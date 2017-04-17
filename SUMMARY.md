@@ -2,17 +2,17 @@
 
 * [Introduction](README.md)
 * [JavaSE](chapter1.md)
-  * [JDK&JRE](chapter1/jdkandjre.md)
+  * [Java基础](chapter1/jdkandjre.md)
   * OOP
   * [JavaAPI](javaapi.md)
-  * Thread
+  * [多线程](chapter1/thread.md)
   * [IO](chapter1/io.md)
-  * [Collection](chapter1/collection.md)
+  * [类集框架](chapter1/collection.md)
   * GUI
-  * Nat
+  * [网络编程](chapter1/nat.md)
 * [Oracle](oracle.md)
 * [JDBC](jdbc.md)
 * [HTML+CSS](html+css.md)
 * [JavaScript](javascript.md)
-* [JavaServerPage](javaserverpage.md)
+* [JSP](javaserverpage.md)
 
