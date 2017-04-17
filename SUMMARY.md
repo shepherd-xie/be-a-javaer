@@ -1,9 +1,15 @@
 # Summary
 
 * [Introduction](README.md)
-* [Java基础](chapter1.md)
+* [JavaSE](chapter1.md)
   * [JDK&JRE](chapter1/jdkandjre.md)
-* [JavaAPI](javaapi.md)
+  * OOP
+  * [JavaAPI](javaapi.md)
+  * Thread
+  * [IO](chapter1/io.md)
+  * [Collection](chapter1/collection.md)
+  * GUI
+  * Nat
 * [Oracle](oracle.md)
 * [JDBC](jdbc.md)
 * [HTML+CSS](html+css.md)
