@@ -34,7 +34,7 @@
 //为变量设置内容用如下格式：
 //数据类型 变量名称 = 常量；
 int num = 10;     //10是常量，常量的默认类型是int
-int result = num * 2;    //
+int result = num * 2;    //利用num变量的内容乘以2，并赋值给result
 ```
 
 
