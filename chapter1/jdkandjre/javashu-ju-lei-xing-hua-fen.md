@@ -45,8 +45,9 @@ System.out.println(result);
 
 **范例：**如果超过了int的最大值或最小值的结果
 
-```
+```java
 int max = Integer.MAX_VALUE ;
+int min = Integer.MIN_VALUE ;
 ```
 
 
