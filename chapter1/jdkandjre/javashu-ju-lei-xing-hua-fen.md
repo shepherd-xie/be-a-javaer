@@ -38,5 +38,7 @@ int result = num * 2;    //利用num变量的内容乘以2，并赋值给result
 System.out.println(result);
 ```
 
+实际上变量与常量最大的区别只有一个：常量的内容是固定的，而变量的内容是可以改变的。
+
 
 
