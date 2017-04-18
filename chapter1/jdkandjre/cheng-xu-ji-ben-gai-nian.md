@@ -33,35 +33,18 @@ public class 类名称 {}
 * 在编写的时候尽量不要使用数字，命名尽量有意义；
 * 对于“$”符号有特殊意义，不要使用；
 * 例如：Student、Math都属于有意义的内容。
-* abstract
-  assert
-  boolean
-  break
-  byte
-  case
-  catch
-  char
-  class
-  const
-  continue    default    do    double    else
-  enum    extends    final    finally    float
-  for    goto    if    implements    import
-  instanceof    int    interface    long    native
-  new    package    private    protected    public
-  return    strictfp    short    static    super
-  switch    synchronized    this    throw    throws
-  transient    try    void    volatile    while
 
-| abstract | assert | boolean | break | byte |
+|  | assert | boolean | break | byte |
 | :---: | :---: | :---: | :---: | :---: |
 | case | catch | char | class | const |
 | continue | default | do | double | else |
 | enum | extends | final | finally | float |
-| for | goto | if | implements | long |
-| native | new | package | private | protected |
-| public  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
+| for | goto | if | implements | import |
+| instanceof | int | interface | long | native |
+| new | package | private | protected | public |
+| return | strictfp | short | static | super |
+| switch | synchronized | this | throw | throws |
+| transient | try | void | volatile | while |
 
 
 
