@@ -33,7 +33,10 @@ public static void main(String[] args) {
 }
 ```
 
+3、屏幕输出：
 
+* 输出之后增加换行：System.out.println\(内容\);
+* 输出之后不增加换行：System.out.print\(内容\);
 
 
 
