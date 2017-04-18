@@ -34,7 +34,7 @@ public class 类名称 {}
 * 对于“$”符号有特殊意义，不要使用；
 * 例如：Student、Math都属于有意义的内容。
 
-|  | assert | boolean | break | byte |
+| abstract | assert | boolean | break | byte |
 | :---: | :---: | :---: | :---: | :---: |
 | case | catch | char | class | const |
 | continue | default | do | double | else |
