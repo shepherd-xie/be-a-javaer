@@ -7,6 +7,7 @@
     * [第一个Java程序](chapter1/jdkandjre/di-yi-ge-java-cheng-xu.md)
     * [CLASSPATH环境属性](chapter1/jdkandjre/classpathhuan-jing-shu-xing.md)
     * [程序基本概念](chapter1/jdkandjre/cheng-xu-ji-ben-gai-nian.md)
+    * [Java数据类型划分](chapter1/jdkandjre/javashu-ju-lei-xing-hua-fen.md)
   * [OOP](chapter1/oop.md)
   * [JavaAPI](javaapi.md)
   * [多线程](chapter1/thread.md)
