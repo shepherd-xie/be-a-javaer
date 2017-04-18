@@ -3,6 +3,8 @@
 * [Introduction](README.md)
 * [JavaSE](chapter1.md)
   * [Java基础](chapter1/jdkandjre.md)
+    * JDK的安装及配置
+    * JDK&JRE
   * OOP
   * [JavaAPI](javaapi.md)
   * [多线程](chapter1/thread.md)
