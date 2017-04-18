@@ -48,8 +48,8 @@ System.out.println(result);
 ```java
 int max = Integer.MAX_VALUE ;    //取出最大值
 int min = Integer.MIN_VALUE ;    //取出最小值
-System.out.println(max) ;
-System.out.println(min) ;
+System.out.println(max) ;    //2147483647
+System.out.println(min) ;    //-2147483648
 ```
 
 
