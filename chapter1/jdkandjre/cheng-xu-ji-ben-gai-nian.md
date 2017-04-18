@@ -6,5 +6,19 @@
 * /\* ... \*/ ：多行注释；
 * /\*\* ... \*/ ：文档注释。
 
+```java
+public class Hello {
+    public static void main(String[] args) {
+        // 单行注释
+        /*
+            多行注释
+        */
+        System.out.println("Hello World!");
+    }
+}
+```
+
+在日后的开发过程中，尽可能的使用单行注释，原因是：在一些开发工具里面，多行注释格式化后的效果不好。而对于文档注释，需要有开发工具的支持后才可以更好的编写。
+
 
 
