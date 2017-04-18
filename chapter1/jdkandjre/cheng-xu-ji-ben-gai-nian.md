@@ -46,5 +46,25 @@ public class 类名称 {}
 | switch | synchronized | this | throw | throws |
 | transient | try | void | volatile | while |
 
+对于所有给出的关键字有如下的几点：
+
+* Java有两个未使用到的关键字：goto、const；
+* Java有三个特殊含义的标记：true、false、null；
+* JDK 1.4 之后增加了assert关键字；
+* JDK 1.5 之后增加了enum关键字；
+
+对于程序开发，以上的要求实际上就够了。但是从JDK 1.7 开始增加了许多神奇的特性。
+
+```java
+public class 你好 {
+	public static void main(String[] args) {
+		int 年龄 = 10;
+		System.out.println(年龄);
+	}
+}
+```
+
+
+
 
 
