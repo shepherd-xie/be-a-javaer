@@ -34,6 +34,8 @@ public class 类名称 {}
 * 对于“$”符号有特殊意义，不要使用；
 * 例如：Student、Math都属于有意义的内容。
 
+给出所有关键字：
+
 | abstract | assert | boolean | break | byte |
 | :---: | :---: | :---: | :---: | :---: |
 | case | catch | char | class | const |
@@ -52,19 +54,22 @@ public class 类名称 {}
 * Java有三个特殊含义的标记：true、false、null；
 * JDK 1.4 之后增加了assert关键字；
 * JDK 1.5 之后增加了enum关键字；
+* **所有关键字都不用背**
 
 对于程序开发，以上的要求实际上就够了。但是从JDK 1.7 开始增加了许多神奇的特性。
 
 ```java
-public class 你好 {
-	public static void main(String[] args) {
-		int 年龄 = 10;
-		System.out.println(年龄);
-	}
+public class 你好 {        //类名称
+    public static void main(String[] args) {
+        int 年龄 = 10;    //变量名称
+        System.out.println(年龄);    //输出内容
+    }
 }
 ```
 
+Java本身是支持中文的，只不过从来没人这么做过。**不要这么做。**
 
+Java每个版本都会有新特性，新特性保守使用。
 
 
 
