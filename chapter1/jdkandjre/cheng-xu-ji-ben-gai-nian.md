@@ -28,7 +28,39 @@ public class Hello {
 public class 类名称 {}
 ```
 
-这里的类名称就属于一个标识符的内容，但是除了类名称之外，属性名称、方法名称等也都成为标识符。所有的标识符都有自己严格的定义要求，基本要求如下：标识符由字母、数字、下划线（\_）、美元符号（$）所组成，其中不能以数字开头，不能是Java中的保留字（关键字）。
+这里的类名称就属于一个标识符的内容，但是除了类名称之外，属性名称、方法名称等也都成为标识符。所有的标识符都有自己严格的定义要求，基本要求如下**：标识符由字母、数字、下划线（\_）、美元符号（$）所组成，其中不能以数字开头，不能是Java中的保留字（关键字）。**
+
+* 在编写的时候尽量不要使用数字，命名尽量有意义；
+* 对于“$”符号有特殊意义，不要使用；
+* 例如：Student、Math都属于有意义的内容。
+* abstract
+  assert
+  boolean
+  break
+  byte
+  case
+  catch
+  char
+  class
+  const
+  continue	default	do	double	else
+  enum	extends	final	finally	float
+  for	goto	if	implements	import
+  instanceof	int	interface	long	native
+  new	package	private	protected	public
+  return	strictfp	short	static	super
+  switch	synchronized	this	throw	throws
+  transient	try	void	volatile	while
+
+| abstract | assert | boolean | break | byte |
+| :---: | :---: | :---: | :---: | :---: |
+| case | catch | char | class | const |
+| continue | default | do | double | else |
+| enum | extends | final | finally | float |
+| for | goto | if | implements | long |
+| native | new | package | private | protected |
+|  |  |  |  |  |
+|  |  |  |  |  |
 
 
 
