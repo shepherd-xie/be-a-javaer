@@ -231,3 +231,11 @@ System.out.println(c);
 
 传统的编程语言中，字符里面只能够保存一些英文字母的标记，但是在Java之中，由于使用了UNICODE编码，这种十六进制的编码可以保存任意的文字，可以设置一个中文字符。
 
+```java
+char c = '陈';
+int num = c;
+System.out.println(num);
+```
+
+
+
