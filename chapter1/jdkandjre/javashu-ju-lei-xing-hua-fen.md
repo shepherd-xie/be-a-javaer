@@ -155,3 +155,13 @@ System.out.println(num * 2);
 
 由于默认的小数类型就是double，所以如果使用了float表示需要将double型变为float型，需要采用强制转换。
 
+**范例：**使用float型
+
+```java
+float f1 = 10.2F;
+float f2 = (float)10.2;
+System.out.println(f1 * f2); //104.03999
+```
+
+
+
