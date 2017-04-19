@@ -313,7 +313,8 @@ System.out.println(str);
 **范例：**转义字符
 
 ```java
-
+String str = "Hello \n\t\"World\"";
+System.out.println(str);
 ```
 
 这些转义字符在Java的学习过程之中考虑到格式显示经常会出现。
