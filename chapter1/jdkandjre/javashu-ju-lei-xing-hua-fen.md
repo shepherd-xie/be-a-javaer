@@ -177,3 +177,11 @@ System.out.println(x / y);
 
 此时如果进行了除法计算发现最终的计算结果变为了1，因为所有的小数位被忽略了。此时要想得出正确的计算结果，则可以将其中的一个整形变为浮点型。
 
+```java
+int x = 9;
+int y = 5;
+System.out.println((double)x / y);
+```
+
+
+
