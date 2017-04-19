@@ -280,3 +280,13 @@ System.out.println("Hello World !"); //字符串常量
 
 在String操作里面，也可以使用“ + ”进行字符串的连接操作。
 
+**范例：**字符串连接
+
+```java
+String str = "Hello";
+str = str + " World !";
+System.out.println("Hello World !"); 
+```
+
+
+
