@@ -70,7 +70,7 @@ switch (整数 | 字符 | 枚举 | String) {
 }
 ```
 
- 在每一个case里面出现的break语句，表示的是停止case的执行，因为switch语句默认情况下会从第一个满足的case语句开始执行全部的语句
+在每一个case里面出现的break语句，表示的是停止case的执行，因为switch语句默认情况下会从第一个满足的case语句开始执行全部的语句代码，一直到整个switch执行完毕或者遇到了break。
 
 **范例：**使用switch判断
 
