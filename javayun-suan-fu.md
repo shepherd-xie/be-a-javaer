@@ -148,5 +148,9 @@ boolean flag = true;
 System.out.println(!flag);
 ```
 
+如果现在是多个布尔表达式想要进行连接，只能够使用与和或两个操作。
 
+**1、与操作**
+
+范例
 
