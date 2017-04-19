@@ -51,22 +51,22 @@ if (score < 60.0) {
 
 ```java
 switch (整数 | 字符 | 枚举 | String) {
-	case 内容 : {
-		内容满组时执行;
-		[break;]
-	}
-	case 内容 : {
-		内容满组时执行;
-		[break;]
-	}
-	case 内容 : {
-		内容满组时执行;
-		[break;]
-	} ...
-	[default : {
-		内容都不满足时执行;
-		[break;]
-	}]
+    case 内容 : {
+        内容满足时执行;
+        [break;]
+    }
+    case 内容 : {
+        内容满足时执行;
+        [break;]
+    }
+    case 内容 : {
+        内容满足时执行;
+        [break;]
+    } ...
+    [default : {
+        内容都不满足时执行;
+        [break;]
+    }]
 }
 ```
 
