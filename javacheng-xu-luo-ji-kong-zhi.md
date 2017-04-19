@@ -96,5 +96,31 @@ switch (ch) {
 }
 ```
 
+switch不能判断布尔表达式，它只能够判断内容。
+
+从JDK1.7开始switch终于出现了字符串的判断。
+
+```java
+String str = "HELLO";
+switch (str) {
+    case "HELLO": {
+        System.out.println("内容是HELLO");
+        break;
+    }
+    case "hello": {
+        System.out.println("内容是hello");
+        break;
+    }
+    case "world": {
+        System.out.println("内容是world");
+        break;
+    }
+    default: {
+        System.out.println("没有匹配内容");
+        break;
+    }
+}
+```
+
 
 
