@@ -183,5 +183,5 @@ int y = 5;
 System.out.println((double)x / y);
 ```
 
-
+在以后的开发中，一定要考虑到整形不保留小数位的问题。
 
