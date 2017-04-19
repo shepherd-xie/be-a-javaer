@@ -203,5 +203,11 @@ System.out.println(c);
 System.out.println(num);
 ```
 
+经过测试发现一些编码情况：
+
+* A（65） ~ Z（90）
+* a（97） ~ z（122）
+* 0（48） ~ 9（57）
+
 
 
