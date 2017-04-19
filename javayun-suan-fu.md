@@ -32,8 +32,11 @@ int num = 10;
 
 **范例：**观察一种神奇的代码
 
-```
-
+```java
+int numA = 10;
+int numB = 20;
+int result = numA * 2 - --numB * numA ++ + numB - numA -- + numB;
+System.out.println(result)l;
 ```
 
 
