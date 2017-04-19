@@ -120,5 +120,7 @@ byte x = (byte)num;    //由int变为byte
 System.out.println(x); //-126
 ```
 
+但是由于byte使用的特殊性，Java对其有一些很好的改善。
+
 
 
