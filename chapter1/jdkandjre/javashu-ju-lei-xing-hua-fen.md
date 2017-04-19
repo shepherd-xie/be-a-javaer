@@ -51,8 +51,9 @@ int min = Integer.MIN_VALUE;     //取出最小值
 System.out.println(max);     //2147483647
 System.out.println(min);     //-2147483648
 // int变量 ± int型常量 = int型数据
-System.out.println(max + 1);	//最大值加一：-2147483648
-System.out.println(min - 1);	//最小值减一：2147483647
+System.out.println(max + 1);    //最大值加1：-2147483648
+System.out.println(min - 1);    //最小值减1：2147483647
+System.out.println(min - 2);    //最小值减2：2147483646
 ```
 
 
