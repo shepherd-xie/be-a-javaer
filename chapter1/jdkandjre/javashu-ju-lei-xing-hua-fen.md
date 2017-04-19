@@ -140,5 +140,9 @@ int num = 0;
 System.out.println(num);
 ```
 
+### 浮点数
+
+浮点数就是小数，Java中只要是小数，那么对应的就是double型数据（double是保存范围最广的数据类型）
+
 
 
