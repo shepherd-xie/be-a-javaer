@@ -125,7 +125,8 @@ System.out.println(x); //-126
 **范例：**观察byte操作
 
 ```
-
+byte num = 100;
+System.out.println(num);
 ```
 
 
