@@ -141,3 +141,12 @@ System.out.println(max);
 
 对于逻辑运算主要就是：与（&、&&）、或（\|、\|\|）、非（！）三种计算。
 
+**范例：**非就是针对布尔类型进行求反
+
+```java
+boolean flag = true;
+System.out.println(!flag);
+```
+
+
+
