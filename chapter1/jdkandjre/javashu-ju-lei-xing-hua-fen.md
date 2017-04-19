@@ -297,5 +297,5 @@ String str = "加法计算：" + numA + numB;
 System.out.println(str);
 ```
 
-
+从之前学习的数据类型来说，任何的数据类型都向范围大的数据类型进行转换，那么如果是int和double，int应该先变为double，而后进行加法计算，但是
 
