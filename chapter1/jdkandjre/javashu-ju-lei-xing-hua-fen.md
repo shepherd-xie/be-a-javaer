@@ -107,7 +107,7 @@ System.out.println(x);   //1000
 ```java
 long num = 2147483649L;
 int x = (int)num;        //把long变为int
-System.out.println(x);   //1000
+System.out.println(x);   //-2147483647
 ```
 
 
