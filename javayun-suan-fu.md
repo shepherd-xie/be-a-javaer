@@ -229,7 +229,8 @@ System.out.println(numA | numB);
 ```java
 int num = 2;
 int result = num << 2;
-System.out.println(numA | numB);
+System.out.println(num);
+System.out.println(result);
 ```
 
 
