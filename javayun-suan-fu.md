@@ -57,5 +57,13 @@ System.out.println("除法计算" + (numA / (double)numB));
 System.out.println("加法计算" + (numA + numB));
 ```
 
+**范例：**求模计算
+
+```java
+int numA = 10;
+int numB = 3;
+System.out.println("求模计算" + (numA % numB));
+```
+
 
 
