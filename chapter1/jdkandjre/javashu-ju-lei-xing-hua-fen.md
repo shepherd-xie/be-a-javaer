@@ -110,6 +110,13 @@ int x = (int)num;        //把long变为int
 System.out.println(x);   //-2147483647
 ```
 
+**注意：区分以下情况（数字1与小写字母l）**
+
+```java
+System.out.println(11 + 1l);
+System.out.println(11 + 11);
+```
+
 在整型数据之中，byte型数据是一个非常有用处的数据类型，首先对于byte型数据它的取值范围：-128 ~ 127之间。
 
 **范例：**观察byte转换
