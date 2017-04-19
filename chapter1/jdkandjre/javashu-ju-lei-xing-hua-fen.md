@@ -278,5 +278,5 @@ System.out.println(str);             //字符串变量
 System.out.println("Hello World !"); //字符串常量
 ```
 
-
+在String操作里面，也可以使用“ + ”进行字符串的连接操作。
 
