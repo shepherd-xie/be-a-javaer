@@ -142,7 +142,16 @@ System.out.println(num);
 
 ### 浮点数
 
-浮点数就是小数，Java中只要是小数，那么对应的就是double型数据（double是保存范围最广的数据类型）
+浮点数就是小数，Java中只要是小数，那么对应的就是double型数据（double是保存范围最广的数据类型）。
+
+**范例：**定义douoble型变量
+
+```java
+//10.2是一个小数所以属于double型
+double num = 10.2;
+//double型 * int型（转化为double，2.0） = double型
+System.out.println(num * 2);
+```
 
 
 
