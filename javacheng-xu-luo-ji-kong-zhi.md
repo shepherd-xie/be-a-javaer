@@ -70,5 +70,5 @@ switch (整数 | 字符 | 枚举 | String) {
 }
 ```
 
-
+ 范例：使用switch判断
 
