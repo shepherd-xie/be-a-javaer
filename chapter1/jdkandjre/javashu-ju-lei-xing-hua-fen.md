@@ -245,3 +245,15 @@ System.out.println(num);
 
 布尔是一个数学家的名字，布尔型是一种逻辑结果，主要保存两类数据：true、false，这类数据主要用于一些程序的逻辑使用上。
 
+**范例：**定义boolean型
+
+```java
+//布尔只有两种取值：true、false
+boolean flag = true;
+if (flag) {
+	System.out.println("Hello World!");
+}
+```
+
+
+
