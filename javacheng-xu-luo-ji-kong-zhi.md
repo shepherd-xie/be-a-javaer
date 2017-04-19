@@ -23,3 +23,14 @@ if (score > 60.0) {
 
 **范例：**出现不满足的判断
 
+```java
+double score = 90;
+if (score > 60.0) {
+    System.out.println("及格了！");
+} else {
+    System.out.println("没及格！");
+}
+```
+
+
+
