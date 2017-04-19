@@ -224,3 +224,13 @@ System.out.println(numA | numB);
 11的二进制：00000000 00000000 00000000 00001011  
 \|结果：           00000000 00000000 00000000 00001011
 
+**范例：**移位操作
+
+```java
+int numA = 9;
+int numB = 11;
+System.out.println(numA | numB);
+```
+
+
+
