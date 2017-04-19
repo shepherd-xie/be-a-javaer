@@ -221,5 +221,12 @@ c = (char)num; //将int变为char型
 System.out.println(c);
 ```
 
+或者
+
+```java
+char c = 'A'; //大写字母
+System.out.println(c + ('a' - 'A')); //小写与大写之间的差值
+```
+
 
 
