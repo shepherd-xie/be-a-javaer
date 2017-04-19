@@ -202,3 +202,11 @@ if ((1 == 1) || (10 / 0 == 0)) {
 
 **范例：**实现位与操作
 
+```java
+int numA = 9;
+int numB = 11;
+System.out.println(numA & numB)
+```
+
+;
+
