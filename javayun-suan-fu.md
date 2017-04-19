@@ -115,9 +115,11 @@ System.out.println("result = " + result);
 ```java
 int numA = 10;
 int numB = 20;
+//如果numA大于numB，返回true，则将numA的内容赋值给max
+//如果numA小于numB，返回false，则将numB的内容赋值给max
 int max = numA > numB ? numA : numB;
 System.out.println(max);
 ```
 
-
+如果此处不使用三目运算，则就需要编写如下形式的判断语句完成了。
 
