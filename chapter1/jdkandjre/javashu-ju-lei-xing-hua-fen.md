@@ -225,7 +225,8 @@ System.out.println(c);
 
 ```java
 char c = 'A'; //大写字母
-System.out.println(c + ('a' - 'A')); //小写与大写之间的差值
+c = c + ('a' - 'A'); //小写与大写之间的差值
+System.out.println(c); 
 ```
 
 
