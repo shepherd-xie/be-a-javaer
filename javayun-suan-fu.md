@@ -96,5 +96,5 @@ System.out.println("numA = " + numA);
 System.out.println("result = " + result);
 ```
 
-如果以后使用此类的操作，也只会使用“ numA ++”；
+如果以后使用此类的操作，也只会使用“ numA ++ ”；
 
