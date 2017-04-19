@@ -36,10 +36,14 @@ if (score > 60.0) {
 
 ```java
 double score = 90;
-if (score > 60.0) {
-    System.out.println("及格了！");
-} else {
+if (score < 60.0) {
     System.out.println("没及格！");
+} else if (score >= 60 && score <= 90) {
+    System.out.println("中等成绩！");
+} else if (score > 90 && score <= 100) {
+    System.out.println("优秀成绩！");
+} else {
+    System.out.println("没有这样的成绩！");
 }
 ```
 
