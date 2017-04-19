@@ -124,7 +124,15 @@ System.out.println(max);
 如果此处不使用三目运算，则就需要编写如下形式的判断语句完成了。
 
 ```java
-
+int numA = 10;
+int numB = 20;
+int max = 0;
+if (numA > numB) {
+    max = numA;
+} else {
+    max = numB;
+}
+System.out.println(max);
 ```
 
 
