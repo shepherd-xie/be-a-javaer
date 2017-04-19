@@ -7,7 +7,7 @@
 > * 基本数据类型：
 >   * 数值型：
 >     * 整形：byte、short、int、long；    ----&gt;    默认值：0
->     * 浮点型：float、double；                 ----&gt;    默认值：0.0
+>     * 浮点型：float、double；                ----&gt;    默认值：0.0
 >   * 字符型：char；                                        ----&gt;    默认值：‘\u0000’
 >   * 布尔型：boolean；                                  ----&gt;    默认值：false
 > * 引用数据类型：数组、类、接口；                 ----&gt;    默认值：null
