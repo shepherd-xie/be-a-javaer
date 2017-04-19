@@ -39,5 +39,5 @@ int result = numA * 2 - --numB * numA ++ + numB - numA -- + numB;
 System.out.println(result);
 ```
 
-
+以后写代码，一定要写出像“ 1 + 1 = 2”这样简单的代码。
 
