@@ -116,6 +116,7 @@ System.out.println("result = " + result);
 int numA = 10;
 int numB = 20;
 int max = numA > numB ? numA : numB;
+System.out.println(max);
 ```
 
 
