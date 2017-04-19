@@ -65,5 +65,13 @@ int numB = 3;
 System.out.println("求模计算" + (numA % numB));
 ```
 
+在运算符里面又提供了一些简化运算符：
+
+```java
+int num = 10;
+num *= 2; //num = num * 2;
+System.out.println(num);
+```
+
 
 
