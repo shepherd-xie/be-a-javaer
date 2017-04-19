@@ -285,7 +285,7 @@ System.out.println("Hello World !"); //字符串常量
 ```java
 String str = "Hello";
 str = str + " World !";
-System.out.println("Hello World !"); 
+System.out.println(str);
 ```
 
 
