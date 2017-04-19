@@ -114,3 +114,11 @@ System.out.println(x);   //-2147483647
 
 **范例：**观察byte转换；
 
+```java
+int num = 130;         //超过了byte的范围
+byte x = (byte)num;    //由int变为byte
+System.out.println(x); //-126
+```
+
+
+
