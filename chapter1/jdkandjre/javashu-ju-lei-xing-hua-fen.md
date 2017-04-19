@@ -270,3 +270,13 @@ if (flag) {
 
 String表示的是一个字符串，即：多个字符的集合，String要求使用“ " ”声明其内容。
 
+**范例：**观察String操作
+
+```java
+String str = "Hello World !";
+System.out.println(str);             //字符串变量
+System.out.println("Hello World !"); //字符串常量
+```
+
+
+
