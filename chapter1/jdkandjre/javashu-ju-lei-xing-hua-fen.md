@@ -102,5 +102,5 @@ int x = (int)num;        //把long变为int
 System.out.println(x);   //1000
 ```
 
-
+如果将long变为了int时所保存的数据超过了int的范围，那么依然会出现数据溢出。
 
