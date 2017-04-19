@@ -36,7 +36,7 @@ int num = 10;
 int numA = 10;
 int numB = 20;
 int result = numA * 2 - --numB * numA ++ + numB - numA -- + numB;
-System.out.println(result)l;
+System.out.println(result);
 ```
 
 
