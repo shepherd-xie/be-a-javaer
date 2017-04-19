@@ -226,8 +226,8 @@ System.out.println(c);
 ```java
 char c = 'A'; //大写字母
 c = c + ('a' - 'A'); //小写与大写之间的差值
-System.out.println(c); 
+System.out.println(c);
 ```
 
-
+传统的编程语言中，字符里面只能够保存一些英文字母的标记，但是在Java之中，由于使用了UNICODE编码，这种十六进制的编码可以保存任意的文字，可以设置一个中文字符。
 
