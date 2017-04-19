@@ -72,8 +72,14 @@ System.out.println(min - 2);    //最小值减2：2147483646
 
 **范例：**扩大数据类型
 
-```
-
+```java
+int max = Integer.MAX_VALUE;     //取出最大值
+int min = Integer.MIN_VALUE;     //取出最小值
+// int变量 ± long型常量 = int型数据
+System.out.println(max + 1L);
+System.out.println(min - (long)1);
+// long变量 ± int型常量 = int型数据
+System.out.println((long)min - 2);
 ```
 
 在程序的世界里面，数据类型的转换有以下规律：
