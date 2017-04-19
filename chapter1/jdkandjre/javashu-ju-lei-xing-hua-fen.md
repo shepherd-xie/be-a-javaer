@@ -97,8 +97,8 @@ System.out.println((long)min - 2);    //最小值减2：-2147483650
 **范例：**将范围大的数据类型变为范围小的数据类型；
 
 ```java
-long num = 1000;		//1000常量是int型，使用long接收，发生了向大范围转型的操作
-int x = (int)num;		//把long变为int
+long num = 1000;         //1000常量是int型，使用long接收，发生了向大范围转型的操作
+int x = (int)num;        //把long变为int
 System.out.println(x);
 ```
 
