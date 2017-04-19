@@ -73,7 +73,21 @@ switch (整数 | 字符 | 枚举 | String) {
 **范例：**使用switch判断
 
 ```java
-
+int ch = 2;
+switch (ch) {
+    case 2: {
+        System.out.println("内容是2")；
+    }
+    case 1: {
+        System.out.println("内容是1")；
+    }
+    case 3: {
+        System.out.println("内容是3")；
+    }
+    default: {
+        System.out.println("没有匹配内容");
+    }
+}
 ```
 
 
