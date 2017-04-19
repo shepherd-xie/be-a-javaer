@@ -290,3 +290,12 @@ System.out.println(str);
 
 数学计算里面有“ + ”，字符串里面也有“ + ”，如果一起使用呢？
 
+```java
+int numA = 100;
+double numB = 99.0;
+String str = "加法计算：";
+System.out.println(str);
+```
+
+
+
