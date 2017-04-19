@@ -153,5 +153,5 @@ double num = 10.2;
 System.out.println(num * 2);
 ```
 
-
+由于默认的小数类型就是double，所以如果使用了float表示需要将double型变为float型，需要采用强制转换。
 
