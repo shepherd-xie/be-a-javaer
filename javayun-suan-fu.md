@@ -227,8 +227,8 @@ System.out.println(numA | numB);
 **范例：**移位操作
 
 ```java
-int numA = 9;
-int numB = 11;
+int num = 2;
+int result = num << 2;
 System.out.println(numA | numB);
 ```
 
