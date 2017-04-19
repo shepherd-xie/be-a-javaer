@@ -288,5 +288,5 @@ str = str + " World !";
 System.out.println(str);
 ```
 
-
+数学计算里面有“ + ”，字符串里面也有“ + ”，如果一起使用呢？
 
