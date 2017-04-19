@@ -251,9 +251,9 @@ System.out.println(num);
 //布尔只有两种取值：true、false
 boolean flag = true;
 if (flag) {
-	System.out.println("Hello World!");
+    System.out.println("Hello World!");
 }
 ```
 
-
+在许多的语言之中，由于设计的初期没有考虑到布尔型的问题，那么就使用了数字0表示false，而非数字0表示true，但是这样的设计对于代码比较混乱，Java里面不允许使用0或1填充布尔型数据变量内容。
 
