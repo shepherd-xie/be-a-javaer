@@ -135,5 +135,5 @@ if (numA > numB) {
 System.out.println(max);
 ```
 
-
+利用三目可以节约一些判断代码。
 
