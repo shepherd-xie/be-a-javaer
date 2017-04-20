@@ -76,6 +76,7 @@ public static void test(double score) {
 public static void main(String[] args) {
     //方法的返回值可以进行接收
     int result = add(10, 20);
+    System.out.println("计算结果：" + result);
 }
 //定义有参数，有返回值的方法
 public static int add(int x, int y) {
