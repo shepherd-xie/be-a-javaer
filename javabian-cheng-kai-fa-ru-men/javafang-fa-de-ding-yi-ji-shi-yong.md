@@ -105,5 +105,5 @@ public static void set(int x) {
 }
 ```
 
-
+ 只有方法返回值类型为void的前提下才可以使用。
 
