@@ -220,5 +220,31 @@ public class MainClass {
 }
 ```
 
-![](/assets/import 2.1-3.png)
+![](/assets/import 2.1-3.png)这个时候给出的代码，是声明并实例化对象，用一行语句完成的，观察引用类型的使用。
+
+**范例：**对象引用传递
+
+```java
+class Book { //定义一个新的类
+	String title; //书的名字
+	double price; //书的价格
+	public void getInfo() { //此方法将由对象调用
+		System.out.println("图书名称：" + title + "，价格：" + price);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Book bookA = new Book();	//声明并实例化对象
+		Book bookB = null;			//声明对象
+		bookA.title = "Java基础入门";
+		bookA.price = 89.9;
+		bookB = bookA;				//引用传递
+		bookB.price = 58.8;
+		bookA.getInfo();
+		bookB.getInfo();
+	}
+}
+```
+
+
 
