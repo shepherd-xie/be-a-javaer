@@ -160,7 +160,14 @@ public static void main(String[] args) {
 
 **范例：**实现一个1~100的累加操作
 
+```java
+int sum = 0;
+int current = 1;
+while (current <= 100) {
+    sum += current;
+}
+System.out.println(sum);
 ```
 
-```
+
 
