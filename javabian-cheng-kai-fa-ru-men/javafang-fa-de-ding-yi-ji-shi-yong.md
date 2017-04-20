@@ -68,5 +68,19 @@ public static void test(double score) {
 }
 ```
 
- 有了参数之后，方法就可以根据不同的参数内容进行数据的处理。
+有了参数之后，方法就可以根据不同的参数内容进行数据的处理。
+
+**范例：**定义有参数有返回值的方法
+
+```java
+public static void main(String[] args) {
+    printInfo();    //直接调用方法
+}
+//定义有参数，有返回值的方法
+public static int add(int x, int y) {
+    return x + y;
+}
+```
+
+
 
