@@ -135,13 +135,12 @@ public static double add(double x, double y) {
 
 ```java
 public static void main(String[] args) {
-    System.out.println("hello");
-    System.out.println(1);
-    System.out.println(12.3);
-    System.out.println(true);
-    System.out.println('A');
+    System.out.println("hello");    //输出String
+    System.out.println(1);        //输出int
+    System.out.println(12.3);    //输出double
+    System.out.println(true);    //输出bolean
+    System.out.println('A');    //输出char
 }
-
 ```
 
 
