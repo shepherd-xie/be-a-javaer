@@ -68,5 +68,5 @@ public static void test(double score) {
 }
 ```
 
-
+ 有了参数之后，方法就可以根据不同的参数内容进行数据的处理。
 
