@@ -239,7 +239,11 @@ System.out.println(sum);
 
 ```java
 for (int i = 1; i <= 10; i ++) {
-    System.out.print("开始看第" + i + "本书")；
+    System.out.print("开始看第" + i + "本书");
+    for (int j = 1; j <= 20; j ++) {
+        System.out.print("看第" + j + "页");
+    }
+    System.out.println();
 }
 ```
 
