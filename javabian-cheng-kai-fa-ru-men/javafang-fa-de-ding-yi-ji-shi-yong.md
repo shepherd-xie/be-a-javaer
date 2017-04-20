@@ -93,6 +93,8 @@ public static int add(int x, int y) {
 ```java
 public static void main(String[] args) {
     set(100);
+    set(3);
+    set(10);
 }
 //定义有参数，有返回值的方法
 public static void set(int x) {
