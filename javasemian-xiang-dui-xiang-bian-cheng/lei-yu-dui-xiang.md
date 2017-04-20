@@ -29,5 +29,17 @@
 * FIeld（属性、变量、成员），就是一堆变量的集合；
 * Method（方法、行为），之前见到的方法，但是此处的方法是由对象调用的。
 
- 范例：定义类
+**范例：**定义类
+
+```java
+class Book {
+    String title;
+    double price;
+    public void getInfo() {
+        System.out.println("图书名称：" + title + "，价格：" + price);
+    }
+}
+```
+
+
 
