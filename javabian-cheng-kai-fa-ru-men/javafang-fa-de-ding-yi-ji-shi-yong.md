@@ -170,5 +170,18 @@ while (current <= 100) {
 System.out.println(sum);
 ```
 
- 将以上的代码形式转化为递归操作。
+将以上的代码形式转化为递归操作。
+
+```java
+public static void main(String[] args) {
+
+}
+public static int sum(int num) {
+    if (num == 1) {
+        return 1;
+    }
+}
+```
+
+
 
