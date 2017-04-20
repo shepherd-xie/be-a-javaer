@@ -105,5 +105,25 @@ public class MainClass {
 }
 ```
 
-任何情况下只要有关键字new，都表示要开辟新的堆内存空间，一旦堆内存空间开辟了，里面就一定会有有所有类重定义的属性内容，当然所有的属性诶荣都是其对应数据类型的默认值。![](/assets/import 2.1-2.png)
+任何情况下只要有关键字new，都表示要开辟新的堆内存空间，一旦堆内存空间开辟了，里面就一定会有有所有类重定义的属性内容，当然所有的属性诶荣都是其对应数据类型的默认值。![](/assets/import 2.1-2.png)以上的代码是分为两步的方式实现了对象的实例化（开辟了堆内存的对象称为实例化对象），若果使用了没有实例化的对象。
+
+```java
+class Book { //定义一个新的类
+	String title; //书的名字
+	double price; //书的价格
+	public void getInfo() { //此方法将由对象调用
+		System.out.println("图书名称：" + title + "，价格：" + price);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Book bk = null;			//声明对象
+		bk.title = "Java基础入门";	//操作属性内容
+		bk.price = 89.9;		//操作属性内容
+		bk.getInfo();			//调用类中的getInfo()方法
+	}
+}
+```
+
+
 
