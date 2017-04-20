@@ -131,5 +131,18 @@ public static double add(double x, double y) {
 }
 ```
 
- 范例：观察代码
+**范例：**观察代码
+
+```java
+public static void main(String[] args) {
+    System.out.println("hello");
+    System.out.println(1);
+    System.out.println(12.3);
+    System.out.println(true);
+    System.out.println('A');
+}
+
+```
+
+
 
