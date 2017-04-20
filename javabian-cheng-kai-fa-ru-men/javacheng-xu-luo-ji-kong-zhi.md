@@ -275,5 +275,16 @@ for (int i = 0; i < 10; i ++) {
 }
 ```
 
+**范例：**观察break
+
+```java
+for (int i = 0; i < 10; i ++) {
+    if (i == 3) {
+        break;
+    }
+    System.out.println("i = " + i);
+}
+```
+
 
 
