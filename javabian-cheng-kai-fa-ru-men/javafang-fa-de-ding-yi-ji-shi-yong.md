@@ -111,5 +111,24 @@ public static void set(int x) {
 
 如果说有一个方法要执行多项操作，例如add方法，它可能执行两个整数的相加，也有可能执行三个整数的相加，还有可能执行两个小数的相加，那么在这样的情况下，一个方法体肯定无法满足这样的需求，要为add方法轻易多个不同的功能实现，此类操作就成为方法重载，但是在进行方法的重载时要求：方法的名称相同，参数的类型或个数不同。
 
- 范例：观察方法重载
+**范例：**观察方法重载
+
+```java
+public static void main(String[] args) {
+    int result = add(10, 20);
+    System.out.println("计算结果：" + result);
+    System.out.println(add(40, 50));
+}
+public static int add(int x, int y) {
+    return x + y;
+}
+public static int add(int x, int y, int z) {
+    return x + y + z;
+}
+public static double add(double x, double y) {
+    return x + y;
+}
+```
+
+
 
