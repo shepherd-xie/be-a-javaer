@@ -143,5 +143,7 @@ public static void main(String[] args) {
 }
 ```
 
- 可以发现“ System.out.println\(\) ”所有的内容都可以执行，所以此方法就是被重载后的方法。
+可以发现“ System.out.println\(\) ”所有的内容都可以执行，所以此方法就是被重载后的方法。
+
+ 方法重载的概念本身很容易理解，但是对于方法重载有两点说明：
 
