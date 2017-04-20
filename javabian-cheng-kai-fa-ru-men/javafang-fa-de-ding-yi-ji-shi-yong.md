@@ -172,7 +172,7 @@ System.out.println(sum);
 
 将以上的代码形式转化为递归操作。
 
- 范例：递归吊桶
+**范例：**递归调用
 
 ```java
 public static void main(String[] args) {
