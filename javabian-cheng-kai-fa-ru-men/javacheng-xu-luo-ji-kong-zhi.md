@@ -171,7 +171,12 @@ do {
 **范例：**实现1~100的累加 —— 使用while循环
 
 ```java
-
+int sum = 0;        //保存总和
+int current = 1;    //循环的初始化条件
+while (current <= 100) {    //循环的结束条件
+    sum += current;    //累加
+    current ++;
+}
 ```
 
 
