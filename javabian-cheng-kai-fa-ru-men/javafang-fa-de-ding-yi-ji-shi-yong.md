@@ -246,5 +246,5 @@ public class MainClass {
 }
 ```
 
-严格来讲bookA和bookB里面保存的是对象的地址信息，所以以上的引用过程就属于将bookA的地址给了bookB。
+严格来讲bookA和bookB里面保存的是对象的地址信息，所以以上的引用过程就属于将bookA的地址给了bookB。![](/assets/import 2.1-4.png)
 
