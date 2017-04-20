@@ -77,6 +77,8 @@ public static void main(String[] args) {
     //方法的返回值可以进行接收
     int result = add(10, 20);
     System.out.println("计算结果：" + result);
+    //也可以将方法返回值进行输出
+    System.out.println(add(40, 50));
 }
 //定义有参数，有返回值的方法
 public static int add(int x, int y) {
