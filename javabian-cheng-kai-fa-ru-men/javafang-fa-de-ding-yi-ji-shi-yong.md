@@ -65,7 +65,6 @@ public static void test(double score) {
     } else {
         System.out.println("不存在的成绩");
     }
-
 }
 ```
 
