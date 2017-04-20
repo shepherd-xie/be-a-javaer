@@ -63,7 +63,7 @@ public static void test(double score) {
     } else if (score >= 0 && score < 60) {
         System.out.println("不及格");
     } else {
-        System.out.println("不存在的成绩")；
+        System.out.println("不存在的成绩");
     }
 
 }
