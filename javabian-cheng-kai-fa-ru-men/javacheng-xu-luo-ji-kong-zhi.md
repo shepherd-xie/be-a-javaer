@@ -185,7 +185,13 @@ while循环属于先判断后执行。
 **范例：**使用do...while循环
 
 ```java
-
+int sum = 0;        //保存总和
+int current = 1;    //循环的初始化条件
+do {    
+    sum += current;    //累加
+    current ++;
+} while (current <= 100);    //循环的结束条件
+System.out.println(sum);
 ```
 
 
