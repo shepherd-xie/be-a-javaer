@@ -190,5 +190,35 @@ public static int sum(int num) {
 }
 ```
 
+### 引用数据的初步分析
 
+引用是整个Java开发之中的核心精髓所在，即：只有掌握了引用这一基础概念之后才可以继续向后面的课程深入学习。引用类似于C/C++中的指针概念，但是要比指针更加简单。
+
+在所有的引用分析里面，最关键的还是在于关键字“ new ”，一定要注意的是，每一次使用关键字new都一定会开辟新的堆内存空间，所以如果代码中声明了两个对象，并且使用了关键字new为两个对象分别进行对象的实例化操作，那么一定是各自占有各自的堆内存空间，并且不会相互影响。
+
+**范例：**声明两个对象
+
+```java
+class Book { //定义一个新的类
+	String title; //书的名字
+	double price; //书的价格
+	public void getInfo() { //此方法将由对象调用
+		System.out.println("图书名称：" + title + "，价格：" + price);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Book bookA = new Book();
+		Book bookB = new Book();
+		bookA.title = "Java基础入门";
+		bookA.price = 89.9;
+		bookB.title = "操作系统";
+		bookB.price = 58.8;
+		bookA.getInfo();
+		bookB.getInfo();
+	}
+}
+```
+
+![](/assets/import 2.1-3.png)
 
