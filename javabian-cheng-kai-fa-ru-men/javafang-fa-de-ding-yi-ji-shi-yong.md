@@ -143,5 +143,5 @@ public static void main(String[] args) {
 }
 ```
 
-
+ 可以发现“ System.out.println\(\) ”所有的内容都可以执行，所以此方法就是被重载后的方法。
 
