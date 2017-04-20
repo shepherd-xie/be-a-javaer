@@ -50,10 +50,30 @@ class Book { //定义一个新的类
 
 引用数据类型与基本数据类型最大的不同在于需要内存的开辟及使用，所以new关键字的主要功能就是开辟内存空间，即：只要是引用数据类型想使用，就必须使用new来开辟内存空间。
 
- 当一个对象实例化之后就可以使用如下的方式利用对象来操作类 结构：
+当一个对象实例化之后就可以使用如下的方式利用对象来操作类 结构：
 
 * 对象.属性：表示要操作类中的属性内容；
 * 对象.方法\(\)：表示要调用类中的方法。
 
 **范例：**使用类 —— 在主类中使用Book类
+
+```java
+class Book { //定义一个新的类
+	String title; //书的名字
+	double price; //书的价格
+	public void getInfo() { //此方法将由对象调用
+		System.out.println("图书名称：" + title + "，价格：" + price);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Book bk = new Book();	//声明并实例化对象
+		bk.title = "Java基础入门";	//操作属性内容
+		bk.price = 89.9;		//操作属性内容
+		bk.getInfo();			//调用类中的getInfo()方法
+	}
+}
+```
+
+
 
