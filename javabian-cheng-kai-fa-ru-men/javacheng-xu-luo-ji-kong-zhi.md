@@ -216,5 +216,17 @@ for (int current = 1; current <= 100; current ++) {
 System.out.println(sum);
 ```
 
+ 但是有的时候for循环也会变成以下形式编写（强烈不建议这样使用）：
+
+```java
+int sum = 0;        //保存总和
+int current = 1;
+for (; current <= 100;) {
+    sum += current;
+    current ++;
+}
+System.out.println(sum);
+```
+
 
 
