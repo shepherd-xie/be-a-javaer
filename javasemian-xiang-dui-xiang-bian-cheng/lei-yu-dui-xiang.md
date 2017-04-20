@@ -59,21 +59,22 @@ class Book { //定义一个新的类
 
 ```java
 class Book { //定义一个新的类
-	String title; //书的名字
-	double price; //书的价格
-	public void getInfo() { //此方法将由对象调用
-		System.out.println("图书名称：" + title + "，价格：" + price);
-	}
+    String title; //书的名字
+    double price; //书的价格
+    public void getInfo() { //此方法将由对象调用
+        System.out.println("图书名称：" + title + "，价格：" + price);
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book bk = new Book();	//声明并实例化对象
-		bk.title = "Java基础入门";	//操作属性内容
-		bk.price = 89.9;		//操作属性内容
-		bk.getInfo();			//调用类中的getInfo()方法
-	}
+    public static void main(String[] args) {
+        Book bk = new Book();    //声明并实例化对象
+        bk.title = "Java基础入门";    //操作属性内容
+        bk.price = 89.9;        //操作属性内容
+        bk.getInfo();            //调用类中的getInfo()方法
+    }
 }
 ```
 
+ 如果想要对以上的程序进行内存分析，可以首先给出两块内存空间的概念：
 
-
+* 
