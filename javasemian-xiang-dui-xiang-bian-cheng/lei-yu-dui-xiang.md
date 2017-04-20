@@ -14,7 +14,5 @@
 
 * 多态性：指的是在某一个概念范围上的满足
 
-而对于面向对象开发分为三个步骤：OOA（面向对象分析）、OOD（面向对象设计）、OOP（面向对象编程）
-
-
+而对于面向对象开发分为三个步骤：OOA（Object-Oriented Analysis，面向对象分析）、OOD（Object-Oriented Design，面向对象设计）、OOP（Object Oriented Programming，面向对象编程）。
 
