@@ -180,5 +180,5 @@ while (current <= 100) {    //循环的结束条件
 System.out.println(sum);
 ```
 
-
+while循环属于先判断后执行。
 
