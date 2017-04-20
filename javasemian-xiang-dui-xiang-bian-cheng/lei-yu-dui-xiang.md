@@ -183,33 +183,37 @@ public class MainClass {
 }
 ```
 
-严格来讲bookA和bookB里面保存的是对象的地址信息，所以以上的引用过程就属于将bookA的地址给了bookB。![](/assets/import 2.1-4.png)由于此时两个对象指向的是同一块堆内存空间，所以任何一个对象修改了堆内存中的数据后，都会影响到其他对象在引用的操作过程中，一块堆内存可以同时被多个栈内存所指向，但是一块栈内存只能保存一块堆内存空间的地址。
+严格来讲bookA和bookB里面保存的是对象的地址信息，所以以上的引用过程就属于将bookA的地址给了bookB。![](/assets/import 2.1-4.png)由于此时两个对象指向的是同一块堆内存空间，所以任何一个对象修改了堆内存中的数据后，都会影
+
+响到其他对象在引用的操作过程中，一块堆内存可以同时被多个栈内存所指向，但是一块栈内存只能
+
+保存一块堆内存空间的地址。
 
 **范例：**继续观察引用传递
 
 ```java
 class Book { //定义一个新的类
-	String title; //书的名字
-	double price; //书的价格
-	public void getInfo() { //此方法将由对象调用
-		System.out.println("图书名称：" + title + "，价格：" + price);
-	}
+    String title; //书的名字
+    double price; //书的价格
+    public void getInfo() { //此方法将由对象调用
+        System.out.println("图书名称：" + title + "，价格：" + price);
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book bookA = new Book();	//声明并实例化对象
-		Book bookB = null;			//声明对象
-		bookA.title = "Java基础入门";
-		bookA.price = 89.9;
-		bookB.title = "操作系统";
-		bookB.price = 58.8;
-		bookB = bookA;				//引用传递
-		bookB.price = 108.8;
-		bookA.getInfo();
-		bookB.getInfo();
-	}
+    public static void main(String[] args) {
+        Book bookA = new Book();    //声明并实例化对象
+        Book bookB = null;            //声明对象
+        bookA.title = "Java基础入门";
+        bookA.price = 89.9;
+        bookB.title = "操作系统";
+        bookB.price = 58.8;
+        bookB = bookA;                //引用传递
+        bookB.price = 108.8;
+        bookA.getInfo();
+        bookB.getInfo();
+    }
 }
 ```
 
-
+![](/assets/import 2.1-5.png)
 
