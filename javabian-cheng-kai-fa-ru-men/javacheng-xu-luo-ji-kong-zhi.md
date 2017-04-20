@@ -264,5 +264,13 @@ for (int i = 1; i <= 9; i ++) {
 
 循环控制一共有两种语句：continue（跳出本次循环）、break（终止循环）。
 
- 范例：观察continue
+**范例：**观察continue
+
+```java
+for (int i = 0; i < 10; i ++) {
+    System.out.println("i = " + i);
+}
+```
+
+
 
