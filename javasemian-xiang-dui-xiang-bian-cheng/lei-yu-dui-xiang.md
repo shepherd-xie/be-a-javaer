@@ -32,10 +32,10 @@
 **范例：**定义类
 
 ```java
-class Book {
-    String title;
-    double price;
-    public void getInfo() {
+class Book { //定义一个新的类
+    String title; //书的名字
+    double price; //书的价格
+    public void getInfo() { //此方法将由对象调用
         System.out.println("图书名称：" + title + "，价格：" + price);
     }
 }
