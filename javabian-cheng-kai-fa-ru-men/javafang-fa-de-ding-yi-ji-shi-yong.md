@@ -226,25 +226,25 @@ public class MainClass {
 
 ```java
 class Book { //定义一个新的类
-	String title; //书的名字
-	double price; //书的价格
-	public void getInfo() { //此方法将由对象调用
-		System.out.println("图书名称：" + title + "，价格：" + price);
-	}
+    String title; //书的名字
+    double price; //书的价格
+    public void getInfo() { //此方法将由对象调用
+        System.out.println("图书名称：" + title + "，价格：" + price);
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book bookA = new Book();	//声明并实例化对象
-		Book bookB = null;			//声明对象
-		bookA.title = "Java基础入门";
-		bookA.price = 89.9;
-		bookB = bookA;				//引用传递
-		bookB.price = 58.8;
-		bookA.getInfo();
-		bookB.getInfo();
-	}
+    public static void main(String[] args) {
+        Book bookA = new Book();    //声明并实例化对象
+        Book bookB = null;            //声明对象
+        bookA.title = "Java基础入门";
+        bookA.price = 89.9;
+        bookB = bookA;                //引用传递
+        bookB.price = 58.8;
+        bookA.getInfo();
+        bookB.getInfo();
+    }
 }
 ```
 
-
+严格来讲bookA和bookB里面保存的是对象的地址信息，所以以上的引用过程就属于将bookA的地址给了bookB。
 
