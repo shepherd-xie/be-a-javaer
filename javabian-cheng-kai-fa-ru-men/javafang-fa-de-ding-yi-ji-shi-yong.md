@@ -180,7 +180,7 @@ System.out.println(sum);
 
 ```java
 public static void main(String[] args) {
-
+    sum(100);
 }
 public static int sum(int num) {
     if (num == 1) {
