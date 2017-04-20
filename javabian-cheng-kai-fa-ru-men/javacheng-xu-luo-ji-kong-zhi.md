@@ -209,7 +209,11 @@ for (循环初始化条件; 循环判断; 循环条件改变) {
 **范例：**使用for循环实现1~100累加
 
 ```java
-
+int sum = 0;        //保存总和
+for (int current = 1; current <= 100; current ++) {
+    sum += current;
+}
+System.out.println(sum);
 ```
 
 
