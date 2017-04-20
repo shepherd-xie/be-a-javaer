@@ -35,6 +35,10 @@ public static 返回值类型 方法名称(参数类型 参数名称,...) {
 **范例：**定义一个没有参数没有返回值的方法
 
 ```java
+public static void main(String[] args) {
+    printInfo();    //直接调用方法
+}
+//定义没有参数没有返回值的方法
 public static void printInfo() {
     System.out.println("Hello World !");
 }
