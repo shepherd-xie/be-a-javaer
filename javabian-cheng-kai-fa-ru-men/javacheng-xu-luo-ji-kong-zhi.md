@@ -228,5 +228,5 @@ for (; current <= 100;) {
 System.out.println(sum);
 ```
 
- 
+ 疑问？现在给出了两种循环的语法，那么在开发之中使用哪种？
 
