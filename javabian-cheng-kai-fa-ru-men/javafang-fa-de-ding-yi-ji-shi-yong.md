@@ -170,5 +170,5 @@ while (current <= 100) {
 System.out.println(sum);
 ```
 
-
+ 将以上的代码形式转化为递归操作。
 
