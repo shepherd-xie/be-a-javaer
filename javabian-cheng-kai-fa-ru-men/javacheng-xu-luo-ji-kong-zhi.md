@@ -177,6 +177,7 @@ while (current <= 100) {    //循环的结束条件
     sum += current;    //累加
     current ++;
 }
+System.out.println(sum);
 ```
 
 
