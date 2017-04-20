@@ -38,7 +38,7 @@ public static 返回值类型 方法名称(参数类型 参数名称,...) {
 public static void main(String[] args) {
     printInfo();    //直接调用方法
 }
-//定义没有参数没有返回值的方法
+//定义没有参数，没有返回值的方法
 public static void printInfo() {
     System.out.println("Hello World !");
 }
@@ -48,7 +48,26 @@ public static void printInfo() {
 
 **范例：**定义一个有参数无返回值的方法
 
+```java
+public static void main(String[] args) {
+    test(90.0);    //直接调用方法
+}
+//定义有参数，没有返回值的方法
+public static void test(double score) {
+    if (score >= 90 && score <= 100) {
+        System.out.println("优秀");
+    } else if (score >= 70 && score < 90) {
+        System.out.println("良好");
+    } else if (score >= 60 && score < 70) {
+        System.out.println("及格");
+    } else if (score >= 0 && score < 60) {
+        System.out.println("不及格");
+    } else {
+        System.out.println("不存在的成绩")
+    }
+
+}
 ```
 
-```
+
 
