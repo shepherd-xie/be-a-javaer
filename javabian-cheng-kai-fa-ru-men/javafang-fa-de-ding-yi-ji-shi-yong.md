@@ -115,9 +115,10 @@ public static void set(int x) {
 
 ```java
 public static void main(String[] args) {
+    //重载方法执行时会根据传入参数的类型及个数匹配不同的方法体执行
     int result = add(10, 20);
     System.out.println("计算结果：" + result);
-    System.out.println(add(40, 50));
+    System.out.println(add(40, 50, 60));
 }
 public static int add(int x, int y) {
     return x + y;
