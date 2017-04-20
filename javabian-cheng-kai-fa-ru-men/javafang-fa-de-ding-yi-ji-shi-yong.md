@@ -90,3 +90,18 @@ public static int add(int x, int y) {
 
 **范例：**利用return结束方法调用
 
+```java
+public static void main(String[] args) {
+    set(100);
+}
+//定义有参数，有返回值的方法
+public static void set(int x) {
+    if (x == 3) {
+        return;
+    }
+    System.out.println("x = " + x);
+}
+```
+
+
+
