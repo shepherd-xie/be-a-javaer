@@ -187,39 +187,51 @@ public class MainClass {
 
 ```java
 class Book { //定义一个新的类
-	private String title; //书的名字
-	private double price; //书的价格
-	//已经明确定义了一个构造，默认的构造将不再自动生成
-	public Book(String t, double p) {
-		title = t;
-		setPrice(p);	//调用本类中定义的setter方法
-	}
-	public void setTilie(String t) {
-		title = t;
-	}
-	public void setPrice(double p) {
-		if (p >= 0) {
-			price = p;
-		}
-	}
-	public String getTitle() {
-		return title;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void getInfo() { //此方法将由对象调用
-		System.out.println("图书名称：" + title + "，价格：" + price);
-	}
+    private String title; //书的名字
+    private double price; //书的价格
+    //已经明确定义了一个构造，默认的构造将不再自动生成
+    public Book(String t, double p) {
+        title = t;
+        setPrice(p);    //调用本类中定义的setter方法
+    }
+    public void setTilie(String t) {
+        title = t;
+    }
+    public void setPrice(double p) {
+        if (p >= 0) {
+            price = p;
+        }
+    }
+    public String getTitle() {
+        return title;
+    }
+    public double getPrice() {
+        return price;
+    }
+    public void getInfo() { //此方法将由对象调用
+        System.out.println("图书名称：" + title + "，价格：" + price);
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		//在实例化对象的同时将所需要的类属性传递到对象的构造方法里
-		Book book = new Book("Java基础入门", 89.9);
-		book.getInfo();
-	}
+    public static void main(String[] args) {
+        //在实例化对象的同时将所需要的类属性传递到对象的构造方法里
+        Book book = new Book("Java基础入门", 89.9);
+        book.getInfo();
+    }
 }
 ```
 
+在实际的工作之中，构造方法的核心作用：在类对象实例化的时候设置属性的初始化内容，构造方法是为属性初始化
 
+准备的。
+
+如果一个类之中已经明确的定义了一个构造方法的话，那么不会再自动生成默认的构造方法，即：一个类之中至少保
+
+留有一个构造方法。
+
+另外，既然构造方法也属于方法，那么可以针对于构造方法进行重载，但是构造方法由于其定义的特殊性，所以在构
+
+造方法重载时，要求只注意参数的类型及个数即可。
+
+范例：构造方法重载
 
