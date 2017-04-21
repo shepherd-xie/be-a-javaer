@@ -149,3 +149,37 @@ public class MainClass {
 
 构造方法是在对象实例化的时候使用的，那么这样做有什么用？
 
+```java
+class Book { //定义一个新的类
+	private String title; //书的名字
+	private double price; //书的价格
+	public void setTilie(String t) {
+		title = t;
+	}
+	public void setPrice(double p) {
+		if (p >= 0) {
+			price = p;
+		}
+	}
+	public String getTitle() {
+		return title;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void getInfo() { //此方法将由对象调用
+		System.out.println("图书名称：" + title + "，价格：" + price);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Book book = new Book();	//使用默认生成的构造方法
+		book.setTilie("Java基础入门");
+		book.setPrice(89.9);
+		book.getInfo();
+	}
+}
+```
+
+
+
