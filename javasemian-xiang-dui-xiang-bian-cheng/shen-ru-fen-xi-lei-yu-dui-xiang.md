@@ -128,17 +128,24 @@ class Book {
 
 ```java
 class Book {
-	public Book() {	//无参的，无返回值的构造方法
-		System.out.println("public Book()执行了");
-	}
+    public Book() {    //无参的，无返回值的构造方法
+        System.out.println("public Book()执行了");
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book book = null;	//声明对象
-		book = new Book();	//实例化对象
-	}
+    public static void main(String[] args) {
+        Book book = null;    //声明对象
+        book = new Book();    //实例化对象
+    }
 }
 ```
 
+通过以上的代码可以发现，所有的构造方法都在对象使用关键字new实例化的时候默认调用。
 
+**构造方法与普通方法的最大区别：**
+
+* 构造方法是在实例化新对象（new）的时候只调用一次。
+* 普通方法是在实例化对象产生之后可以随意调用多次。
+
+构造方法是在对象实例化的时候使用的，那么这样做有什么用？
 
