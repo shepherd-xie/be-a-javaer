@@ -118,9 +118,11 @@ public void setPrice(double p) {
 
 ```java
 class Book {
-	public Book() {};	//无参的，无返回值的构造方法
+    public Book() {};    //无参的，无返回值的构造方法
 }
 ```
 
+如果在Book类里面没有写上以上的构造方法，Java也会自动生成一个。
 
+以上只是知道了构造方法一直都存在，但是并额米有发现构造方法有什么样的作用。
 
