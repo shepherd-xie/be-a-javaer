@@ -277,41 +277,65 @@ public class MainClass {
 
 ```java
 class Book { //定义一个新的类
-	private String title; //书的名字
-	private double price; //书的价格
-	public Book() {
-		System.out.println("无参构造");
-	}
-	public Book(String t) {
-		System.out.println("有一个参数的构造");
-	}
-	public Book(String t, double p) {
-		System.out.println("有两个参数的构造");
-	}
-	public void setTilie(String t) {
-		title = t;
-	}
-	public void setPrice(double p) {
-		if (p >= 0) {
-			price = p;
-		}
-	}
-	public String getTitle() {
-		return title;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void getInfo() { //此方法将由对象调用
-		System.out.println("图书名称：" + title + "，价格：" + price);
-	}
+    private String title; //书的名字
+    private double price; //书的价格
+    public Book() {
+        System.out.println("无参构造");
+    }
+    public Book(String t) {
+        System.out.println("有一个参数的构造");
+    }
+    public Book(String t, double p) {
+        System.out.println("有两个参数的构造");
+    }
+    public void setTilie(String t) {
+        title = t;
+    }
+    public void setPrice(double p) {
+        if (p >= 0) {
+            price = p;
+        }
+    }
+    public String getTitle() {
+        return title;
+    }
+    public double getPrice() {
+        return price;
+    }
+    public void getInfo() { //此方法将由对象调用
+        System.out.println("图书名称：" + title + "，价格：" + price);
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		new Book("Java基础入门", 98.8).getInfo();
-	}
+    public static void main(String[] args) {
+        new Book("Java基础入门", 98.8).getInfo();
+    }
 }
 ```
 
+但是匿名对象由于没有其他对象对其进行引用，所以只能使用一次，一次之后该对象空间就将成为垃圾，等待回收。
 
+疑问？什么时候使用有名对象，什么时候使用匿名对象？
+
+对于定义对象具体应该定义为各种类型是没有一个具体的规定的，大致上来说，在以后开发过程之中，凡是需要多次
+
+调用的都设置为有名对象，凡是只调用一次的，都设置为匿名对象。
+
+总结
+
+1、构造方法的定义要求：方法名称与类名称相同，无返回值声明；
+
+2、构造方法是在类对象使用关键字new实例化的时候被默认调用的，不管代码如何改变，只要有了关键字new就一定
+
+需要构造方法；
+
+3、一个类之中至少会保留有一个构造方法，如果没有明确的定义构造方法，那么会自动的生成一个无参的什么都不
+
+做的构造方法；
+
+4、构造方法的核心功能是在类对象实例化的时候为类中的属性初始化；
+
+5、构造方法重载时只要求考虑参数的类型及个数即可；
+
+6、匿名对象只能够使用一次。
 
