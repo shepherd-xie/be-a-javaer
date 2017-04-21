@@ -416,14 +416,20 @@ class Emp {    //一个有意义的类
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		Emp e = new Emp(7369, "SMITH", "CLERK", 800.0, 1.0);
-		e.setEname("ALLEN");
-		System.out.println(e.getInfo());
-		System.out.println("姓名：" + e.getEname());
-	}
+    public static void main(String[] args) {
+        Emp e = new Emp(7369, "SMITH", "CLERK", 800.0, 1.0);
+        e.setEname("ALLEN");
+        System.out.println(e.getInfo());
+        System.out.println("姓名：" + e.getEname());
+    }
 }
 ```
 
+所有类中提供的settter、getter方法可能某些操作不会使用到，但是依然必须提供。
 
+所有的setter方法除了具备有设置属性的内容之外，也具备有修改属性内容的功能。
+
+#### 总结
+
+简单Java类是日后进行整个项目开发的千分之一的组成部分，也是最为重要的组成部分。
 
