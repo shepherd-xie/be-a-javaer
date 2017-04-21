@@ -185,3 +185,41 @@ public class MainClass {
 
 **范例：**定义构造方法
 
+```java
+class Book { //定义一个新的类
+	private String title; //书的名字
+	private double price; //书的价格
+	//已经明确定义了一个构造，默认的构造将不再自动生成
+	public Book(String t, double p) {
+		title = t;
+		setPrice(p);	//调用本类中定义的setter方法
+	}
+	public void setTilie(String t) {
+		title = t;
+	}
+	public void setPrice(double p) {
+		if (p >= 0) {
+			price = p;
+		}
+	}
+	public String getTitle() {
+		return title;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void getInfo() { //此方法将由对象调用
+		System.out.println("图书名称：" + title + "，价格：" + price);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		//在实例化对象的同时将所需要的类属性传递到对象的构造方法里
+		Book book = new Book("Java基础入门", 89.9);
+		book.getInfo();
+	}
+}
+```
+
+
+
