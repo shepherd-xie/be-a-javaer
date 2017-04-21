@@ -55,7 +55,7 @@ System.out.println(result);
 
 每一种数据类型都有其对应数据类型的保存范围，那么下面来观察一个程序。
 
-**范例：**如果超过了int的最大值或最小值的结果
+**范例：**观察如果超过了int的最大值或最小值的结果
 
 ```java
 int max = Integer.MAX_VALUE;     //取出最大值
