@@ -55,5 +55,37 @@ public class MainClass {
 * **setter方法主要是设置内容，public void setTitle\(String t\);，有参；**
 * **getter方法主要是取得内容，public String getTitle\(\);，无参；**
 
+**范例：**为Book类中的封装属性设置setter、getter操作
+
+```java
+class Book { //定义一个新的类
+	private String title; //书的名字
+	private double price; //书的价格
+	public void setTilie(String t) {
+		title = t;
+	}
+	public void setPrice(double p) {
+		price = p;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void getInfo() { //此方法将由对象调用
+		System.out.println("图书名称：" + title + "，价格：" + price);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Book book = new Book();
+		book.setTilie("Java基础入门");
+		book.setPrice(-89.9);
+		book.getInfo();
+	}
+}
+```
+
 
 
