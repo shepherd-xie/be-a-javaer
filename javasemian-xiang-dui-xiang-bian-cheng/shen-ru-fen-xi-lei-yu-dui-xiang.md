@@ -151,35 +151,37 @@ public class MainClass {
 
 ```java
 class Book { //定义一个新的类
-	private String title; //书的名字
-	private double price; //书的价格
-	public void setTilie(String t) {
-		title = t;
-	}
-	public void setPrice(double p) {
-		if (p >= 0) {
-			price = p;
-		}
-	}
-	public String getTitle() {
-		return title;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void getInfo() { //此方法将由对象调用
-		System.out.println("图书名称：" + title + "，价格：" + price);
-	}
+    private String title; //书的名字
+    private double price; //书的价格
+    public void setTilie(String t) {
+        title = t;
+    }
+    public void setPrice(double p) {
+        if (p >= 0) {
+            price = p;
+        }
+    }
+    public String getTitle() {
+        return title;
+    }
+    public double getPrice() {
+        return price;
+    }
+    public void getInfo() { //此方法将由对象调用
+        System.out.println("图书名称：" + title + "，价格：" + price);
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book book = new Book();	//使用默认生成的构造方法
-		book.setTilie("Java基础入门");
-		book.setPrice(89.9);
-		book.getInfo();
-	}
+    public static void main(String[] args) {
+        Book book = new Book();    //使用默认生成的构造方法
+        book.setTilie("Java基础入门");
+        book.setPrice(89.9);
+        book.getInfo();
+    }
 }
 ```
 
+本程序是现实例化了Book类对象，而后利用Book类的实例化对象去调用类中定义的setter方法，如果要想设置全部属性的内容，那么一定要调用多次setter方法。
 
+**范例：**定义构造方法
 
