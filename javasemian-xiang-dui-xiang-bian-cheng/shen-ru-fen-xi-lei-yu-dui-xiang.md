@@ -339,3 +339,7 @@ public class MainClass {
 
 6、匿名对象只能够使用一次。
 
+### 简单Java类
+
+
+
