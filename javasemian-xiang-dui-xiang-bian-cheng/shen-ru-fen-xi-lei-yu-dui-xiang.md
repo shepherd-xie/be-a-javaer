@@ -275,3 +275,43 @@ public class MainClass {
 
 既然有了构造方法的概念，实际上就可以依照此方法使用匿名对象。之前定义的都属于有名对象，所有的对象都给了一个名字，但是这个名字真正使用的时候调用的肯定是堆内存空间，即：真实的对象信息都保存在了堆内存空间之中，那么如果没有栈指向的对象就成为匿名对象。
 
+```java
+class Book { //定义一个新的类
+	private String title; //书的名字
+	private double price; //书的价格
+	public Book() {
+		System.out.println("无参构造");
+	}
+	public Book(String t) {
+		System.out.println("有一个参数的构造");
+	}
+	public Book(String t, double p) {
+		System.out.println("有两个参数的构造");
+	}
+	public void setTilie(String t) {
+		title = t;
+	}
+	public void setPrice(double p) {
+		if (p >= 0) {
+			price = p;
+		}
+	}
+	public String getTitle() {
+		return title;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void getInfo() { //此方法将由对象调用
+		System.out.println("图书名称：" + title + "，价格：" + price);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		new Book("Java基础入门", 98.8).getInfo();
+	}
+}
+```
+
+
+
