@@ -27,18 +27,20 @@
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		//声明并开辟了一个3个长度的数组
-		int date[] = new int[3]; 
-		date[0] = 10;
-		date[1] = 20;
-		date[2] = 30;
-		for (int i = 0; i < date.length; i ++) {
-			System.out.println(date[i]);
-		}
-	}
+    public static void main(String[] args) {
+        //声明并开辟了一个3个长度的数组
+        int date[] = new int[3]; 
+        date[0] = 10;
+        date[1] = 20;
+        date[2] = 30;
+        for (int i = 0; i < date.length; i ++) {
+            System.out.println(date[i]);
+        }
+    }
 }
 ```
 
+虽然数组的操作比较简单，但是其最麻烦的问题在于，它也属于引用数据类型，所以以上的代码依然需要牵扯到内存
 
+分配，与对象保存唯一的区别在于：对象中的堆内存保存的是属性，而数据中的堆内存保存的是一组信息。
 
