@@ -28,7 +28,25 @@ public class MainClass {
 
 那么现在首先需要解决的问题就是将Book类中的属性设置为对外不可见（只能够针对于本类访问），所以可以使用private关键字来定义属性。
 
-范例：修改之前的程序
+**范例：**修改之前的程序
+
+```java
+class Book { //定义一个新的类
+	private String title; //书的名字
+	private double price; //书的价格
+	public void getInfo() { //此方法将由对象调用
+		System.out.println("图书名称：" + title + "，价格：" + price);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Book book = new Book();
+		book.title = "Java基础入门";	//The field Book.title is not visible
+		book.price = -89.9;			//The field Book.price is not visible
+		book.getInfo();
+	}
+}
+```
 
 
 
