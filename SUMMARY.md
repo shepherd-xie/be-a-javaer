@@ -11,4 +11,5 @@
 * [JavaSE面向对象编程](javasemian-xiang-dui-xiang-bian-cheng.md)
   * [类与对象](javasemian-xiang-dui-xiang-bian-cheng/lei-yu-dui-xiang.md)
   * [深入分析类与对象](javasemian-xiang-dui-xiang-bian-cheng/shen-ru-fen-xi-lei-yu-dui-xiang.md)
+  * [简单Java类](javasemian-xiang-dui-xiang-bian-cheng/jian-dan-java-lei.md)
 
