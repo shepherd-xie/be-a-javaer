@@ -92,11 +92,11 @@ public class MainClass {
 **范例：**增加验证
 
 ```java
-	public void setPrice(double p) {
-		if (p >= 0) {
-			price = p;
-		}
-	}
+public void setPrice(double p) {
+    if (p >= 0) {
+        price = p;
+    }
+}
 ```
 
 
