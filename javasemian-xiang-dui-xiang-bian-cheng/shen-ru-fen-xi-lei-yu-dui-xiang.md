@@ -32,21 +32,28 @@ public class MainClass {
 
 ```java
 class Book { //定义一个新的类
-	private String title; //书的名字
-	private double price; //书的价格
-	public void getInfo() { //此方法将由对象调用
-		System.out.println("图书名称：" + title + "，价格：" + price);
-	}
+    private String title; //书的名字
+    private double price; //书的价格
+    public void getInfo() { //此方法将由对象调用
+        System.out.println("图书名称：" + title + "，价格：" + price);
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book book = new Book();
-		book.title = "Java基础入门";	//The field Book.title is not visible
-		book.price = -89.9;			//The field Book.price is not visible
-		book.getInfo();
-	}
+    public static void main(String[] args) {
+        Book book = new Book();
+        book.title = "Java基础入门";    //The field Book.title is not visible
+        book.price = -89.9;            //The field Book.price is not visible
+        book.getInfo();
+    }
 }
 ```
+
+在访问属性的时候发现，外部的对象无法再直接调用类中的属性了，所以现在等于是属性对外部而言就是不可见的。
+
+但是如果想要让程序可以正常使用，那么必须要想办法让外部的程序可以操作类的属性才可以。所以在开发之中，针对于属性有这样的一种定义：**所有在类中定义的属性都要求使用private声明，如果属性需要被外部所使用，那么需要按照要求定义相应的setter、getter方法，以String title为例：**
+
+* **setter方法主要是设置内容，public void setTitle\(String title\);  **
+* **getter方法主要是取得内容，public String getTitle\(\);**
 
 
 
