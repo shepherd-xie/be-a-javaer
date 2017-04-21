@@ -23,3 +23,22 @@
 
 由于数组是一种顺序的结构，并且数组的长度都是固定的，那么可以使用循环的方式输出，很明显需要知道for循环，而且在Java里面为了方便数组的输出提供有一个“数组名称.length”的属性，可以取得数组长度。
 
+**范例：**定义数组
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		//声明并开辟了一个3个长度的数组
+		int date[] = new int[3]; 
+		date[0] = 10;
+		date[1] = 20;
+		date[2] = 30;
+		for (int i = 0; i < date.length; i ++) {
+			System.out.println(date[i]);
+		}
+	}
+}
+```
+
+
+
