@@ -59,32 +59,44 @@ public class MainClass {
 
 ```java
 class Book { //定义一个新的类
-	private String title; //书的名字
-	private double price; //书的价格
-	public void setTilie(String t) {
-		title = t;
-	}
-	public void setPrice(double p) {
-		price = p;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void getInfo() { //此方法将由对象调用
-		System.out.println("图书名称：" + title + "，价格：" + price);
-	}
+    private String title; //书的名字
+    private double price; //书的价格
+    public void setTilie(String t) {
+        title = t;
+    }
+    public void setPrice(double p) {
+        price = p;
+    }
+    public String getTitle() {
+        return title;
+    }
+    public double getPrice() {
+        return price;
+    }
+    public void getInfo() { //此方法将由对象调用
+        System.out.println("图书名称：" + title + "，价格：" + price);
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book book = new Book();
-		book.setTilie("Java基础入门");
-		book.setPrice(-89.9);
-		book.getInfo();
-	}
+    public static void main(String[] args) {
+        Book book = new Book();
+        book.setTilie("Java基础入门");
+        book.setPrice(-89.9);
+        book.getInfo();
+    }
 }
+```
+
+如果真的需要加入检查的代码，那么应该在setter之中增加，因为getter只是简单的返回数据。
+
+**范例：**增加验证
+
+```java
+	public void setPrice(double p) {
+		if (p >= 0) {
+			price = p;
+		}
+	}
 ```
 
 
