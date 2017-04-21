@@ -126,3 +126,19 @@ class Book {
 
 以上只是知道了构造方法一直都存在，但是并额米有发现构造方法有什么样的作用。
 
+```java
+class Book {
+	public Book() {	//无参的，无返回值的构造方法
+		System.out.println("public Book()执行了");
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Book book = null;	//声明对象
+		book = new Book();	//实例化对象
+	}
+}
+```
+
+
+
