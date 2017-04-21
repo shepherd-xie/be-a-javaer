@@ -412,5 +412,18 @@ class Emp {    //一个有意义的类
 }
 ```
 
+**范例：**编写测试程序
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		Emp e = new Emp(7369, "SMITH", "CLERK", 800.0, 1.0);
+		e.setEname("ALLEN");
+		System.out.println(e.getInfo());
+		System.out.println("姓名：" + e.getEname());
+	}
+}
+```
+
 
 
