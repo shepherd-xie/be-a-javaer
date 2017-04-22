@@ -155,42 +155,40 @@ public class MainClass {
 
 ### 数组与方法参数的传递（难点）
 
-在之前所编写的所有方法传递数据几乎都使用的基本数据类型，那么除了基本数据类型之外，也可以传递数组，但是
+在之前所编写的所有方法传递数据几乎都使用的基本数据类型，那么除了基本数据类型之外，也可以传递数组，但是如果传递的是数组，请千万要记住观察内存分配图。
 
-如果传递的是数组，请千万要记住观察内存分配图。
-
-范例：一个数组传递的程序
+**范例：**一个数组传递的程序
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		int date[] = new int[]{1, 2, 3};
-		change(date);	//int temp[] = date;
-		for (int i = 0; i < date.length; i ++) {
-			System.out.println(date[i]);
-		}
-	}
-	//此方法定义在主类中，由主方法直接调用
-	public static void change(int temp[]) {
-		for (int i = 0; i < temp.length; i ++) {
-			temp[i] *= 2;	//将数组的内容乘2
-		}
-	}
+    public static void main(String[] args) {
+        int date[] = new int[]{1, 2, 3};
+        change(date);    //int temp[] = date;
+        for (int i = 0; i < date.length; i ++) {
+            System.out.println(date[i]);
+        }
+    }
+    //此方法定义在主类中，由主方法直接调用
+    public static void change(int temp[]) {
+        for (int i = 0; i < temp.length; i ++) {
+            temp[i] *= 2;    //将数组的内容乘2
+        }
+    }
 }
 ```
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		int date[] = new int[]{1, 2, 3};
-		int temp[] = date;
-		for (int i = 0; i < temp.length; i ++) {
-			temp[i] *= 2;	//将数组的内容乘2
-		}
-		for (int i = 0; i < date.length; i ++) {
-			System.out.println(date[i]);
-		}
-	}
+    public static void main(String[] args) {
+        int date[] = new int[]{1, 2, 3};
+        int temp[] = date;
+        for (int i = 0; i < temp.length; i ++) {
+            temp[i] *= 2;    //将数组的内容乘2
+        }
+        for (int i = 0; i < date.length; i ++) {
+            System.out.println(date[i]);
+        }
+    }
 }
 ```
 
