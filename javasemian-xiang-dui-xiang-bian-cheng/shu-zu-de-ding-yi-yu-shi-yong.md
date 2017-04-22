@@ -40,5 +40,22 @@ public class MainClass {
 }
 ```
 
-虽然数组的操作比较简单，但是其最麻烦的问题在于，它也属于引用数据类型，所以以上的代码依然需要牵扯到内存分配，与对象保存唯一的区别在于：对象中的堆内存保存的是属性，而数据中的堆内存保存的是一组信息。![](/assets/import 2.3-1.png)
+虽然数组的操作比较简单，但是其最麻烦的问题在于，它也属于引用数据类型，所以以上的代码依然需要牵扯到内存分配，与对象保存唯一的区别在于：对象中的堆内存保存的是属性，而数据中的堆内存保存的是一组信息。![](/assets/import 2.3-1.png)以上使用的是第一种数组定义的语法，那么下面更换第二种；
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		int date[] = null;	//声明数组	
+		date = new int[3]; 	//开辟空间
+		date[0] = 10;
+		date[1] = 20;
+		date[2] = 30;
+		for (int i = 0; i < date.length; i ++) {
+			System.out.println(date[i]);
+		}
+	}
+}
+```
+
+
 
