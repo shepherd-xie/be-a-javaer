@@ -464,52 +464,50 @@ Java本身针对于数组是有提供类库支持的，下面来说两个与数�
 
 1、数组拷贝：可以将一个数组的部分内容拷贝到另一个数组中；
 
-语法：System.arraycopy\(源数组名称, 源数组拷贝开始索引, 目标数组名称, 目标数组拷贝开始索引, 长度\);
+* 语法：System.arraycopy\(源数组名称, 源数组拷贝开始索引, 目标数组名称, 目标数组拷贝开始索引, 长度\);
 
-范例：实现数组拷贝
+**范例：**实现数组拷贝
 
-数组A：1、2、3、4、5、6、7、8
-
-数组B：11、22、33、44、55、66、77、88
-
-要求拷贝后的数组B：11、22、5、6、7、66、77、88
+* 数组A：1、2、3、4、5、6、7、8
+* 数组B：11、22、33、44、55、66、77、88
+* 要求拷贝后的数组B：11、22、5、6、7、66、77、88
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		int dataA[] = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
-		int dataB[] = new int[] { 11, 22, 33, 44, 55, 66, 77, 88 };
-		System.arraycopy(dataA, 4, dataB, 2, 3);
-		print(dataB);
-	}
-	public static void print(int temp[]) {
-		for (int i = 0; i < temp.length; i++) {
-			System.out.print(temp[i] + "、");
-		}
-		System.out.println();
-	}
+    public static void main(String[] args) {
+        int dataA[] = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+        int dataB[] = new int[] { 11, 22, 33, 44, 55, 66, 77, 88 };
+        System.arraycopy(dataA, 4, dataB, 2, 3);
+        print(dataB);
+    }
+    public static void print(int temp[]) {
+        for (int i = 0; i < temp.length; i++) {
+            System.out.print(temp[i] + "、");
+        }
+        System.out.println();
+    }
 }
 ```
 
 2、数组排序：之前给出了排序的基本操作，但是在开发里面如果要进行排序只需要使用如下代码即可：
 
-语法：java.util.Arrays.sort\(数组名称\);
+* 语法：java.util.Arrays.sort\(数组名称\);
 
-范例：实现排序
+**范例：**实现排序
 
 ```java
  public class MainClass {
-	public static void main(String[] args) {
-		int data[] = new int[] { 3, 6, 1, 2, 8, 0 };
-		java.util.Arrays.sort(data);
-		print(data);
-	}
-	public static void print(int temp[]) {
-		for (int i = 0; i < temp.length; i++) {
-			System.out.print(temp[i] + "、");
-		}
-		System.out.println();
-	}
+    public static void main(String[] args) {
+        int data[] = new int[] { 3, 6, 1, 2, 8, 0 };
+        java.util.Arrays.sort(data);
+        print(data);
+    }
+    public static void print(int temp[]) {
+        for (int i = 0; i < temp.length; i++) {
+            System.out.print(temp[i] + "、");
+        }
+        System.out.println();
+    }
 }
 ```
 
