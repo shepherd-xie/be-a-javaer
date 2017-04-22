@@ -91,20 +91,16 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		int date[] = new int [] {1, 2, 3, 4, 5};
-		for (int i = 0; i < date.length; i ++) {
-			System.out.println(date[i]);
-		}
-	}
+    public static void main(String[] args) {
+        int date[] = new int [] {1, 2, 3, 4, 5};
+        for (int i = 0; i < date.length; i ++) {
+            System.out.println(date[i]);
+        }
+    }
 }
 ```
 
-在实际的工作之中，数组是会存在的，但是它的内容大部分情况下都是通过传递的数据而动态生成的，很少会出现这
+在实际的工作之中，数组是会存在的，但是它的内容大部分情况下都是通过传递的数据而动态生成的，很少会出现这种先开辟数组而后去使用的情况。
 
-种先开辟数组而后去使用的情况。
-
-虽然数组支持顺序的数据访问操作，但是数组有一个最大的缺点 —— 长度不能够被改变，所以正因为如此，在开发
-
-之中，不会直接去应用数组，但是会使用到数组的概念。
+虽然数组支持顺序的数据访问操作，但是数组有一个最大的缺点 —— 长度不能够被改变，所以正因为如此，在开发之中，不会直接去应用数组，但是会使用到数组的概念。
 
