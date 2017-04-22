@@ -57,5 +57,25 @@ public class MainClass {
 }
 ```
 
-下面还是以内存关系来描述以上的关系。![](/assets/import 2.3-2.png)
+下面还是以内存关系来描述以上的关系。![](/assets/import 2.3-2.png)既然数组属于引用数据类型，那么数组一定可以发生引用传递。
+
+**范例：**数组的引用传递
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		int date[] = new int[3]; 	
+		date[0] = 10;
+		date[1] = 20;
+		date[2] = 30;
+		int temp[] = date;
+		temp[0] = 99;
+		for (int i = 0; i < date.length; i ++) {
+			System.out.println(date[i]);
+		}
+	}
+}
+```
+
+
 
