@@ -192,5 +192,274 @@ public class MainClass {
 }
 ```
 
-![](/assets/import 2.3-4.png)
+![](/assets/import 2.3-4.png)在进行数组的引用传递的过程之中，方法对数组的修改一定会影响到原始数据。
+
+范例：实现一个数组排序
+
+数组的排序操作再笔试之中经常被问到，下面给出（升序）排序的基本原理：
+
+* 原始数据：    2、1、9、0、5、3、7、6、8；
+* 第一次排序：1、2、0、5、3、7、6、8、9；
+* 第二次排序：1、0、2、3、5、6、7、8、9；
+* 第三次排序：0、1、2、3、5、6、7、8、9。
+
+以上只是给出了排序的基础原理过程，但是会根据数据的不同会出现不同的排序次数，但是不管有多少条数据，总的
+
+排序次数不会超过数组的长度。所以只要排序的次数达到了“长度\*长度”，那么所有的数据一定可以排序成功。
+
+基础的实现：
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		int date[] = new int[]{2, 1, 9, 0, 5, 3, 7, 6, 8};
+		print(date);
+		//外层控制排序的次数
+		for (int i = 0; i < date.length; i ++) {
+			//内层控制每次的排序控制
+			for (int j = 0; j < date.length - 1; j ++) {
+				if (date[j] > date[j + 1]) {
+					int t = date[j + 1];
+					date[j + 1] = date[j];
+					date[j] = t;
+				}
+			}
+		}
+		print(date);
+	}
+	//专门定义一个输出的方法
+	public static void print(int temp[]) {
+		for (int i = 0; i < temp.length; i ++) {
+			System.out.print(temp[i] + "、");
+		}
+		System.out.println();
+	}
+}
+```
+
+改善设计：主方法设计上是作为程序的起点存在，那么所有的程序起点都可以称为客户端，既然是客户端，所有的代
+
+码编写一定要简单，那么可以采用方法进行封装。
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		int date[] = new int[] { 2, 1, 9, 0, 5, 3, 7, 6, 8 };
+		sort(date);//实现排序
+		print(date);
+	}
+	// 这个方法专门负责排序
+	public static void sort(int arr[]) {
+		// 外层控制排序的次数
+		for (int i = 0; i < arr.length; i++) {
+			// 内层控制每次的排序控制
+			for (int j = 0; j < arr.length - 1; j++) {
+				if (arr[j] > arr[j + 1]) {
+					int t = arr[j + 1];
+					arr[j + 1] = arr[j];
+					arr[j] = t;
+				}
+			}
+		}
+	}
+	// 专门定义一个输出的方法
+	public static void print(int temp[]) {
+		for (int i = 0; i < temp.length; i++) {
+			System.out.print(temp[i] + "、");
+		}
+		System.out.println();
+	}
+}
+```
+
+面试题：请编写一个数组排序操作
+
+答案如上。
+
+范例：实现数组的转置
+
+如果要想实现转置的操作，有两个思路：
+
+定义一个新的数组，而后将原始数组按照倒序的方式插入到新的数组之中，随后改变原始数组引用。
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		int date[] = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+		//首先定义一个新的数组，长度与原始数组一致
+		int temp[] = new int[date.length];
+		int foot = date.length - 1;	//控制date数组的索引
+		//对于新的数组按照索引由小到大的顺序循环
+		for (int i = 0; i < temp.length; i ++) {
+			temp[i] = date[foot];
+			foot --;
+		}
+		//此时temp的内容就是date转置后的结果
+		//让date指向temp,而date的原始数据就成为垃圾了
+		date = temp;
+		print(date);
+	}
+	// 专门定义一个输出的方法
+	public static void print(int temp[]) {
+		for (int i = 0; i < temp.length; i++) {
+			System.out.print(temp[i] + "、");
+		}
+		System.out.println();
+	}
+}
+```
+
+虽然以上的代码实现了转置的操作，但是遗憾的是，代码里面会产生垃圾。
+
+利用算法，在一个数组上完成转置操作：
+
+* 原始数组：    1、2、3、4、5、6、7、8，转置次数：数组长度 ÷ 2
+* 第一次转置：8、2、3、4、5、6、7、1
+* 第二次转置：8、7、3、4、5、6、2、1
+* 第三次转置：8、7、6、4、5、3、2、1
+* 第四次转置：8、7、6、5、4、3、2、1
+
+但是以上给出的数组长度是一个偶数，如果是一个奇数呢？
+
+* 原始数组：    1、2、3、4、5、6、7，转置次数：数组长度 ÷ 2
+* 第一次转置：7、2、3、4、5、6、1
+* 第二次转置：7、6、3、4、5、2、1
+* 第三次转置：7、6、5、4、3、2、1
+
+也就是说不管是奇数个数还是偶数个数的数组，转置的次数计算方式完全一样。
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		int date[] = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+		reverse(date);	//实现转置
+		print(date);
+	}
+	//此方法实现数组的转置操作
+	public static void reverse(int arr[]) {
+		int len = arr.length / 2;	//转置的次数
+		int head = 0;	//头部索引
+		int tail = arr.length - 1;	//尾部索引
+		for (int i = 0; i < len; i ++){
+			int t = arr[head];
+			arr[head] = arr[tail];
+			arr[tail] = t;
+			head ++;
+			tail --;
+		}
+	}
+	// 专门定义一个输出的方法
+	public static void print(int temp[]) {
+		for (int i = 0; i < temp.length; i++) {
+			System.out.print(temp[i] + "、");
+		}
+		System.out.println();
+	}
+}
+```
+
+以上实现的是一个一维数组的转置，那么如果是二维数组呢？
+
+前提：是一个行与列完全相同的数组；
+
+1	2	3
+
+4	5	6
+
+7	8	9
+
+第一次转置：
+
+1	4	3
+
+2	5	6
+
+7	8	9
+
+第二次转置：
+
+1	4	7
+
+2	5	6
+
+3	8	9
+
+第三次转置：
+
+1	4	7
+
+2	5	8
+
+3	6	9
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		int date[][] = new int[][] { 
+			{ 1, 2, 3 }, 
+			{ 4, 5, 6 }, 
+			{ 7, 8, 9 } 
+			};
+		reverse(date); // 实现转置
+		print(date);
+	}
+	// 此方法实现数组的转置操作
+	public static void reverse(int arr[][]) {
+		for (int i = 0; i < arr.length; i ++) {
+			for (int j = i; j < arr[i].length; j ++) {
+				if (i != j) {
+					int t = arr[i][j];
+					arr[i][j] = arr[j][i];
+					arr[j][i] = t;
+				}
+			}
+		}
+	}
+	// 专门定义一个输出的方法
+	public static void print(int temp[][]) {
+		for (int i = 0; i < temp.length; i++) {
+			for (int j = 0; j < temp[i].length; j ++) {
+				System.out.print(temp[i][j] + "、");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+}
+```
+
+以上给出的是一个等行列的数组，但如果行和列不一样呢？
+
+1	2	3
+
+4	5	6
+
+开辟一个新的数组，数组的行数是原数组的列数，列数是原数组的行数。
+
+需要改变原始数组的引用，会产生垃圾。
+
+以上实现了方法接收数组的操作情况，同样方法也可以返回数组。
+
+范例：方法返回数组
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		int data[] = init();	//接受数组
+		print(data);
+	}
+	public static int[] init() {
+		return new int[] { 1, 2, 3 };
+	}
+	// 专门定义一个输出的方法
+	public static void print(int temp[]) {
+		for (int i = 0; i < temp.length; i++) {
+			System.out.print(temp[i] + "、");
+		}
+		System.out.println();
+	}
+}
+```
+
+重点关注方法的返回值即可。
 
