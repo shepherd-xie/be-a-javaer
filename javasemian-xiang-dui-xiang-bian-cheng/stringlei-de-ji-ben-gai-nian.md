@@ -36,3 +36,36 @@ String类有两种形式，主观上会认为第二种构造方法的形式更�
 
 ### 字符串的比较
 
+如果现在有两个int型整数想要判断其是否相等，可以使用“ == ”符号进行判断。
+
+**范例：**判断两个int型整数是否相等
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		int x = 10;
+		int y = 10;
+		System.out.println(x == y);
+	}
+}
+```
+
+但是需要知道的是在String上也可以使用“ == ”比较，那么比较的结果如何呢？
+
+**范例：**在String中使用“ == ”判断
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String stra = "hello";
+		String strb = new String("hello");
+		String strc = strb;	//引用传递
+		System.out.println(stra == strb);	//false
+		System.out.println(stra == strc);	//false
+		System.out.println(strb == strc);	//true
+	}
+}
+```
+
+以上三个String类对象的内容完全一样，既然完全一样，那么结果应该是true，可实际的代码显示这样的结果并不是正确的。下边通过内存关系进行分析。
+
