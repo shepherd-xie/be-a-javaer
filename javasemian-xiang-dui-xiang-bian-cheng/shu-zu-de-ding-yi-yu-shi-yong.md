@@ -44,18 +44,18 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		int date[] = null;	//声明数组	
-		date = new int[3]; 	//开辟空间
-		date[0] = 10;
-		date[1] = 20;
-		date[2] = 30;
-		for (int i = 0; i < date.length; i ++) {
-			System.out.println(date[i]);
-		}
-	}
+    public static void main(String[] args) {
+        int date[] = null;    //声明数组    
+        date = new int[3];     //开辟空间
+        date[0] = 10;
+        date[1] = 20;
+        date[2] = 30;
+        for (int i = 0; i < date.length; i ++) {
+            System.out.println(date[i]);
+        }
+    }
 }
 ```
 
-
+下面还是以内存关系来描述以上的关系。![](/assets/import 2.3-2.png)
 
