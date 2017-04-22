@@ -511,5 +511,99 @@ public class MainClass {
 }
 ```
 
+### 对象数组（重点）
 
+数组是引用类型，而类也同样是引用类型，所以如果是对象数组的话表示一个引用类型中嵌套有其他引用类型。
+
+在之前使用的数组都属于基本数据类型的数组，但是所有的引用数据类型也同样可以定义数组，这样的数组称为对象
+
+数组。如果想要定义对象数组（以类为例），可以才用如下的形式完成：
+
+动态初始化：开辟之后对象数组的内容都是null值
+
+声明并开辟数组：类名称 对象数组名称\[\] = new 类名称\[长度\];
+
+分步完成：
+
+声明对象数组：类名称 对象数组名称\[\] = null;
+
+开辟对象数组：对象数组名称\[\] = new 类名称\[长度\];
+
+静态初始化：类名称 对象数组名称\[\] = new 类名称\[\]{实例化对象, 实例化对象, ...};
+
+范例：对象数组的动态初始化
+
+```java
+class Book {
+	private String title;
+	private double price;
+	public Book(String t, double p) {
+		title = t;
+		price = p;
+	}
+	//setter、getter、无参构造略
+	public String getInfo() {
+		return "书名：" + title + "，价格：" + price;
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		//开辟了一个3个长度的对象数组
+		Book books[] = new Book[3];
+		//对象数组中的每个数据都需要分别实例化
+		books[0] = new Book("Java基础入门", 89.8);
+		books[1] = new Book("操作系统", 51.5);
+		books[2] = new Book("数据结构", 100.2);
+		for (int i = 0; i < books.length; i ++) {
+			System.out.println(books[i].getInfo());
+		}
+	}
+}
+```
+
+对象数组实际上就是将多个对象交给数组统一管理。
+
+范例：使用静态初始化
+
+```java
+class Book {
+	private String title;
+	private double price;
+	public Book(String t, double p) {
+		title = t;
+		price = p;
+	}
+	//setter、getter、无参构造略
+	public String getInfo() {
+		return "书名：" + title + "，价格：" + price;
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		//开辟了一个3个长度的对象数组
+		Book books[] = new Book[]{
+			new Book("Java基础入门", 89.8),
+			new Book("操作系统", 51.5),
+			new Book("数据结构", 100.2)
+		};
+		for (int i = 0; i < books.length; i ++) {
+			System.out.println(books[i].getInfo());
+		}
+	}
+}
+```
+
+一般而言，使用对象数组的时候只会定义成一维数组。
+
+总结
+
+1、数组用的很少，但是一定会用，而且数组相关的逻辑关系比较麻烦；
+
+2、一切以一维数组为主，要明白数组的定义语法与内存关系（对象一致）；
+
+3、对象数组的定义语法，对象数组 = 多个对象；
+
+4、数组有一个最大的天生短板：长度固定，所以这就限制了数组在开发中的出现；
+
+5、数组的排序：java.util.Arrays.sort\(数组名称\)。
 
