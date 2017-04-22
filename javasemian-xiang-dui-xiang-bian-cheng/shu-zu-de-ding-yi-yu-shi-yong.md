@@ -63,19 +63,19 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		int date[] = new int[3]; 	
-		date[0] = 10;
-		date[1] = 20;
-		date[2] = 30;
-		int temp[] = date;
-		temp[0] = 99;
-		for (int i = 0; i < date.length; i ++) {
-			System.out.println(date[i]);
-		}
-	}
+    public static void main(String[] args) {
+        int date[] = new int[3];     
+        date[0] = 10;
+        date[1] = 20;
+        date[2] = 30;
+        int temp[] = date;
+        temp[0] = 99;
+        for (int i = 0; i < date.length; i ++) {
+            System.out.println(date[i]);
+        }
+    }
 }
 ```
 
-
+![](/assets/import 2.3-3.png)
 
