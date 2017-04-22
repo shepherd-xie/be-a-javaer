@@ -195,3 +195,30 @@ String str = new String("hello");
 
 ![](/assets/import 2.4-3.png)通过内存分析可以发现，如果使用的是构造方法的方式进行String类对象实例化的时候，那么最终的操作形式就变成了开辟两块堆内存空间（其中有一块堆内存空间将成为垃圾空间）。
 
+除了浪费空间之外，如果使用了构造方法定义的String类对象，其内容不会保存在对象池之中，因为是使用的关键字
+
+new开辟的新内存。如果希望开辟的新内存数据也可以进行对象池的保存，那么可以采用String类定义的一个手工入
+
+池的方法：public String intern\(\);
+
+范例：手工入池
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		//使用构造方法定义了新的内存空间，而后入池
+		String stra = new String("hello").intern();
+		String strb = "hello";
+		System.out.println(stra == strb);
+	}
+}
+```
+
+面试题：请解释String类对象两种实例化方式的区别？
+
+直接赋值（String str = "字符串"）：只会开辟一块堆内存空间，并且会自动保存在对象池中以共下次重复使用；
+
+构造方法（String str = new String\("字符串"\)）：会开辟两块堆内存空间，其中有一块空间将成为垃圾，并且不
+
+会自动入池，但是用户可以使用intern\(\)方法手工入池。
+
