@@ -42,11 +42,11 @@ String类有两种形式，主观上会认为第二种构造方法的形式更�
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		int x = 10;
-		int y = 10;
-		System.out.println(x == y);
-	}
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 10;
+        System.out.println(x == y);
+    }
 }
 ```
 
@@ -56,16 +56,46 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String stra = "hello";
-		String strb = new String("hello");
-		String strc = strb;	//引用传递
-		System.out.println(stra == strb);	//false
-		System.out.println(stra == strc);	//false
-		System.out.println(strb == strc);	//true
-	}
+    public static void main(String[] args) {
+        String stra = "hello";
+        String strb = new String("hello");
+        String strc = strb;    //引用传递
+        System.out.println(stra == strb);    //false
+        System.out.println(stra == strc);    //false
+        System.out.println(strb == strc);    //true
+    }
 }
 ```
 
 以上三个String类对象的内容完全一样，既然完全一样，那么结果应该是true，可实际的代码显示这样的结果并不是正确的。下边通过内存关系进行分析。
+
+![](/assets/import 2.4-1.png)通过以上的分析结果可以发现，“ == ”现在确实是进行了比较，但是比较的并不是字符串包含的内容，而是字符串实例对象所在的内存地址的数值，所以“ == ”是属于数值比较，比较的是内存地址。
+
+如果想要去比较字符串的内容，那么可以使用String类里面定义的方法：
+
+* 比较内容：public boolean equals\(String str\);
+
+**范例：**实现内容比较
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String stra = "hello";
+		String strb = new String("hello");
+		String strc = strb;	//引用传递
+		System.out.println(stra.equals(strb));	//true
+		System.out.println(stra.equals(strc));	//true
+		System.out.println(strb.equals(strc));	//true
+	}
+}
+```
+
+此时实现了字符串内容的比较，所以在以后的开发之中，只要是进行字符串的相等判断，千万不要使用“ == ”完成。
+
+**面试题：**请解释在字符串相等的判断中“ == ”与“ equals\(\)”的区别？
+
+* “ == ”是Java提供的关系运算符，主要的功能是进行数值相等判断的，如果用在了String对象上表示的是内存地址数值的比较；
+* “ equals\(\) ”是String提供的一个方法，由于进行字符串内容的比较。
+
+
 
