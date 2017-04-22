@@ -193,5 +193,7 @@ public class MainClass {
 String str = new String("hello");
 ```
 
-![](/assets/import 2.4-3.png)
+![](/assets/import 2.4-3.png)通过内存分析可以发现，如果使用的是构造方法的方式进行String类对象实例化的时候，那么最终的操作形式就变成
+
+了开辟两块堆内存空间（其中有一块堆内存空间将成为垃圾空间）。
 
