@@ -12,4 +12,5 @@
   * [类与对象](javasemian-xiang-dui-xiang-bian-cheng/lei-yu-dui-xiang.md)
   * [深入分析类与对象](javasemian-xiang-dui-xiang-bian-cheng/shen-ru-fen-xi-lei-yu-dui-xiang.md)
   * [数组的定义与使用](javasemian-xiang-dui-xiang-bian-cheng/shu-zu-de-ding-yi-yu-shi-yong.md)
+  * [String类的基本概念](javasemian-xiang-dui-xiang-bian-cheng/stringlei-de-ji-ben-gai-nian.md)
 
