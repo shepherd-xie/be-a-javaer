@@ -79,14 +79,14 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String stra = "hello";
-		String strb = new String("hello");
-		String strc = strb;	//引用传递
-		System.out.println(stra.equals(strb));	//true
-		System.out.println(stra.equals(strc));	//true
-		System.out.println(strb.equals(strc));	//true
-	}
+    public static void main(String[] args) {
+        String stra = "hello";
+        String strb = new String("hello");
+        String strc = strb;    //引用传递
+        System.out.println(stra.equals(strb));    //true
+        System.out.println(stra.equals(strc));    //true
+        System.out.println(strb.equals(strc));    //true
+    }
 }
 ```
 
@@ -97,5 +97,62 @@ public class MainClass {
 * “ == ”是Java提供的关系运算符，主要的功能是进行数值相等判断的，如果用在了String对象上表示的是内存地址数值的比较；
 * “ equals\(\) ”是String提供的一个方法，由于进行字符串内容的比较。
 
+### 字符串常量就是String的匿名对象
 
+实际上任何的语言都没有提供字符串这一概念，很多的语言里面都是使用了字符数组来描述的字符串的概念。在Java
+
+里面也没有字符串的概念。但是所有的开发都不可能离开字符串的应用，那么最终的结果是，Java自己创造了字符串
+
+。但是这个字符串依然不属于基本数据类型，它是将字符串作为了String类的匿名对象的形式存在的。
+
+**范例：**观察字符串是匿名对象的验证
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "hello";
+		System.out.println("hello".equals(str));
+	}
+}
+```
+
+那么所谓的直接赋值实际上就相当于将一个匿名对象设置了一个名字而已，但唯一的区别是，String类的匿名对象是
+
+由系统自动生成的，不再由用户自己直接创建。
+
+**Tip：**为了避免空指向异常的出现，可以将字符串写在前面调用方法
+
+观察问题：
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String input = null;	//假设这个字符串由用户来输入
+		//当用户输入的值为"hello"是满足一些条件
+		if (input.equals("hello")) {
+			System.out.println("Hello World !");
+		}
+	}
+}
+```
+
+此时由于用户的输入错误导致input的内容为空，而后又利用input调用了equals\(\)方法，那么一定会出
+
+现“NullPointerException”异常，但是如果此时换个方式。
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String input = null;	//假设这个字符串由用户来输入
+		//当用户输入的值为"hello"是满足一些条件
+		if ("hello".equals(input)) {
+			System.out.println("Hello World !");
+		}
+	}
+}
+```
+
+如果将操作倒过来使用，永远不可能出现空指向异常。
+
+_在以后的开发中，如果需要判断输入的内容是否是某一字符串，一定要将该字符串写在equals的前面。_
 
