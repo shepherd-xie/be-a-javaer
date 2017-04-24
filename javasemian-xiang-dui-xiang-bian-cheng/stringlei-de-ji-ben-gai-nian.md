@@ -217,5 +217,52 @@ public class MainClass {
 
 ### 字符串一旦定义则不可改变
 
+观察以下代码。
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "Hello";
+		str = str + "World";
+		str += "!";
+		System.out.println(str);
+	}
+}
+```
+
+以上代码最终的结果实际上发现str对象的内容被改变了，但是下面通过内存关系分析一下到底是怎么改变的。
+
+![](/assets/import 2.4-4.png)
+
+以上的操作可以发现，所谓的字符串内容实际上根本就没有改变（Java就定义好了String的内容不能改变），而对于
+
+字符串对象内容的改变，是利用了引用关系的变化而实现得，但是每一次的变化都会产生垃圾空间。
+
+**范例：**观察以下代码
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "";
+		for (int i = 0; i < 1000; i ++) {
+			str += i;
+		}
+		System.out.println(str);
+	}
+}
+```
+
+以上的代码修改了String对象的引用关系1000次，并且会产生大量的垃圾空间，在开发之中是被严格禁止使用的，
+
+String的内容不要过多频繁的修改。
+
+#### 总结
+
+String类的特点：
+
+* String类对象的相等判断使用equals\(\)方法完成，“ == ”实现的是地址数值的比较；
+* 字符串内容一旦声明则不可改变，String类对象内容的改变是依靠引用关系的改变实现的；
+* String类有两种实例化方式，使用直接赋值可以不产生垃圾空间，并且可以自动入池，不要使用构造方法完成。
+
 
 
