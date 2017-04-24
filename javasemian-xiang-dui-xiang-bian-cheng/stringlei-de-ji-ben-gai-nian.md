@@ -221,12 +221,12 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "Hello";
-		str = str + "World";
-		str += "!";
-		System.out.println(str);
-	}
+    public static void main(String[] args) {
+        String str = "Hello";
+        str = str + "World";
+        str += "!";
+        System.out.println(str);
+    }
 }
 ```
 
@@ -234,27 +234,23 @@ public class MainClass {
 
 ![](/assets/import 2.4-4.png)
 
-以上的操作可以发现，所谓的字符串内容实际上根本就没有改变（Java就定义好了String的内容不能改变），而对于
-
-字符串对象内容的改变，是利用了引用关系的变化而实现得，但是每一次的变化都会产生垃圾空间。
+以上的操作可以发现，所谓的字符串内容实际上根本就没有改变（Java就定义好了String的内容不能改变），而对于字符串对象内容的改变，是利用了引用关系的变化而实现得，但是每一次的变化都会产生垃圾空间。
 
 **范例：**观察以下代码
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "";
-		for (int i = 0; i < 1000; i ++) {
-			str += i;
-		}
-		System.out.println(str);
-	}
+    public static void main(String[] args) {
+        String str = "";
+        for (int i = 0; i < 1000; i ++) {
+            str += i;
+        }
+        System.out.println(str);
+    }
 }
 ```
 
-以上的代码修改了String对象的引用关系1000次，并且会产生大量的垃圾空间，在开发之中是被严格禁止使用的，
-
-String的内容不要过多频繁的修改。
+以上的代码修改了String对象的引用关系1000次，并且会产生大量的垃圾空间，在开发之中是被严格禁止使用的，String的内容不要过多频繁的修改。
 
 #### 总结
 
