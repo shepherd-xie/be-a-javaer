@@ -17,5 +17,88 @@ String在所有的开发之中都一定要使用到，String类里面提供了�
 
 ### 字符与字符串
 
+很多的语言之中都是利用了字符数组的概念来描述字符串的信息，这一点在String类的方法上也都有所提供。
 
+| No. | 方法名称 | 类型 | 描述 |
+| :---: | :---: | :---: | :---: |
+| 1 | public String\(char\[\] value\) | 构造 | 将字符数组变为String类对象 |
+| 2 | public String\(char\[\] value,int offset,int count\) | 构造 | 将部分字符数组变为String |
+| 3 | public char charAt\(int index\) | 普通 | 返回指定索引对应的字符信息 |
+| 4 | public char\[\] toCharArray\(\) | 普通 | 将字符串以字符数组的形式返回 |
+
+范例：取出指定索引的字符
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "hello";
+		char c = str.charAt(0);
+		System.out.println(c);
+	}
+}
+```
+
+程序之中字符串的下标都是从0开始的。
+
+范例：字符数组与字符串的转换
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "hello";
+		char[] data = str.toCharArray();
+		for (int i = 0; i < data.length; i ++) {
+			System.out.println(data[i]);
+		}
+	}
+}
+```
+
+范例：将字符串转大写
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "hello";
+		char[] data = str.toCharArray();
+		for (int i = 0; i < data.length; i ++) {
+			data[i] += 'A' - 'a';
+		}
+		System.out.println(new String(data));
+		System.out.println(new String(data, 1, 3));
+	}
+}
+```
+
+范例：给定一个字符串，要求判断其是否由数组组成
+
+思路：如果整个字符串要判断是不是数字无法实现，但是可以将字符串变为字符数组，而后判断每一个字符的内容是
+
+否是数字，如果该字符的范围在（'0'~'9'）指定的范畴之内，那么就是数字。
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "681356486";
+		if (isNumber(str)) {
+			System.out.println("字符串由数字组成!");
+		} else {
+			System.out.println("字符串不是由数字组成");
+		}
+	}
+	//判断字符串是否由数字组成
+	public static boolean isNumber(String temp) {
+		char[] data = temp.toCharArray();
+		for (int i = 0; i < data.length; i ++) {
+			if (data[i] > '9' || data[i] < '0') {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+
+```
+
+如果写的某一个方法返回的内容是boolean，那么习惯性的做法是将其以“isXxx”进行命名。
 
