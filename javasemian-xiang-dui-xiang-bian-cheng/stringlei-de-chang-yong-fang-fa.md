@@ -99,3 +99,16 @@ public class MainClass {
 
 如果写的某一个方法返回的内容是boolean，那么习惯性的做法是将其以“isXxx”进行命名。
 
+### 字节与字符串
+
+字节使用byte描述，使用字节一般主要用于数据的传输或者进行编码转换的时候使用，而咋String类里面就提供有将字符串变为字节数组的操作，目的就是为了传输以及编码转换。
+
+| No. | 方法名称 | 类型 | 描述 |
+| :---: | :---: | :---: | :---: |
+| 1 | public String\(byte\[\] bytes\) | 构造 | 将将全部字节数组变为字符串 |
+| 2 | public String\(byte\[\] bytes,int offset,int length\) | 构造 | 将部分字节数组变为字符串 |
+| 3 | public byte\[\] getBytes\(\) | 普通 | 将字符串将字符串变为字节数组 |
+| 4 | public byte\[\] getBytes\(String charsetName\) throws UnsupportedEncodingException | 普通 | 进行编码转换 |
+
+
+
