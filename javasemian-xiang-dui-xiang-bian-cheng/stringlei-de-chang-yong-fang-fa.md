@@ -110,5 +110,23 @@ public class MainClass {
 | 3 | public byte\[\] getBytes\(\) | 普通 | 将字符串将字符串变为字节数组 |
 | 4 | public byte\[\] getBytes\(String charsetName\) throws UnsupportedEncodingException | 普通 | 进行编码转换 |
 
+**范例：**观察字符串与字节数组的转换
 
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "helloworld";
+		byte[] data = str.getBytes(); //将字符串转为字节数组
+		for (int i = 0; i < data.length; i ++) {
+			data[i] += 'A' - 'a'; //将小写字母变为大写字母
+		}
+		System.out.println(new String(data));
+		System.out.println(new String(data, 5, 5));
+	}
+}
+```
+
+因为现在操作的是英文字母，所以感觉与字符类似。
+
+在以后讲解IO操作的时候会牵扯到字节数组的操作，在后续的开发之中会逐步接触到乱码的处理问题。
 
