@@ -245,12 +245,48 @@ public class MainClass {
 
 | No. | 方法名称 | 类型 | 描述 |
 | :---: | :---: | :---: | :---: |
-| 1 | public boolean contains\(String s\) | 普通 | 判断指定的内容是否存在 |
-| 2 | public int indexOf\(String str\) | 普通 | 由前向后查找指定字符串的位置，如果查找到返回第一个字母的索引，如果找不到返回-1。 |
-| 3 | public int indexOf\(String str,int fromIndex\) | 普通 | 从指定位置由前向后查找指定字符串，找不到返回-1。 |
-| 4 | public int lastIndexOf\(String str\) | 普通 | 由后向前查找指定字符串，找不到返回-1。 |
-| 5 | public int lastIndexOf\(String str,int fromIndex\) | 普通 | 从指定位置由后向前查找指定字符串，找不到返回-1. |
-|  |  |  |  |
+| 1 | public String replaceAll\(String **regex**,String replacement\) | 普通 | 用新的内容替换掉全部旧的内容 |
+| 2 | public String replaceFirst\(String **regex**,String replacement\) | 普通 | 替换首个满足条件的内容 |
+
+**范例：**观察替换掉的结果
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "helloworld";
+		String resultA = str.replaceAll("l", "_");
+		String resultB = str.replaceFirst("l", "_");
+		System.out.println(resultA);
+		System.out.println(resultB);
+	}
+}
+```
+
+对于替换的操作后续还会有更加完善的讲解。
+
+### 字符串截取
+
+从一个完成的字符串之中可以截取部分的子字符串数组，支持的方法如下：
+
+| No. | 方法名称 | 类型 | 描述 |
+| :---: | :---: | :---: | :---: |
+| 1 | public String substring\(int beginIndex\) | 普通 | 从指定索引截取到结尾 |
+| 2 | public String substring\(int beginIndex,int endIndex\) | 普通 | 截取部分子字符串 |
+
+**范例：**验证操作
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "helloworld";
+		String resultA = str.substring(5);
+		String resultB = str.substring(0, 5);
+		System.out.println(resultA);
+		System.out.println(resultB);
+	}
+}
+
+```
 
 
 
