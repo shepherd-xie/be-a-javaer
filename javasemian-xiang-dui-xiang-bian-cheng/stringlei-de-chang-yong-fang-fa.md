@@ -228,15 +228,29 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "##@@hello**";
-		System.out.println(str.startsWith("##"));
-		System.out.println(str.startsWith("@@", 2));
-		System.out.println(str.endsWith("**"));
-	}
+    public static void main(String[] args) {
+        String str = "##@@hello**";
+        System.out.println(str.startsWith("##"));
+        System.out.println(str.startsWith("@@", 2));
+        System.out.println(str.endsWith("**"));
+    }
 }
-
 ```
 
 这些开头和结尾的判断往往可以作为一些标记在程序中出现。
+
+### 字符串替换
+
+指的是使用一个新的字符串替换掉旧的字符串，支持的方法有如下几个：
+
+| No. | 方法名称 | 类型 | 描述 |
+| :---: | :---: | :---: | :---: |
+| 1 | public boolean contains\(String s\) | 普通 | 判断指定的内容是否存在 |
+| 2 | public int indexOf\(String str\) | 普通 | 由前向后查找指定字符串的位置，如果查找到返回第一个字母的索引，如果找不到返回-1。 |
+| 3 | public int indexOf\(String str,int fromIndex\) | 普通 | 从指定位置由前向后查找指定字符串，找不到返回-1。 |
+| 4 | public int lastIndexOf\(String str\) | 普通 | 由后向前查找指定字符串，找不到返回-1。 |
+| 5 | public int lastIndexOf\(String str,int fromIndex\) | 普通 | 从指定位置由后向前查找指定字符串，找不到返回-1. |
+|  |  |  |  |
+
+
 
