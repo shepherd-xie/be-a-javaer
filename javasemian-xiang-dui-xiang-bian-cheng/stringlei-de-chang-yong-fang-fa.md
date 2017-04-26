@@ -105,7 +105,7 @@ public class MainClass {
 
 | No. | 方法名称 | 类型 | 描述 |
 | :---: | :---: | :---: | :---: |
-| 1 | public String\(byte\[\] bytes\) | 构造 | 将将全部字节数组变为字符串 |
+| 1 | public String\(byte\[\] bytes\) | 构造 | 将全部字节数组变为字符串 |
 | 2 | public String\(byte\[\] bytes,int offset,int length\) | 构造 | 将部分字节数组变为字符串 |
 | 3 | public byte\[\] getBytes\(\) | 普通 | 将字符串将字符串变为字节数组 |
 | 4 | public byte\[\] getBytes\(String charsetName\) throws UnsupportedEncodingException | 普通 | 进行编码转换 |
@@ -114,19 +114,57 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "helloworld";
-		byte[] data = str.getBytes(); //将字符串转为字节数组
-		for (int i = 0; i < data.length; i ++) {
-			data[i] += 'A' - 'a'; //将小写字母变为大写字母
-		}
-		System.out.println(new String(data));
-		System.out.println(new String(data, 5, 5));
-	}
+    public static void main(String[] args) {
+        String str = "helloworld";
+        byte[] data = str.getBytes(); //将字符串转为字节数组
+        for (int i = 0; i < data.length; i ++) {
+            data[i] += 'A' - 'a'; //将小写字母变为大写字母
+        }
+        System.out.println(new String(data));
+        System.out.println(new String(data, 5, 5));
+    }
 }
 ```
 
 因为现在操作的是英文字母，所以感觉与字符类似。
 
 在以后讲解IO操作的时候会牵扯到字节数组的操作，在后续的开发之中会逐步接触到乱码的处理问题。
+
+### 字符串的比较
+
+如果要进行字符串内容相等的判断使用equals\(\)，但是在String类里面定义的比较判断不止这一个。
+
+| No. | 方法名称 | 类型 | 描述 |
+| :---: | :---: | :---: | :---: |
+| 1 | public boolean equals\(String anObject\) | 普通 | 进行相等判断，区分大小写 |
+| 2 | public boolean equalsIgnoreCase\(String anotherString\) | 普通 | 进行相等判断，不区分大小写 |
+| 3 | public int compareTo\(String anotherString\) | 普通 | 判断两个字符串的大小（按照字符编码比较）此方法的返回值有如下三种结果：=0，表示要比较的两个字符串内容相同；&gt;0，表示大于的结果；&lt;0，表示小于的结果。 |
+|  |  |  |  |
+
+**范例：**相等判断
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String stra = "Hello";
+		String strb = "hELLO";
+		System.out.println(stra.equals(strb)); //false
+		System.out.println(stra.equalsIgnoreCase(strb)); //true
+	}
+}
+```
+
+**范例：**观察compareTo\(\)方法
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String stra = "Hello";
+		String strb = "hELLO";
+		System.out.println(stra.compareTo(strb));
+	}
+}
+```
+
+现在只有String类的对象才具有大小关系判断。
 
