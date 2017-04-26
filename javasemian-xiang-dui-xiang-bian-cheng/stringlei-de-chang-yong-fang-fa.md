@@ -200,29 +200,43 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "helloworld";
-		if (str.indexOf("world") != -1) {
-			System.out.println("可以查询到数据。");
-		}
-	}
+    public static void main(String[] args) {
+        String str = "helloworld";
+        if (str.indexOf("world") != -1) {
+            System.out.println("可以查询到数据。");
+        }
+    }
 }
-
 ```
 
 但是JDK1.5开始之后出现了contains\(\)方法，这个方法可以直接返回boolean。
 
 ```java
 public class MainClass {
+    public static void main(String[] args) {
+        String str = "helloworld";
+        if (str.contains("world")) {
+            System.out.println("可以查询到数据。");
+        }
+    }
+}
+```
+
+使用contains\(\)更加的简单，并且在整个Java里面，contains已经成为了一个查询的代名词。
+
+**范例：**开头或结尾判断
+
+```java
+public class MainClass {
 	public static void main(String[] args) {
-		String str = "helloworld";
-		if (str.contains("world")) {
-			System.out.println("可以查询到数据。");
-		}
+		String str = "##@@hello**";
+		System.out.println(str.startsWith("##"));
+		System.out.println(str.startsWith("@@", 2));
+		System.out.println(str.endsWith("**"));
 	}
 }
 
 ```
 
-
+这些开头和结尾的判断往往可以作为一些标记在程序中出现。
 
