@@ -139,18 +139,17 @@ public class MainClass {
 | 1 | public boolean equals\(String anObject\) | 普通 | 进行相等判断，区分大小写 |
 | 2 | public boolean equalsIgnoreCase\(String anotherString\) | 普通 | 进行相等判断，不区分大小写 |
 | 3 | public int compareTo\(String anotherString\) | 普通 | 判断两个字符串的大小（按照字符编码比较）此方法的返回值有如下三种结果：=0，表示要比较的两个字符串内容相同；&gt;0，表示大于的结果；&lt;0，表示小于的结果。 |
-|  |  |  |  |
 
 **范例：**相等判断
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String stra = "Hello";
-		String strb = "hELLO";
-		System.out.println(stra.equals(strb)); //false
-		System.out.println(stra.equalsIgnoreCase(strb)); //true
-	}
+    public static void main(String[] args) {
+        String stra = "Hello";
+        String strb = "hELLO";
+        System.out.println(stra.equals(strb)); //false
+        System.out.println(stra.equalsIgnoreCase(strb)); //true
+    }
 }
 ```
 
@@ -158,13 +157,25 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String stra = "Hello";
-		String strb = "hELLO";
-		System.out.println(stra.compareTo(strb));
-	}
+    public static void main(String[] args) {
+        String stra = "Hello";
+        String strb = "hELLO";
+        System.out.println(stra.compareTo(strb));
+    }
 }
 ```
 
 现在只有String类的对象才具有大小关系判断。
+
+### 字符串查找
+
+从一个完整的字符串之中要判断某一个子字符串是否存在，这一功能可以使用如下的方法完成。
+
+| No. | 方法名称 | 类型 | 描述 |
+| :---: | :---: | :---: | :---: |
+| 1 | public boolean contains\(String s\) | 普通 | 判断指定的内容是否存在 |
+| 2 | public int indexOf\(String str\) | 普通 | 由前向后查找指定字符串的位置，如果查找到返回第一个字母的索引，如果找不到返回-1。 |
+| 3 | public int indexOf\(String str,int fromIndex\) | 普通 | 从指定位置由前向后查找指定字符串的位置，找不到返回-1. |
+
+
 
