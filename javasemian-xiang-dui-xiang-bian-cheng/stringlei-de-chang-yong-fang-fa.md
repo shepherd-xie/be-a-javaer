@@ -175,7 +175,27 @@ public class MainClass {
 | :---: | :---: | :---: | :---: |
 | 1 | public boolean contains\(String s\) | 普通 | 判断指定的内容是否存在 |
 | 2 | public int indexOf\(String str\) | 普通 | 由前向后查找指定字符串的位置，如果查找到返回第一个字母的索引，如果找不到返回-1。 |
-| 3 | public int indexOf\(String str,int fromIndex\) | 普通 | 从指定位置由前向后查找指定字符串的位置，找不到返回-1. |
+| 3 | public int indexOf\(String str,int fromIndex\) | 普通 | 从指定位置由前向后查找指定字符串，找不到返回-1。 |
+| 4 | public int lastIndexOf\(String str\) | 普通 | 由后向前查找指定字符串，找不到返回-1。 |
+| 5 | public int lastIndexOf\(String str,int fromIndex\) | 普通 | 从指定位置由后向前查找指定字符串，找不到返回-1. |
+| 6 | public boolean startsWith\(String prefix\) | 普通 | 判断是否以指定字符串开头 |
+| 7 | public boolean startsWith\(String prefix,int toffset\) | 普通 | 从指定位置开始判断是否以指定字符串开头 |
+| 8 | public boolean endsWith\(String suffix\) | 普通 | 判断是否以指定字符串结尾 |
+
+**范例：**使用indexOf\(\)等功能查找
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "helloworld";
+		System.out.println(str.indexOf("world"));
+		System.out.println(str.indexOf("l"));
+		System.out.println(str.indexOf("l", 3));
+		System.out.println(str.lastIndexOf("l"));
+	}
+}
+
+```
 
 
 
