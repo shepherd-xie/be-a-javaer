@@ -186,12 +186,39 @@ public class MainClass {
 
 ```java
 public class MainClass {
+    public static void main(String[] args) {
+        String str = "helloworld";
+        System.out.println(str.indexOf("world"));
+        System.out.println(str.indexOf("l"));
+        System.out.println(str.indexOf("l", 3));
+        System.out.println(str.lastIndexOf("l"));
+    }
+}
+```
+
+以上的过程都只是返回了位置。但是在一些程序之中需要告诉用户的是有没有的结果，最早的做法是判断查询结果是否是“-1”。
+
+```java
+public class MainClass {
 	public static void main(String[] args) {
 		String str = "helloworld";
-		System.out.println(str.indexOf("world"));
-		System.out.println(str.indexOf("l"));
-		System.out.println(str.indexOf("l", 3));
-		System.out.println(str.lastIndexOf("l"));
+		if (str.indexOf("world") != -1) {
+			System.out.println("可以查询到数据。");
+		}
+	}
+}
+
+```
+
+但是JDK1.5开始之后出现了contains\(\)方法，这个方法可以直接返回boolean。
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "helloworld";
+		if (str.contains("world")) {
+			System.out.println("可以查询到数据。");
+		}
 	}
 }
 
