@@ -293,8 +293,8 @@ public class MainClass {
 
 | No. | 方法名称 | 类型 | 描述 |
 | :---: | :---: | :---: | :---: |
-| 1 | public String substring\(int beginIndex\) | 普通 | 从指定索引截取到结尾 |
-| 2 | public String substring\(int beginIndex,int endIndex\) | 普通 | 截取部分子字符串 |
+| 1 | public String\[\] split\(String regex\) | 普通 | 按照指定字符串进行全部拆分 |
+| 2 | public String\[\] split\(String regex,int limit\) | 普通 | 按照指定的字符串进行部分拆分  |
 
 
 
