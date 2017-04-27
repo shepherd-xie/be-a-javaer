@@ -437,3 +437,42 @@ public class MainClass {
 
 如果觉得isEmpty\(\)不方便可以使用“"".equals\(str\)”。
 
+#### 总结
+
+| **No. ** | **方法名称** | **类型** | **描述** |
+| :---: | :---: | :---: | :---: |
+| 1 | public String\(char\[\] value\) | 构造 | 将字符数组变为String类对象 |
+| 2 | public String\(char\[\] value,int offset,int count\) | 构造 | 将部分字符数组变为String |
+| 3 | public char charAt\(int index\) | 普通 | 返回指定索引对应的字符信息 |
+| 4 | public char\[\] toCharArray\(\) | 普通 | 将字符串以字符数组的形式返回 |
+| 5 | public String\(byte\[\] bytes\) | 构造 | 将全部字节数组变为字符串 |
+| 6 | public String\(byte\[\] bytes,int offset,int length\) | 构造 | 将部分字节数组变为字符串 |
+| 7 | public byte\[\] getBytes\(\) | 普通 | 将字符串将字符串变为字节数组 |
+| 8 | public byte\[\] getBytes\(String charsetName\) throws UnsupportedEncodingException | 普通 | 进行编码转换 |
+| 9 | public boolean equals\(String anObject\) | 普通 | 进行相等判断，区分大小写 |
+| 10 | public boolean equalsIgnoreCase\(String anotherString\) | 普通 | 进行相等判断，不区分大小写 |
+| 11 | public int compareTo\(String anotherString\) | 普通 | 判断两个字符串的大小（按照字符编码比较）此方法的返回值有如下三种结果：=0，表示要比较的两个字符串内容相同；&gt;0，表示大于的结果；&lt;0，表示小于的结果。 |
+| 12 | public boolean contains\(String s\) | 普通 | 判断指定的内容是否存在 |
+| 13 | public int indexOf\(String str\) | 普通 | 由前向后查找指定字符串的位置，如果查找到返回第一个字母的索引，如果找不到返回-1。 |
+| 14 | public int indexOf\(String str,int fromIndex\) | 普通 | 从指定位置由前向后查找指定字符串，找不到返回-1。 |
+| 15 | public int lastIndexOf\(String str\) | 普通 | 由后向前查找指定字符串，找不到返回-1。 |
+| 16 | public int lastIndexOf\(String str,int fromIndex\) | 普通 | 从指定位置由后向前查找指定字符串，找不到返回-1. |
+| 17 | public boolean startsWith\(String prefix\) | 普通 | 判断是否以指定字符串开头 |
+| 18 | public boolean startsWith\(String prefix,int toffset\) | 普通 | 从指定位置开始判断是否以指定字符串开头 |
+| 19 | public boolean endsWith\(String suffix\) | 普通 | 判断是否以指定字符串结尾 |
+| 20 | public String replaceAll\(String regex,String replacement\) | 普通 | 用新的内容替换掉全部旧的内容 |
+| 21 | public String replaceFirst\(String regex,String replacement\) | 普通 | 替换首个满足条件的内容 |
+| 22 | public String substring\(int beginIndex\) | 普通 | 从指定索引截取到结尾 |
+| 23 | public String substring\(int beginIndex,int endIndex\) | 普通 | 截取部分子字符串 |
+| 24 | public String\[\] split\(String regex\) | 普通 | 按照指定字符串进行全部拆分 |
+| 25 | public String\[\] split\(String regex,int limit\) | 普通 | 按照指定的字符串进行部分拆分 |
+| 26 | public String concat\(String str\) | 普通 | 字符串连接，与“+”类似 |
+| 27 | public String toLowerCase\(\) | 普通 | 转小写 |
+| 28 | public String toUpperCase\(\) | 普通 | 转大写 |
+| 29 | public String trim\(\) | 普通 | 去掉字符串两边的空格 |
+| 30 | public int length\(\) | 普通 | 取得字符串长度 |
+| 31 | public String intern\(\) | 普通 | 数据入池 |
+| 32 | public boolean isEmpty\(\) | 普通 |  |
+
+
+
