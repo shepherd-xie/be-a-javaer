@@ -451,7 +451,7 @@ public class MainClass {
 | 8 | public byte\[\] getBytes\(String charsetName\) throws UnsupportedEncodingException | 普通 | 进行编码转换 |
 | 9 | public boolean equals\(String anObject\) | 普通 | 进行相等判断，区分大小写 |
 | 10 | public boolean equalsIgnoreCase\(String anotherString\) | 普通 | 进行相等判断，不区分大小写 |
-| 11 | public int compareTo\(String anotherString\) | 普通 | 判断两个字符串的大小（按照字符编码比较）此方法的返回值有如下三种结果：=0，表示要比较的两个字符串内容相同；&gt;0，表示大于的结果；&lt;0，表示小于的结果。 |
+| 11 | public int compareTo\(String anotherString\) | 普通 | 判断两个字符串的大小（按照字符编码比较） |
 | 12 | public boolean contains\(String s\) | 普通 | 判断指定的内容是否存在 |
 | 13 | public int indexOf\(String str\) | 普通 | 由前向后查找指定字符串的位置，如果查找到返回第一个字母的索引，如果找不到返回-1。 |
 | 14 | public int indexOf\(String str,int fromIndex\) | 普通 | 从指定位置由前向后查找指定字符串，找不到返回-1。 |
