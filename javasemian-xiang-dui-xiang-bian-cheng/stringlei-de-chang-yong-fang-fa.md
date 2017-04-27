@@ -354,31 +354,30 @@ public class MainClass {
 | 4 | public String trim\(\) | 普通 | 去掉字符串两边的空格 |
 | 5 | public int length\(\) | 普通 | 取得字符串长度 |
 | 6 | public String intern\(\) | 普通 | 数据入池 |
-| 7 | public boolean isEmpty\(\) |  普通 | 判断是否是空字符串 |
-| 8 |  | 普通 |  |
+| 7 | public boolean isEmpty\(\) | 普通 | 判断是否是空字符串 |
 
 **范例：**字符串连接
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String stra = "hello";
-		String strb = "hello" + "world";
-		String strc = "helloworld";
-		System.out.println(stra == strc); //false
-		System.out.println(strb == strc); //true
-	}
+    public static void main(String[] args) {
+        String stra = "hello";
+        String strb = "hello" + "world";
+        String strc = "helloworld";
+        System.out.println(stra == strc); //false
+        System.out.println(strb == strc); //true
+    }
 }
 ```
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String stra = "hello";
-		String strb = stra + "world";
-		String strc = "helloworld";
-		System.out.println(stra == strc); //false
-		System.out.println(strb == strc); //false
+    public static void main(String[] args) {
+        String stra = "hello";
+        String strb = stra + "world";
+        String strc = "helloworld";
+        System.out.println(stra == strc); //false
+        System.out.println(strb == strc); //false
 }
 ```
 
@@ -386,11 +385,11 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "(*(*Hello(*(*";
-		System.out.println(str.toUpperCase());
-		System.out.println(str.toLowerCase());
-	}
+    public static void main(String[] args) {
+        String str = "(*(*Hello(*(*";
+        System.out.println(str.toUpperCase());
+        System.out.println(str.toLowerCase());
+    }
 }
 ```
 
@@ -398,32 +397,28 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "      Hello World       ";
-		System.out.println("【" + str + "】");
-		System.out.println("【" + str.trim() + "】");
-	}
+    public static void main(String[] args) {
+        String str = "      Hello World       ";
+        System.out.println("【" + str + "】");
+        System.out.println("【" + str.trim() + "】");
+    }
 }
 ```
 
-一般在用户进行数据输入的时候有可能会携带有无用的空格内容，那么接收到这些数据后就需要消除掉所有的空格内
-
-容。
+一般在用户进行数据输入的时候有可能会携带有无用的空格内容，那么接收到这些数据后就需要消除掉所有的空格内容。
 
 **范例：**取得字符串长度
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "helloworld";
-		System.out.println(str.length());
-	}
+    public static void main(String[] args) {
+        String str = "helloworld";
+        System.out.println(str.length());
+    }
 }
 ```
 
-在某些情况下要求用户输入的数据长度是有限制的，可以利用此方式判断。数组中也有一个length属性，但是调用的
-
-形式不同：
+在某些情况下要求用户输入的数据长度是有限制的，可以利用此方式判断。数组中也有一个length属性，但是调用的形式不同：
 
 * 数组对象.length
 * String 对象.length\(\)
@@ -432,11 +427,11 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "helloworld";
-		System.out.println(str.isEmpty()); //false
-		System.out.println("".isEmpty()); //true
-	}
+    public static void main(String[] args) {
+        String str = "helloworld";
+        System.out.println(str.isEmpty()); //false
+        System.out.println("".isEmpty()); //true
+    }
 }
 ```
 
