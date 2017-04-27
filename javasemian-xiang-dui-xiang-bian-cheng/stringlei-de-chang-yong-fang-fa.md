@@ -294,7 +294,51 @@ public class MainClass {
 | No. | 方法名称 | 类型 | 描述 |
 | :---: | :---: | :---: | :---: |
 | 1 | public String\[\] split\(String regex\) | 普通 | 按照指定字符串进行全部拆分 |
-| 2 | public String\[\] split\(String regex,int limit\) | 普通 | 按照指定的字符串进行部分拆分  |
+| 2 | public String\[\] split\(String regex,int limit\) | 普通 | 按照指定的字符串进行部分拆分 |
 
+**范例：**进行全部拆分
 
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "hello world welcome to come back";
+		String[] result = str.split(" ");
+		for (int i = 0; i < result.length; i ++) {
+			System.out.println(result[i]);
+		}
+	}
+}
+```
+
+如果在拆分的时候只是写了一个空字符串（""），表示按照每一个字符拆分。
+
+**范例：**部分拆分
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "hello world welcome to come back";
+		String[] result = str.split(" ", 2);
+		for (int i = 0; i < result.length; i ++) {
+			System.out.println(result[i]);
+		}
+	}
+}
+```
+
+**范例：**实现IPv4地址拆分
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "192.168.1.1";
+		String[] result = str.split("\\.");
+		for (int i = 0; i < result.length; i ++) {
+			System.out.println(result[i]);
+		}
+	}
+}
+```
+
+如果是一些敏感字严格来讲是拆分不了，如果真的遇见拆分不了的情况就使用“\\”进行转义后才可以拆分。
 
