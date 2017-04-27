@@ -252,13 +252,13 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "helloworld";
-		String resultA = str.replaceAll("l", "_");
-		String resultB = str.replaceFirst("l", "_");
-		System.out.println(resultA);
-		System.out.println(resultB);
-	}
+    public static void main(String[] args) {
+        String str = "helloworld";
+        String resultA = str.replaceAll("l", "_");
+        String resultB = str.replaceFirst("l", "_");
+        System.out.println(resultA);
+        System.out.println(resultB);
+    }
 }
 ```
 
@@ -277,16 +277,24 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "helloworld";
-		String resultA = str.substring(5);
-		String resultB = str.substring(0, 5);
-		System.out.println(resultA);
-		System.out.println(resultB);
-	}
+    public static void main(String[] args) {
+        String str = "helloworld";
+        String resultA = str.substring(5);
+        String resultB = str.substring(0, 5);
+        System.out.println(resultA);
+        System.out.println(resultB);
+    }
 }
-
 ```
+
+### 字符串拆分
+
+将一个完整的字符串，按照指定的内容拆分为字符串数组，方法如下：
+
+| No. | 方法名称 | 类型 | 描述 |
+| :---: | :---: | :---: | :---: |
+| 1 | public String substring\(int beginIndex\) | 普通 | 从指定索引截取到结尾 |
+| 2 | public String substring\(int beginIndex,int endIndex\) | 普通 | 截取部分子字符串 |
 
 
 
