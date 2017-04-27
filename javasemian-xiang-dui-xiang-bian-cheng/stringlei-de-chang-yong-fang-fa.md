@@ -300,13 +300,13 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "hello world welcome to come back";
-		String[] result = str.split(" ");
-		for (int i = 0; i < result.length; i ++) {
-			System.out.println(result[i]);
-		}
-	}
+    public static void main(String[] args) {
+        String str = "hello world welcome to come back";
+        String[] result = str.split(" ");
+        for (int i = 0; i < result.length; i ++) {
+            System.out.println(result[i]);
+        }
+    }
 }
 ```
 
@@ -316,13 +316,13 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String str = "hello world welcome to come back";
-		String[] result = str.split(" ", 2);
-		for (int i = 0; i < result.length; i ++) {
-			System.out.println(result[i]);
-		}
-	}
+    public static void main(String[] args) {
+        String str = "hello world welcome to come back";
+        String[] result = str.split(" ", 2);
+        for (int i = 0; i < result.length; i ++) {
+            System.out.println(result[i]);
+        }
+    }
 }
 ```
 
@@ -330,15 +330,115 @@ public class MainClass {
 
 ```java
 public class MainClass {
+    public static void main(String[] args) {
+        String str = "192.168.1.1";
+        String[] result = str.split("\\.");
+        for (int i = 0; i < result.length; i ++) {
+            System.out.println(result[i]);
+        }
+    }
+}
+```
+
+如果是一些敏感字严格来讲是拆分不了，如果真的遇见拆分不了的情况就使用“\”进行转义后才可以拆分。
+
+### 其他方法
+
+以上给出的方法是可以归类的，但是在String里面也有一部分方法是不能归类的：
+
+| No. | 方法名称 | 类型 | 描述 |
+| :---: | :---: | :---: | :---: |
+| 1 | public String concat\(String str\) | 普通 | 字符串连接，与“+”类似 |
+| 2 | public String toLowerCase\(\) | 普通 | 转小写 |
+| 3 | public String toUpperCase\(\) | 普通 | 转大写 |
+| 4 | public String trim\(\) | 普通 | 去掉字符串两边的空格 |
+| 5 | public int length\(\) | 普通 | 取得字符串长度 |
+| 6 | public String intern\(\) | 普通 | 数据入池 |
+| 7 | public boolean isEmpty\(\) |  普通 | 判断是否是空字符串 |
+| 8 |  | 普通 |  |
+
+**范例：**字符串连接
+
+```java
+public class MainClass {
 	public static void main(String[] args) {
-		String str = "192.168.1.1";
-		String[] result = str.split("\\.");
-		for (int i = 0; i < result.length; i ++) {
-			System.out.println(result[i]);
-		}
+		String stra = "hello";
+		String strb = "hello" + "world";
+		String strc = "helloworld";
+		System.out.println(stra == strc); //false
+		System.out.println(strb == strc); //true
 	}
 }
 ```
 
-如果是一些敏感字严格来讲是拆分不了，如果真的遇见拆分不了的情况就使用“\\”进行转义后才可以拆分。
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String stra = "hello";
+		String strb = stra + "world";
+		String strc = "helloworld";
+		System.out.println(stra == strc); //false
+		System.out.println(strb == strc); //false
+}
+```
+
+**范例：**转小写与大写
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "(*(*Hello(*(*";
+		System.out.println(str.toUpperCase());
+		System.out.println(str.toLowerCase());
+	}
+}
+```
+
+所有的非字母数据不会进行任何的转换操作。
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "      Hello World       ";
+		System.out.println("【" + str + "】");
+		System.out.println("【" + str.trim() + "】");
+	}
+}
+```
+
+一般在用户进行数据输入的时候有可能会携带有无用的空格内容，那么接收到这些数据后就需要消除掉所有的空格内
+
+容。
+
+**范例：**取得字符串长度
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "helloworld";
+		System.out.println(str.length());
+	}
+}
+```
+
+在某些情况下要求用户输入的数据长度是有限制的，可以利用此方式判断。数组中也有一个length属性，但是调用的
+
+形式不同：
+
+* 数组对象.length
+* String 对象.length\(\)
+
+**范例：**判断是否为空字符串
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		String str = "helloworld";
+		System.out.println(str.isEmpty()); //false
+		System.out.println("".isEmpty()); //true
+	}
+}
+```
+
+如果觉得isEmpty\(\)不方便可以使用“"".equals\(str\)”。
 
