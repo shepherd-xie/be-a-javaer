@@ -88,79 +88,71 @@ public class MainClass {
 
 ### 调用方法
 
-通过之前的代码可以发现，所谓的this实际上指的就是本类的结构，在一个类中除了有成员之外还会有方法（普通方
-
-法、构造方法），利用this可以调用本类的普通方法或构造方法。
+通过之前的代码可以发现，所谓的this实际上指的就是本类的结构，在一个类中除了有成员之外还会有方法（普通方法、构造方法），利用this可以调用本类的普通方法或构造方法。
 
 1、调用普通方法
 
 ```java
 class Book {
-	private String title;
-	private double price;
-	public Book(String title, double price) {
-		this.title = title;
-		this.price = price;
-	}
-	//setter、getter略
-	public void print() {
-		System.out.println("**********");
-	}
-	public String getInfo() {
-		this.print();
-		return "书名：" + this.title + "，价格：" + this.price;
-	} 
+    private String title;
+    private double price;
+    public Book(String title, double price) {
+        this.title = title;
+        this.price = price;
+    }
+    //setter、getter略
+    public void print() {
+        System.out.println("**********");
+    }
+    public String getInfo() {
+        this.print();
+        return "书名：" + this.title + "，价格：" + this.price;
+    } 
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book book = new Book("Java基础入门", 89.8);
-		System.out.println(book.getInfo());
-	}
+    public static void main(String[] args) {
+        Book book = new Book("Java基础入门", 89.8);
+        System.out.println(book.getInfo());
+    }
 }
 ```
 
-调用普通方法的时候是否在方法前加入“this.”并没有一个明确的要求，即使不加this也表示本类调用的方法，但
+调用普通方法的时候是否在方法前加入“this.”并没有一个明确的要求，即使不加this也表示本类调用的方法，但是从代码的严谨性上来讲一定要加上this。
 
-是从代码的严谨性上来讲一定要加上this。
-
-在一个类里面方法除了普通方法还会包含构造方法，这是表示多个方法之间要进行互相调用。使用的形式“this\(参
-
-数,参数,...\)”。
+在一个类里面方法除了普通方法还会包含构造方法，这是表示多个方法之间要进行互相调用。使用的形式“this\(参数,参数,...\)”。
 
 下面将通过一个简短的代码来分析，为什么需要构造方法间的相互调用。
 
 **范例：**观察问题
 
-现在定义的Book类里面有三个构造方法，但是要求不管调用哪一个构造方法都要输出一行提示信息“新的Book类对象
-
-生成”。
+现在定义的Book类里面有三个构造方法，但是要求不管调用哪一个构造方法都要输出一行提示信息“新的Book类对象生成”。
 
 ```java
 class Book {
-	private String title;
-	private double price;
-	public Book() {
-		System.out.println("一个新的Book类对象生成");
-	}
-	public Book(String title) {
-		System.out.println("一个新的Book类对象生成");
-		this.title = title;
-	}
-	public Book(String title, double price) {
-		System.out.println("一个新的Book类对象生成");
-		this.title = title;
-		this.price = price;
-	}
-	//setter、getter略
-	public String getInfo() {
-		return "书名：" + this.title + "，价格：" + this.price;
-	} 
+    private String title;
+    private double price;
+    public Book() {
+        System.out.println("一个新的Book类对象生成");
+    }
+    public Book(String title) {
+        System.out.println("一个新的Book类对象生成");
+        this.title = title;
+    }
+    public Book(String title, double price) {
+        System.out.println("一个新的Book类对象生成");
+        this.title = title;
+        this.price = price;
+    }
+    //setter、getter略
+    public String getInfo() {
+        return "书名：" + this.title + "，价格：" + this.price;
+    } 
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book book = new Book("Java基础入门", 89.8);
-		System.out.println(book.getInfo());
-	}
+    public static void main(String[] args) {
+        Book book = new Book("Java基础入门", 89.8);
+        System.out.println(book.getInfo());
+    }
 }
 ```
 
@@ -168,29 +160,29 @@ public class MainClass {
 
 ```java
 class Book {
-	private String title;
-	private double price;
-	public Book() {
-		System.out.println("一个新的Book类对象生成");
-	}
-	public Book(String title) {
-		this();
-		this.title = title;
-	}
-	public Book(String title, double price) {
-		this(title);
-		this.price = price;
-	}
-	//setter、getter略
-	public String getInfo() {
-		return "书名：" + this.title + "，价格：" + this.price;
-	} 
+    private String title;
+    private double price;
+    public Book() {
+        System.out.println("一个新的Book类对象生成");
+    }
+    public Book(String title) {
+        this();
+        this.title = title;
+    }
+    public Book(String title, double price) {
+        this(title);
+        this.price = price;
+    }
+    //setter、getter略
+    public String getInfo() {
+        return "书名：" + this.title + "，价格：" + this.price;
+    } 
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book book = new Book("Java基础入门", 89.8);
-		System.out.println(book.getInfo());
-	}
+    public static void main(String[] args) {
+        Book book = new Book("Java基础入门", 89.8);
+        System.out.println(book.getInfo());
+    }
 }
 ```
 
@@ -203,36 +195,34 @@ public class MainClass {
 
 ```java
 class Book {
-	private String title;
-	private double price;
-	public Book() {
-		this("Java", 89.8);
-		System.out.println("一个新的Book类对象生成");
-	}
-	public Book(String title) {
-		this();
-		this.title = title;
-	}
-	public Book(String title, double price) {
-		this(title);
-		this.price = price;
-	}
-	//setter、getter略
-	public String getInfo() {
-		return "书名：" + this.title + "，价格：" + this.price;
-	} 
+    private String title;
+    private double price;
+    public Book() {
+        this("Java", 89.8);
+        System.out.println("一个新的Book类对象生成");
+    }
+    public Book(String title) {
+        this();
+        this.title = title;
+    }
+    public Book(String title, double price) {
+        this(title);
+        this.price = price;
+    }
+    //setter、getter略
+    public String getInfo() {
+        return "书名：" + this.title + "，价格：" + this.price;
+    } 
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Book book = new Book("Java基础入门", 89.8);
-		System.out.println(book.getInfo());
-	}
+    public static void main(String[] args) {
+        Book book = new Book("Java基础入门", 89.8);
+        System.out.println(book.getInfo());
+    }
 }
 ```
 
-以上代码在编译之后就会出现错误提示“构造方法递归调用”，所以在使用this\(\)互相调用构造的时候至少保留一个
-
-构造没有使用this\(\)调用其他构造方法。
+以上代码在编译之后就会出现错误提示“构造方法递归调用”，所以在使用this\(\)互相调用构造的时候至少保留一个构造没有使用this\(\)调用其他构造方法。
 
 **实例：**定义一个雇员类（编号、姓名、工资、部门），在这个类里面提供四个构造方法：
 
@@ -245,50 +235,50 @@ public class MainClass {
 
 ```java
 class Emp {
-	private int empno;
-	private String ename;
-	private double sal;
-	private String dept;
-	public Emp() {
-		this.empno = 0;
-		this.ename = "无雇员";
-		this.sal = 0.0;
-		this.dept = "未定";
-	}
-	public Emp(int empno) {
-		this.empno = empno;
-		this.ename = "临时工";
-		this.sal = 800.0;
-		this.dept = "后勤";
-	}
-	public Emp(int empno, String ename) {
-		this.empno = empno;
-		this.ename = ename;
-		this.sal = 2000.0;
-		this.dept = "技术部";
-	}
-	public Emp(int empno, String ename, double sal, String dept) {
-		this.empno = empno;
-		this.ename = ename;
-		this.sal = sal;
-		this.dept = dept;
-	}
-	//setter、getter略
-	public String getInfo() {
-		return "雇员编号：" + this.empno + "，名称：" + this.ename + "，工资：" + this.sal + "，部门：" + this.dept;
-	}
+    private int empno;
+    private String ename;
+    private double sal;
+    private String dept;
+    public Emp() {
+        this.empno = 0;
+        this.ename = "无雇员";
+        this.sal = 0.0;
+        this.dept = "未定";
+    }
+    public Emp(int empno) {
+        this.empno = empno;
+        this.ename = "临时工";
+        this.sal = 800.0;
+        this.dept = "后勤";
+    }
+    public Emp(int empno, String ename) {
+        this.empno = empno;
+        this.ename = ename;
+        this.sal = 2000.0;
+        this.dept = "技术部";
+    }
+    public Emp(int empno, String ename, double sal, String dept) {
+        this.empno = empno;
+        this.ename = ename;
+        this.sal = sal;
+        this.dept = dept;
+    }
+    //setter、getter略
+    public String getInfo() {
+        return "雇员编号：" + this.empno + "，名称：" + this.ename + "，工资：" + this.sal + "，部门：" + this.dept;
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Emp ea = new Emp();
-		Emp eb = new Emp(9527);
-		Emp ec = new Emp(7566, "ALLEN");
-		Emp ed = new Emp(7869, "KING", 5000.0, "Boss");
-		System.out.println(ea.getInfo());
-		System.out.println(eb.getInfo());
-		System.out.println(ec.getInfo());
-		System.out.println(ed.getInfo());
-	}
+    public static void main(String[] args) {
+        Emp ea = new Emp();
+        Emp eb = new Emp(9527);
+        Emp ec = new Emp(7566, "ALLEN");
+        Emp ed = new Emp(7869, "KING", 5000.0, "Boss");
+        System.out.println(ea.getInfo());
+        System.out.println(eb.getInfo());
+        System.out.println(ec.getInfo());
+        System.out.println(ed.getInfo());
+    }
 }
 ```
 
@@ -298,41 +288,41 @@ public class MainClass {
 
 ```java
 class Emp {
-	private int empno;
-	private String ename;
-	private double sal;
-	private String dept;
-	public Emp() {
-		this(0, "无雇员", 0.0, "未定");
-	}
-	public Emp(int empno) {
-		this(empno, "临时工", 800.0, "后勤");
-	}
-	public Emp(int empno, String ename) {
-		this(empno, ename, 2000.0, "技术部");
-	}
-	public Emp(int empno, String ename, double sal, String dept) {
-		this.empno = empno;
-		this.ename = ename;
-		this.sal = sal;
-		this.dept = dept;
-	}
-	//setter、getter略
-	public String getInfo() {
-		return "雇员编号：" + this.empno + "，名称：" + this.ename + "，工资：" + this.sal + "，部门：" + this.dept;
-	}
+    private int empno;
+    private String ename;
+    private double sal;
+    private String dept;
+    public Emp() {
+        this(0, "无雇员", 0.0, "未定");
+    }
+    public Emp(int empno) {
+        this(empno, "临时工", 800.0, "后勤");
+    }
+    public Emp(int empno, String ename) {
+        this(empno, ename, 2000.0, "技术部");
+    }
+    public Emp(int empno, String ename, double sal, String dept) {
+        this.empno = empno;
+        this.ename = ename;
+        this.sal = sal;
+        this.dept = dept;
+    }
+    //setter、getter略
+    public String getInfo() {
+        return "雇员编号：" + this.empno + "，名称：" + this.ename + "，工资：" + this.sal + "，部门：" + this.dept;
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		Emp ea = new Emp();
-		Emp eb = new Emp(9527);
-		Emp ec = new Emp(7566, "ALLEN");
-		Emp ed = new Emp(7869, "KING", 5000.0, "Boss");
-		System.out.println(ea.getInfo());
-		System.out.println(eb.getInfo());
-		System.out.println(ec.getInfo());
-		System.out.println(ed.getInfo());
-	}
+    public static void main(String[] args) {
+        Emp ea = new Emp();
+        Emp eb = new Emp(9527);
+        Emp ec = new Emp(7566, "ALLEN");
+        Emp ed = new Emp(7869, "KING", 5000.0, "Boss");
+        System.out.println(ea.getInfo());
+        System.out.println(eb.getInfo());
+        System.out.println(ec.getInfo());
+        System.out.println(ed.getInfo());
+    }
 }
 ```
 
