@@ -472,7 +472,7 @@ public class MainClass {
 | 29 | public String trim\(\) | 普通 | 去掉字符串两边的空格 |
 | 30 | public int length\(\) | 普通 | 取得字符串长度 |
 | 31 | public String intern\(\) | 普通 | 数据入池 |
-| 32 | public boolean isEmpty\(\) | 普通 |  |
+| 32 | public boolean isEmpty\(\) | 普通 | 判断是否是空字符串 |
 
 
 
