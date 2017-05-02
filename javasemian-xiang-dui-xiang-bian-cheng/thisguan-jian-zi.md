@@ -328,3 +328,72 @@ public class MainClass {
 
 此时的操作就利用了构造方法间的相互调用解决了代码的重复问题。
 
+### 表示当前对象
+
+当前对象指的是当前正在调用类中方法的对象。
+
+```java
+class Book {
+	public void print() {
+		//this就是当前调用方法的对象
+		System.out.println("this = " + this);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Book booka = new Book();
+		Book bookb = new Book();
+		System.out.println("booka = " + booka);
+		booka.print();
+		System.out.println("----------------------------");
+		System.out.println("bookb = " + bookb);
+		bookb.print();
+	}
+}
+```
+
+之前出现的“this.属性”实际上指的就是当前对象中的属性，一定是保存在堆内存中的内容。
+
+**思考：**观察如下代码的执行
+
+```java
+class A {
+	private B b;
+	//2、执行A()
+	public A() {
+		//3、实例化B类对象
+		this.b = new B(this); //4、this == temp
+		this.b.get(); //7、调用b.get()
+	}
+	//10、调用print()
+	public void print() {
+		System.out.println("Hello World !");
+	}
+}
+class B {
+	private A a;
+	//5、调用B(A a)，a == temp
+	public B(A a) {
+		this.a = a; //6、保存a对象（temp）
+	}
+	//8、调用this.a（temp）.print()
+	public void get() {
+		this.a.print();
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		//1、实例化A类对象，调用A()
+		A temp = new A();
+	}
+}
+```
+
+#### 总结
+
+1、类中的属性调用一定要加上this；
+
+2、类中的构造方法间的互相调用一定要保留出口；
+
+3、this表示当前对象，指的是当前正在调用类中方法的对象。
+
