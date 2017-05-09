@@ -26,4 +26,8 @@
   * [覆写](javasemian-xiang-dui-xiang-bian-cheng/fu-xie.md)
   * [数组操作](javasemian-xiang-dui-xiang-bian-cheng/shu-zu-cao-zuo.md)
   * [辅助概念](javasemian-xiang-dui-xiang-bian-cheng/fu-zhu-gai-nian.md)
+  * [抽象类的定义及使用](javasemian-xiang-dui-xiang-bian-cheng/chou-xiang-lei-de-ding-yi-ji-shi-yong.md)
+  * [接口的定义及使用](javasemian-xiang-dui-xiang-bian-cheng/jie-kou-de-ding-yi-ji-shi-yong.md)
+  * [Object类](javasemian-xiang-dui-xiang-bian-cheng/objectlei.md)
+  * [拓展概念](javasemian-xiang-dui-xiang-bian-cheng/tuo-zhan-gai-nian.md)
 
