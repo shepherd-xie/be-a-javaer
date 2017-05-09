@@ -31,4 +31,6 @@
   * [Object类](javasemian-xiang-dui-xiang-bian-cheng/objectlei.md)
   * [拓展概念](javasemian-xiang-dui-xiang-bian-cheng/tuo-zhan-gai-nian.md)
   * [包的定义及使用](javasemian-xiang-dui-xiang-bian-cheng/bao-de-ding-yi-ji-shi-yong.md)
+  * [访问控制权限](javasemian-xiang-dui-xiang-bian-cheng/fang-wen-kong-zhi-quan-xian.md)
+  * [异常的捕获及处理](javasemian-xiang-dui-xiang-bian-cheng/yi-chang-de-bu-huo-ji-chu-li.md)
 
