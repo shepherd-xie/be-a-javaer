@@ -25,4 +25,5 @@
   * [继承性](javasemian-xiang-dui-xiang-bian-cheng/ji-cheng-xing.md)
   * [覆写](javasemian-xiang-dui-xiang-bian-cheng/fu-xie.md)
   * [数组操作](javasemian-xiang-dui-xiang-bian-cheng/shu-zu-cao-zuo.md)
+  * [辅助概念](javasemian-xiang-dui-xiang-bian-cheng/fu-zhu-gai-nian.md)
 
