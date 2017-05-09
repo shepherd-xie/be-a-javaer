@@ -17,4 +17,6 @@
   * [this关键字](javasemian-xiang-dui-xiang-bian-cheng/thisguan-jian-zi.md)
   * [引用传递](javasemian-xiang-dui-xiang-bian-cheng/yin-yong-chuan-di.md)
   * [数据表与简单Java类映射](javasemian-xiang-dui-xiang-bian-cheng/shu-ju-biao-yu-jian-dan-java-lei-ying-she.md)
+  * [对象比较](javasemian-xiang-dui-xiang-bian-cheng/dui-xiang-bi-jiao.md)
+  * [static关键字](javasemian-xiang-dui-xiang-bian-cheng/staticguan-jian-zi.md)
 
