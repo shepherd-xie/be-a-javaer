@@ -19,4 +19,6 @@
   * [数据表与简单Java类映射](javasemian-xiang-dui-xiang-bian-cheng/shu-ju-biao-yu-jian-dan-java-lei-ying-she.md)
   * [对象比较](javasemian-xiang-dui-xiang-bian-cheng/dui-xiang-bi-jiao.md)
   * [static关键字](javasemian-xiang-dui-xiang-bian-cheng/staticguan-jian-zi.md)
+  * [代码块](javasemian-xiang-dui-xiang-bian-cheng/dai-ma-kuai.md)
+  * [内部类](javasemian-xiang-dui-xiang-bian-cheng/nei-bu-lei.md)
 
