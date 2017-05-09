@@ -21,4 +21,6 @@
   * [static关键字](javasemian-xiang-dui-xiang-bian-cheng/staticguan-jian-zi.md)
   * [代码块](javasemian-xiang-dui-xiang-bian-cheng/dai-ma-kuai.md)
   * [内部类](javasemian-xiang-dui-xiang-bian-cheng/nei-bu-lei.md)
+  * [链表的定义与使用](javasemian-xiang-dui-xiang-bian-cheng/lian-biao-de-ding-yi-yu-shi-yong.md)
+  * [继承性](javasemian-xiang-dui-xiang-bian-cheng/ji-cheng-xing.md)
 
