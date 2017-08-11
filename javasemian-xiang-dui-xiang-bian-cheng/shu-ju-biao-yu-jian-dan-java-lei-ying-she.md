@@ -146,3 +146,105 @@ for (int i = 0; i < dept.getEmps().length; i ++) {
 
 整个代码之中都是依靠代码链进行数据的取出的。
 
+### 题目一：一对多
+
+* 1、要求可以通过一个城市找到它对应的省份信息；
+* 2、可以通过一个省份找到所有城市的信息；
+
+**第一步：**先写出基本字段
+
+```java
+class Province { // 类名称就是表名称
+	private int pid;
+	private String name;
+	public Province(int pid, String name) {
+		this.pid = pid;
+		this.name = name;
+	}
+	public String getInfo() {
+		return "pid=" + pid + ", name=" + name;
+	}
+}
+class City {
+	private int cid;
+	private String name;
+	public City(int cid, String name) {
+		this.cid = cid;
+		this.name = name;
+	}
+	public String getInfo() {
+		return "cid=" + cid + ", name=" + name;
+	}
+}
+```
+
+**第二步：**设置关联字段\(引用\)
+
+```java
+class Province { // 类名称就是表名称
+	private int pid;
+	private String name;
+	private City[] cities;
+	public Province(int pid, String name) {
+		this.pid = pid;
+		this.name = name;
+	}
+	public void setCities(City[] cities) {
+		this.cities = cities;
+	}
+	public City[] getCities() {
+		return this.cities;
+	}
+	public String getInfo() {
+		return "pid=" + pid + ", name=" + name;
+	}
+}
+class City {
+	private int cid;
+	private String name;
+	private Province province;
+	public City(int cid, String name) {
+		this.cid = cid;
+		this.name = name;
+	}
+	public void setProvince(Province province) {
+		this.province = province;
+	}
+	public Province getProvince() {
+		return this.province;
+	}
+	public String getInfo() {
+		return "cid=" + cid + ", name=" + name;
+	}
+}
+```
+
+**第三步：**进行代码测试
+
+> 按照两步完成，第一步是设置数据，第二步是根据结构取出数据。
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		// 第一步：设置关系数据
+		// 1、先准备好各自独立的对象
+		Province pro = new Province(1, "Shaan xi");
+		City c1 = new City(1001, "Xi'an");
+		City c2 = new City(1002, "Baoji");
+		City c3 = new City(1003, "Xianyang");
+		// 2、设置关系
+		c1.setProvince(pro); // 一个城市属于一个省份
+		c2.setProvince(pro);
+		c3.setProvince(pro);
+		pro.setCities(new City[] {c1, c2, c3}); // 一个省份有多个城市
+		// 第二步：取出关系数据
+		System.out.println(c2.getProvince().getInfo());
+		for (int i = 0; i < pro.getCities().length; i ++) {
+			System.out.println("\t|- " + pro.getCities()[i].getInfo());
+		}
+	}
+}
+```
+
+
+
