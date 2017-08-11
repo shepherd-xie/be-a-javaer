@@ -448,11 +448,11 @@ public class MainClass {
 
 ### 题目三：多对多
 
-1、可以根据一个管理员找到它所对应的角色，以及每个角色包含的所有权限组的信息，以及每个权限组所包含的所有权限的内容；
+1、可以根据一个管理员找到它所对应的角色，以及每个角色包含的所有权限组的信息，以及每个权限组所包含的所有权限的内容；
 
 2、可以根据一个权限组找到所有具备此权限组的角色以及每个角色所拥有的管理员信息；
 
-在本次的设计之中给出的“角色\_权限组”表实际上属于一张关系表，它所保存的只是两个外键的关联关系，这样的关系表不需要为其生成映射类。
+在本次的设计之中给出的“角色\_权限组”表实际上属于一张关系表，它所保存的只是两个外键的关联关系，这样的关系表不需要为其生成映射类。
 
 生成的只能是实体表的转换操作，而多对多的中间转换表只需要通过类属性的关系配置即可。
 
@@ -460,50 +460,50 @@ public class MainClass {
 
 ```java
 class Admin {
-	private String aid;
-	private String password;
-	public Admin(String aid, String password) {
-		this.aid = aid;
-		this.password = password;
-	}
-	public String getInfo() {
-		return "aid=" + aid + ", password=" + password;
-	}
+    private String aid;
+    private String password;
+    public Admin(String aid, String password) {
+        this.aid = aid;
+        this.password = password;
+    }
+    public String getInfo() {
+        return "aid=" + aid + ", password=" + password;
+    }
 }
 class Role {
-	private int rid;
-	private String title;
-	public Role(int rid, String title) {
-		this.rid = rid;
-		this.title = title;
-	}
-	public String getInfo() {
-		return "rid=" + rid + ", title=" + title;
-	}
+    private int rid;
+    private String title;
+    public Role(int rid, String title) {
+        this.rid = rid;
+        this.title = title;
+    }
+    public String getInfo() {
+        return "rid=" + rid + ", title=" + title;
+    }
 }
 class Group {
-	private int gid;
-	private String title;
-	public Group(int gid, String title) {
-		this.gid = gid;
-		this.title = title;
-	}
-	public String getInfo() {
-		return "gid=" + gid + ", title=" + title;
-	}
+    private int gid;
+    private String title;
+    public Group(int gid, String title) {
+        this.gid = gid;
+        this.title = title;
+    }
+    public String getInfo() {
+        return "gid=" + gid + ", title=" + title;
+    }
 }
 class Action {
-	private int aid;
-	private String title;
-	private String url;
-	public Action(int aid, String title, String url) {
-		this.aid = aid;
-		this.title = title;
-		this.url = url;
-	}
-	public String getInfo() {
-		return "aid=" + aid + ", title=" + title + ", url=" + url;
-	}
+    private int aid;
+    private String title;
+    private String url;
+    public Action(int aid, String title, String url) {
+        this.aid = aid;
+        this.title = title;
+        this.url = url;
+    }
+    public String getInfo() {
+        return "aid=" + aid + ", title=" + title + ", url=" + url;
+    }
 }
 ```
 
@@ -511,92 +511,92 @@ class Action {
 
 ```java
 class Admin {
-	private String aid;
-	private String password;
-	private Role role;
-	public Admin(String aid, String password) {
-		this.aid = aid;
-		this.password = password;
-	}
-	public void setRole(Role role) {
-		this.role = role;
-	}
-	public Role getRole() {
-		return this.role;
-	}
-	public String getInfo() {
-		return "aid=" + aid + ", password=" + password;
-	}
+    private String aid;
+    private String password;
+    private Role role;
+    public Admin(String aid, String password) {
+        this.aid = aid;
+        this.password = password;
+    }
+    public void setRole(Role role) {
+        this.role = role;
+    }
+    public Role getRole() {
+        return this.role;
+    }
+    public String getInfo() {
+        return "aid=" + aid + ", password=" + password;
+    }
 }
 class Role {
-	private int rid;
-	private String title;
-	private Admin[] admins;
-	private Group[] groups;
-	public Role(int rid, String title) {
-		this.rid = rid;
-		this.title = title;
-	}
-	public void setAdmins(Admin[] admins) {
-		this.admins = admins;
-	}
-	public Admin[] getAdmins() {
-		return this.admins;
-	}
-	public void setGroups(Group[] groups) {
-		this.groups = groups;
-	}
-	public Group[] getGroups() {
-		return this.groups;
-	}
-	public String getInfo() {
-		return "rid=" + rid + ", title=" + title;
-	}
+    private int rid;
+    private String title;
+    private Admin[] admins;
+    private Group[] groups;
+    public Role(int rid, String title) {
+        this.rid = rid;
+        this.title = title;
+    }
+    public void setAdmins(Admin[] admins) {
+        this.admins = admins;
+    }
+    public Admin[] getAdmins() {
+        return this.admins;
+    }
+    public void setGroups(Group[] groups) {
+        this.groups = groups;
+    }
+    public Group[] getGroups() {
+        return this.groups;
+    }
+    public String getInfo() {
+        return "rid=" + rid + ", title=" + title;
+    }
 }
 class Group {
-	private int gid;
-	private String title;
-	private Role[] roles;
-	private Action[] actions;
-	public Group(int gid, String title) {
-		this.gid = gid;
-		this.title = title;
-	}
-	public void setRoles(Role[] roles) {
-		this.roles = roles;
-	}
-	public Role[] getRoles() {
-		return this.roles;
-	}
-	public void setActions(Action[] actions) {
-		this.actions = actions;
-	}
-	public Action[] getActions() {
-		return this.actions;
-	}
-	public String getInfo() {
-		return "gid=" + gid + ", title=" + title;
-	}
+    private int gid;
+    private String title;
+    private Role[] roles;
+    private Action[] actions;
+    public Group(int gid, String title) {
+        this.gid = gid;
+        this.title = title;
+    }
+    public void setRoles(Role[] roles) {
+        this.roles = roles;
+    }
+    public Role[] getRoles() {
+        return this.roles;
+    }
+    public void setActions(Action[] actions) {
+        this.actions = actions;
+    }
+    public Action[] getActions() {
+        return this.actions;
+    }
+    public String getInfo() {
+        return "gid=" + gid + ", title=" + title;
+    }
 }
 class Action {
-	private int aid;
-	private String title;
-	private String url;
-	private Group group;
-	public Action(int aid, String title, String url) {
-		this.aid = aid;
-		this.title = title;
-		this.url = url;
-	}
-	public void setGroup(Group group) {
-		this.group = group;
-	}
-	public Group getGroup() {
-		return this.group;
-	}
-	public String getInfo() {
-		return "aid=" + aid + ", title=" + title + ", url=" + url;
-	}
+    private int aid;
+    private String title;
+    private String url;
+    private Group group;
+    public Action(int aid, String title, String url) {
+        this.aid = aid;
+        this.title = title;
+        this.url = url;
+    }
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+    public Group getGroup() {
+        return this.group;
+    }
+    public String getInfo() {
+        return "aid=" + aid + ", title=" + title + ", url=" + url;
+    }
 }
 ```
 
@@ -606,84 +606,84 @@ class Action {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		// 第一步：设置完整关系
-		// 1、准备出若干个对象
-		Admin a1 = new Admin("admin", "hello");
-		Admin a2 = new Admin("guest", "hello");
-		Admin a3 = new Admin("scott", "tiger");
-		Role r1 = new Role(1, "System administrator");
-		Role r2 = new Role(2, "Information administrator");
-		Group g1 = new Group(10, "Information manager");
-		Group g2 = new Group(20, "User manager");
-		Group g3 = new Group(30, "Data manager");
-		Group g4 = new Group(40, "Interface manager");
-		Group g5 = new Group(50, "Backups manager");
-		Action at1 = new Action(1001, "get info", "-");
-		Action at2 = new Action(1002, "del info", "-");
-		Action at3 = new Action(1003, "add info", "-");
-		Action at4 = new Action(1004, "add user", "-");
-		Action at5 = new Action(1005, "del user", "-");
-		Action at6 = new Action(1006, "update user", "-");
-		Action at7 = new Action(1007, "user data", "-");
-		Action at8 = new Action(1008, "dept data", "-");
-		Action at9 = new Action(1009, "co. data", "-");
-		Action at10 = new Action(1010, "service", "-");
-		Action at11 = new Action(1011, "shrot message", "-");
-		Action at12 = new Action(1012, "all backups", "-");
-		Action at13 = new Action(1013, "scope backups", "-");
-		// 2、要设置这些对象之间的基本关系
-		// 设置管理员与角色
-		a1.setRole(r1);
-		a2.setRole(r2);
-		a3.setRole(r2);
-		r1.setAdmins(new Admin[] {a1});
-		r2.setAdmins(new Admin[] {a2, a3});
-		// 设置角色与管理员组
-		r1.setGroups(new Group[] {g1, g2, g3, g4, g5});
-		r2.setGroups(new Group[] {g1, g2});
-		g1.setRoles(new Role[] {r1, r2});
-		g2.setRoles(new Role[] {r1, r2});
-		g3.setRoles(new Role[] {r1});
-		g4.setRoles(new Role[] {r1});
-		g5.setRoles(new Role[] {r1});
-		// 设置管理员组与权限
-		g1.setActions(new Action[] {at1, at2, at3});
-		g2.setActions(new Action[] {at4, at5, at6});
-		g3.setActions(new Action[] {at7, at8, at9});
-		g4.setActions(new Action[] {at10, at11});
-		g5.setActions(new Action[] {at12, at13});
-		at1.setGroup(g1);
-		at2.setGroup(g1);
-		at3.setGroup(g1);
-		at4.setGroup(g2);
-		at5.setGroup(g2);
-		at6.setGroup(g2);
-		at7.setGroup(g3);
-		at8.setGroup(g3);
-		at9.setGroup(g3);
-		at10.setGroup(g4);
-		at11.setGroup(g4);
-		at12.setGroup(g5);
-		at13.setGroup(g5);
-		// 第二步：取出数据内容
-		System.out.println(a1.getInfo());
-		System.out.println("\t|- " + a1.getRole().getInfo());
-		for (int i = 0; i < a1.getRole().getGroups().length; i ++) {
-			System.out.println("\t\t|- " + a1.getRole().getGroups()[i].getInfo());
-			for (int j = 0; j < a1.getRole().getGroups()[i].getActions().length; j ++) {
-				System.out.println("\t\t\t|- " + a1.getRole().getGroups()[i].getActions()[j].getInfo());
-			}
-		}
-		System.out.println("-------------------------------------------------------------");
-		System.out.println(g2.getInfo());
-		for (int i = 0; i < g2.getRoles().length; i ++) {
-			System.out.println("\t|- " + g2.getRoles()[i].getInfo());
-			for (int j = 0; j < g2.getRoles()[i].getAdmins().length; j ++) {
-				System.out.println("\t\t|- " + g2.getRoles()[i].getAdmins()[j].getInfo());
-			}
-		}
-	}
+    public static void main(String[] args) {
+        // 第一步：设置完整关系
+        // 1、准备出若干个对象
+        Admin a1 = new Admin("admin", "hello");
+        Admin a2 = new Admin("guest", "hello");
+        Admin a3 = new Admin("scott", "tiger");
+        Role r1 = new Role(1, "System administrator");
+        Role r2 = new Role(2, "Information administrator");
+        Group g1 = new Group(10, "Information manager");
+        Group g2 = new Group(20, "User manager");
+        Group g3 = new Group(30, "Data manager");
+        Group g4 = new Group(40, "Interface manager");
+        Group g5 = new Group(50, "Backups manager");
+        Action at1 = new Action(1001, "get info", "-");
+        Action at2 = new Action(1002, "del info", "-");
+        Action at3 = new Action(1003, "add info", "-");
+        Action at4 = new Action(1004, "add user", "-");
+        Action at5 = new Action(1005, "del user", "-");
+        Action at6 = new Action(1006, "update user", "-");
+        Action at7 = new Action(1007, "user data", "-");
+        Action at8 = new Action(1008, "dept data", "-");
+        Action at9 = new Action(1009, "co. data", "-");
+        Action at10 = new Action(1010, "service", "-");
+        Action at11 = new Action(1011, "shrot message", "-");
+        Action at12 = new Action(1012, "all backups", "-");
+        Action at13 = new Action(1013, "scope backups", "-");
+        // 2、要设置这些对象之间的基本关系
+        // 设置管理员与角色
+        a1.setRole(r1);
+        a2.setRole(r2);
+        a3.setRole(r2);
+        r1.setAdmins(new Admin[] {a1});
+        r2.setAdmins(new Admin[] {a2, a3});
+        // 设置角色与管理员组
+        r1.setGroups(new Group[] {g1, g2, g3, g4, g5});
+        r2.setGroups(new Group[] {g1, g2});
+        g1.setRoles(new Role[] {r1, r2});
+        g2.setRoles(new Role[] {r1, r2});
+        g3.setRoles(new Role[] {r1});
+        g4.setRoles(new Role[] {r1});
+        g5.setRoles(new Role[] {r1});
+        // 设置管理员组与权限
+        g1.setActions(new Action[] {at1, at2, at3});
+        g2.setActions(new Action[] {at4, at5, at6});
+        g3.setActions(new Action[] {at7, at8, at9});
+        g4.setActions(new Action[] {at10, at11});
+        g5.setActions(new Action[] {at12, at13});
+        at1.setGroup(g1);
+        at2.setGroup(g1);
+        at3.setGroup(g1);
+        at4.setGroup(g2);
+        at5.setGroup(g2);
+        at6.setGroup(g2);
+        at7.setGroup(g3);
+        at8.setGroup(g3);
+        at9.setGroup(g3);
+        at10.setGroup(g4);
+        at11.setGroup(g4);
+        at12.setGroup(g5);
+        at13.setGroup(g5);
+        // 第二步：取出数据内容
+        System.out.println(a1.getInfo());
+        System.out.println("\t|- " + a1.getRole().getInfo());
+        for (int i = 0; i < a1.getRole().getGroups().length; i ++) {
+            System.out.println("\t\t|- " + a1.getRole().getGroups()[i].getInfo());
+            for (int j = 0; j < a1.getRole().getGroups()[i].getActions().length; j ++) {
+                System.out.println("\t\t\t|- " + a1.getRole().getGroups()[i].getActions()[j].getInfo());
+            }
+        }
+        System.out.println("-------------------------------------------------------------");
+        System.out.println(g2.getInfo());
+        for (int i = 0; i < g2.getRoles().length; i ++) {
+            System.out.println("\t|- " + g2.getRoles()[i].getInfo());
+            for (int j = 0; j < g2.getRoles()[i].getAdmins().length; j ++) {
+                System.out.println("\t\t|- " + g2.getRoles()[i].getAdmins()[j].getInfo());
+            }
+        }
+    }
 }
 ```
 
