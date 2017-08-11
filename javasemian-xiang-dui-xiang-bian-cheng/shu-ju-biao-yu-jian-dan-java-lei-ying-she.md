@@ -2,7 +2,7 @@
 
 ---
 
-在之前已经给出了简单Java类一定要和数据表的结构对应，同时外键需要依靠引用来进行关联，于是，本次将针对简单Java类做一个功能上的扩充。
+在之前已经给出了简单Java类一定要和数据表的结构对应，同时外键需要依靠引用来进行关联，于是，本次将针对简单Java类做一个功能上的扩充。
 
 要求通过Java程序描述出dept-emp关系，使用字段:
 
@@ -18,35 +18,35 @@
 
 ```java
 class Dept {
-	private int deptno;
-	private String dname;
-	private String loc;
-	public Dept(int deptno, String dname, String loc) {
-		this.deptno = deptno;
-		this.dname = dname;
-		this.loc = loc;
-	}
-	public String getInfo() {
-		return "deptno=" + deptno + ", dname=" + dname + ", loc=" + loc;
-	}
+    private int deptno;
+    private String dname;
+    private String loc;
+    public Dept(int deptno, String dname, String loc) {
+        this.deptno = deptno;
+        this.dname = dname;
+        this.loc = loc;
+    }
+    public String getInfo() {
+        return "deptno=" + deptno + ", dname=" + dname + ", loc=" + loc;
+    }
 }
 class Emp {
-	private int demo;
-	private String ename;
-	private String job;
-	private double sal;
-	private double comm;
-	public Emp(int demo, String ename, String job, double sal, double comm) {
-		this.demo = demo;
-		this.ename = ename;
-		this.job = job;
-		this.sal = sal;
-		this.comm = comm;
-	}
-	public String getInfo() {
-		return "demo=" + demo + ", ename=" + ename + ", job=" + job + ", sal=" + sal + ", comm=" 
+    private int demo;
+    private String ename;
+    private String job;
+    private double sal;
+    private double comm;
+    public Emp(int demo, String ename, String job, double sal, double comm) {
+        this.demo = demo;
+        this.ename = ename;
+        this.job = job;
+        this.sal = sal;
+        this.comm = comm;
+    }
+    public String getInfo() {
+        return "demo=" + demo + ", ename=" + ename + ", job=" + job + ", sal=" + sal + ", comm=" 
 + comm;
-	}
+    }
 }
 ```
 
@@ -57,12 +57,12 @@ class Emp {
 * Emp类：
 
 ```java
-private Dept dept;	// 表示对应的部门信息
+private Dept dept;    // 表示对应的部门信息
 public void setDept(Dept dept) {
-	this.dept = dept;
+    this.dept = dept;
 }
 public Dept getDept() {
-	return this.dept;
+    return this.dept;
 }
 ```
 
@@ -71,24 +71,24 @@ public Dept getDept() {
 * Dept类
 
 ```java
-private Emp[] emps;	// 多个雇员
+private Emp[] emps;    // 多个雇员
 public void setEmps(Emp[] emps) {
-	this.emps = emps;
+    this.emps = emps;
 }
 public Emp[] getEmps() {
-	return this.emps;
+    return this.emps;
 }
 ```
 
 一个雇员有一个领导
 
 ```java
-private Emp mgr;	// 表示雇员对应的领导
+private Emp mgr;    // 表示雇员对应的领导
 public void setMgr(Emp mgr) {
-	this.mgr = mgr;
+    this.mgr = mgr;
 }
 public Emp getMgr() {
-	return this.mgr;
+    return this.mgr;
 }
 ```
 
@@ -102,22 +102,22 @@ public Emp getMgr() {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		// 第一步：设置数据
-		// 1、产生各自的独立对象
-		Dept dept = new Dept(10, "ACCOUNTING", "New York"); // 部门信息
-		Emp ea = new Emp(7369, "SMITH", "CLERK", 800.0, 0.0); // 雇员信息
-		Emp eb = new Emp(7902, "FORD", "MANAGER", 2450.0, 0.0); // 雇员信息
-		Emp ec = new Emp(7839, "KING", "PRESIDENT", 5000.0, 0.0); // 雇员信息
-		// 2、设置雇员和领导关系
-		ea.setMgr(eb);
-		eb.setMgr(ec);
-		// 3、设置雇员和部门关系
-		ea.setDept(dept); // 雇员与部门
-		eb.setDept(dept); // 雇员与部门
-		ec.setDept(dept); // 雇员与部门
-		dept.setEmps(new Emp[] {ea, eb, ec});
-	}
+    public static void main(String[] args) {
+        // 第一步：设置数据
+        // 1、产生各自的独立对象
+        Dept dept = new Dept(10, "ACCOUNTING", "New York"); // 部门信息
+        Emp ea = new Emp(7369, "SMITH", "CLERK", 800.0, 0.0); // 雇员信息
+        Emp eb = new Emp(7902, "FORD", "MANAGER", 2450.0, 0.0); // 雇员信息
+        Emp ec = new Emp(7839, "KING", "PRESIDENT", 5000.0, 0.0); // 雇员信息
+        // 2、设置雇员和领导关系
+        ea.setMgr(eb);
+        eb.setMgr(ec);
+        // 3、设置雇员和部门关系
+        ea.setDept(dept); // 雇员与部门
+        eb.setDept(dept); // 雇员与部门
+        ec.setDept(dept); // 雇员与部门
+        dept.setEmps(new Emp[] {ea, eb, ec});
+    }
 }
 ```
 
@@ -129,10 +129,20 @@ public class MainClass {
 * 可以根据一个部门取出所有的雇员以及每个雇员的领导信息；
 
 ```java
-
-
-
+System.out.println(ea.getInfo());
+System.out.println("\t|-" + ea.getMgr().getInfo());
+System.out.println("\t|-" + ea.getDept().getInfo());
 ```
 
+```java
+System.out.println(dept.getInfo());
+for (int i = 0; i < dept.getEmps().length; i ++) {
+	System.out.println("\t|-" + dept.getEmps()[i].getInfo());
+	if (dept.getEmps()[i].getMgr() != null) {
+		System.out.println("\t\t|-" + dept.getEmps()[i].getMgr().getInfo());
+	}
+}
+```
 
+整个代码之中都是依靠代码链进行数据的取出的。
 
