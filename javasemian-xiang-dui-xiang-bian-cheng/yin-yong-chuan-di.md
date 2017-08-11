@@ -48,5 +48,36 @@ public class MainClass {
 }
 ```
 
-要注意的只有一点，String类对象的内容一旦声明，对象内容的改变依靠的是引用地址的改变。![](/assets/import 2.7-2.png)
+要注意的只有一点，String类对象的内容一旦声明，对象内容的改变依靠的是引用地址的改变。![](/assets/import 2.7-2.png)**范例三：**
+
+```java
+class Message {
+	private String info = "nihao";
+	public Message(String info) {
+		this.info = info;
+	}
+	public void setInfo(String info) {
+		this.info = info;
+	}
+	public String getInfo() {
+		return this.info;
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Message msg = new Message("Hello");
+		fun(msg);
+		System.out.println(msg);
+	}
+	public static void fun(Message temp) {
+		temp.setInfo("World");
+	}
+}
+```
+
+![](/assets/import 2.7-3.png)
+
+
+
+
 
