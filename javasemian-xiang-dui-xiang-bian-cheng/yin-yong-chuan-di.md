@@ -37,16 +37,16 @@ public class MainClass {
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		String msg = "Hello";
-		fun(msg);
-		System.out.println(msg);
-	}
-	public static void fun(String temp) {
-		temp = "World";
-	}
+    public static void main(String[] args) {
+        String msg = "Hello";
+        fun(msg);
+        System.out.println(msg);
+    }
+    public static void fun(String temp) {
+        temp = "World";
+    }
 }
 ```
 
-要注意的只有一点，String类对象的内容一旦声明，对象内容的改变依靠的是引用地址的改变。
+要注意的只有一点，String类对象的内容一旦声明，对象内容的改变依靠的是引用地址的改变。![](/assets/import 2.7-2.png)
 
