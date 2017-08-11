@@ -137,10 +137,10 @@ System.out.println("\t|-" + ea.getDept().getInfo());
 ```java
 System.out.println(dept.getInfo());
 for (int i = 0; i < dept.getEmps().length; i ++) {
-	System.out.println("\t|-" + dept.getEmps()[i].getInfo());
-	if (dept.getEmps()[i].getMgr() != null) {
-		System.out.println("\t\t|-" + dept.getEmps()[i].getMgr().getInfo());
-	}
+    System.out.println("\t|- " + dept.getEmps()[i].getInfo());
+    if (dept.getEmps()[i].getMgr() != null) {
+        System.out.println("\t\t|- " + dept.getEmps()[i].getMgr().getInfo());
+    }
 }
 ```
 
