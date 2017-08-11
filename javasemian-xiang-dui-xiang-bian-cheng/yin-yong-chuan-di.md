@@ -75,9 +75,7 @@ public class MainClass {
 }
 ```
 
-![](/assets/import 2.7-3.png)但是以上的内存描述并不严格，因为在程序里面，info也是一个String类的对象，所以如果想要描述清楚，应该使用如
-
-下的内存关系图。
+![](/assets/import 2.7-3.png)但是以上的内存描述并不严格，因为在程序里面，info也是一个String类的对象，所以如果想要描述清楚，应该使用如下的内存关系图。
 
 ![](/assets/import 1.7-4.png)
 
