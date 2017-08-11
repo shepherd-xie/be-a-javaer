@@ -89,15 +89,15 @@ public class MainClass {
 
 ```
 CREATE TABLE member (
-	mid		NUMBER ,
-	name		VARCHAR2(50) ,
-	CONSTRAINT member_pk_mid PRIMARY KEY(mid)
+    mid        NUMBER ,
+    name        VARCHAR2(50) ,
+    CONSTRAINT member_pk_mid PRIMARY KEY(mid)
 ) ;
 CREATE TALBE car (
-	mid		NUMBER ,
-	pname		VARCHAR2(50) ,
-	CONSTRAINT car_fk_mid FOREIGN KEY(mid) REFERENCES member(mid) ,
-	CONSTRAINT car_pk_mid PRIMARY KEY(mid)
+    mid        NUMBER ,
+    pname        VARCHAR2(50) ,
+    CONSTRAINT car_fk_mid FOREIGN KEY(mid) REFERENCES member(mid) ,
+    CONSTRAINT car_pk_mid PRIMARY KEY(mid)
 ) ;
 ```
 
@@ -115,11 +115,11 @@ CREATE TALBE car (
 
 ```java
 class Member {
-	private int mid;
-	private String name;
+    private int mid;
+    private String name;
 }
 class Car {
-	private String pname;
+    private String pname;
 }
 ```
 
@@ -127,15 +127,15 @@ class Car {
 
 ```java
 class Member {
-	private int midl;
-	private String name;
-	// car有实例化对象表示有车
-	// car为null表示没有车
-	private Car car;	// 表示属于人的车
+    private int midl;
+    private String name;
+    // car有实例化对象表示有车
+    // car为null表示没有车
+    private Car car;    // 表示属于人的车
 }
 class Car {
-	private Member member;	// 车属于一个人
-	private String pname;
+    private Member member;    // 车属于一个人
+    private String pname;
 }
 ```
 
@@ -143,28 +143,28 @@ class Car {
 
 ```java
 class Member {
-	private int mid;
-	private String name;
-	// car有实例化对象表示有车
-	// car为null表示没有车
-	private Car car;	// 表示属于人的车
-	public Member(int mid, String name) {
-		this.mid = mid;
-		this.name = name;
-	}
-	public String getInfo() {
-		return "mid=" + this.mid + ", name=" + this.name;
-	}
+    private int mid;
+    private String name;
+    // car有实例化对象表示有车
+    // car为null表示没有车
+    private Car car;    // 表示属于人的车
+    public Member(int mid, String name) {
+        this.mid = mid;
+        this.name = name;
+    }
+    public String getInfo() {
+        return "mid=" + this.mid + ", name=" + this.name;
+    }
 }
 class Car {
-	private Member member;	// 车属于一个人
-	private String pname;
-	public Car(String pname) {
-		this.pname = pname;
-	}
-	public String getInfo() {
-		return "pname=" + this.pname;
-	}
+    private Member member;    // 车属于一个人
+    private String pname;
+    public Car(String pname) {
+        this.pname = pname;
+    }
+    public String getInfo() {
+        return "pname=" + this.pname;
+    }
 }
 ```
 
@@ -172,8 +172,75 @@ class Car {
 
 ```java
 class Member {
+    private int mid;
+    private String name;
+    // car有实例化对象表示有车
+    // car为null表示没有车
+    private Car car;    // 表示属于人的车
+    public Member(int mid, String name) {
+        this.mid = mid;
+        this.name = name;
+    }
+    public String getInfo() {
+        return "mid=" + this.mid + ", name=" + this.name;
+    }
+    public void setCar(Car car) {
+        this.car = car;
+    }
+    public Car getCar() {
+        return this.car;
+    }
+}
+class Car {
+    private Member member;    // 车属于一个人
+    private String pname;
+    public Car(String pname) {
+        this.pname = pname;
+    }
+    public String getInfo() {
+        return "pname=" + this.pname;
+    }
+    public void setMember(Member member) {
+        this.member = member;
+    }
+    public Member getMember() {
+        return this.member;
+    }
+}
+```
+
+以上的程序类完成之后，下面需要对程序进行测试，但是程序的测试要求分两步;
+
+* 第一步：根据定义的结构关系设置数据；
+* 第二步：根据定义的结构关系取出数据；
+
+```java
+public class MainClass {
+    public static void main(String[] args) {
+        // 第一步：设置数据
+        Member m = new Member(1, "Alpha");    // 独立对象
+        Car c = new Car("MK14L");    // 独立对象
+        m.setCar(c);    // 一个人有一辆车
+        c.setMember(m); // 一辆车属于一个人
+        // 第二步：取出关系
+        // 通过人找到车的信息
+        System.out.println(m.getCar().getInfo());
+        // 通过车找到人的信息
+        System.out.println(c.getMember().getInfo());
+    }
+}
+```
+
+下面可以进一步设计，例如：每个人都有自己的孩子，孩子还可能有车，那么有两种设计方法：
+
+* 方法一：设计一个孩子类，
+* 方法二：一个人的孩子本质还是一个人，与人的类没有区别，可以在Member类里面设计一个属性表示孩子，其类型就是Member。
+
+```java
+class Member {
 	private int mid;
 	private String name;
+	private Member child;	// 表示孩子
 	// car有实例化对象表示有车
 	// car为null表示没有车
 	private Car car;	// 表示属于人的车
@@ -183,6 +250,12 @@ class Member {
 	}
 	public String getInfo() {
 		return "mid=" + this.mid + ", name=" + this.name;
+	}
+	public void setChild(Member child) {
+		this.child = child;
+	}
+	public Member getChild() {
+		return this.child;
 	}
 	public void setCar(Car car) {
 		this.car = car;
@@ -207,39 +280,56 @@ class Car {
 		return this.member;
 	}
 }
-```
-
-以上的程序类完成之后，下面需要对程序进行测试，但是程序的测试要求分两步;
-
-* 第一步：根据定义的结构关系设置数据；
-* 第二步：根据定义的结构关系取出数据；
-
-```java
 public class MainClass {
 	public static void main(String[] args) {
 		// 第一步：设置数据
 		Member m = new Member(1, "Alpha");	// 独立对象
+		Member chd = new Member(2, "Beta");	// 一个孩子
 		Car c = new Car("MK14L");	// 独立对象
+		Car cc = new Car("K98");	// 一辆车
 		m.setCar(c);	// 一个人有一辆车
 		c.setMember(m); // 一辆车属于一个人
+		chd.setCar(cc); //一个孩子有一辆车
+		cc.setMember(chd);	// 一个车属于一个孩子
+		m.setChild(chd);	// 一个人有一个孩子
 		// 第二步：取出关系
 		// 通过人找到车的信息
 		System.out.println(m.getCar().getInfo());
 		// 通过车找到人的信息
 		System.out.println(c.getMember().getInfo());
+		// 通过人找到孩子的信息
+		System.out.println(m.getChild().getInfo());
+		// 通过人找打他孩子的车的信息
+		System.out.println(m.getChild().getCar().getInfo());
 	}
 }
 ```
 
-下面可以进一步设计，例如：每个人都有自己的孩子，孩子还可能有车，那么有两种设计方法：
+这样的操作在现实中十分常见。我们还可以针对引用做进一步的描述，例如:要求描述电脑，例如电脑由主机、显示器
 
-方法一：设计一个孩子类，
-
-方法二：一个人的孩子本质还是一个人，与人的类没有区别，可以在Member类里面设计一个属性表示孩子，其类型就是Member。
+、键盘、CPU、内存、硬盘、显卡组成，那么如何通过代码描述？
 
 ```java
-
+class 键盘 {}
+class 鼠标 {}
+class CPU {}
+class 硬盘 {}
+class 内存 {}
+class 显示器 {}
+class 主板 {}
+class 主机 {
+	private CPU[] 对象;
+	private 硬盘[] 对象;
+	private 主板 对象;
+	private 内存 对象;
+}
+class 电脑 {
+	private 主机 对象;
+	private 显示器[] 对象;
+	private 键盘 对象;
+	private 鼠标 对象;
+}
 ```
 
-
+这样的设计思路在Java之中称为合成设计模式。
 
