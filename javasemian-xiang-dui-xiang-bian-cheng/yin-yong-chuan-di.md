@@ -10,28 +10,43 @@
 
 ```java
 class Message {
-	private int num = 10;
-	public Message(int num) {
-		this.num = num;
-	}
-	public void setNum(int num) {
-		this.num = num;
-	}
-	public int getNum() {
-		return this.num;
-	}
+    private int num = 10;
+    public Message(int num) {
+        this.num = num;
+    }
+    public void setNum(int num) {
+        this.num = num;
+    }
+    public int getNum() {
+        return this.num;
+    }
 }
 public class MainClass {
+    public static void main(String[] args) {
+        Message msg = new Message(30);
+        fun(msg);
+        System.out.println(msg.getNum());
+    }
+    public static void fun(Message temp) {
+        temp.setNum(100);
+    }
+}
+```
+
+![](/assets/import 2.7-1.png)**范例二：**
+
+```java
+public class MainClass {
 	public static void main(String[] args) {
-		Message msg = new Message(30);
+		String msg = "Hello";
 		fun(msg);
-		System.out.println(msg.getNum());
+		System.out.println(msg);
 	}
-	public static void fun(Message temp) {
-		temp.setNum(100);
+	public static void fun(String temp) {
+		temp = "World";
 	}
 }
 ```
 
-
+要注意的只有一点，String类对象的内容一旦声明，对象内容的改变依靠的是引用地址的改变。
 
