@@ -155,26 +155,26 @@ for (int i = 0; i < dept.getEmps().length; i ++) {
 
 ```java
 class Province { // 类名称就是表名称
-	private int pid;
-	private String name;
-	public Province(int pid, String name) {
-		this.pid = pid;
-		this.name = name;
-	}
-	public String getInfo() {
-		return "pid=" + pid + ", name=" + name;
-	}
+    private int pid;
+    private String name;
+    public Province(int pid, String name) {
+        this.pid = pid;
+        this.name = name;
+    }
+    public String getInfo() {
+        return "pid=" + pid + ", name=" + name;
+    }
 }
 class City {
-	private int cid;
-	private String name;
-	public City(int cid, String name) {
-		this.cid = cid;
-		this.name = name;
-	}
-	public String getInfo() {
-		return "cid=" + cid + ", name=" + name;
-	}
+    private int cid;
+    private String name;
+    public City(int cid, String name) {
+        this.cid = cid;
+        this.name = name;
+    }
+    public String getInfo() {
+        return "cid=" + cid + ", name=" + name;
+    }
 }
 ```
 
@@ -182,40 +182,40 @@ class City {
 
 ```java
 class Province { // 类名称就是表名称
-	private int pid;
-	private String name;
-	private City[] cities;
-	public Province(int pid, String name) {
-		this.pid = pid;
-		this.name = name;
-	}
-	public void setCities(City[] cities) {
-		this.cities = cities;
-	}
-	public City[] getCities() {
-		return this.cities;
-	}
-	public String getInfo() {
-		return "pid=" + pid + ", name=" + name;
-	}
+    private int pid;
+    private String name;
+    private City[] cities;
+    public Province(int pid, String name) {
+        this.pid = pid;
+        this.name = name;
+    }
+    public void setCities(City[] cities) {
+        this.cities = cities;
+    }
+    public City[] getCities() {
+        return this.cities;
+    }
+    public String getInfo() {
+        return "pid=" + pid + ", name=" + name;
+    }
 }
 class City {
-	private int cid;
-	private String name;
-	private Province province;
-	public City(int cid, String name) {
-		this.cid = cid;
-		this.name = name;
-	}
-	public void setProvince(Province province) {
-		this.province = province;
-	}
-	public Province getProvince() {
-		return this.province;
-	}
-	public String getInfo() {
-		return "cid=" + cid + ", name=" + name;
-	}
+    private int cid;
+    private String name;
+    private Province province;
+    public City(int cid, String name) {
+        this.cid = cid;
+        this.name = name;
+    }
+    public void setProvince(Province province) {
+        this.province = province;
+    }
+    public Province getProvince() {
+        return this.province;
+    }
+    public String getInfo() {
+        return "cid=" + cid + ", name=" + name;
+    }
 }
 ```
 
@@ -225,25 +225,230 @@ class City {
 
 ```java
 public class MainClass {
+    public static void main(String[] args) {
+        // 第一步：设置关系数据
+        // 1、先准备好各自独立的对象
+        Province pro = new Province(1, "Shaan xi");
+        City c1 = new City(1001, "Xi'an");
+        City c2 = new City(1002, "Baoji");
+        City c3 = new City(1003, "Xianyang");
+        // 2、设置关系
+        c1.setProvince(pro); // 一个城市属于一个省份
+        c2.setProvince(pro);
+        c3.setProvince(pro);
+        pro.setCities(new City[] {c1, c2, c3}); // 一个省份有多个城市
+        // 第二步：取出关系数据
+        System.out.println(c2.getProvince().getInfo());
+        for (int i = 0; i < pro.getCities().length; i ++) {
+            System.out.println("\t|- " + pro.getCities()[i].getInfo());
+        }
+    }
+}
+```
+
+### 题目二：一对多
+
+* 1、可以通过一个类型找到它所对应的全部子类型；
+* 2、可以通过一个类型找到他所对应的全部商品，以及每个商品对应的子类型；
+* 3、可以通过一个子类型找到所有对应的全部商品。
+
+**第一步：**设计基本字段
+
+```java
+class Item { // 父栏目
+	private int iid;
+	private String name;
+	private String note;
+	public Item(int iid, String name, String note) {
+		this.iid = iid;
+		this.name = name;
+		this.note = note;
+	}
+	public String getInfo() {
+		return "iid=" + iid + ", name=" + name + ", note=" + note;
+	}
+}
+class Subitem { // 子栏目
+	private int sid;
+	private String name;
+	private String note;
+	public Subitem(int sid, String name, String note) {
+		this.sid = sid;
+		this.name = name;
+		this.note = note;
+	}
+	public String getInfo() {
+		return "sid=" + sid + ", name=" + name + ", note=" + note;
+	}
+}
+class Product { // 商品
+	private int pid;
+	private String name;
+	private double price;
+	public Product(int pid, String name, double price) {
+		this.pid = pid;
+		this.name = name;
+		this.price = price;
+	}
+	public String getInfo() {
+		return "pid=" + pid + ", name=" + name + ", price=" + price;
+	}
+}
+```
+
+**第二步：**设置关系
+
+```java
+class Item { // 父栏目
+	private int iid;
+	private String name;
+	private String note;
+	private Subitem[] subitems;
+	private Product[] products;
+	public Item(int iid, String name, String note) {
+		this.iid = iid;
+		this.name = name;
+		this.note = note;
+	}
+	public void setSubitems(Subitem[] subitems) {
+		this.subitems = subitems;
+	}
+	public Subitem[] getSubitems() {
+		return this.subitems;
+	}
+	public void setProducts(Product[] products) {
+		this.products = products;
+	}
+	public Product[] getProducts() {
+		return this.products;
+	}
+	public String getInfo() {
+		return "iid=" + iid + ", name=" + name + ", note=" + note;
+	}
+}
+class Subitem { // 子栏目
+	private int sid;
+	private String name;
+	private String note;
+	private Item item;
+	private Product[] products;
+	public Subitem(int sid, String name, String note) {
+		this.sid = sid;
+		this.name = name;
+		this.note = note;
+	}
+	public void setItem(Item item) {
+		this.item = item;
+	}
+	public Item getItem() {
+		return this.item;
+	}
+	public void setProducts(Product[] products) {
+		this.products = products;
+	}
+	public Product[] getProducts() {
+		return this.products;
+	}
+	public String getInfo() {
+		return "sid=" + sid + ", name=" + name + ", note=" + note;
+	}
+}
+class Product { // 商品
+	private int pid;
+	private String name;
+	private double price;
+	private Item item;
+	private Subitem subitem;
+	public Product(int pid, String name, double price) {
+		this.pid = pid;
+		this.name = name;
+		this.price = price;
+	}
+	public void setItem(Item item) {
+		this.item = item;
+	}
+	public Item getItem() {
+		return this.item;
+	}
+	public void setSubitem(Subitem subitem) {
+		this.subitem = subitem;
+	}
+	public Subitem getSubitem() {
+		return this.subitem;
+	}
+	public String getInfo() {
+		return "pid=" + pid + ", name=" + name + ", price=" + price;
+	}
+}
+```
+
+**第三步：**设置关系以及数据的取出
+
+```java
+public class MainClass {
 	public static void main(String[] args) {
-		// 第一步：设置关系数据
-		// 1、先准备好各自独立的对象
-		Province pro = new Province(1, "Shaan xi");
-		City c1 = new City(1001, "Xi'an");
-		City c2 = new City(1002, "Baoji");
-		City c3 = new City(1003, "Xianyang");
-		// 2、设置关系
-		c1.setProvince(pro); // 一个城市属于一个省份
-		c2.setProvince(pro);
-		c3.setProvince(pro);
-		pro.setCities(new City[] {c1, c2, c3}); // 一个省份有多个城市
-		// 第二步：取出关系数据
-		System.out.println(c2.getProvince().getInfo());
-		for (int i = 0; i < pro.getCities().length; i ++) {
-			System.out.println("\t|- " + pro.getCities()[i].getInfo());
+		// 第一步：设置数据关系
+		// 1、准备出单独的类对象
+		Item item = new Item(1, "PC", "-");
+		Subitem suba = new Subitem(1001, "CPU", "-");
+		Subitem subb = new Subitem(1002, "Hard disk", "-");
+		Subitem subc = new Subitem(1003, "Graphics", "-");
+		Product proa = new Product(90001, "Intel CORE i7", 998);
+		Product prob = new Product(90002, "Intel CORE i5", 798);
+		Product proc = new Product(90003, "Seagate 1TB", 398);
+		Product prod = new Product(90004, "Seagate 500MB", 358);
+		Product proe = new Product(90005, "NVIDIA 1080Ti", 1080);
+		Product prof = new Product(90006, "NVIDIA TITAN", 9998);
+		// 2、设置对象间的引用关系
+		suba.setItem(item);
+		subb.setItem(item);
+		subc.setItem(item);
+		item.setSubitems(new Subitem[] {suba, subb, subc});
+		proa.setSubitem(suba);
+		proa.setItem(item);
+		prob.setSubitem(suba);
+		prob.setItem(item);
+		proc.setSubitem(subb);
+		proc.setItem(item);
+		prod.setSubitem(subb);
+		prod.setItem(item);
+		proe.setSubitem(subc);
+		proe.setItem(item);
+		prof.setSubitem(subc);
+		prof.setItem(item);
+		suba.setProducts(new Product[] {proa, prob});
+		subb.setProducts(new Product[] {proc, prod});
+		subc.setProducts(new Product[] {proe, prof});
+		item.setProducts(new Product[] {proa, prob, proc, prod, proe, prof});
+		// 第二步：取出数据
+		// 1、通过一个类型找到对应的全部子类型
+		System.out.println(item.getInfo());
+		for (int i = 0; i < item.getSubitems().length; i ++) {
+			System.out.println("\t|- " + item.getSubitems()[i].getInfo());
+		}
+		System.out.println("----------------------------------------------------------");
+		// 2、通过一个类型找到他所对应的全部商品，以及每个商品对应的子类型
+		System.out.println(item.getInfo());
+		for (int i = 0; i < item.getProducts().length; i ++) {
+			System.out.println("\t|- " + item.getProducts()[i].getInfo());
+			System.out.println("\t\t|- " + item.getProducts()[i].getSubitem().getInfo());
+		}
+		System.out.println("----------------------------------------------------------");
+		// 3、通过一个子类型找到所有对应的全部商品
+		System.out.println(subb.getInfo());
+		for (int i = 0; i < subb.getProducts().length; i ++) {
+			System.out.println("\t|- " + subb.getProducts()[i].getInfo());
 		}
 	}
 }
+```
+
+
+
+```java
+
+
+
 ```
 
 
