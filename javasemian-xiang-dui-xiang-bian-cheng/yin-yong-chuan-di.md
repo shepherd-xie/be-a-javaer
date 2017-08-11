@@ -111,7 +111,7 @@ CREATE TALBE car (
 * 多个实例化对象 = 多条记录；
 * 引用关系 = 外键约束；
 
-范例：代码设计如下
+**范例：**代码设计如下
 
 ```java
 class Member {
@@ -238,76 +238,74 @@ public class MainClass {
 
 ```java
 class Member {
-	private int mid;
-	private String name;
-	private Member child;	// 表示孩子
-	// car有实例化对象表示有车
-	// car为null表示没有车
-	private Car car;	// 表示属于人的车
-	public Member(int mid, String name) {
-		this.mid = mid;
-		this.name = name;
-	}
-	public String getInfo() {
-		return "mid=" + this.mid + ", name=" + this.name;
-	}
-	public void setChild(Member child) {
-		this.child = child;
-	}
-	public Member getChild() {
-		return this.child;
-	}
-	public void setCar(Car car) {
-		this.car = car;
-	}
-	public Car getCar() {
-		return this.car;
-	}
+    private int mid;
+    private String name;
+    private Member child;    // 表示孩子
+    // car有实例化对象表示有车
+    // car为null表示没有车
+    private Car car;    // 表示属于人的车
+    public Member(int mid, String name) {
+        this.mid = mid;
+        this.name = name;
+    }
+    public String getInfo() {
+        return "mid=" + this.mid + ", name=" + this.name;
+    }
+    public void setChild(Member child) {
+        this.child = child;
+    }
+    public Member getChild() {
+        return this.child;
+    }
+    public void setCar(Car car) {
+        this.car = car;
+    }
+    public Car getCar() {
+        return this.car;
+    }
 }
 class Car {
-	private Member member;	// 车属于一个人
-	private String pname;
-	public Car(String pname) {
-		this.pname = pname;
-	}
-	public String getInfo() {
-		return "pname=" + this.pname;
-	}
-	public void setMember(Member member) {
-		this.member = member;
-	}
-	public Member getMember() {
-		return this.member;
-	}
+    private Member member;    // 车属于一个人
+    private String pname;
+    public Car(String pname) {
+        this.pname = pname;
+    }
+    public String getInfo() {
+        return "pname=" + this.pname;
+    }
+    public void setMember(Member member) {
+        this.member = member;
+    }
+    public Member getMember() {
+        return this.member;
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		// 第一步：设置数据
-		Member m = new Member(1, "Alpha");	// 独立对象
-		Member chd = new Member(2, "Beta");	// 一个孩子
-		Car c = new Car("MK14L");	// 独立对象
-		Car cc = new Car("K98");	// 一辆车
-		m.setCar(c);	// 一个人有一辆车
-		c.setMember(m); // 一辆车属于一个人
-		chd.setCar(cc); //一个孩子有一辆车
-		cc.setMember(chd);	// 一个车属于一个孩子
-		m.setChild(chd);	// 一个人有一个孩子
-		// 第二步：取出关系
-		// 通过人找到车的信息
-		System.out.println(m.getCar().getInfo());
-		// 通过车找到人的信息
-		System.out.println(c.getMember().getInfo());
-		// 通过人找到孩子的信息
-		System.out.println(m.getChild().getInfo());
-		// 通过人找打他孩子的车的信息
-		System.out.println(m.getChild().getCar().getInfo());
-	}
+    public static void main(String[] args) {
+        // 第一步：设置数据
+        Member m = new Member(1, "Alpha");    // 独立对象
+        Member chd = new Member(2, "Beta");    // 一个孩子
+        Car c = new Car("MK14L");    // 独立对象
+        Car cc = new Car("K98");    // 一辆车
+        m.setCar(c);    // 一个人有一辆车
+        c.setMember(m); // 一辆车属于一个人
+        chd.setCar(cc); //一个孩子有一辆车
+        cc.setMember(chd);    // 一个车属于一个孩子
+        m.setChild(chd);    // 一个人有一个孩子
+        // 第二步：取出关系
+        // 通过人找到车的信息
+        System.out.println(m.getCar().getInfo());
+        // 通过车找到人的信息
+        System.out.println(c.getMember().getInfo());
+        // 通过人找到孩子的信息
+        System.out.println(m.getChild().getInfo());
+        // 通过人找打他孩子的车的信息
+        System.out.println(m.getChild().getCar().getInfo());
+    }
 }
 ```
 
-这样的操作在现实中十分常见。我们还可以针对引用做进一步的描述，例如:要求描述电脑，例如电脑由主机、显示器
-
-、键盘、CPU、内存、硬盘、显卡组成，那么如何通过代码描述？
+这样的操作在现实中十分常见。我们还可以针对引用做进一步的描述，例如:要求描述电脑，例如电脑由主机、显示器、键盘、CPU、内存、硬盘、显卡组成，那么如何通过代码描述？
 
 ```java
 class 键盘 {}
@@ -318,16 +316,16 @@ class 内存 {}
 class 显示器 {}
 class 主板 {}
 class 主机 {
-	private CPU[] 对象;
-	private 硬盘[] 对象;
-	private 主板 对象;
-	private 内存 对象;
+    private CPU[] 对象;
+    private 硬盘[] 对象;
+    private 主板 对象;
+    private 内存 对象;
 }
 class 电脑 {
-	private 主机 对象;
-	private 显示器[] 对象;
-	private 键盘 对象;
-	private 鼠标 对象;
+    private 主机 对象;
+    private 显示器[] 对象;
+    private 键盘 对象;
+    private 鼠标 对象;
 }
 ```
 
