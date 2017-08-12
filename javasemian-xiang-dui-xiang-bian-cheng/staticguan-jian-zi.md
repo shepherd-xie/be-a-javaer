@@ -159,7 +159,7 @@ public class MainClass {
 * 所有的非static定义的结构，必须在类已经明确的产生了实例化对象才会分配堆空间，才可以使用；
 * 所有的static定义的结构，不受实例化对象的控制，即：可以在没有实例化对象的时候访问。
 
-**解决问题：    
+**解决问题：      
 **
 
 在最早讲解方法的时候曾经讲过：如果一个方法定义在了主类方法之中，并且由主方法直接进行调用的话，方法语法：
@@ -253,7 +253,7 @@ _**写一个类的时候优先考虑的一定是非static方法或非static变�
 
 ### 主方法
 
-下面来观察Java main方法的组成：
+下面来观察Java main方法的组成：public static void main\(String\[\] args\)
 
 * public：主方法是任何程序的开始，所以这个方法对任何的操作都一定是可见的，就必须使用public；
 * static：证明此方法是由类名称调用的；
@@ -265,11 +265,11 @@ _**写一个类的时候优先考虑的一定是非static方法或非static变�
 
 ```java
 public class MainClass {
-	public static void main(String[] args) {
-		for (int i = 0; i < args.length; i ++) {
-			System.out.println(args[i]);
-		}
-	}
+    public static void main(String[] args) {
+        for (int i = 0; i < args.length; i ++) {
+            System.out.println(args[i]);
+        }
+    }
 }
 ```
 
