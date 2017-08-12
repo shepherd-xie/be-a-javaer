@@ -159,7 +159,7 @@ public class MainClass {
 * 所有的非static定义的结构，必须在类已经明确的产生了实例化对象才会分配堆空间，才可以使用；
 * 所有的static定义的结构，不受实例化对象的控制，即：可以在没有实例化对象的时候访问。
 
-**解决问题：      
+**解决问题：        
 **
 
 在最早讲解方法的时候曾经讲过：如果一个方法定义在了主类方法之中，并且由主方法直接进行调用的话，方法语法：
@@ -276,4 +276,78 @@ public class MainClass {
 所有输入的参数必须使用空格分割，例如：“java MainClass 参数 参数 参数”。
 
 如果想要在参数中输入空格，则可以使用“"”描述：“java MainClass "参数 参数"”。
+
+### static的实际应用
+
+在之前得到的结论：
+
+* 不管有多少个对象，都使用同一个static属性；
+* 使用static方法可以避免实例化对象调用方法的限制。
+
+**功能一：**实现类实例化对象个数的统计
+
+希望每当实例化一个类对象的时候都可以打印一个信息：产生的第x个实例化对象。
+
+因为只要是新的实例化对象产生了，那么就一定会去调用类中的构造方法，所以可以在构造方法里面增加一个统计数据的操作，每当新对象产生之后统计的内容就自增一个。
+
+```java
+class Book {
+	private static int num = 0;
+	public Book() {
+		num ++;
+		System.out.println("这是第" + num + "产生的对象！");
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		new Book();
+		new Book();
+		new Book();
+		new Book();
+		new Book();
+		new Book();
+	}
+}
+```
+
+**功能二：**实现属性的自动设置
+
+例如，现在某一个类有一个无参构造方法，一个有参构造方法，有参构造方法主要的目的是传递一个title属性，但是希望不管调用的是无参的还是有参的构造，都可以为title设置内容。
+
+```java
+class Book {
+	private String title;
+	private static int num = 0;
+	public Book() {
+		this("NOTITLE - " + num ++);
+	}
+	public Book(String title) {
+		this.title = title;
+	}
+	public String getTitle() {
+		return this.title;
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		System.out.println(new Book("Java").getTitle());
+		System.out.println(new Book().getTitle());
+		System.out.println(new Book().getTitle());
+	}
+}
+```
+
+此时就算是没有设置title属性的内容，那么最终的属性也不会是null。
+
+#### 总结
+
+1、开发之中首选的属性一定不是static属性，首选的方法一定不是static方法；
+
+2、static属性和方法可以在没有实例化对象的时候直接由类名称进行调用；
+
+3、static属性保存在全局数据区
+
+> 内存区一共有四个：栈内存、堆内存、全局数据区、全局代码区。
+
+
 
