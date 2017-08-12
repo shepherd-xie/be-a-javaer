@@ -159,7 +159,7 @@ public class MainClass {
 * 所有的非static定义的结构，必须在类已经明确的产生了实例化对象才会分配堆空间，才可以使用；
 * 所有的static定义的结构，不受实例化对象的控制，即：可以在没有实例化对象的时候访问。
 
-**解决问题：        
+**解决问题：          
 **
 
 在最早讲解方法的时候曾经讲过：如果一个方法定义在了主类方法之中，并且由主方法直接进行调用的话，方法语法：
@@ -288,52 +288,52 @@ public class MainClass {
 
 希望每当实例化一个类对象的时候都可以打印一个信息：产生的第x个实例化对象。
 
-因为只要是新的实例化对象产生了，那么就一定会去调用类中的构造方法，所以可以在构造方法里面增加一个统计数据的操作，每当新对象产生之后统计的内容就自增一个。
+因为只要是新的实例化对象产生了，那么就一定会去调用类中的构造方法，所以可以在构造方法里面增加一个统计数据的操作，每当新对象产生之后统计的内容就自增一个。
 
 ```java
 class Book {
-	private static int num = 0;
-	public Book() {
-		num ++;
-		System.out.println("这是第" + num + "产生的对象！");
-	}
+    private static int num = 0;
+    public Book() {
+        num ++;
+        System.out.println("这是第" + num + "产生的对象！");
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		new Book();
-		new Book();
-		new Book();
-		new Book();
-		new Book();
-		new Book();
-	}
+    public static void main(String[] args) {
+        new Book();
+        new Book();
+        new Book();
+        new Book();
+        new Book();
+        new Book();
+    }
 }
 ```
 
 **功能二：**实现属性的自动设置
 
-例如，现在某一个类有一个无参构造方法，一个有参构造方法，有参构造方法主要的目的是传递一个title属性，但是希望不管调用的是无参的还是有参的构造，都可以为title设置内容。
+例如，现在某一个类有一个无参构造方法，一个有参构造方法，有参构造方法主要的目的是传递一个title属性，但是希望不管调用的是无参的还是有参的构造，都可以为title设置内容。
 
 ```java
 class Book {
-	private String title;
-	private static int num = 0;
-	public Book() {
-		this("NOTITLE - " + num ++);
-	}
-	public Book(String title) {
-		this.title = title;
-	}
-	public String getTitle() {
-		return this.title;
-	}
+    private String title;
+    private static int num = 0;
+    public Book() {
+        this("NOTITLE - " + num ++);
+    }
+    public Book(String title) {
+        this.title = title;
+    }
+    public String getTitle() {
+        return this.title;
+    }
 }
 public class MainClass {
-	public static void main(String[] args) {
-		System.out.println(new Book("Java").getTitle());
-		System.out.println(new Book().getTitle());
-		System.out.println(new Book().getTitle());
-	}
+    public static void main(String[] args) {
+        System.out.println(new Book("Java").getTitle());
+        System.out.println(new Book().getTitle());
+        System.out.println(new Book().getTitle());
+    }
 }
 ```
 
