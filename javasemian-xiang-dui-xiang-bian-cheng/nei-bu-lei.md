@@ -4,9 +4,8 @@
 
 内部类的基本定义结构
 
-使用static定义内部类
-
-在方法中定义内部类
+> 使用static定义内部类
+> 在方法中定义内部类
 
 从开发的角度，内部类能少用就少用。优先考虑的还是普通类。
 
@@ -16,4 +15,23 @@
 
 **范例：**观察内部类的基本形式
 
-```java```
+```java
+class Outer { // 外部类
+	private String msg = "Hello World !";
+	class Inner { // 定义了一个内部类
+		public void print() {
+			System.out.println(msg);
+		}
+	}
+	public void fun() {
+		// 实例化内部类对象，并且调用print()方法
+		new Inner().print();
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Outer out = new Outer(); // 实例化外部类对象
+		out.fun(); // 调用外部类方法
+	}
+}
+```
