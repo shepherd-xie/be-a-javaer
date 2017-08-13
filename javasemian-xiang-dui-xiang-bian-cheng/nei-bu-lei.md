@@ -103,6 +103,105 @@ public class MainClass {
 }
 ```
 
-...实际上以上代码的最终目的只有一个：让内部类可以访问外部类中定义的一个私有的msg属性内容。
+实际上以上代码的最终目的只有一个：让内部类可以访问外部类中定义的一个私有的msg属性内容。
 
 内部类有一个最大的优点：可以方便的访问外部类的私有属性。
+
+但是需要注意的是内部类可以方便的访问外部类的私有属性，同样，外部类也可以通过内部类对象访问内部类的私有属性。
+
+**范例：**访问内部类的私有属性
+
+```java
+class Outer { // 外部类
+	private String msg = "Hello World !";
+	class Inner { // 定义了一个内部类
+		private String info = "你好，世界！";
+		public void print() {
+			System.out.println(msg);
+		}
+	}
+	public void fun() {
+		Inner in  = new Inner(); // 内部类对象
+		// 直接利用内部类对象访问内部类定义的私有属性
+		System.out.println(in.info);
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Outer out = new Outer(); // 实例化外部类对象
+		out.fun(); // 调用外部类方法
+	}
+}
+```
+
+一旦使用了内部类之后，私有属性的访问就变得非常简单了。
+
+在之前的案例里一直要求访问类属性的时候一定要在前面加上this，但是如果直接在pring()方法里面加上this表示的是查找本类的属性，但是此时要访问的实际上是我外部类的属性，那么应该使用“外部类.this”。
+
+```java
+class Outer { // 外部类
+	private String msg = "Hello World !";
+	class Inner { // 定义了一个内部类
+		public void print() {
+			// 外部类.this = 外部类的当前对象
+			System.out.println(Outer.this.msg);
+		}
+	}
+	public void fun() {
+		new Inner().print();
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Outer out = new Outer(); // 实例化外部类对象
+		out.fun(); // 调用外部类方法
+	}
+}
+```
+
+以上的所有代码都有一个特点：通过外部类的一个fun()方法访问内部类的操作。内部类能不能像普通对象那样直接在外部产生实例化对象调用？
+
+要想解决这个问题，那么就要通过内部类编译后生成的文件形式来观察。发现内部类的class文件的形式是：Outer$Inner.class。所有的“$”是在文件中的命名，如果换回到了程序里面就变为了“.”，也就是说内部类的名称就是“外部类.内部类”。此时可以给出内部类对象的实例化语法：
+
+```java
+外部类.内部类 内部类对象 = new 外部类().new 内部类();
+```
+
+**范例：**实例化内部类对象
+
+```java
+class Outer { // 外部类
+	private String msg = "Hello World !";
+	class Inner { // 定义了一个内部类
+		public void print() {
+			// 外部类.this = 外部类的当前对象
+			System.out.println(Outer.this.msg);
+		}
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Outer.Inner in = new Outer().new Inner();
+		in.print();
+	}
+}
+```
+
+内部类不可能离开外部类的实例化对象，所以一定要先实例化外部类对象之后才可以使用内部类对象。如果真的使用到了内部类，也基本上不会像以上的操作那样进行的。一定是通过外部类进行访问内部类。
+
+如果现在一个内部类只希望被一个外部类访问，不能够被外部调用，那么可以使用private进行定义。
+
+```java
+class Outer { // 外部类
+	private String msg = "Hello World !";
+	private class Inner { // 定义了一个内部类
+		public void print() {
+			// 外部类.this = 外部类的当前对象
+			System.out.println(Outer.this.msg);
+		}
+	}
+}
+```
+
+此时的内部类是不可能在外部进行对象实例化的。
+
