@@ -205,3 +205,134 @@ class Outer { // 外部类
 
 此时的内部类是不可能在外部进行对象实例化的。
 
+### 使用static定义内部类
+
+使用static定义的属性或者是方法是不受到类实例化对象控制的，所以如果使用了static定义内部类，它就不会再受到外部类的实例化对象控制。
+
+如果一个内部类使用了static定义的话，那么这个内部类就变为了一个外部类，并且只能够访问外部类中定义的static操作。相当于定义了一个外部类。
+
+```java
+class Outer { // 外部类
+	private static String msg = "Hello World !";
+	static class Inner {
+		public void print() {
+			System.out.println(msg);
+		} 
+	} 
+}
+```
+
+此时如果想要取得内部类的实例化对象，使用的语法如下：
+
+```java
+外部类.内部类 内部类对象 = new 外部类.内部类();
+```
+
+此时不再需要先产生外部类对象，再产生内部类对象，仿佛就变为了一个独立的类。
+
+```java
+class Outer { // 外部类
+	private static String msg = "Hello World !";
+	static class Inner {
+		public void print() {
+			System.out.println(msg);
+		} 
+	} 
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Outer.Inner in = new Outer.Inner();
+		in.print();
+	}
+}
+```
+
+如果以后看到了可以直接实例化“类.类.类”的时候一定要知道，这是一个使用了static的内部类。
+
+### 在方法中定义内部类
+
+内部类可以在任意的位置上定义，包括：类中、代码块里、方法里面，其中方法中定义内部类是比较常见的形式，如果后期要使用也会使用此类形式。
+
+**范例：**在方法里面定义内部类
+
+```java
+class Outer { // 外部类
+	private String msg = "Hello World !";
+	public void fun() {
+		class Inner { // 方法中定义的内部类
+			public void print() {
+				System.out.println(Outer.this.msg);
+			}
+		}
+		new Inner().print();
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		new Outer().fun();
+	}
+}
+```
+
+但是方法里面会接收参数，方法里面也会定义变量。
+
+**范例：**访问方法中定义的参数或者是变量
+
+```java
+class Outer { // 外部类
+	private String msg = "Hello World !";
+	public void fun(int num) { // 方法参数
+		double score = 99.9; // 方法变量
+		class Inner { // 方法中定义的内部类
+			public void print() {
+				System.out.println("属性：" + Outer.this.msg);
+				System.out.println("方法参数：" + num);
+				System.out.println("方法变量：" + score);
+			}
+		}
+		new Inner().print();
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		new Outer().fun(100);
+	}
+} 
+```
+
+此时发现没有加入任何修饰，方法中的内部类可以访问方法的参数以及定义的变量。但是这种操作只适合于JDK1.8之后的版本。如果在JDK1.7以及之前的版本有一个严格的要求：方法中定义的内部类如果想要访问方法的参数或者是方法定义的变量，那么参数或变量前一定要加上“final”标记。
+
+**范例：**正规代码
+
+```java
+class Outer { // 外部类
+	private String msg = "Hello World !";
+	public void fun(final int num) { // 方法参数
+		final double score = 99.9; // 方法变量
+		class Inner { // 方法中定义的内部类
+			public void print() {
+				System.out.println("属性：" + Outer.this.msg);
+				System.out.println("方法参数：" + num);
+				System.out.println("方法变量：" + score);
+			}
+		}
+		new Inner().print();
+	}
+}
+```
+
+#### 总结
+
+1、内部类只是阐述了基本定义形式，但是没有讲解如何去使用；
+
+2、内部类可以与外部类之间方便的进行私有属性的访问；
+
+3、内部类可以使用private声明，声明之后无法在外部实例化内部类对象；
+
+* 语法：外部类.内部类 内部类对象 = new 外部类().new 内部类();
+
+4、使用static定义的内部类就相当于是一个外部类；
+
+* 语法：外部类.内部类 内部类对象 = new 外部类.内部类();
+
+5、内部类可以在方法中定义。
