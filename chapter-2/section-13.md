@@ -379,7 +379,553 @@ public class MainClass {
 
 由于是动态对象数组，所以数组中的每一个元素的索引的内容都一定是动态生成的。
 
+**范例：**在Link类里面增加一个foot的属性，表示每一个Node元素的编号
+
+```java
+private int foot = 0;
+```
+
+**范例：**在每一次查询的时候（一个链表可能查询多次），那么foot应该在每一次查询时都从头开始；但是一定要注意查询的前提：root存在，并且要查询的索引小于链表个数。
+
+```java
+public String get(int index) {
+	if (index >= this.count) { // 操过了查询范围（索引从0开始）
+		return null; // 没有数据
+	}
+	this.foot = 0; // 表示从前向后查询
+	return this.root.getNode(index); // 将查询过程交给Node类处理
+}
+```
+
+**范例：**在Node类里面实现getNode\(\)方法，内部类和外部类之间可以互相进行私有属性的访问。
+
+```java
+public String getNode(int index) {
+	// 使用当前的foot与要查询的索引进行比较
+	// 随后将foot的内容自增，目的是为了进行下一步查询
+	if (Link.this.foot ++ == index) { // 当前节点是要查询的索引
+		return this.data; // 返回当前节点数据
+	} else { // 继续向后查询
+		return this.next.getNode(index);
+	}
+}
+```
+
+### 修改指定索引内容：public void set\(int index, 数据类型 变量\)
+
+修改数据和查询数据区别不大，查询的时候当满足索引值得时候只是进行了一个数据的返回，那么此处只需要将数据返回变为数据的重新赋值即可。
+
+**范例：**在Link类里面增加set\(\)方法
+
+```java
+public void set(int index, String data) {
+	if (index >= this.count) {
+		return ; // 结束方法调用
+	}
+	this.foot = 0; // 重新设置foot属性的内容，作为索引出现
+	this.root.setNode(index, data); // 交给Node类设置数据内容
+}
+```
+
+**范例：**在Node类里面增加setNode\(\)方法
+
+```java
+public void setNode(int index, String data) {
+	if (Link.this.foot ++ == index) {
+		this.data = data; // 进行内容的修改
+	} else {
+		this.next.setNode(index, data);
+	}
+}
+```
+
+### 数据删除：public void remove\(数据类型 变量\)
+
+对于删除数据而言，可以分为两种情况：
+
+* 情况一：要删除的数据是根节点，则root应该变为“根节点\.next”，由于root是由Link类进行维护，所以此操作应该在Link类中定义;
+* 情况二：要删除的是普通节点，应该在Node类中处理。删除数据的最终形式：当前节点上一节点\.next = 当前节点\.next，即：空出了当前节点。
+
+**范例：**在Node类里面增加一个removeNode\(\)方法，此方法专门处理非根节点的删除
+
+```java
+// 要传递上一个节点以及要删除的数据
+public void removeNode(Node previous, String data) {
+	if (data.equals(this.data)) { // 当前节点为要删除节点
+		previous.next = this.next; // 空出当前节点
+	} else { // 应该向后继续查询
+		this.next.removeNode(this, data);
+	}
+}
+```
+
+**范例：**在Link类里面增加根节点的判断
+
+```java
+public void remove(String data) {
+	if (this.contains(data)) { // 判断数据是否存在
+		// 判断要删除的数据是否是根节点的数据
+		if (data.equals(this.root.data)) {
+			this.root = this.root.next; // 空出当前根节点
+		} else { // 不是根元素
+			this.root.next.removeNode(this.root, data);
+		}
+		this.count -- ; // 统计个数减少
+	}
+}
+```
+
+### 将链表变为对象数组：public 数据类型\[\] toArray\(\)
+
+任何情况下，不管是什么样的类都不可能在类中使用输出语句，想要输出数据，一定要将数据返回到调用处进行输出，而链表属于动态对象数组，所以此处最好的做法是将链表以对象数组的形式返回。
+
+Link类的toArray\(\)方法一定要返回一个对象数组，并且这个对象数组一定要被Node类操作，那么这个对象数组最好定义在Link类的属性里面。
+
+**范例：**修改Link类的定义
+
+* 增加一个返回的数组属性内容，之所以将其定义为属性，是因为内部类和外部类都可以访问；
+
+```java
+private String[] retArray; // 返回的数组
+```
+
+* 增加toArray\(\)方法
+
+```java
+public String[] toArray() {
+	if (this.root == null) {
+		return null;
+	}
+	this.foot = 0; // 需要索引控制
+	this.retArray = new String[this.count]; // 根据保存内容个开辟数组
+	this.root.toArrayNode(); // 交给Node类处理
+	return this.retArray;
+}
+```
+
+**范例：**在Node类里面处理数组数据的保存
+
+```java
+// 第一次调用（Link）：this = Link.root
+// 第二次调用（Node）：this = Link.root.next
+public void toArrayNode() {
+	Link.this.retArray[Link.this.foot ++] = this.data;
+	if (this.next != null) { // 有后续元素
+		this.next.toArrayNode();
+	}
+}
+```
+
+链表数据变为对象数组取出是最为重要的功能。
+
+### 使用链表、
+
+以上给出的链表严格意义上来讲不能够使用，而且意义也不大，因为它所能够操作的数据类型只有String，毕竟String所保存的数据比较少，所以可以采用自定义类来进行链表的操作。
+
+由于链表中要保存的对象需要实现contains\(\)、remove\(\)等功能，所以在类中要提供有对象比较方法的支持。
+
+** 范例：**定义一个保存图书信息的类
+
+```java
+class Book {
+	private String title;
+	private double price;
+	public Book(String title, double price) {
+		this.title = title;
+		this.price = price;
+	}
+	public boolean compare(Book book) {
+		if (this == book)
+			return true;
+		if (book == null)
+			return false;
+		if (this.price == book.price && this.title.equals(book.title))
+			return true;
+		return false;
+	}
+	public String getInfo() {
+		return "title=" + title + ", price=" + price;
+	}
+}
+```
+
+**范例：**修改链表实现
+
+```java
+class Link { // 链表类，外部能够看见的只有这一个类
+	// 让其为Link类服务
+	private class Node { // 定义的节点类
+		private Book data;
+		private Node next;
+		public Node(Book data) {
+			this.data = data;
+		}
+		public void addNode(Node newNode) {
+			if (this.next == null) { // 当前的下一个节点为空
+				this.next = newNode;
+			} else { // 向后继续保存
+				this.next.addNode(newNode);
+			}
+		}
+		// 第一次调用（Link）：this = Link.root
+		// 第二次调用（Node）：this = Link.root.next
+		// 第三次调用（Node）：this = Link.root.next.next
+		public boolean containsNode(Book data) {
+			if (data.compare(this.data)) { // 当前节点数据为要查询的数据
+				return true; // 不再向后查询
+			} else { // 当前节点数据不满足查询要求
+				if (this.next != null ) { // 有后续节点
+					return this.next.containsNode(data);
+				} else {
+					return false;
+				}
+			}
+		}
+		public Book getNode(int index) {
+			// 使用当前的foot与要查询的索引进行比较
+			// 随后将foot的内容自增，目的是为了进行下一步查询
+			if (Link.this.foot ++ == index) { // 当前节点是要查询的索引
+				return this.data; // 返回当前节点数据
+			} else { // 继续向后查询
+				return this.next.getNode(index);
+			}
+		}
+		public void setNode(int index, Book data) {
+			if (Link.this.foot ++ == index) {
+				this.data = data; // 进行内容的修改
+			} else {
+				this.next.setNode(index, data);
+			}
+		}
+		// 要传递上一个节点以及要删除的数据
+		public void removeNode(Node previous, Book data) {
+			if (data.compare(this.data)) { // 当前节点为要删除节点
+				previous.next = this.next; // 空出当前节点
+			} else { // 应该向后继续查询
+				this.next.removeNode(this, data);
+			}
+		}
+		// 第一次调用（Link）：this = Link.root
+		// 第二次调用（Node）：this = Link.root.next
+		public void toArrayNode() {
+			Link.this.retArray[Link.this.foot ++] = this.data;
+			if (this.next != null) { // 有后续元素
+				this.next.toArrayNode();
+			}
+		}
+	}
+	// ========================= 以上为内部类 =========================
+	private Node root; // 需要根节点
+	private int count = 0; // 保存元素的个数
+	private int foot = 0;
+	private Book[] retArray; // 返回的数组
+	public void add(Book data) { // 假设不允许有null
+		if (data == null) {
+			return ;
+		}
+		Node newNode = new Node(data); // 要保存的数据
+		if (this.root == null) { // 当前没有根节点
+			this.root = newNode; // 保存根节点
+		} else { // 根节点存在，其他节点交给Node类处理
+			this.root.addNode(newNode);
+		}
+		this.count ++; // 每一次保存完成后数据量加一
+	}
+	public int size() { // 取得保存的数据量
+		return this.count;
+	}
+	public boolean isEmpty() {
+		return this.count == 0;
+	}
+	public boolean contains(Book data) {
+		// 没有要查询的数据，也不存在根节点
+		if (data == null || this.root == null) {
+			return false; // 没有查询结果
+		}
+		return this.root.containsNode(data);
+	}
+	public Book get(int index) {
+		if (index >= this.count) { // 操过了查询范围（索引从0开始）
+			return null; // 没有数据
+		}
+		this.foot = 0; // 表示从前向后查询
+		return this.root.getNode(index); // 将查询过程交给Node类处理
+	}
+	public void set(int index, Book data) {
+		if (index >= this.count) {
+			return ; // 结束方法调用
+		}
+		this.foot = 0; // 重新设置foot属性的内容，作为索引出现
+		this.root.setNode(index, data); // 交给Node类设置数据内容
+	}
+	public void remove(Book data) {
+		if (this.contains(data)) { // 判断数据是否存在
+			// 判断要删除的数据是否是根节点的数据
+			if (data.compare(this.root.data)) {
+				this.root = this.root.next; // 空出当前根节点
+			} else { // 不是根元素
+				this.root.next.removeNode(this.root, data);
+			}
+			this.count -- ; // 统计个数减少
+		}
+	}
+	public Book[] toArray() {
+		if (this.root == null) {
+			return null;
+		}
+		this.foot = 0; // 需要索引控制
+		this.retArray = new Book[this.count]; // 根据保存内容个开辟数组
+		this.root.toArrayNode(); // 交给Node类处理
+		return this.retArray;
+	}
+}
+```
+
+**范例：**实现测试
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		Link all = new Link();
+		all.add(new Book("Java", 12.8));
+		all.add(new Book("Oracle", 13.8));
+		all.add(new Book("Linux", 14.8));
+		System.out.println("保存书的个数：" + all.size());
+		System.out.println(all.contains(new Book("Java", 12.8)));
+		all.remove(new Book("Oracle", 13.8));
+		Book[] books = all.toArray();
+		for (int i = 0; i < books.length; i ++) {
+			System.out.println(books[i].getInfo());
+		}
+	}
+} 
+```
+
+链表的最好使用就是横向代替对象数组。
+
+### 在关系中使用链表
+
+链表是动态对象数组，那么在之前进行数据表映射的时候（本次只以一对多为主），都会出现对象数组的概念，所以现在就可以利用链表来实现对象数组的保存。
+
+对于任何一个要使用链表的类而言，一定要提供有对象比较方法。
+
+```java
+class Province { // 类名称就是表名称
+    private int pid;
+    private String name;
+    private Link cities = new Link();
+    public Province(int pid, String name) {
+        this.pid = pid;
+        this.name = name;
+    }
+    public boolean compare(Province province) {
+    	if (this == province) 
+    		return true;
+    	if (province == null)
+    		return false;
+    	if (this.pid == province.pid && this.name.equals(province.name))
+    		return true;
+    	return false;
+    }
+    public Link getCities() {
+        return this.cities;
+    }
+    public String getInfo() {
+        return "pid=" + pid + ", name=" + name;
+    }
+}
+class City {
+    private int cid;
+    private String name;
+    private Province province;
+    public City(int cid, String name) {
+        this.cid = cid;
+        this.name = name;
+    }
+    public boolean compare(City city) {
+    	if (this == city)
+    		return true;
+    	if (city == null)
+    		return false;
+    	if (this.cid == city.cid && this.name.equals(city.name) 
+    			&& this.province.compare(city.province)) 
+    		return true;
+    	return false;
+    }
+    public void setProvince(Province province) {
+        this.province = province;
+    }
+    public Province getProvince() {
+        return this.province;
+    }
+    public String getInfo() {
+        return "cid=" + cid + ", name=" + name;
+    }
+}
+class Link { // 链表类，外部能够看见的只有这一个类
+	// 让其为Link类服务
+	private class Node { // 定义的节点类
+		private City data;
+		private Node next;
+		public Node(City data) {
+			this.data = data;
+		}
+		public void addNode(Node newNode) {
+			if (this.next == null) { // 当前的下一个节点为空
+				this.next = newNode;
+			} else { // 向后继续保存
+				this.next.addNode(newNode);
+			}
+		}
+		// 第一次调用（Link）：this = Link.root
+		// 第二次调用（Node）：this = Link.root.next
+		// 第三次调用（Node）：this = Link.root.next.next
+		public boolean containsNode(City data) {
+			if (data.compare(this.data)) { // 当前节点数据为要查询的数据
+				return true; // 不再向后查询
+			} else { // 当前节点数据不满足查询要求
+				if (this.next != null ) { // 有后续节点
+					return this.next.containsNode(data);
+				} else {
+					return false;
+				}
+			}
+		}
+		public City getNode(int index) {
+			// 使用当前的foot与要查询的索引进行比较
+			// 随后将foot的内容自增，目的是为了进行下一步查询
+			if (Link.this.foot ++ == index) { // 当前节点是要查询的索引
+				return this.data; // 返回当前节点数据
+			} else { // 继续向后查询
+				return this.next.getNode(index);
+			}
+		}
+		public void setNode(int index, City data) {
+			if (Link.this.foot ++ == index) {
+				this.data = data; // 进行内容的修改
+			} else {
+				this.next.setNode(index, data);
+			}
+		}
+		// 要传递上一个节点以及要删除的数据
+		public void removeNode(Node previous, City data) {
+			if (data.compare(this.data)) { // 当前节点为要删除节点
+				previous.next = this.next; // 空出当前节点
+			} else { // 应该向后继续查询
+				this.next.removeNode(this, data);
+			}
+		}
+		// 第一次调用（Link）：this = Link.root
+		// 第二次调用（Node）：this = Link.root.next
+		public void toArrayNode() {
+			Link.this.retArray[Link.this.foot ++] = this.data;
+			if (this.next != null) { // 有后续元素
+				this.next.toArrayNode();
+			}
+		}
+	}
+	// ========================= 以上为内部类 =========================
+	private Node root; // 需要根节点
+	private int count = 0; // 保存元素的个数
+	private int foot = 0;
+	private City[] retArray; // 返回的数组
+	public void add(City data) { // 假设不允许有null
+		if (data == null) {
+			return ;
+		}
+		Node newNode = new Node(data); // 要保存的数据
+		if (this.root == null) { // 当前没有根节点
+			this.root = newNode; // 保存根节点
+		} else { // 根节点存在，其他节点交给Node类处理
+			this.root.addNode(newNode);
+		}
+		this.count ++; // 每一次保存完成后数据量加一
+	}
+	public int size() { // 取得保存的数据量
+		return this.count;
+	}
+	public boolean isEmpty() {
+		return this.count == 0;
+	}
+	public boolean contains(City data) {
+		// 没有要查询的数据，也不存在根节点
+		if (data == null || this.root == null) {
+			return false; // 没有查询结果
+		}
+		return this.root.containsNode(data);
+	}
+	public City get(int index) {
+		if (index >= this.count) { // 操过了查询范围（索引从0开始）
+			return null; // 没有数据
+		}
+		this.foot = 0; // 表示从前向后查询
+		return this.root.getNode(index); // 将查询过程交给Node类处理
+	}
+	public void set(int index, City data) {
+		if (index >= this.count) {
+			return ; // 结束方法调用
+		}
+		this.foot = 0; // 重新设置foot属性的内容，作为索引出现
+		this.root.setNode(index, data); // 交给Node类设置数据内容
+	}
+	public void remove(City data) {
+		if (this.contains(data)) { // 判断数据是否存在
+			// 判断要删除的数据是否是根节点的数据
+			if (data.compare(this.root.data)) {
+				this.root = this.root.next; // 空出当前根节点
+			} else { // 不是根元素
+				this.root.next.removeNode(this.root, data);
+			}
+			this.count -- ; // 统计个数减少
+		}
+	}
+	public City[] toArray() {
+		if (this.root == null) {
+			return null;
+		}
+		this.foot = 0; // 需要索引控制
+		this.retArray = new City[this.count]; // 根据保存内容个开辟数组
+		this.root.toArrayNode(); // 交给Node类处理
+		return this.retArray;
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Link all = new Link();
+		// 第一步：设置关系数据
+		// 1、先准备好各自独立的对象
+        Province pro = new Province(1, "Shaan xi");
+        City c1 = new City(1001, "Xi'an");
+        City c2 = new City(1002, "Baoji");
+        City c3 = new City(1003, "Xianyang");
+        // 2、设置关系
+        c1.setProvince(pro); // 一个城市属于一个省份
+        c2.setProvince(pro);
+        c3.setProvince(pro);
+        pro.getCities().add(c1);
+        pro.getCities().add(c2);
+        pro.getCities().add(c3);
+        // 第二步：取出关系
+        System.out.println(pro.getInfo());
+        System.out.println("拥有的城市数量：" + pro.getCities().size());
+        pro.getCities().remove(c3);
+        City[] c = pro.getCities().toArray();
+        for (int i = 0; i < c.length; i ++) {
+        	System.out.println(c[i].getInfo());
+        }
+	}
+}
+```
+
+本程序不再受到长度的限制，但是会出现一个新的问题：对于每一个新的类都要定义一个新的属于该类的Link类。
+
+方法解决的是代码的重复问题，但是以上问题并不属于代码的重复，而是属于数据类型的不统一，所以之前学习到的内容就不足以解决这个问题。
+
 #### 总结
+
+1、链表本次讲解的知识一个最基础的单项链表；
+
+2、熟记以下方法的名称以及作用；
 
 | No. | 方法名称 | 类型 | 描述 |
 | :---: | :---: | :---: | :---: |
@@ -388,10 +934,10 @@ public class MainClass {
 | 3 | public boolean isEmpty\(\) | 普通 | 判断是否是空链表（size\(\) == 0） |
 | 4 | public boolean contains\(数据类型 变量\) | 普通 | 判断某一个数据是否存在 |
 | 5 | public 数据类型 get\(int index\) | 普通 | 根据索引取得数据 |
-| 6 |  | 普通 |  |
-| 7 |  | 普通 |  |
-| 8 |  | 普通 |  |
-| 9 |  | 普通 |  |
+| 6 | public void set\(int index, 数据类型 变量\) | 普通 | 更新指定索引的数据 |
+| 7 | public void remove\(数据类型 变量\) | 普通 | 删除指定数据，如果是对象则要进行对象比较 |
+| 8 | public 数据类型\[\] toArray\(\) | 普通 | 将链表以对象数组的形式返回 |
 
+3、本次讲解的链表是日后进行Java类集学习的前期原理分析。
 
 
