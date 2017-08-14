@@ -38,7 +38,7 @@ public class MainClass {
 }
 ```
 
-![](/assets/import 2.10-1.png)
+![](/images/chapter-2/section-10/1.png)
 
 通过内存关系可以发现此时代码的问题：既然这个类所有图书的出版社都是同一个，那么就没有必要让每个对象都各自占有重复的属性信息。
 
@@ -76,7 +76,7 @@ public class MainClass {
 
 一旦在属性定义上使用了static之后，只要有一个对象修改了属性的内容，那么所有的对象的static属性内容都将一起进行修改，也就是说此时的pub属性就变为了一个公共属性。
 
-![](/assets/import 2.10-2.png)
+![](/images/chapter-2/section-10/2.png)
 
 static声明的属性与普通属性（非static属性）最大的区别在于保存的内容区域的不同。
 
