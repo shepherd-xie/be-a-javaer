@@ -18,8 +18,39 @@
 
 ```
 
-|  |  |
-|:---:|:---:|
+
+<table>
+	<thead>
+		<tr>
+			<td>Person.java</td>
+			<td>Student.java</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				class Person {
+					private String name;
+					private int age;
+					public void setName(String name) {
+						this.name = name;
+					}
+					public String getName() {
+						return name;
+					}
+					public void setAge(int age) {
+						this.age = age;
+					}
+					public int getAge() {
+						return age;
+					}
+				}
+			</td>
+		</tr>
+	<tbody>
+</table>
+| Person.java | Student.java |
+| :---: | :---: |
 | class Person {
 	private String name;
 	private int age;
@@ -35,5 +66,29 @@
 	public int getAge() {
 		return age;
 	}
-} |  |
+} | class Student {
+	private String name;
+	private int age;
+	private String school; 
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setSchool(String school) {
+		this.school = school;
+	}
+	public String getSchool() {
+		return school;
+	}
+} |
+
+以上的程序里面出现了代码的重复，在自然的关系上，学生是人的一种类型，并且学生与人相比描述的更加细致，范围更小。
 
