@@ -154,6 +154,18 @@ public static void main(String[] args) {
 * 在进行方法重载时候一定要考虑到参数类型的统一上，虽然可以实现重载方法返回不同类型的操作，但是从标准的开发来讲，建议所有的重载后的方法使用同一种返回值类型；
 * 方法重载的时候是依靠参数的数据类型及个数来区分不同的方法，而不是通过返回值类型来区分的。
 
+> **Java的方法签名**
+> 方法签名，顾名思义，方法的签名，来区分不同方法的标示符。
+> 在Java编程语言，一个方法签名的方法名称和参数的数量和类型。返回类型和抛出异常并不认为是一个方法签名的一部分。
+> 
+> 以下三种方法有相同的签名被认为是相同的,只是返回值不同。参数的名称不是方法签名的一部分,忽略编译器检验方法唯一性。
+> _The following three methods do have the same signatures and are considered the same, as only the return value differs. The name of the parameter is not part of the method signature and is ignored by the compiler for checking method uniqueness._
+> ```
+  int doSomething(int y);
+  String doSomething(int x);
+  int doSomething(int z) throws java.lang.Exception;
+  ```
+
 ### 方法的递归调用
 
 递归调用是迈向数据结构开发的第一步，但是想要熟练地掌握递归调用是需要大量的代码练习。
