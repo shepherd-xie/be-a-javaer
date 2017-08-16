@@ -217,23 +217,35 @@ public class MainClass {
 ```
 
 > ### 关于子类继承父类私有成员的问题
+> 
 > JDK官方文档的解释:
+> 
 > > A subclass does not inherit the private members of its parent class. However, if the superclass has public or protected methods for accessing its private fields, these can also be used by the subclass.
+> 
 > Google翻译：
+> 
 > > 子类不会继承其父类的私有成员。但是，如果超类具有用于访问其私有字段的公共或受保护方法，那么这些子类也可以被子类使用。
 > 
 > **从继承的概念来说**，private和final不被继承。Java官方文档上是这么说的。
+> 
 > **从内存的角度来说**，父类的一切都被继承(从父类构造方法被调用就知道了，因为new一个对象，就会调用构造方法，子类被new的时候就会调用父类的构造方法，所以从内存的角度来说，子类拥有一个完整的父类)。**子类对象所引用的内存有父类变量的一份拷贝。**
 > 
 > 以上内容仅用于引申，这个问题本身就是一个有歧义的问题。对于这个问题目前来说（2017.8.16）最终的解释如下：
-> 引用自!(Java语言规范\[The Java® Language Specification\])[https://docs.oracle.com/javase/specs/jls/se8/html/index.html]
-> !(8.2. Class Members)[https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.2]
+> 
+> 引用自[Java语言规范\[The Java® Language Specification\]](https://docs.oracle.com/javase/specs/jls/se8/html/index.html) [8.2. Class Members](https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.2)
+> 
 > > Members of a class that are declared private are not inherited by subclasses of that class.
+> > 
 > > Only members of a class that are declared protected or public are inherited by subclasses declared in a package other than the one in which the class is declared.
+> 
 > Google翻译：
+> > 
 > > 声明为私有的类的成员不会被该类的子类继承。
+> > 
 > > 只有声明为protected或public的类的成员才能被继承于除了声明该类的包之外的其他包。
+> 
 > _**子类不能继承父类的私有成员，不能够通过正常的OOP去访问，但并不表示其在子类之中不存在。**_
+> 
 > 关于以上问题的验证，可以在之后的_反射_章节学习到相关知识。
 
 **关于super.方法\(\)与this.方法\(\)的区别？**
@@ -255,14 +267,19 @@ public class MainClass {
 在发生重载关系的时候，返回值可以不同，但是考虑到程序设计的统一性，重载时尽量保证方法的返回值类型相同。
 
 > ### 重写\(Overriding\)
+> 
 > 重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即_**外壳不变，核心重写！**_
+> 
 > 重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法。
->
+> 
 > ### 重载\(Overloading\)
+> 
 > 重载是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。
+> 
 > 每个重载的方法（或者构造函数）都必须有一个独一无二的参数类型列表。
-
+> 
 > #### 方法的重写规则
+> 
 > * 参数列表必须完全与被重写方法的相同；
 > * 返回类型必须完全与被重写方法的返回类型相同；
 > * 访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为public，那么在子类中重写该方法就不能声明为protected。
@@ -276,6 +293,7 @@ public class MainClass {
 > * 如果不能继承一个方法，则不能重写这个方法。
 >
 > #### 方法的重载规则
+> 
 > * 被重载的方法必须改变参数列表(参数个数或类型或顺序不一样)；
 > * 被重载的方法可以改变返回类型；
 > * 被重载的方法可以改变访问修饰符；
