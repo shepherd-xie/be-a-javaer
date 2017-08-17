@@ -105,14 +105,14 @@ class X extends C implements A, B { // X类实现了A和B两个接口
 <table><tr>
 <td>
 	interface A {
-	&nbap;&nbap;&nbap;&nbap;public static final String MSG = "Hello";
-	&nbap;&nbap;&nbap;&nbap;public abstract void print();
+	&nbsp;&nbsp;&nbsp;&nbsp;public static final String MSG = "Hello";
+	&nbsp;&nbsp;&nbsp;&nbsp;public abstract void print();
 	}
 </td>
 <td>
 	interface A {
-	&nbap;&nbap;&nbap;&nbap;String MSG = "Hello";
-	&nbap;&nbap;&nbap;&nbap;void print();
+	&nbsp;&nbsp;&nbsp;&nbsp;String MSG = "Hello";
+	&nbsp;&nbsp;&nbsp;&nbsp;void print();
 	}
 </td>
 </tr></table>
@@ -195,7 +195,7 @@ class X implements A.B {
 
 电脑上可以使用U盘、MP3、打印机，这些设备都是连接到USB接口上的。
 
-![](/chapter-2/section-19/1.png)
+![](/images/chapter-2/section-19/1.png)
 
 所有的代码如果要进行开发，一定要首先开发出USB接口标准，因为有了标准之后，电脑才可以去使用这些标准，设备厂商才可以去设计USB设备。
 
