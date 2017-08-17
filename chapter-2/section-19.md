@@ -104,15 +104,15 @@ class X extends C implements A, B { // X类实现了A和B两个接口
 
 <table><tr>
 <td>
-	interface A {
-	&nbsp;&nbsp;&nbsp;&nbsp;public static final String MSG = "Hello";
-	&nbsp;&nbsp;&nbsp;&nbsp;public abstract void print();
+	interface A { <br />
+	&nbsp;&nbsp;&nbsp;&nbsp;public static final String MSG = "Hello"; <br />
+	&nbsp;&nbsp;&nbsp;&nbsp;public abstract void print(); <br />
 	}
 </td>
 <td>
-	interface A {
-	&nbsp;&nbsp;&nbsp;&nbsp;String MSG = "Hello";
-	&nbsp;&nbsp;&nbsp;&nbsp;void print();
+	interface A { <br />
+	&nbsp;&nbsp;&nbsp;&nbsp;String MSG = "Hello"; <br />
+	&nbsp;&nbsp;&nbsp;&nbsp;void print(); <br />
 	}
 </td>
 </tr></table>
