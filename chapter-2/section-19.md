@@ -264,6 +264,164 @@ public class MainClass {
 
 在现实生活中，标准的概念随处可见，而在程序之中标准就是利用接口来定义的。
 
+### 接口的应用 —— 工厂设计模式（Factory）
+
+下面观察一段程序代码。
+
 ```java
+interface Fruit {
+	public void eat();
+}
+class Apple implements Fruit {
+	public void eat() {
+		System.out.println("吃苹果");
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Fruit fruit = new Apple();
+		fruit.eat();
+	}
+}
 ```
+
+以上的程序可以通过主方法得到Fruit接口对象，但是有没有逻辑上的问题呢？
+
+如果要确定一个代码是否合理，有如下几个标准：
+
+* 客户端调用简单，不需要关注具体的细节；
+* 客户端之外的代码修改，不影响客户的使用，即：用户可以不用关心代码是否变更。
+
+以上程序没有语法错误，但关键问题出现在了关键字“new”上。一个接口不可能只有一个子类，所以对于Fruit也有可能产生多个子类对象。
+
+```java
+class Orange implements Fruit {
+	public void eat() {
+		System.out.println("吃橘子");
+	}
+}
+```
+
+现在的客户端上要想得到新的子类对象，需要修改代码。修改为：
+
+```java
+public class MainClass {
+	public static void main(String[] args) {
+		Fruit fruit = new Orange();
+		fruit.eat();
+	}
+}
+```
+
+此时发现，如果在客户端产生了实例化对象，那么每次要想更换对象都需要修改客户端上的逻辑控制代码。这样的做法明显不是合理的。
+
+在整个代码过程中，客户端应该关心的是如何取得一个Fruit接口对象，而后进行方法的调用，至于说这个借口对象的具体实例化子类是谁，并不是客户端所关心的。
+
+所以经过分析发现，最大的问题就在于关键字new，而这一问题就可以理解为代码的耦合度过高。耦合度太高的直接问题就是代码不方便维护。如何解决这个问题可以参考Java虚拟机的设计思想：
+
+* 程序 -> JVM -> 适应不同的操作系统（A -> C -> B）；
+
+**范例：**增加一个过渡
+
+```java
+class Factory {
+	public static Fruit getInstance(String className) {
+		if ("apple".equals(className)) {
+			return new Apple();
+		} else if ("oragle".equals(className)) {
+			return new Orange();
+		} else {
+			return null;
+		}
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Fruit fruit = Factory.getInstance("apple");
+		fruit.eat();
+	}
+}
+```
+
+现在的客户端不会看见具体的子类，因为所有的接口对象都是通过Factory类取得的，如果日后要扩充新的Fruit子类对象，则只需要修改Factory类即可，但是客户端的调用不会发生变化。
+
+![](/images/chapter-2/section-19/2.png)
+
+**面试题：**编写一个Factory程序
+
+### 接口的应用 —— 代理设计模式（Proxy）
+
+![](/images/chapter-2/section-19/3.png)
+
+```java
+interface Subject { // 整个操作的核心主题
+	public void doSomething();
+}
+class RealSubject implements Subject {
+	public void doSomething() {
+		System.out.println("顾客正在吃饭。");
+	}
+}
+class ProxySubject implements Subject {
+	private Subject subject;
+	// 要接受一个真实主题的操作对象
+	public ProxySubject(Subject subject) {
+		this.subject = subject;
+	}
+	public void prepare() {
+		System.out.println("为吃饭做准备");
+	}
+	public void doSomething() {
+		this.prepare();
+		this.subject.doSomething();
+		this.destory();
+	}
+	public void destory() {
+		System.out.println("打扫卫生");
+	}
+}
+public class MainClass {
+	public static void main(String[] args) {
+		Subject subject = new ProxySubject(new RealSubject());
+		subject.doSomething(); // 调用的是代理主题操作
+	}
+}
+```
+
+代理设计模式的核心就在于有一个主题操作接口（可能有多种方法），核心的业务主题只完成核心功能，例如：吃饭。而代理主题负责完成所有与核心主题有关的辅助性操作。
+
+![](/images/chapter-2/section-19/4.png)
+
+**面试题：**请编写一个Proxy程序
+
+### 抽象类与接口的区别（面试题）
+
+抽象类和接口在使用的形式上是非常相似的，所以很多人也乐意去问这两者之间的区别。
+
+| No. | 区别 | 抽象类 | 接口 |
+| :---: | :---: | :---: | :---: |
+| 1 | 关键字 | abstract class | interface |
+| 2 | 组成 | 构造方法、普通方法、抽象方法、static方法、常量、变量 | 抽象方法、全局常量 |
+| 3 | 子类使用 | class 子类 extends 抽象类 | class 子类 implements 接口, 接口,... |
+| 4 | 关系 | 抽象类可以实现多个接口 | 接口不能够继承抽象类，可以继承多个接口 |
+| 5 | 权限 | 可以使用各种权限 | 只能够使用public权限 |
+| 6 | 限制 | 单继承局限 | 没有单继承局限 |
+| 7 | 子类 | 抽象类和接口都必须有子类，子类必须覆写全部的抽象方法 |
+| 8 | 实例化对象 | 依靠子类对象的向上转型进行对象的实例化 |
+
+经过比较可以发现，抽象类中支持的功能绝对要比接口更多，但是有一点严重的缺陷：单继承局限。所以，在之后的开发之中，当抽象类和接口都可以使用的时候，优先考虑接口。
+
+**一些不成文的规定（50%）：**
+
+* 在进行某些公共操作的时候一定要定义出接口；
+* 有了接口就需要利用子类完善方法；
+* 如果是自己编写的接口，那么一定不要用new直接实例化接口子类，使用工厂类完成。
+
+#### 总结
+
+1、接口与抽象类定义的不同；
+
+2、接口作为标准用于解耦合以及不同层之间的连接桥梁；
+
+3、熟记工厂设计模式和代理设计模式。
 
