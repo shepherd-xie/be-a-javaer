@@ -212,19 +212,19 @@ public class MainClass {
 </thead>
 <tbody>
 <td>
-|- java.lang.Object 
-|-- java.lang.Throwable 
-|--- java.lang.Exception 
-|---- java.lang.RuntimeException 
-|----- java.lang.ArithmeticException 
+|- java.lang.Object <br />
+|-- java.lang.Throwable <br />
+|--- java.lang.Exception <br />
+|---- java.lang.RuntimeException <br />
+|----- java.lang.ArithmeticException <br />
 </td>
 <td>
-|- java.lang.Object 
-|-- java.lang.Throwable 
-|--- java.lang.Exception 
-|---- java.lang.RuntimeException 
-|----- java.lang.IllegalArgumentException 
-|------ java.lang.NumberFormatException 
+|- java.lang.Object <br />
+|-- java.lang.Throwable <br />
+|--- java.lang.Exception <br />
+|---- java.lang.RuntimeException <br />
+|----- java.lang.IllegalArgumentException <br />
+|------ java.lang.NumberFormatException <br />
 </td>
 <tbody>
 </table>
@@ -240,7 +240,7 @@ public class MainClass {
 
 **面试题：**请解释Java中的异常处理流程
 
-![](image/chapter-2/section-24/1.png)
+![](/images/chapter-2/section-24/1.png)
 
 1、当程序在运行过程之中出现了异常后，会由JVM自动根据异常的类型实例化一个与之类型匹配的异常类对象（此处用户不用去关心new，由系统自动负责处理）；
 
