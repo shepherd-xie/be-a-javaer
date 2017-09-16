@@ -33,6 +33,8 @@
   * [第 22 节 包的定义及使用](chapter-2/section-22.md)
   * [第 23 节 访问控制权限](chapter-2/section-23.md)
   * [第 24 节 异常的捕获及处理](chapter-2/section-24.md)
+  * [第 25 节 Java5新特性](chapter-2/section-25.md)
+  * [第 26 节 泛型](chapter-2/section-26.md)
 
 
 
