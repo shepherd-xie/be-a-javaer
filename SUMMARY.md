@@ -35,6 +35,7 @@
   * [第 24 节 异常的捕获及处理](chapter-2/section-24.md)
   * [第 25 节 Java5新特性](chapter-2/section-25.md)
   * [第 26 节 泛型](chapter-2/section-26.md)
+  * [第 27 节 枚举](chapter-2/section-27.md)
 
 
 
