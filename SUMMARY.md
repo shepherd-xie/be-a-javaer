@@ -37,6 +37,7 @@
   * [第 26 节 泛型](chapter-2/section-26.md)
   * [第 27 节 枚举](chapter-2/section-27.md)
   * [第 28 节 Annotation](chapter-2/section-28.md)
+  * [第 29 节 Java8新特性](chapter-2/section-29.md)
 
 
 
