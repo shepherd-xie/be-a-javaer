@@ -8,7 +8,7 @@
   * [第 4 节 Java运算符](chapter-1/section-4.md)
   * [第 5 节 Java程序逻辑控制](chapter-1/section-5.md)
   * [第 6 节 Java方法的定义及使用](chapter-1/section-6.md)
-* [第 2 章 JavaSE面向对象编程](chapter-2.md)
+* [第 2 章 Java面向对象编程](chapter-2.md)
   * [第 1 节 类与对象](chapter-2/section-1.md)
   * [第 2 节 深入分析类与对象](chapter-2/section-2.md)
   * [第 3 节 数组的定义与使用](chapter-2/section-3.md)
@@ -38,6 +38,8 @@
   * [第 27 节 枚举](chapter-2/section-27.md)
   * [第 28 节 Annotation](chapter-2/section-28.md)
   * [第 29 节 Java8新特性](chapter-2/section-29.md)
+* [第 3 章 Java高级编程](chapter-1.md)
+  * [第 1 节 Java多线程基础实现](chapter-3/section-1.md)
 
 
 
