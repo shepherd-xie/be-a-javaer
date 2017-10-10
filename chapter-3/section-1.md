@@ -145,6 +145,141 @@ private native void start0();
 
 _**即：使用Thread类的start()方法不仅仅要启动多线程的执行代码，还要去根据不同的操作系统进行资源的分配。**_
 
+### 实现Runnable接口
+
+虽然Thread类可以是实现多线程的主体类定义，但是它有一个问题，Java的单继承局限，正因为如此，在任何情况下针对与类的继承都应该是回避的问题，那么多线程也一样，为了解决单继承局限的问题，在Java里面专门提供了Runnable接口。此接口定义如下：
+
+```java
+@FunctionalInterface
+public interface Runnable {
+	public void run();
+}
+```
+
+在接口里面任何的方法都是public定义的权限，不存在默认的权限。
+
+那么只需要让一个类实现Runnable接口即可，并且也需要覆写run()方法。
+
+```java
+// 线程操作主类
+class MyThread implements Runnable { // 这就是一个多线程的操作类
+	private String name; // 定义类中的属性
+	public MyThread(String name) { // 定义构造方法
+		this.name = name;
+	}
+	@Override
+	public void run() { // 覆写run()方法，作为线程的主体操作方法
+		for (int i = 0; i < 200; i ++) {
+			System.out.println(this.name + " ---> " + i);
+		}
+	}
+}
+```
+
+与继承Thread类相比，此时的MyThread类在结构上与之前是没有区别的。但是有一点需要注意的是，如果直接继承了Thread类，那么可以直接继承start()方法，但是如果实现的是Runnable接口，并没有start()方法可以被继承。
+
+不管何种情况下，如果要想启动多线程一定要依靠Thread类完成，在Thread类里面定义有一下的构造方法：
+
+* 构造方法：public Thread(Runnable target)，接收的是Runnable接口对象;
+
+**范例：**启动多线程
+
+```java
+public class MainClass { // 主类
+	public static void main(String[] args) {
+		MyThread mt1 = new MyThread("线程A");
+		MyThread mt2 = new MyThread("线程B");
+		MyThread mt3 = new MyThread("线程C");
+		new Thread(mt1).start();
+		new Thread(mt2).start();
+		new Thread(mt3).start();
+	}
+}
+```
+
+此时就避免了单继承局限，那么也就是说在实际工作中使用Runnable接口是最合适的。
+
+### 多线程两种实现方式的区别？（面试题）
+
+首先一定要明确的是，使用Runnable接口与Thread类相比，解决了单继承的定义局限，所以不管后面的区别与联系是什么，至少这一点上就已经有了取舍 —— 如果要使用，一定使用Runnable接口。
+
+观察Thread类的定义。
+
+```java
+public class Thread extends Object implements Runnable
+```
+
+发现Thread类实现了Runnable接口。那么这样一来程序就变为了以下的形式。
+
+![](/images/chapter-3/section-1/1.png)
+
+此时整个的定义结构看起来非常像代理设计模式，如果是代理设计模式，客户端调用的代理类的方法也应该是接口里提供的方法，那么也应该是run()才对。
+
+除了以上的联系之外，还有一点：使用Runnable接口可以比Thread类能够更好的描述出数据共享这一概念。此时的数据共享指的是多个线程访问统一资源的操作。
+
+**范例：**观察代码（每一个线程对象都必须通过start()启动）
+
+```java
+package com.alpha;
+class MyThread extends Thread { // 这就是一个多线程的操作类
+	private int ticket = 10;
+	@Override
+	public void run() { // 覆写run()方法，作为线程的主体操作方法
+		for (int i = 0; i < 100; i ++) {
+			if (this.ticket > 0) {
+				System.out.println("卖票，ticket = " + this.ticket --);
+			}
+		}
+	}
+}
+public class MainClass { // 主类
+	public static void main(String[] args) {
+		MyThread mt1 = new MyThread();
+		MyThread mt2 = new MyThread();
+		MyThread mt3 = new MyThread();
+		mt1.start();
+		mt2.start();
+		mt3.start();
+	}
+}
+```
+
+本程序声明了三个MyThread类的对象，并且分别调用了三次start()方法，启动线程对象。但是发现最终的结果是每一个线程对象都在卖各自的10张票，此时并不存在数据共享。
+
+**范例：**利用Runnable实现
+
+```java
+package com.alpha;
+class MyThread implements Runnable { // 这就是一个多线程的操作类
+	private int ticket = 10;
+	@Override
+	public void run() { // 覆写run()方法，作为线程的主体操作方法
+		for (int i = 0; i < 100; i ++) {
+			if (this.ticket > 0) {
+				System.out.println("卖票，ticket = " + this.ticket --);
+			}
+		}
+	}
+}
+public class MainClass { // 主类
+	public static void main(String[] args) {
+		MyThread mt = new MyThread();
+		new Thread(mt).start();
+		new Thread(mt).start();
+		new Thread(mt).start();
+	}
+}
+```
+
+**面试题：**请解释Thread类与Runnable接口实现多线程的区别？（**面试题：**请解释多线程两种实现方式的区别）
+
+* Thread类是Runnable接口的子类，使用Runnable接口实现多继承可以避免单继承局限；
+* Runnable接口实现的多线程可以比Thread类实现的多线程更加清楚的描述数据共享的概念。
+
+**面试题：**请写出多线程两种实现操作。
+
+如上。
+
 ```java
 ```
 
