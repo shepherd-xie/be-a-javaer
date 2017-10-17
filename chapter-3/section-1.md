@@ -293,6 +293,8 @@ public interface Callable<V> {
 
 call()方法执行完线程的功能之后可以返回一个结果，而返回结果的类型由Callable接口上的泛型来决定。
 
+**范例：**定义一个线程主体类
+
 ```java
 import java.util.concurrent.Callable;
 class MyThread implements Callable<String> {
@@ -308,6 +310,47 @@ class MyThread implements Callable<String> {
 	}
 }
 ```
+
+此时观察Thread类里面发现并没有直接支持Callable接口的多线程应用。
+
+从JDK1.5开始提供有java.util.concurrent.FutureTask<V>类。这个类主要是负责Callable接口对象操作的，这个接口的定义结构：
+
+```java
+public class FutureTask<V> extends Object implements RunnableFuture<V>
+``` 
+
+```java
+public interface RunnableFuture<V> extends Runnable, Future<V>
+``` 
+
+在FutureTask类里面定义有如下的构造方法：public FutureTask(Callable<V> callable)
+
+接收的目的只有一个，那么就是取得call()方法的返回结果。
+
+```java
+public class MainClass { // 主类
+	public static void main(String[] args) throws Exception {
+		MyThread mt1 = new MyThread();
+		MyThread mt2 = new MyThread();
+		FutureTask<String> task1 = new FutureTask<String>(mt1); // 目的是为了取得cvall()返回结果
+		FutureTask<String> task2 = new FutureTask<String>(mt2); // 目的是为了取得cvall()返回结果
+		// FuntureTask是Runnable接口子类，所以可以使用Thread类的构造来接收task对象
+		new Thread(task1).start();
+		new Thread(task2).start();
+		// 多线程执行完毕之后可以取得内容，依靠FutureTask的父接口Future中的get()方法完成
+		System.out.println("A线程的返回结果：" + task1.get());
+		System.out.println("B线程的返回结果：" + task2.get());
+	}
+}
+```
+
+最麻烦的问题在于需要接受返回值信息，并且又要与原始的多线程的实现靠拢（向Thread类靠拢）。
+
+#### 总结
+
+1、对于多线程的实现，重点在于Runnable接口与Thread类启动的配合上；
+
+2、对于JDK1.5新特性，了解就行了，知道区别就在于返回结果上。
 
 
 
