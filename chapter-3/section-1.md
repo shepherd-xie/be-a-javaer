@@ -280,7 +280,33 @@ public class MainClass { // 主类
 
 如上。
 
+### 第三种实现方式
+
+使用Runnable接口实现的多线程可以避免单继承局限，但是Runnable里面的run()方法不能返回操作结果。为了解决这样的矛盾，提供了一个新的接口java.util.concurrent.Callable接口。
+
 ```java
+@FunctionalInterface
+public interface Callable<V> {
+	public V call() throws Exception;
+}
+```
+
+call()方法执行完线程的功能之后可以返回一个结果，而返回结果的类型由Callable接口上的泛型来决定。
+
+```java
+import java.util.concurrent.Callable;
+class MyThread implements Callable<String> {
+	private int ticket = 10;
+	@Override
+	public String call() throws Exception {
+		for (int i = 0; i < 100; i ++) {
+			if (this.ticket > 0) {
+				System.out.println("卖票，ticket = " + this.ticket --);
+			}
+		}
+		return "票已卖光！";
+	}
+}
 ```
 
 

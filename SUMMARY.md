@@ -38,8 +38,9 @@
   * [第 27 节 枚举](chapter-2/section-27.md)
   * [第 28 节 Annotation](chapter-2/section-28.md)
   * [第 29 节 Java8新特性](chapter-2/section-29.md)
-* [第 3 章 Java高级编程](chapter-1.md)
+* [第 3 章 Java高级编程](chapter-3.md)
   * [第 1 节 Java多线程基础实现](chapter-3/section-1.md)
+  * [第 2 节 线程常用操作方法](chapter-3/section-2.md)
 
 
 
