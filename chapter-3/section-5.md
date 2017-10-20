@@ -337,22 +337,6 @@ public class MainClass{
 >     cout << "I'm deleting " << name << " with age " << age << endl;
 > }
 > ```
->
-> 另外要注意的是，析构函数是不容许参数传递。然而，与构造函数一样，析构函数可以被显式调用：
->
-> ```c++
-> int main() 
-> {
->     person someone("Wales", 40);
->     someone.~person();  //此時會輸出一次"I'm deleting Wales with age 40"
-> 
->     return 0;  //第二次輸出"I'm deleting  with age 40"
-> }
-> /* 在這裡，程式結束時會自動調用析構函數，
->    而person.name在第一次調用析構函數時已被清除，
->    但person.age會按編譯器而定，
->    沒能在第一次調用析構函數時清零。 */
-> ```
 
 * finalize()方法：_**protected**_ void finalize() throws _**Throwable**_
   * 在对象回收时就算抛出了任何的异常，也不会影响到整个程序的正常执行。
@@ -446,7 +430,4 @@ public class MainClass{
 #### 总结
 
 标识接口，没有任何方法定义，只是一个空接口的声明。
-
-```java
-```
 
