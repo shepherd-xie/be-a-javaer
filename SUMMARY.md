@@ -42,6 +42,8 @@
   * [第 1 节 Java多线程基础实现](chapter-3/section-1.md)
   * [第 2 节 线程常用操作方法](chapter-3/section-2.md)
   * [第 3 节 线程的同步与死锁](chapter-3/section-3.md)
+  * [第 4 节 生产者与消费者](chapter-3/section-4.md)
+  * [第 5 节 Java基础类库](chapter-3/section-5.md)
 
 
 
