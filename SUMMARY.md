@@ -45,6 +45,7 @@
   * [第 4 节 生产者与消费者](chapter-3/section-4.md)
   * [第 5 节 Java基础类库](chapter-3/section-5.md)
   * [第 6 节 数字操作类](chapter-3/section-6.md)
+  * [第 7 节 日期处理类](chapter-3/section-7.md)
 
 
 
