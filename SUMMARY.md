@@ -46,6 +46,7 @@
   * [第 5 节 Java基础类库](chapter-3/section-5.md)
   * [第 6 节 数字操作类](chapter-3/section-6.md)
   * [第 7 节 日期处理类](chapter-3/section-7.md)
+  * [第 8 节 比较器](chapter-3/section-8.md)
 
 
 
