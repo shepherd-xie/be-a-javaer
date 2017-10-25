@@ -74,21 +74,21 @@ public class MainClass{
 
 2、字符集
 
-* [abc]：表示字符abc中任意一个；
-* [^abc]：表示不是字符abc中任意一个；
-* [a-z]：表示任意一位小写字母；
-* [a-zA-Z]：表示任意一位字母；
-* [0-9]：表示任意的一位数字；
+* \[abc\]：表示字符abc中任意一个；
+* \[\^abc\]：表示不是字符abc中任意一个；
+* \[a-z\]：表示任意一位小写字母；
+* \[a-zA-Z\]：表示任意一位字母；
+* \[0-9\]：表示任意的一位数字；
 
 3、简化的字符集
 
 * . ：表示任意一位字符；
-* \\d：表示[0-9]；
-* \\D：表示[^0-9]；
+* \\d：表示\[0-9\]；
+* \\D：表示\[^0-9\]；
 * \\s：表示任意的空白字符，"\\t"、"\\n"；
 * \\S：表示任意非空白字符；
-* \\w：等价于[a-zA-Z\_0-9]，表示由任意的字母、数字、\_所组成；
-* \\W：等价于[^a-zA-Z\_0-9]，表示不是由任意的字母、数字、\_所组成；
+* \\w：等价于\[a-zA-Z\_0-9\]，表示由任意的字母、数字、\_所组成；
+* \\W：等价于\[\^a-zA-Z\_0-9\]，表示不是由任意的字母、数字、\_所组成；
 
 4、边界匹配（不要在Java中使用）
 
@@ -243,7 +243,7 @@ package com.alpha;
 public class MainClass{ 
 	public static void main(String[] args) throws Exception {
 		String str = "hello_ni.hao123@git.com";
-		String regex = "[a-zA-Z][a-zA-Z0-9_\\.]{0,28}[a-zA-Z0-9]@\\w+\\.(net|cn|com|com\\\\.cn|net|edu|org|gov)";
+		String regex = "[a-zA-Z][a-zA-Z0-9_\\.]{0,28}[a-zA-Z0-9]@\\w+\\.(net|cn|com|com\\.cn|net|edu|org|gov)";
 		System.out.println(str.matches(regex));
 	}
 }
