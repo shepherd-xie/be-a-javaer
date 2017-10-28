@@ -49,6 +49,7 @@
   * [第 8 节 比较器](chapter-3/section-8.md)
   * [第 9 节 正则表达式](chapter-3/section-9.md)
   * [第 10 节 反射机制](chapter-3/section-10.md)
+  * [第 11 节 国际化程序实现](chapter-3/section-11.md)
 
 
 
