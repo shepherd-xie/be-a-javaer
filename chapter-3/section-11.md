@@ -148,6 +148,3 @@ public class MainClass{
 
 2、Locale类用于指定读取的资源文件的语言环境。
 
-```java
-```
-
