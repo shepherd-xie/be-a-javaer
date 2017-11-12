@@ -17,14 +17,27 @@ File类虽然可以操作文件，但是并不是操作文件的内容，如果�
 * 字符流（JDK1.1）：Reader、Writer。
 
 > ### 流是什么？
+>
+> _引用自 [Java™教程](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)_
+>
+> I / O流表示输入源或输出目标。 流可以表示许多不同类型的源和目标，包括磁盘文件，设备，其他程序和内存数组。
+>
+> 流支持许多不同类型的数据，包括简单字节，原始数据类型，本地化字符和对象。 有些流只是传递数据。 其他人以有用的方式操作和转换数据。
+>
+> 无论内部是如何工作的，所有流都使用相同的简单模型：程序流是一系列数据。
+>
+> 原文：
+>
+> > _Quoted from [The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)_
+> > 
+> > An I/O Stream represents an input source or an output destination. A stream can represent many different kinds of sources and destinations, including disk files, devices, other programs, and memory arrays.
+> > 
+> > Streams support many different kinds of data, including simple bytes, primitive data types, localized characters, and objects. Some streams simply pass on data; others manipulate and transform the data in useful ways.
+> > 
+> > No matter how they work internally, all streams present the same simple model to programs that use them: A stream is a sequence of data.
+
+
 > 
-> 流是个抽象的概念，是对输入输出设备的抽象，Java程序中，对于数据的输入/输出操作都是以“流”的方式进行。设备可以是文件，网络，内存等。
-> 
-> 流具有方向性，至于是输入流还是输出流则是一个相对的概念，一般以程序为参考，如果数据的流向是程序至设备，我们成为输出流，反之我们称为输入流。
-> 
-> 可以将流想象成一个“水流管道”，水流就在这管道中形成了，自然就出现了方向的概念。
-> 
-> 当程序需要从某个数据源读入数据的时候，就会开启一个输入流，数据源可以是文件、内存或网络等等。相反地，需要写出数据到某个数据源目的地的时候，也会开启一个输出流，这个数据源目的地也可以是文件、内存或网络等等。
 
 ### 字节输出流：OutputStream（重点）
 
