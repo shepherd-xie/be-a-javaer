@@ -116,5 +116,3 @@ public class CopyDemo {
 
 本程序属于之前的一个总结程序，能够把本程序掌握清楚，就可以轻松的掌握InputStream、OutputStream两个类的核心操作，并且在以后的开发之中，以上的代码100%会使用到。
 
-```java
-```
