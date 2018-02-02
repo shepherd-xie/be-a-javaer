@@ -56,8 +56,9 @@
   * [第 13-2 节 文件拷贝](chapter-3/section-13e2.md)
   * [第 14 节 IO辅助概念](chapter-3/section-14.md)
   * [第 15 节 打印流](chapter-3/section-15.md)
-  * [第 16 节 System类对IO的支持(chapter-3/section-16.md)
-  * [第 17 节 IO高级应用(chapter-3/section-17.md)
-
+  * [第 16 节 System类对IO的支持](chapter-3/section-16.md)
+  * [第 17 节 IO高级应用](chapter-3/section-17.md)
+* [其他](other.md)
+  * [Long精度丢失](other/other-1.md)
 
 
