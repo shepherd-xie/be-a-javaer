@@ -60,6 +60,7 @@
   * [第 17 节 IO高级应用](chapter-3/section-17.md)
   * [第 18 节 网络编程](chapter-3/section-18.md)
   * [第 19 节 类集框架](chapter-3/section-19.md)
+  * [第 20 节 Java数据库编程（JDBC）](chapter-3/section-20.md)
 * [其他](other.md)
   * [Long精度丢失](other/other-1.md)
 
