@@ -2,7 +2,8 @@
 
 * [Introduction](README.md)
 * [第 1 章 Oracle数据库基础](chapter-4.md)
-  * [第 1 节 Oracle简介](chapter-4.md)
+  * [第 1 节 Oracle简介](chapter-4/section-1.md)
+  * [第 2 节 Oracle简介](chapter-4/section-2.md)
 * [第 2 章 Java编程开发入门](chapter-1.md)
   * [第 1 节 Java开发准备](chapter-1/section-1.md)
   * [第 2 节 Java基本概念](chapter-1/section-2.md)

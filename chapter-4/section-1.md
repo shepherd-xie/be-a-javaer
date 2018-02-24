@@ -20,7 +20,8 @@ Oracle的中文含义是甲骨文，在古希腊神话之中被翻译为“神�
 * Oracle 9i（3CD）：属于Oracle 8i的稳定版本；
 * Oracle 10g（630M）：使用了网格计算（grid）的方式，提升了数据库的分布式访问性能；
 * **Oracle 11g**（1.7G）：属于Oracle 10g的稳定版本；
-* Oracle 12c；指的是云服务（cloud）支持，是现在的最新版本。
+* Oracle 12c；指的是云服务（cloud）支持，是现在的最新版本[^2]。
 
 [^1]:埃德·奥德斯（Ed Oates）、布鲁斯·斯科特（Bruce Scott）、鲍勃·迈纳（Bob Miner）、拉里·埃里森（Larry Ellison）。
+[^2]:目前最新版本为Oracle 18c。
 
