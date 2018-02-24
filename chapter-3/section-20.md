@@ -50,7 +50,7 @@ Java技术连接任何数据库性能都是很高的，除了SQL Server。
 * 数据库的链接地址：jdbc:oracle:连接方式:@主机:端口:数据库SID
   * jdbc:oracle:thin:@localhost:1521:orcl；
 * 数据库的用户名：scott；
-* 数据库的密码:tiger；
+* 数据库的密码：tiger；
 
 要连接数据库必须依靠DriverManager类完成，在此类定义有如下的方法：
 
@@ -668,8 +668,5 @@ public class TestDemo {
 		conn.close();
 	}
 }
-```
-
-```java
 ```
 
