@@ -111,5 +111,7 @@ _**将字符编码设为UTF-8编码。**_
 * OracleServiceORCL：数据库实例服务，它的命名标准：OracleServiceSID，每当系统增加一个数据库的时候，都会增加一个类似的服务。
   * 在默认的情况下，SID的名称和数据库的名称是完全一致的，在网络上使用的是SID的名字。
 
-[^1]:Oracle创始人中有一位叫Bruce Scott，他养了一只猫叫做tiger。
+---
+
+[^1]: Oracle创始人中有一位叫Bruce Scott，他养了一只猫叫做tiger。
 
