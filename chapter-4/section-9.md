@@ -4,7 +4,7 @@
 
 所有的单行函数，严格来讲，程序都可以处理。
 
-所谓的单行函数值的就是完成某一具功能的操作函数，例如：转大写、或者说进行日期格式的转换等，一般而言，单行函数的格式：“返回值 函数名称(参数)”。
+所谓的单行函数值的就是完成某一具功能的操作函数，例如：转大写、或者说进行日期格式的转换等，一般而言，单行函数的格式：“返回值 函数名称\(参数\)”。
 
 单行函数按照类型一共分为以下几种：字符串函数、数值函数、日期函数、转换函数、通用函数。
 
@@ -12,14 +12,14 @@
 
 字符串函数主要是处理字符串数据的（对于字符串的数据有可能是从列上找到的，或者是直接设置的字符串常量），包含的函数有如下几种。
 
-| No. | 函数名称 | 描述 |
-| :---: | :---: | :---: |
-| 1 | 字符串 UPPER(列 | 字符串) | 将传入的字符串变为大写字母形式 |
-| 2 | 字符串 LOWER(列 | 字符串) | 将传入的字符串变为小写字母形式 |
-| 3 | 字符串 INITCAP(列 | 字符串) | 首字母大写，其余变为小写 |
-| 4 | 数字 LENGTH(列 | 字符串) | 取得执行字符串的长度 |
-| 5 | 字符串 SUBSTR(列 | 字符串, 开始索引, [长度]) | 进行字符串的截取，如果没有设置长度，表示从开始索引一直截取到结尾 |
-| 6 | 字符串 REPLACE(列 | 字符串, 旧内容, 新内容) | 将指定字符串的数据以新数据替换旧字符串 |
+|  | No. | 函数名称 | 描述 |
+| :---: | :---: | :---: | :--- |
+| 1 | 字符串 UPPER\(列 | \|字符串\) | 将传入的字符串变为大写字母形式 |
+| 2 | 字符串 LOWER\(列 | 字符串\) | 将传入的字符串变为小写字母形式 |
+| 3 | 字符串 INITCAP\(列 | 字符串\) | 首字母大写，其余变为小写 |
+| 4 | 数字 LENGTH\(列 | 字符串\) | 取得执行字符串的长度 |
+| 5 | 字符串 SUBSTR\(列 | 字符串, 开始索引, \[长度\]\) | 进行字符串的截取，如果没有设置长度，表示从开始索引一直截取到结尾 |
+| 6 | 字符串 REPLACE\(列 | 字符串, 旧内容, 新内容\) | 将指定字符串的数据以新数据替换旧字符串 |
 
 在Oracle里面，所有的函数如果要想进行验证，也必须编写SQL语句。为了方便用户进行一些验证或者是一些不需要查询表的操作，专门提供了一个dual的虚拟表。
 
@@ -71,8 +71,8 @@ SELECT * FROM emp WHERE LENGTH(ename)=5;
 
 4、字符串截取
 
-* 从指定位置截取到结尾：字符串 SUBSTR(列 | 字符串, 开始索引);
-* 截取部分内容：字符串 SUBSTR(列 | 字符串, 开始索引, 长度);
+* 从指定位置截取到结尾：字符串 SUBSTR\(列 \| 字符串, 开始索引\);
+* 截取部分内容：字符串 SUBSTR\(列 \| 字符串, 开始索引, 长度\);
 
 **范例：**验证函数
 
@@ -116,13 +116,13 @@ SELECT SUBSTR(ename,-3) FROM emp;
 
 数值函数主要是进行数字的处理，最为核心的数值函数一共有三个。
 
-| No. | 函数名称 | 描述 |
-| :---: | :---: | :---: |
-| 1 | 数字 ROUND(列 | 数字[, 小数位]) | 实现数据的四舍五入，可以保留小数位 |
-| 2 | 数字 TRUNC(列 | 数字[, 小数位]) | 实现数据的截取，即：不进位 |
-| 3 | 数字 MOD(列 | 数字， 列 | 数字) | 求模(计算余数) |
+|  |  | No. | 函数名称 | 描述 |
+| :---: | :---: | :---: | :--- | :--- |
+|  | 1 | 数字 ROUND\(列 | 数字\[, 小数位\]\) | 实现数据的四舍五入，可以保留小数位 |
+|  | 2 | 数字 TRUNC\(列 | 数字\[, 小数位\]\) | 实现数据的截取，即：不进位 |
+| 3 | 数字 MOD\(列 | 数字， 列 | 数字\) | 求模\(计算余数\) |
 
-**范例：**使用ROUND()函数
+**范例：**使用ROUND\(\)函数
 
 ```sql
 SELECT ROUND(789.5671234) FROM dual;
@@ -130,7 +130,7 @@ SELECT ROUND(789.5671234) FROM dual;
 
 如果没有设置小数点的保留位数，那么会直接不保留小数位进位。
 
-**范例：**使用ROUND()函数
+**范例：**使用ROUND\(\)函数
 
 ```sql
 SELECT ROUND(789.5671234,2) FROM dual;
@@ -146,14 +146,14 @@ SELECT ROUND(789.5671234,-2) FROM dual;
 
 如果设置为负数，那么就表示进行整数位的四舍五入。
 
-**范例：**验证TRUNC()函数
+**范例：**验证TRUNC\(\)函数
 
-TRUNK()函数与ROUND()函数的使用形式上差别不大，唯一的区别在于TRUNC()是不会进位的。
+TRUNK\(\)函数与ROUND\(\)函数的使用形式上差别不大，唯一的区别在于TRUNC\(\)是不会进位的。
 
 ```sql
 SELECT TRUNC(789.5671234),
-	TRUNC(789.5671234,2),
-	TRUNC(789.5671234,-2) FROM dual;
+    TRUNC(789.5671234,2),
+    TRUNC(789.5671234,-2) FROM dual;
 ```
 
 **范例：**求模函数
@@ -208,12 +208,12 @@ SELECT empno,ename,job,SYSDATE-hiredate FROM emp;
 
 为了准确的进行日期操作，在Oracle里面提供有四个日期处理函数。
 
-| No. | 函数名称 | 描述 |
-| :---: | :---: | :---: |
-| 1 | 日期 ADD_MONTHS(列 | 日期, 月数) | 在指定的日期上增加若干个月之后的日期 |
-| 2 | 数字 MONTHS_BETWEEN(列 | 日期, 列 | 日期) | 返回两个日期之间所经历的月 |
-| 3 | 日期 LAST_DAY(列 | 日期) | 取得指定日期所在月的最后一天 |
-| 4 | 日期 NEXT_DAY(列 | 日期, 星期X) | 返回下一个指定的一周时间数对应的日期 |
+|  |  | No. | 函数名称 | 描述 |
+| :---: | :---: | :---: | :--- | :--- |
+|  | 1 | 日期 ADD\_MONTHS\(列 | 日期, 月数\) | 在指定的日期上增加若干个月之后的日期 |
+| 2 | 数字 MONTHS\_BETWEEN\(列 | 日期, 列 | 日期\) | 返回两个日期之间所经历的月 |
+|  | 3 | 日期 LAST\_DAY\(列 | 日期\) | 取得指定日期所在月的最后一天 |
+|  | 4 | 日期 NEXT\_DAY\(列 | 日期, 星期X\) | 返回下一个指定的一周时间数对应的日期 |
 
 **范例：**在当前日期下增加指定的月数
 
@@ -243,7 +243,7 @@ SELECT empno,ename,hiredate FROM emp WHERE hiredate=LAST_DAY(hiredate)-2;
 
 一般而言，日期函数的操作过程是有些麻烦的，但是有一个前提：利用日期函数操作的日期是最准确的。
 
-**范例：**验证“NEXT_DAT()”函数
+**范例：**验证“NEXT\_DAT\(\)”函数
 
 ```sql
 SELECT NEXT_DAY(SYSDATE,'星期二') FROM dual;
@@ -258,11 +258,11 @@ SELECT NEXT_DAY(SYSDATE,'星期二') FROM dual;
 在整个Oracle里面提供了两种方式来计算年份：
 
 * 方式一：（日期 - 日期 = 天数） ÷ 365 = 年，这种方式无法规避闰年的问题；
-* 方式二：MONTHS_BETWEEN(SYSDATE,hiredate) ÷ 12；
+* 方式二：MONTHS\_BETWEEN\(SYSDATE,hiredate\) ÷ 12；
 
 ```sql
 SELECT empno,ename,hiredate,
-	TRUNC(MONTHS_BETWEEN(SYSDATE,hiredate)/12) year
+    TRUNC(MONTHS_BETWEEN(SYSDATE,hiredate)/12) year
 FROM emp;
 ```
 
@@ -272,8 +272,8 @@ FROM emp;
 
 ```sql
 SELECT empno,ename,hiredate,
-	TRUNC(MONTHS_BETWEEN(SYSDATE,hiredate)/12) year,
-	TRUNC(MOD(MONTHS_BETWEEN(SYSDATE,hiredate),12)) month
+    TRUNC(MONTHS_BETWEEN(SYSDATE,hiredate)/12) year,
+    TRUNC(MOD(MONTHS_BETWEEN(SYSDATE,hiredate),12)) month
 FROM emp;
 ```
 
@@ -282,14 +282,17 @@ FROM emp;
 在Oracle之中提供的计算天数的操作只有一种形式“日期1 - 日期2 = 天数”；
 
 * 日期1：使用SYSDATE，表示当前的日期时间；
-* 日期2：ADD_MONTHS(hiredate,MONTHS_BETWEEN(SYSDATE,hiredate))；
+* 日期2：ADD\_MONTHS\(hiredate,MONTHS\_BETWEEN\(SYSDATE,hiredate\)\)；
   * 规避：由于时间跨度太长，必须规避掉年和月的问题；
   * 分析：雇佣日期 + （雇佣日期到现在为止所经历的月数）
 
 ```sql
 SELECT empno,ename,hiredate,
-	TRUNC(MONTHS_BETWEEN(SYSDATE,hiredate)/12) year,
-	TRUNC(MOD(MONTHS_BETWEEN(SYSDATE,hiredate),12)) month,
-	TRUNC(SYSDATE-ADD_MONTHS(hiredate,MONTHS_BETWEEN(SYSDATE,hiredate))) day
+    TRUNC(MONTHS_BETWEEN(SYSDATE,hiredate)/12) year,
+    TRUNC(MOD(MONTHS_BETWEEN(SYSDATE,hiredate),12)) month,
+    TRUNC(SYSDATE-ADD_MONTHS(hiredate,MONTHS_BETWEEN(SYSDATE,hiredate))) day
 FROM emp;
 ```
+
+
+
