@@ -73,6 +73,7 @@
   * [第 8 节 综合练习：基础查询](chapter-4/section-8.md)
   * [第 9 节 单行函数](chapter-4/section-9.md)
   * [第 10 节 多表查询](chapter-4/section-10.md)
+  * [第 11 节 分组统计查询](chapter-4/section-11.md)
 * [其他](other.md)
   * [Long精度丢失](other/other-1.md)
 
