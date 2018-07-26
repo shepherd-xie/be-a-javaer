@@ -74,6 +74,9 @@
   * [第 9 节 单行函数](chapter-4/section-9.md)
   * [第 10 节 多表查询](chapter-4/section-10.md)
   * [第 11 节 分组统计查询](chapter-4/section-11.md)
+  * [第 12 节 子查询](chapter-4/section-12.md)
+  * [第 13 节 综合案例：复杂查询](chapter-4/section-13.md)
+  * [第 14 节 数据更新操作](chapter-4/section-14.md)
 * [其他](other.md)
   * [Long精度丢失](other/other-1.md)
 
