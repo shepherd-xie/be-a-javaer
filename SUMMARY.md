@@ -77,6 +77,8 @@
   * [第 12 节 子查询](chapter-4/section-12.md)
   * [第 13 节 综合案例：复杂查询](chapter-4/section-13.md)
   * [第 14 节 数据更新操作](chapter-4/section-14.md)
+  * [第 15 节 事务处理](chapter-4/section-15.md)
+  * [第 16 节 数据伪列](chapter-4/section-16.md)
 * [其他](other.md)
   * [Long精度丢失](other/other-1.md)
 
