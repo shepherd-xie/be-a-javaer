@@ -79,6 +79,7 @@
   * [第 14 节 数据更新操作](chapter-4/section-14.md)
   * [第 15 节 事务处理](chapter-4/section-15.md)
   * [第 16 节 数据伪列](chapter-4/section-16.md)
+  * [第 17 节 数据表的创建与管理](chapter-4/section-17.md)
 * [其他](other.md)
   * [Long精度丢失](other/other-1.md)
 
