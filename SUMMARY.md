@@ -80,6 +80,9 @@
   * [第 15 节 事务处理](chapter-4/section-15.md)
   * [第 16 节 数据伪列](chapter-4/section-16.md)
   * [第 17 节 数据表的创建与管理](chapter-4/section-17.md)
+  * [第 18 节 约束的创建与管理](chapter-4/section-18.md)
+  * [第 19 节 综合案例：数据表操作](chapter-4/section-19.md)
+  * [第 20 节 序列的定义与使用](chapter-4/section-20.md)
 * [其他](other.md)
   * [Long精度丢失](other/other-1.md)
 

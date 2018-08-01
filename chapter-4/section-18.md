@@ -237,4 +237,99 @@ INSERT INTO book(bid,title,mid) VALUES (1005,'computer network','GAMMA');
 INSERT INTO book(bid,title,mid) VALUES (1006,'data structure','DELAT');
 ```
 
-这个时候可以发现，在member表中并没有`GAMMA`和`DELAT`的mid。这个数据显然不应该保存到book表中，`book.mid`的取值范围应该由`member.mid`决定。
+这个时候可以发现，在member表中并没有`GAMMA`和`DELAT`的mid。这个数据显然不应该保存到book表中，`book.mid`的取值范围应该由`member.mid`决定。想要实现这种关系的约束就要依靠外键。
+
+**范例：**使用外键规范做法
+```sql
+DROP TABLE member PURGE;
+DROP TABLE book PURGE;
+CREATE TABLE member (
+    mid     VARCHAR2(50),
+    name    VARCHAR2(50),
+    CONSTRAINT pk_mid PRIMARY KEY(mid)
+);
+CREATE TABLE book (
+    bid     NUMBER,
+    title   VARCHAR2(50),
+    mid     VARCHAR2(50),
+    CONSTRAINT pk_bid PRIMARY KEY(bid),
+    CONSTRAINT fk_mid FOREIGN KEY(mid) REFERENCES member(mid)
+);
+```
+
+此时如果追加关联数据的时候没有指定的数据与之对应则会抛出`ORA-02291: 违反完整约束条件 (SCOTT.FK_MID) - 未找到父项关键字`错误信息。
+
+虽然外键在整体上起到了约束作用，但是需要注意一些问题。
+
+1. 一旦设置了外键关系后，再删除主表之前就必须先删除子表，否则无法删除`ORA-02449: 表中的唯一/主键被外键引用`。
+```sql
+DROP TABLE book PURGE;
+DROP TABLE member PURGE;
+```
+或忽略外键关系，强制删除。
+```sql
+DROP TABLE member CASCADE CONSTRAINT;
+```
+2. 对于已存在的记录，必须先删除子表记录后才能删除父表记录。但是这样的操作十分麻烦，为了解决这个问题，可以在设置级联操作，级联操作有两种：
+  * 级联删除：`ON DELETE CASCADE`；
+  ```sql
+  CREATE TABLE book (
+      bid     NUMBER,
+      title   VARCHAR2(50),
+      mid     VARCHAR2(50),
+      CONSTRAINT pk_bid PRIMARY KEY(bid),
+      CONSTRAINT fk_mid FOREIGN KEY(mid) REFERENCES member(mid) ON DELETE CASCADE
+  );
+  ```
+  * 级联更新：`ON DELETE SET NULL`，如果被删除则将子表字段设置为`null`；
+  ```sql
+  CREATE TABLE book (
+      bid     NUMBER,
+      title   VARCHAR2(50),
+      mid     VARCHAR2(50),
+      CONSTRAINT pk_bid PRIMARY KEY(bid),
+      CONSTRAINT fk_mid FOREIGN KEY(mid) REFERENCES member(mid) ON DELETE SET NULL
+  );
+  ```
+
+## 修改约束
+
+_**设置原则：**_在任何的系统数据库设计的时候，当你的数据库表创建完成之后一定要将约束同时建立完毕，并且不要进行约束的变更。
+
+为了演示约束的修改处理，创建一张简单的数据表：
+
+**范例：**建立数据表
+```sql
+DROP TABLE member PURGE;
+CREATE TABLE member (
+    mid     VARCHAR2(50),
+    name    VARCHAR2(50)
+);
+INSERT INTO member(mid,name) VALUES ('ALPHA','ALPHA GO');
+INSERT INTO member(mid,name) VALUES ('ALPHA','BETA GO');
+INSERT INTO member(mid,name) VALUES ('BETA',null);
+```
+
+1\. 为表追加约束：
+
+* 语法：`ALTER TABLE 表名称 ADD CONSTRAINT 约束名称 约束类型(字段)`；
+
+**范例：**为member表追加主键约束
+  * 如果数据表之中的数据有违法主键的情况出现，那么该约束是无法添加的；
+```sql
+ALTER TABLE member ADD CONSTRAINT pk_mid PRIMARY KEY(mid);
+```
+
+以上语法是能够追加非空之外的约束，如果想要增加非空约束，只能够通过修改表结构的操作完成；
+```sql
+ALTER TABLE member MODIFY (name VARCHAR2(50) NOT NULL);
+```
+
+2\. 删除表约束：
+
+* 语法：`ALTER TABLE 表名称 DROP CONSTRAINT 约束名称;`
+
+**范例：**删除主键约束
+```sql
+ALTER TABLE member DROP CONSTRAINT pk_mid;
+```
