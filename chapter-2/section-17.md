@@ -1,10 +1,11 @@
 ## 辅助概念
 
+* [final关键字](chapter-2/section-17.md#final关键字)
+* [多态性](chapter-2/section-17.md#多态性)
+
 ---
 
 ### final关键字
-
-掌握final定义类、方法、属性的特点。
 
 在Java之中final称为终结器，在Java里面可以使用final定义类、方法和属性。
 
@@ -42,7 +43,7 @@ class B extends A {
 class A {
 	final double GOOD = 100.0;
 	public final void fun() {
-		GOOD = 1.1; // 不能狗修改常量
+		GOOD = 1.1; // 不能够修改常量
 	}
 }
 ```

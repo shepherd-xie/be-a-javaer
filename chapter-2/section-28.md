@@ -17,7 +17,7 @@ Annotation是JDK1.5最大的特色，利用注解的形式来实现程序的不�
 
 在JavaSE里面支持自定义Annotation的开发，并且提供了三个最为常用的基础的Annotation：@Override、@Deprecated、@SuppressWarnings。
 
-### 准确的覆写：@Override
+### 精确覆写：@Override
 
 如果在输出对象的时候希望其可以返回需要的内容，那么一定要进行toString()方法的覆写。
 
@@ -46,7 +46,7 @@ class Book {
 
 如果是使用Eclipse编写代码，几乎都会自动生成这样的注解。
 
-### 声明过期操作：@Deprecated
+### 过期声明：@Deprecated
 
 如果说现在有一个专门负责完成某项功能的工具包，里面有一个Hello类，在Hello类里面有一个fun()方法，在所有项目最初的发展阶段，fun()方法非常的完善，但是后来随着开发技术的不断将强，发现fun()这个方法的功能不足，这个时候对于开发者有两个选择：
 

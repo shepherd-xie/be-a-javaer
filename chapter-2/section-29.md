@@ -1,5 +1,10 @@
 ## Java8新特性
 
+* [接口定义增强](chapter-2/section-29.md#接口定义增强)
+* [Lambda表达式](chapter-2/section-29.md#Lambda表达式)
+* [方法引用](chapter-2/section-29.md#方法引用)
+* [函数式接口](chapter-2/section-29.md#函数式接口)
+
 ---
 
 ### 接口定义增强
@@ -345,7 +350,7 @@ public class MainClass {
 
 四种方法引用基本的形式如上，但是是否真的去使用，现在给你的答案是：NO。
 
-### 内建函数式接口
+### 函数式接口
 
 观察在JDK1.8中提供的新的函数式接口包以及提供的四个函数式接口
 

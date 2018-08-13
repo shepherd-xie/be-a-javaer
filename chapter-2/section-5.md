@@ -139,6 +139,7 @@ public class MainClass {
 | 1 | public boolean equals\(String anObject\) | 普通 | 进行相等判断，区分大小写 |
 | 2 | public boolean equalsIgnoreCase\(String anotherString\) | 普通 | 进行相等判断，不区分大小写 |
 | 3 | public int compareTo\(String anotherString\) | 普通 | 判断两个字符串的大小（按照字符编码比较）此方法的返回值有如下三种结果：=0，表示要比较的两个字符串内容相同；&gt;0，表示大于的结果；&lt;0，表示小于的结果。 |
+| 4 | public int compareToIgnoreCase(String str) | 普通 | 不区分大小写进行字符串大小比较 |
 
 **范例：**相等判断
 
@@ -342,6 +343,27 @@ public class MainClass {
 
 如果是一些敏感字严格来讲是拆分不了，如果真的遇见拆分不了的情况就使用“\”进行转义后才可以拆分。
 
+### 格式化字符串
+
+从JDK1.5开始，为了吸引更多的开发人员，Java提供了格式化数据的处理操作，类似于C语言中的格式化输出语句，可以利用占位符实现输出。常用的占位符：字符串（%s）、字符（%c）、整数（%d）、浮点数（%f）等。
+
+| No. | 方法名称 | 类型 | 描述 |
+| :---: | :---: | :---: | :---: |
+| 1 | public static String format(String format, Object... args) | 静态 | 格式化字符串 |
+
+**范例:**格式化字符串
+```java
+public class MainClass {
+    public static void main(String[] args) {
+        String name = "韩梅梅";
+        int age = 18;
+        double score = 75.1234;
+        String info = String.format("姓名：%s，年龄：%d，成绩：%f。", name, age, score);
+        System.out.println(info);
+    }
+}
+```
+
 ### 其他方法
 
 以上给出的方法是可以归类的，但是在String里面也有一部分方法是不能归类的：
@@ -452,27 +474,27 @@ public class MainClass {
 | 9 | public boolean equals\(String anObject\) | 普通 | 进行相等判断，区分大小写 |
 | 10 | public boolean equalsIgnoreCase\(String anotherString\) | 普通 | 进行相等判断，不区分大小写 |
 | 11 | public int compareTo\(String anotherString\) | 普通 | 判断两个字符串的大小（按照字符编码比较） |
-| 12 | public boolean contains\(String s\) | 普通 | 判断指定的内容是否存在 |
-| 13 | public int indexOf\(String str\) | 普通 | 由前向后查找指定字符串的位置，如果查找到返回第一个字母的索引，如果找不到返回-1。 |
-| 14 | public int indexOf\(String str,int fromIndex\) | 普通 | 从指定位置由前向后查找指定字符串，找不到返回-1。 |
-| 15 | public int lastIndexOf\(String str\) | 普通 | 由后向前查找指定字符串，找不到返回-1。 |
-| 16 | public int lastIndexOf\(String str,int fromIndex\) | 普通 | 从指定位置由后向前查找指定字符串，找不到返回-1. |
-| 17 | public boolean startsWith\(String prefix\) | 普通 | 判断是否以指定字符串开头 |
-| 18 | public boolean startsWith\(String prefix,int toffset\) | 普通 | 从指定位置开始判断是否以指定字符串开头 |
-| 19 | public boolean endsWith\(String suffix\) | 普通 | 判断是否以指定字符串结尾 |
-| 20 | public String replaceAll\(String regex,String replacement\) | 普通 | 用新的内容替换掉全部旧的内容 |
-| 21 | public String replaceFirst\(String regex,String replacement\) | 普通 | 替换首个满足条件的内容 |
-| 22 | public String substring\(int beginIndex\) | 普通 | 从指定索引截取到结尾 |
-| 23 | public String substring\(int beginIndex,int endIndex\) | 普通 | 截取部分子字符串 |
-| 24 | public String\[\] split\(String regex\) | 普通 | 按照指定字符串进行全部拆分 |
-| 25 | public String\[\] split\(String regex,int limit\) | 普通 | 按照指定的字符串进行部分拆分 |
-| 26 | public String concat\(String str\) | 普通 | 字符串连接，与“+”类似 |
-| 27 | public String toLowerCase\(\) | 普通 | 转小写 |
-| 28 | public String toUpperCase\(\) | 普通 | 转大写 |
-| 29 | public String trim\(\) | 普通 | 去掉字符串两边的空格 |
-| 30 | public int length\(\) | 普通 | 取得字符串长度 |
-| 31 | public String intern\(\) | 普通 | 数据入池 |
-| 32 | public boolean isEmpty\(\) | 普通 | 判断是否是空字符串 |
-
-
-
+| 12 | public int compareToIgnoreCase(String str) | 普通 | 不区分大小写进行字符串大小比较 |
+| 13 | public boolean contains\(String s\) | 普通 | 判断指定的内容是否存在 |
+| 14 | public int indexOf\(String str\) | 普通 | 由前向后查找指定字符串的位置，如果查找到返回第一个字母的索引，如果找不到返回-1。 |
+| 15 | public int indexOf\(String str,int fromIndex\) | 普通 | 从指定位置由前向后查找指定字符串，找不到返回-1。 |
+| 16 | public int lastIndexOf\(String str\) | 普通 | 由后向前查找指定字符串，找不到返回-1。 |
+| 17 | public int lastIndexOf\(String str,int fromIndex\) | 普通 | 从指定位置由后向前查找指定字符串，找不到返回-1. |
+| 18 | public boolean startsWith\(String prefix\) | 普通 | 判断是否以指定字符串开头 |
+| 19 | public boolean startsWith\(String prefix,int toffset\) | 普通 | 从指定位置开始判断是否以指定字符串开头 |
+| 20 | public boolean endsWith\(String suffix\) | 普通 | 判断是否以指定字符串结尾 |
+| 21 | public String replaceAll\(String regex,String replacement\) | 普通 | 用新的内容替换掉全部旧的内容 |
+| 22 | public String replaceFirst\(String regex,String replacement\) | 普通 | 替换首个满足条件的内容 |
+| 23 | public String substring\(int beginIndex\) | 普通 | 从指定索引截取到结尾 |
+| 24 | public String substring\(int beginIndex,int endIndex\) | 普通 | 截取部分子字符串 |
+| 25 | public String\[\] split\(String regex\) | 普通 | 按照指定字符串进行全部拆分 |
+| 26 | public String\[\] split\(String regex,int limit\) | 普通 | 按照指定的字符串进行部分拆分 |
+| 27 | public static String format(String format, Object... args) | 静态 | 格式化字符串 |
+| 28 | public String concat\(String str\) | 普通 | 字符串连接，与“+”类似 |
+| 29 | public String toLowerCase\(\) | 普通 | 转小写 |
+| 30 | public String toUpperCase\(\) | 普通 | 转大写 |
+| 31 | public String trim\(\) | 普通 | 去掉字符串两边的空格 |
+| 32 | public int length\(\) | 普通 | 取得字符串长度 |
+| 33 | public String intern\(\) | 普通 | 数据入池 |
+| 34 | public boolean isEmpty\(\) | 普通 | 判断是否是空字符串 |
+| 35 | public boolean isEmpty\(\) | 普通 | 判断是否是空字符串 |

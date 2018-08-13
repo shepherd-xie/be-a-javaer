@@ -1,5 +1,9 @@
 ## Java5新特性
 
+* [可变参数](chapter-2/section-25.md#可变参数)
+* [foreach循环](chapter-2/section-25.md#foreach循环)
+* [静态导入](chapter-2/section-25.md#静态导入)
+
 ---
 
 从JDK1.5开始，Java的开发就出现了许多的新特性。
@@ -79,11 +83,11 @@ public class MainClass {
 
 2、可变参数就属于数组的变形应用。
 
-## for_each循环
+## foreach循环
 
 增强型for循环的使用。
 
-for_each输出是由C#最早引入的概念。其目的就是进行数组或者是集合数据的输出。
+foreach输出是由C#最早引入的概念。其目的就是进行数组或者是集合数据的输出。
 
 在最早如果要进行数组输出肯定使用for循环，而后利用下标进行数据的访问。
 
@@ -100,7 +104,7 @@ public class MainClass {
 
 有人会认为以上的输出需要使用索引会比较麻烦。
 
-从JDK1.5之后增加的for_each循环形式就可以取消掉索引的操作形式。语法如下：
+从JDK1.5之后增加的foreach循环形式就可以取消掉索引的操作形式。语法如下：
 
 ```java
 for (类型 变量 : 数组 | 集合) {

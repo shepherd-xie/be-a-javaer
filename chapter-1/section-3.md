@@ -8,11 +8,11 @@ Java一共分为两大类数据：基本数据类型、引用数据类型；
 
 * 基本数据类型：
   * 数值型：
-    * 整形：byte、short、int、long；    ----&gt;    默认值：0
-    * 浮点型：float、double；                ----&gt;    默认值：0.0
-  * 字符型：char；                                        ----&gt;    默认值：‘\u0000’
-  * 布尔型：boolean；                                  ----&gt;    默认值：false
-* 引用数据类型：数组、类、接口；                 ----&gt;    默认值：null
+    * 整形：byte、short、int、long；_默认值：0_
+    * 浮点型：float、double；_默认值：0.0_
+  * 字符型：char；_默认值：‘\u0000’_
+  * 布尔型：boolean；_默认值：false_
+* 引用数据类型：数组、类、接口；_默认值：null_
 
 基本数据类型不牵扯内存分欧问题，而引用数据类型需要由开发者为其分配空间，而后进行关系的匹配。
 
@@ -77,10 +77,10 @@ System.out.println(min - 2);    //最小值减2：2147483646
 ```java
 int max = Integer.MAX_VALUE;     //取出最大值
 int min = Integer.MIN_VALUE;     //取出最小值
-// int变量 ± long型常量 = int型数据
+// int变量 ± long型常量 = long型数据
 System.out.println(max + 1L);         //最大值加1：2147483648
 System.out.println(min - (long)1);    //最小值减1：-2147483649
-// long变量 ± int型常量 = int型数据
+// long变量 ± int型常量 = long型数据
 System.out.println((long)min - 2);    //最小值减2：-2147483650
 ```
 
@@ -289,6 +289,8 @@ String str = "Hello";
 str = str + " World !";
 System.out.println(str);
 ```
+
+> 此处的“ + ”实际上只是一个[语法糖（Syntactic sugar）](https://zh.wikipedia.org/wiki/%E8%AF%AD%E6%B3%95%E7%B3%96)，当“ + ”的左右两侧出现String类型数据时底层调用的是[String::concat](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#concat-java.lang.String-)来实现字符串拼接。
 
 数学计算里面有“ + ”，字符串里面也有“ + ”，如果一起使用呢？
 

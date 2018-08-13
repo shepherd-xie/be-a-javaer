@@ -486,7 +486,7 @@ public class MainClass {
 |------ java.lang.NumberFormatException 
 ```
 
-在Java里面为了方便用户代码的编写，专门提供了一种RuntimeException类，这种异常类的最大特征在于：程序在编译的时候不会强制性的要求用户处理异常，用户可以根据自己的需要选择性进行处理，但是如果没有处理又发生异常了，将交给JVM默认处理。也就是说RuntimeException的子异常类，可以根据用户需要选择进行处理。
+在Java里面为了方便用户代码的编写，专门提供了一种RuntimeException类，这种异常类的最大特征在于：程序在编译的时候不会强制性的要求用户处理异常，用户可以根据自己的需要选择性进行处理，但是如果没有处理又发生异常了，将交给JVM默认处理。也就是说RuntimeException的子异常类，可以根据用户需要选择进行处理。RuntimeException又称_**非受检异常（Unchecked Exception）**_，RuntimeException以外的强制用户处理的异常又称_**受检异常（Checked Exception）**_。
 
 **面试题：**请解释Exception与RuntimeException的区别？请列举出几个常见的RuntimeException；
 
@@ -556,10 +556,6 @@ public class MainClass {
 
 #### 总结
 
-1、Exception的父类是Throwable，但是在编写代码的时候尽量不要使用Throwable，因为Throwable下还包含了一个Error子类，我们能够处理的只有Exception子类；
-
-2、异常处理的标准格式：tyr、catch、finally、throw、throws；
-
-3、RuntimeException与Exception的区别。
-
-
+1. Exception的父类是Throwable，但是在编写代码的时候尽量不要使用Throwable，因为Throwable下还包含了一个Error子类，我们能够处理的只有Exception子类；
+2. 异常处理的标准格式：tyr、catch、finally、throw、throws；
+3. RuntimeException与Exception的区别。
