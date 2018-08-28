@@ -1,12 +1,8 @@
 ## 正则表达式
 
----
-
-所有的开发一定要有正则的支持。
-
-1、常用的正则标记；
-
-2、String类对正则的支持。
+* [常用的正则标记](/chapter-3/section-9.md#常用的正则标记)
+* [String类对正则的支持](/chapter-3/section-9.md#String类对正则的支持)
+* [java.util.regex包支持](/chapter-3/section-9.md#java.util.regex包支持)
 
 ### 问题引出
 
@@ -61,7 +57,7 @@ public class MainClass{
 * Pattern类：此类对象如果要想取得必须使用compile()方法，方法的功能是编译正则；
 * Matcher类：通过Pattern类取得。
 
-### 正则标记（重点）
+### 常用的正则标记
 
 所有的正则可以使用的标记都在java.util.Pattern类里面定义。
 
@@ -90,7 +86,7 @@ public class MainClass{
 * \\w：等价于\[a-zA-Z\_0-9\]，表示由任意的字母、数字、\_所组成；
 * \\W：等价于\[^a-zA-Z\_0-9\]，表示不是由任意的字母、数字、\_所组成；
 
-4、边界匹配（不要在Java中使用）
+4、边界匹配
 
 * ^ ：正则的开始；
 * $ ：正则的结束；
@@ -110,7 +106,7 @@ public class MainClass{
 * X|Y：满足正则X或正则Y；
 * (X)：将多个正则设置为一组；
 
-### String类对正则的支持（重点）
+### String类对正则的支持
 
 在JDK1.4之后，由于正则的引入，所以String类里面也相应的增加了新的操作方法支持。
 
@@ -125,7 +121,6 @@ public class MainClass{
 给出的几个方法里面对于替换和拆分实际上难度不高，最关键的就是正则匹配，在验证上使用的特别多。
 
 **范例：**实现字符串替换
-
 ```java
 package com.alpha;
 public class MainClass{ 
@@ -138,7 +133,6 @@ public class MainClass{
 ```
 
 **范例：**字符串拆分
-
 ```java
 package com.alpha;
 public class MainClass{ 
@@ -249,12 +243,11 @@ public class MainClass{
 }
 ```
 
-### java.util.regex包支持(理解)
+### java.util.regex包支持
 
 在大多数情况下使用正则的时候都会采用String类完成，但是正则最原始的开发包是java.util.regex，这个包里提供有两个类。
 
 **范例：**Pattern类
-
 ```java
 package com.alpha;
 import java.util.Arrays;
@@ -271,7 +264,6 @@ public class MainClass{
 ```
 
 **范例：**字符串验证
-
 ```java
 package com.alpha;
 import java.util.regex.Matcher;
@@ -291,7 +283,6 @@ public class MainClass{
 
 #### 总结
 
-1、利用正则实现验证代码可以最少化；
-
-2、一定要清楚String类对正则支持的几个方法，以及所有讲解过的相关程序。
+1. 利用正则实现验证代码可以最少化；
+2. 一定要清楚String类对正则支持的几个方法，以及所有讲解过的相关程序。
 

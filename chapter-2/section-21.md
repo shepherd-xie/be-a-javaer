@@ -1,7 +1,7 @@
 ## 拓展概念
 
-* [匿名内部类](chapter-2/section-21.md#匿名内部类)
-* [包装类](chapter-2/section-21.md#包装类)
+* [匿名内部类](/chapter-2/section-21.md#匿名内部类)
+* [包装类](/chapter-2/section-21.md#包装类)
 
 ---
 

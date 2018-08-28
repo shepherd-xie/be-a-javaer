@@ -1,7 +1,7 @@
 ## 控制权限
 
-* [单例设计模式](chapter-2/section-23.md#单例设计模式)
-* [多例设计模式](chapter-2/section-23.md#多例设计模式)
+* [单例设计模式](/chapter-2/section-23.md#单例设计模式)
+* [多例设计模式](/chapter-2/section-23.md#多例设计模式)
 
 ---
 

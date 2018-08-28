@@ -1,8 +1,8 @@
 ## Java5新特性
 
-* [可变参数](chapter-2/section-25.md#可变参数)
-* [foreach循环](chapter-2/section-25.md#foreach循环)
-* [静态导入](chapter-2/section-25.md#静态导入)
+* [可变参数](/chapter-2/section-25.md#可变参数)
+* [foreach循环](/chapter-2/section-25.md#foreach循环)
+* [静态导入](/chapter-2/section-25.md#静态导入)
 
 ---
 

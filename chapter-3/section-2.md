@@ -100,6 +100,7 @@ main
 所谓的线程休眠指的就是让线程的执行速度稍微变慢一点。休眠的方法：
 
 * public static void sleep(long millis) throws InterruptedException
+* public static void sleep(long millis, int nanos) throws InterruptedException
 
 **范例：**观察休眠特点
 
@@ -129,6 +130,106 @@ public class MainClass { // 主类
 因为每一次执行到run()方法的线程对象都必须进行休眠，所以执行的速度就会变慢。
 
 默认情况下，在休眠的时候如果设置了多个线程对象，那么多有的线程对象将一起进入到run()方法（所谓的一起进入实际上是因为先后顺序实在是太短了，但实际上有区别。）。
+
+### 线程的中断
+
+在之前的休眠方法中抛出了一个中断异常InterruptedException，实际上线程是可以被其他线程中断的，Thread类提供以下方法：
+* 判断线程是否被中断：public boolean isInterrupted()
+* 中断线程：public void interrupt()
+
+**范例：**线程的中断
+```java
+public class MainClass { // 主类
+	public static void main(String[] args) throws Exception {
+        Thread thread = new Thread(() -> {
+            System.out.println("线程休眠");
+            try {
+                Thread.sleep(10000);
+                System.out.println("休眠结束");
+            } catch (InterruptedException e) {
+                System.out.println("产生中断");
+            }
+        });
+        thread.start();
+        Thread.sleep(100);
+        if (!thread.isInterrupted()) {
+            System.out.println("中断线程");
+            thread.interrupt();
+        }
+	}
+}
+```
+
+### 线程合并
+
+线程合并就是将几个并发线程合并为一个单一线程执行，应用场景就是当一个线程的执行必须是要等到其他线程执行完毕之后才能执行。
+* public final void join() throws InterruptedException
+* public final void join(long millis) throws InterruptedException
+* public final void join(long millis, int nanos) throws InterruptedException
+
+**范例：**线程合并
+```java
+public class MainClass { // 主类
+	public static void main(String[] args) throws Exception {
+        Thread mainThread = Thread.currentThread();
+        Thread thread = new Thread(() -> {
+            for (int i = 0; i < 50; i ++) {
+                if (i == 20) {
+                    try {
+                        mainThread.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName() + " ==> " + i);
+            }
+        });
+        thread.start();
+        for (int i = 0; i < 50; i ++) {
+            Thread.sleep(100);
+            System.out.println(Thread.currentThread().getName() + " ==> " + i);
+        }
+	}
+}
+```
+
+### 线程让步
+
+如果当前线程获得CPU时间片可以使用线程让步将CPU时间片让渡给其他线程，而自身进入就绪阶段。
+* public static void yield()
+
+**范例：**线程让步
+```java
+public class MainClass { // 主类
+	public static void main(String[] args) throws Exception {
+        Thread mainThread = Thread.currentThread();
+        Thread thread = new Thread(() -> {
+            for (int i = 0; i < 50; i ++) {
+                if (i % 3 == 0) {
+                    System.out.println(Thread.currentThread().getName() + " 让步");
+                    Thread.yield();
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName() + " ==> " + i);
+            }
+        });
+        thread.start();
+        for (int i = 0; i < 50; i ++) {
+            Thread.sleep(100);
+            System.out.println(Thread.currentThread().getName() + " ==> " + i);
+        }
+	}
+}
+```
 
 ### 线程优先级
 

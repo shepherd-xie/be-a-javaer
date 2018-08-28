@@ -1,316 +1,327 @@
-## IO高级应用
+## IO辅助概念
 
----
+* [字符编码](/chapter-3/section-17.md#字符编码)
+* [内存流](/chapter-3/section-17.md#内存流)
+* [管道流](/chapter-3/section-17.md#管道流)
+* [RandomAccessFile](/chapter-3/section-17.md#RandomAccessFile)
 
-### 缓冲输入流
+### 字符编码
 
-缓冲输入流是在开发之中，也会经常被使用到的工具类，其目的是解决数据的乱码问题。
+了解常见的字符编码。
 
-现在最直观的问题就是System.in所带来的问题。
+了解乱码的产生原因。
 
-如果要进行中文数据的处理那么就会使用到字符流，如果想要完整的处理数据，那么一定需要一个缓冲区。对于缓冲区的操作有两种流：
+计算机中所有的信息组成都是二进制数据，那么所有能够描述出的中文文字都是经过处理后的结果。在计算机的世界里，所有的语言文字都会使用编码来进行描述，例如：最常见的编码是ASCII码。在实际的工作里面最为常见的几种编码如下：
 
-* 字符缓冲流：BufferedReader、BufferWriter；
-* 字节换成流：BufferedInputStream、BufferedOutputStream；
+* GBK、GB2312：中文的国标编码，其中GBK包含有简体中文与繁体中文两种，而GB2312只包含简体；
+* ISO8859-1：是国际编码，可以描述任何的文字信息；
+* UNICODE：是十六进制编码，造成传输的无用数据过多；
+* UTF编码（UTF-8）：融合了ISO8859-1和UNICODE编码的特点；
 
-在给出的缓冲区数据输入流上有两个，其中最为重要的就是BufferedReader，因为在BufferedReader类里面提供有一个重要的读取方法：public String readLine() throws IOException，读取一行数据，以分隔符（"\n"）为界。
+在以后的所有开发里面，使用的都是UTF-8编码。
 
-下面来观察BufferedReader类的继承结构以及构造方法；
+所谓的乱码最本质的方式就是编码与解码的字符集不统一。如果要想知道现在系统能够使用的编码，那么可以列出所有的环境属性。
+
+```java
+package com.alpha;
+public class MainClass { 
+	public static void main(String[] args) throws Exception {
+		System.getProperties().list(System.out);
+	}
+}
+```
+
+`file.encoding=GBK`
+`file.separator=\`
+
+发现默认的编码是GBK，那么也就是说默认输出的中文都是GBK编码标准。
+
+**范例：**默认的中文输出
+
+```java
+package com.alpha;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+public class MainClass { 
+	public static void main(String[] args) throws Exception {
+		File file = new File("d:" + File.separator + "test.txt");
+		OutputStream output = new FileOutputStream(file);
+		output.write("你好，世界！".getBytes());
+		output.close();
+	}
+}
+```
+
+**范例：**出现乱码
+
+```java
+package com.alpha;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+public class MainClass { 
+	public static void main(String[] args) throws Exception {
+		File file = new File("d:" + File.separator + "test.txt");
+		OutputStream output = new FileOutputStream(file);
+		output.write("你好，世界！".getBytes("ISO8859-1"));
+		output.close();
+	}
+}
+```
+
+所谓的乱码最本质的就是编码集不统一。
+
+#### 总结
+
+1、以后开发的代码使用的都是UTF-8编码；
+
+2、乱码的本质就是编码与解码不统一。
+
+### 内存流
+
+可以使用内存流实现IO操作
+
+在之前使用过了文件操作流实现了针对于文件数据的输入与输出操作，但是如果现在某一种应该用，需要进行IO操作，可是又不想产生文件的时候，就可以利用内存来实现输入与输出的操作。
+
+针对于内存流，java.io包里面提供了两组操作：
+
+* 字节内存流：ByteArrayInputStream、ByteArrayOutputStream
+* 字符内存流：CharArrayReader、CharArrayWriter
+
+本次是以字节内存流操作为主。下面重点来看ByteArrayInputStream与ByteArrayOutputStream的继承结构与构造方法。
+
+ByteArrayInputStream
 
 * java.lang.Object
-  * java.io.Reader
-    * java.io.BufferedReader
+  * java.io.InputSteram
+    * java.io.ByteArrayInputStream
 
-Constructor：public BufferedReader(Reader in)
+Constructor：public ByteArrayInputStream(byte[] buf)，表示将要操作的数据设置到输入流
 
-但是此时如果要想使用BufferedReader类来处理System.in就比较麻烦了，因为System.in是InputStream类。在之前学习过一个类：InputStreamReader。
+ByteArrayOutputStream
 
-**范例：**键盘输入数据的标准格式
+* java.lang.Object
+  * java.io.OutputStream
+    * java.io.ByteArrayOutputStream
+
+Constructor：public ByteArrayOutputStream()，从内存输出数据
+
+下面为了更好的说明出问题，特别做一个举例：
+
+* 以文件操作为例：
+  * 输出（OutputStream）：程序 -> OutputStream -> 文件；
+  * 输入（InputStream）：程序 <- InputStream <- 文件；
+* 以内存操作为例：
+  * 输出（InputStream）：程序 -> InputStream -> 内存；
+  * 输入（OutputStream）：程序 <- OutputStream <- 内存；
+
+**范例：**实现一个小写字母转大写字母的操作
+
+* 为了方便的实现字母的转大写的转换（避免不必要的字符也被转换了）可以借助于Character：
+  * public static char toLowerCase(char ch)；
+  * public static int toLowerCase(int codePoint)；
+  * public static char toUpperCase(char ch)；
+  * public static int toUpperCase(int codePoint)；
 
 ```java
 package com.alpha;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 public class MainClass { 
 	public static void main(String[] args) throws Exception {
-		// System.in是InputStream类对象
-		// BufferedReader的构造方法接收Reader类对象
-		// 利用InputStreamReader将字符流变为字节流
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("请输入数据：");
-		String str = br.readLine(); // 以回车作为换行
-		System.out.println("输入的内容：" + str);
-	}
-}
-```
-
-此时输入的数据没有长度限制，并且返回的还是String型数据，那么这样就可以实现键盘的输入，但是这种操作一般意义不大。
-
-使用BufferedReader是因为他可以实现字符串数据的接收，所以现在可以实现基于正则的判断。
-
-**范例：**判断输入内容
-
-```java、
-package com.alpha;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-public class MainClass { 
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		boolean flag = true;
-		while (flag) {
-			System.out.print("请输入年龄：");
-			String str = br.readLine();
-			if (str.matches("\\d{1,3}")) { // 输入的数据由数字组成
-				System.out.println("年龄是：" + Integer.parseInt(str));
-				flag = false;
-			} else {
-				System.out.println("年龄输入错误");
-			}
+		String str = "Hello World!"; // 要求被转换的字符串
+		// 本次将通过内存操作流实现转换，先将数据保存在内存流里面，而后从里面取出每一个数据
+		// 将所有要读取的数据设置到内存输入流之中，本次利用向上转型
+		InputStream input = new ByteArrayInputStream(str.getBytes());
+		// 为了能够将所有的内存流数据取出，可以使用ByteArrayOutputStream
+		OutputStream output = new ByteArrayOutputStream();
+		int temp = 0; // 读取每一个字节数据
+		// 经过此次循环之后，所有的数据都将保存在内存输出流对象之中
+		while ((temp = input.read()) != -1) { // 每次读取一个数据
+			output.write(Character.toUpperCase(temp)); // 字节输出流
 		}
+		System.out.println(output); // 调用toString()方法
+		input.close();
+		output.close();
 	}
 }
 ```
 
-正式因为此处可以使用正则进行操作验证，所以在开发的过程中，最方便的是能够接收String类型的数据。
+以上的操作代码里面，所有的输入和输出流都发生了向上转型，向上转型的好处是可以得到操作模式的统一，但是千万不要忽略了一个问题，每一个子类实际上都有每一个子类自己的功能，在ByteArrayOutputStream类里面有一个非常重要的方法：public byte[] toByteArray()，这个方法可以将所有的保存在内存中的字节数据变为字节数组。
 
-除了可以接受输入信息之外，也可以利用缓冲区进行文件的读取。
+利用这个BYteArrayOutputStream可以实现多个文件的同时读取。
 
-```java
-package com.alpha;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-public class MainClass { 
-	public static void main(String[] args) throws Exception {
-		File file = new File("d:" + File.separator + "my.txt");
-		BufferedReader br = new BufferedReader(new FileReader(file));
-		String str = null;
-		while ((str = br.readLine()) != null) {
-			System.out.println(str);
-		}
-		br.close();
-	}
-}
-```
-
-与直接使用InputStream（Reader）类相比，使用BufferedReader在进行文件信息读取的时候会更加的方便。
-
-#### 总结
-
-读取数据不再直接使用InoutStream，就好比输出不再使用OutputStream一样。
-
-### 扫描流：Scanner
-
-1、Scanner类的主要她点以及操作形式；
-
-2、利用Scanner解决输入流的操作。
-
-如果要改进输出功能不足体用有打印流，随后又利用了BufferedReader解决了大文本数据的读取操作，但是BufferedReader类有两个问题：
-
-* 它读取数据的时候只能够按照字符串返回：public String readLine() throws IOException；
-* 所有的分隔符都是固定的。
-
-在JDK1.5后提供有体格java.util.Scanner的类，这个类专门负责解决所有输入流的操作问题。
-
-构造方法：public Scanner(InputStream source)，接收有一个InputStream类对象，表示的是由外部设置输入的位置。
-
-在Scanner类里面定义了一下的两组方法：
-
-* 判断是否有指定数据：public boolean hasNext()；
-* 取出数据：public String next()。
-
-**范例：**以键盘输入数据为例
+**范例：**实现文件的合并读取
 
 ```java
 package com.alpha;
-import java.util.Scanner;
-public class MainClass { 
-	public static void main(String[] args) throws Exception {
-		Scanner scan = new Scanner(System.in);
-		System.out.print("请输入内容：");
-		if (scan.hasNext()) { // 现在有输入数据
-			System.out.println("输入内容：" + scan.next());
-		}
-		scan.close();
-	}
-}
-```
-
-Scanner与BufferedReader类的操作相比，Scanner更加的容易，并且操作更为直观。
-
-但是需要提醒的是，如果输入的是字符串，是否存在有hasNext()方法意义不大。但是如果是其他的数据类型，hasNext()就有意义了，为了保持操作的统一性，不管输入的是什么类型都要有hasNext()方法。
-
-**范例：**输入一个数字 —— double
-
-```java
-package com.alpha;
-import java.util.Scanner;
-public class MainClass { 
-	public static void main(String[] args) throws Exception {
-		Scanner scan = new Scanner(System.in);
-		System.out.print("请输入成绩：");
-		if (scan.hasNextDouble()) {
-			double score = scan.nextDouble();
-			System.out.println("输入内容：" + score);
-		} else {
-			System.out.println("输入的不是数字");
-		}
-		scan.close();
-	}
-}
-```
-
-除了以上支持的各种可行外，也可以在Scanner输入数据的时候设置正则验证。
-
-**范例：**正则验证
-
-```java
-package com.alpha;
-import java.util.Scanner;
-public class MainClass { 
-	public static void main(String[] args) throws Exception {
-		Scanner scan = new Scanner(System.in);
-		System.out.print("请输入生日：");
-		if (scan.hasNext("\\d{4}-\\d{2}-\\d{2}")) {
-			String bir = scan.next("\\d{4}-\\d{2}-\\d{2}");
-			System.out.println("输入内容：" + bir);
-		} else {
-			System.out.println("输入的格式错误");
-		}
-		scan.close();
-	}
-}
-```
-
-在Scanner类的构造里面由于接受的类型是InputStream，所以此时依然可以设置一个文件的数据流，但是在进行文件读取的时候需要考虑到分隔符问题：public Scanner useDelimiter(String pattern)。
-
-```java
-package com.alpha;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.Scanner;
+import java.io.InputStream;
 public class MainClass { 
 	public static void main(String[] args) throws Exception {
-		Scanner scan = new Scanner(new FileInputStream(new File("d:" + File.separator + "my.txt")));
-		scan.useDelimiter("\r\n"); // 设置换行符
-		while (scan.hasNext()) {
-			System.out.println(scan.next());
+		File filea = new File("d:" + File.separator + "infoa.txt");
+		File fileb = new File("d:" + File.separator + "infob.txt");
+		InputStream inputa = new FileInputStream(filea);
+		InputStream inputb = new FileInputStream(fileb);
+		ByteArrayOutputStream output = new ByteArrayOutputStream();
+		int temp = 0; // 每次读取一个字节
+		while ((temp = inputa.read()) != -1) {
+			output.write(temp);
 		}
-		scan.close();
+		while ((temp = inputb.read()) != -1) {
+			output.write(temp);
+		}
+		// 现在所有的内容都保存在了内存输出流里面，所有的内容变为字节数组取出
+		byte[] data = output.toByteArray();
+		output.close();
+		inputa.close();
+		inputb.close();
+		System.out.println(new String(data));
 	}
 }
 ```
 
-> ### 关于\r、\n的一些冷知识
-> 
-> * \r = CR (Carriage Return) // moves the cursor to the beginning of the line without advancing to the next line. -Used as a new line character in Mac OS before X
-> * \n = LF (Line Feed) // moves the cursor down to the next line without returning to the beginning of the line. -Used as a new line character in Unix/Mac OS X
-> * \r\n = CR + LF // a combination of \r and \n. -Used as a new line character in Windows
-> 
-> 在计算机还没有出现之前，有一种叫做电传打字机（Teletype Model 33）的玩意，每秒钟可以打10个字符。但是它有一个问题，就是打完一行换行的时候，要用去0.2秒，正好可以打两个字符。要是在这0.2秒里面，又有新的字符传过来，那么这个字符将丢失。
-> 
-> 于是，研制人员想了个办法解决这个问题，就是在每行后面加两个表示结束的字符。一个叫做“回车”，告诉打字机把打印头定位在左边界；另一个叫做“换行”，告诉打字机把纸向下移一行。
-> 
-> 这就是“换行”和“回车”的来历，从它们的英语名字上也可以看出一二。
-> 
-> 后来，计算机发明了，这两个概念也就被般到了计算机上。那时，存储器很贵，一些科学家认为在每行结尾加两个字符太浪费了，加一个就可以。于是，就出现了分歧。
-> 
-> * Unix系统里，每行结尾只有“<换行>”，即“\n”；
-> * Windows系统里面，每行结尾是“<回车><换行>”，即“\r\n”；
-> * Mac系统里，每行结尾是“<回车>”，即“\r”。
-> 
-> 一个直接后果是，Unix/Mac系统下的文件在Windows里打开的话，所有文字会变成一行；而Windows里的文件在Unix/Mac下打开的话，在每行的结尾可能会多出一个^M符号。
+对于OutputStream和InputStream又有了新的输入及输出的位置，其中以ByteArrayOutputStream最为重要。
 
-现在使用Scanner读取数据的时候综合来讲的确要比BufferedReader简单一些，所以在以后的开发之中，程序输出数据使用打印流，输入数据使用扫描流。
+### 管道流
 
-#### 总结
+管道流主要的功能是实现两个线程之间的IO处理操作。管道字符流也分为两类：
 
-InputStream类的功能不足被Scanner替代了。
-
-Reader类的功能不足被BufferedReader替代了。
-
-OutputStream类的功能不足被PrintStream替代了。
-
-Writer类的功能不足被PrintWriter替代了。
-
-### 对象序列化
-
-1、对象序列化的意义以及实现；
-
-2、了解对象输入、输出流的使用；
-
-3、理解transient关键字。
-
-**对象序列化**
-
-所谓的对象序列化指的就是将保存在内存中的对象数据转换为二进制数据流进行传输的操作。但是并不是所有类的对象都可以进行序列化，想要能够序列化的类必须要实现java.io.Serializable接口。但是这个接口里面没有任何属性和方法存在，因为它是一个标识接口，表示一种能力。
-
-**范例：**定义一个可以被序列化对象的类
-
+* **字节管道流：**PipedOutputStream、PipedInputStream;
+  * 连接：`public void connect(PipedInputStream snk) throws IOException`;
+* **字符管道流：**PipedWriter、PipedReader;
+  * 连接：`public void connect(PipedWriter src) throws IOException`;
+  
+**范例：**实现管道操作
 ```java
-import java.io.Serializable;
-@SuppressWarnings("serial")
-class Book implements Serializable { // 此类对象可以被序列化
-	private String title;
-	private double price;
-	public Book(String title, double price) {
-		this.title = title;
-		this.price = price;
-	}
-	@Override
-	public String toString() {
-		return "Book [title=" + title + ", price=" + price + "]";
-	}
+public class Application {
+    public static void main(String[] args) throws IOException, InterruptedException {
+        SendThread send = new SendThread();
+        ReceiveThread receive = new ReceiveThread();
+        send.getOutputStream().connect(receive.getInputStream());
+        new Thread(send, "消息发送线程").start();
+        new Thread(receive, "消息接收线程").start();
+    }
+}
+class SendThread implements Runnable {
+    private PipedOutputStream outputStream;
+    public SendThread() {
+        this.outputStream = new PipedOutputStream();
+    }
+    @Override
+    public void run() {
+        for (int i = 0; i < 10; i ++) {
+            try {
+                this.outputStream.write(("[第" + (i + 1) + "次信息发送 - " + Thread.currentThread().getName()+ "] Hello World!\n").getBytes());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            this.outputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public PipedOutputStream getOutputStream() {
+        return outputStream;
+    }
+}
+class ReceiveThread implements Runnable {
+    private PipedInputStream inputStream;
+    public ReceiveThread() {
+        this.inputStream = new PipedInputStream(); 
+    }
+    @Override
+    public void run() {
+        byte[] buf = new byte[1024];
+        int len = 0;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        try {
+            while ((len = this.inputStream.read(buf)) != -1) {
+                bos.write(buf, 0, len);
+            }
+            System.out.println("[" + Thread.currentThread().getName() + "接收消息] \n" + new String(bos.toByteArray()));
+            bos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            this.inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public PipedInputStream getInputStream() {
+        return inputStream;
+    }
 }
 ```
 
-**实现序列化与反序列化**
+### RandomAccessFile
 
-由于现在只有单机程序，所以下面将对象序列化到文件里面，随后再通过文件反序列化到程序之中。如果要想实现这样的操作，那么需要两个类的支持：
+对于文件内容的处理操作主要通过InputStream（Reader）、OutputStream（Writer）来实现，但是利用这些类实现的内容读取只能够将数据部分部分读取进来。
 
-* 序列化类：java.io.ObjectOutputStream，将对象变为指定格式的二进制数据；
-* 反序列化类：java.io.ObjectInputStream，可以将序列化对象转换回对象。
+为了弥补这种方式的不足，Java提供了RandomAccessFile类，这个类可以实现文件的跳跃式读取，方便读取固定格式的内容，实现类似C语言的文件访问形式。
 
-**范例：**实现序列化对象操作 —— ObjectOutputStream
+RandomAccessFile类里面定义有如下的操作方法：
+* 构造方法：`public RandomAccessFile(File file, String mode) throws FileNotFoundException`;
+  * 文件处理模式：r、rw；
 
-* 构造方法：public ObjectOutputStream(OutputStream out) throws IOException
-* 输出对象：public final void writeObject(Object obj) throws IOException
-
+**范例：**实现文件的保存
 ```java
-	public static void ser() throws Exception {
-		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("d:" + File.separator + "book.txt")));
-		oos.writeObject(new Book("java", 12.5));
-		oos.close();
-	}
+public class Application {
+    public static void main(String[] args) throws Exception {
+        File file = new File("d:" + File.separator + "hello.txt");
+        RandomAccessFile raf = new RandomAccessFile(file, "rw");
+        String[] names = new String[] {"zhangsan", "lisi    ", "wangwu  "};
+        int[] ages = new int[] {30, 20, 16};
+        for (int i = 0; i < names.length; i ++) {
+            raf.write(names[i].getBytes());
+            raf.write(ages[i]);
+        }
+        raf.close();
+    }
+}
 ```
 
-**范例：**实现反序列化操作 —— ObjectInputStream
+RandomAccessFile最大的特点是在于数据的读取处理上，因为所有的数据是按照固定长度进行的保存，所以读取的时候就可以进行跳字节的读取：
+* 跳过n个字节：`public int skipBytes(int n) throws IOException`;
+* 定位到某个字节：`public void seek(long pos) throws IOException`;
 
-* 构造方法：public ObjectInputStream(InputStream in) throws IOException
-* 读取方法：public final Object readObject() throws IOException, ClassNotFoundException
-
+**范例：**读取数据
 ```java
-	public static void dser() throws Exception {
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("d:" + File.separator + "book.txt")));
-		Object obj = ois.readObject();
-		Book book = (Book) obj;
-		System.out.println(book);
-	}
+public class Application {
+    public static void main(String[] args) throws Exception {
+        File file = new File("d:" + File.separator + "hello.txt");
+        RandomAccessFile raf = new RandomAccessFile(file, "rw");
+        {
+            // 读取王五的数据
+            raf.skipBytes(24);
+            byte[] data = new byte[8];
+            int len = raf.read(data);
+            System.out.println("姓名：" + new String(data, 0, len) + "、年龄：" + raf.readInt());
+        }
+        {
+            // 读取李四的数据
+            raf.seek(12);
+            byte[] data = new byte[8];
+            int len = raf.read(data);
+            System.out.println("姓名：" + new String(data, 0, len) + "、年龄：" + raf.readInt());
+        }
+        {
+            // 读取战三的数据
+            raf.seek(0);
+            byte[] data = new byte[8];
+            int len = raf.read(data);
+            System.out.println("姓名：" + new String(data, 0, len) + "、年龄：" + raf.readInt());
+        }
+        raf.close();
+    }
+}
 ```
-
-在实际的开发之中，会由容器帮助用户自动完成以上的操作。
-
-**transient关键字**
-
-以上虽然实现了对象序列化，但是会发现序列化操作是将整个对象的所有属性内容进行了保存，那么如果说现在某些属性的内容不需要被保存，就可以通过transient关键字来定义。
-
-```java
-	private transient String title;
-```
-
-此时title属性将无法被序列化。但是大部分情况下不需要使用此关键字。
-
-#### 总结
-
-对象序列化本身就是一个非常简单的概念，但是由于其在开发之中的广泛应用很广泛，所以现在对于编写代码中就必须要清楚Serializable接口的作用，需要注意的是：不是所有的类都需要被序列化，只有需要传输的类才需要被序列化。

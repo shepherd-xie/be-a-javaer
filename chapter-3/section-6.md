@@ -1,12 +1,8 @@
 ## 数字操作类
 
----
-
-1、Math类；
-
-2、Random类；
-
-3、大数字操作类。
+* [Math类](/chapter-3/section-6.md#Math类)
+* [Random类](/chapter-3/section-6.md#Random类)
+* [大数字操作类](/chapter-3/section-6.md#大数字操作类)
 
 ### Math类
 
@@ -15,13 +11,10 @@ Math就是一个专门进行数学计算的操作类，里面提供了一系列�
 在Math类里面提供的一切方法都是static型的方法，因为Math类里面没有普通属性。
 
 Math类中有这样的一个方法：
-
 * 四舍五入：public static long round(double a)。
 
 **范例：**观察四舍五入
-
 ```java
-package com.alpha;
 public class MainClass{ 
 	public static void main(String[] args) throws Exception {
 		System.out.println(Math.round(15.5)); // 16
@@ -40,8 +33,6 @@ public class MainClass{
 **范例：**产生10个不大于100的正整数（0~99）
 
 ```java
-package com.alpha;
-import java.util.Random;
 public class MainClass{ 
 	public static void main(String[] args) throws Exception {
 		Random random = new Random();
@@ -55,11 +46,7 @@ public class MainClass{
 既然Random可以产生对技术，下面就希望利用其来实现一个36选7的功能。
 
 **范例：**36选7
-
 ```java
-package com.alpha;
-import java.util.Arrays;
-import java.util.Random;
 public class MainClass{ 
 	public static void main(String[] args) throws Exception {
 		Random random = new Random();
@@ -98,12 +85,10 @@ public class MainClass{
 
 在很多的开发之中随机数都一定会有。
 
-### 大整数操作类：BigInteger
+### 大数字操作类
 
-如果说现在要操作的数组值很大，那么首先想到的应该是double，那么如果说现在计算的结果超过了double该如何接收这个数据。
-
+如果说现在要操作的数字值很大，那么首先想到的应该是double，那么如果说现在计算的结果超过了double该如何接收这个数据。
 ```java
-package com.alpha;
 public class MainClass{ 
 	public static void main(String[] args) throws Exception {
 		System.out.println(Double.MAX_VALUE * Double.MAX_VALUE); // Infinity
@@ -119,11 +104,11 @@ public class MainClass{
 
 所以在Java里面考虑到了此类情况，专门提供了大数字的操作类，其中就有BigInteger、BigDecimal两种。
 
+**BigInteger**
+
 BigInteger类的构造方法：public BigInteger(String val)，它接受的是String型。
 
 ```java
-package com.alpha;
-import java.math.BigInteger;
 public class MainClass{ 
 	public static void main(String[] args) throws Exception {
 		BigInteger biga = new BigInteger("894165498148168684618");
@@ -141,7 +126,7 @@ public class MainClass{
 
 在Java里面虽然提供了大数字的操作类，但是很多的时候，我们对于数字的精度要求可能会更高，所以Java本身提供的数字类实际意义并不大。
 
-### 大浮点数：BigDecimal
+**BigDecimal两种**
 
 BigInteger不能保存小数，而BigDecimal可以保存小数。在BigDecimal类里面提供有如下的构造：
 
@@ -158,12 +143,7 @@ BigInteger不能保存小数，而BigDecimal可以保存小数。在BigDecimal�
   * int roundingMode：进位模式（public static final int ROUND_HALF_UP）。
 
 **范例：**实现准确的四舍五入
-
 ```java
-package com.alpha;
-
-import java.math.BigDecimal;
-
 class MyMath {
 	/**
 	 * 实现准确位数的四舍五入操作
@@ -188,10 +168,8 @@ public class MainClass{
 
 #### 总结
 
-1、Math类重点要清楚round()方法的机制；
-
-2、Random类生成随机数；
-
-3、如果数据量大就使用BigInteger或BigDecimal，这两个类是Number的子类。
+1. Math类重点要清楚round()方法的机制；
+2. Random类生成随机数；
+3. 如果数据量大就使用BigInteger或BigDecimal，这两个类是Number的子类。
 
 

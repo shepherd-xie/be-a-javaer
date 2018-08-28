@@ -1,8 +1,8 @@
 ## 深入分析类与对象
 
-* [成员属性封装](chapter-2/section-2.md#成员属性封装)
-* [构造方法与匿名对象](chapter-2/section-2.md#构造方法与匿名对象)
-* [简单Java类](chapter-2/section-2.md#简单Java类)
+* [成员属性封装](/chapter-2/section-2.md#成员属性封装)
+* [构造方法与匿名对象](/chapter-2/section-2.md#构造方法与匿名对象)
+* [简单Java类](/chapter-2/section-2.md#简单Java类)
 
 ### 成员属性封装
 

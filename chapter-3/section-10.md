@@ -2,11 +2,9 @@
 
 ---
 
-1、认识反射；
-
-2、理解反射的作用；
-
-3、利用反射来调用类的结构。
+* 认识反射；
+* 理解反射的作用；
+* 利用反射来调用类的结构。
 
 ### 认识反射
 
@@ -28,7 +26,6 @@ public class MainClass{
 * 取得Class对象：public final Class<?> getClass()
 
 **范例：**观察反射
-
 ```java
 package com.alpha;
 import java.util.Date; // 先有类
@@ -51,7 +48,6 @@ class java.util.Date
 java.util.Class是一个类，这个类是反射操作的源头，即：所有的反射都要从此类开始进行，而最关键的是这个类有三种实例化方式：
 
 * 第一种：调用Object类中的getClass()方法；
-
 ```java
 package com.alpha;
 import java.util.Date; // 先有类
@@ -65,7 +61,6 @@ public class MainClass{
 ```
 
 * 第二种：使用“类.class”取得；
-
 ```java
 package com.alpha;
 import java.util.Date; // 先有类
@@ -101,7 +96,6 @@ public class MainClass{
 * 实例化对象方法：public T newInstance() throws InstantiationException, IllegalAccessException
 
 **范例：**利用反射实例化对象
-
 ```java
 package com.alpha;
 class Book {
@@ -127,7 +121,6 @@ public class MainClass{
 在任何的开发之中，new是造成耦合的最大元凶，一切的耦合都起源于new。
 
 **范例：**观察工厂设计模式
-
 ```java
 package com.alpha.factory;
 interface Fruit {
@@ -223,7 +216,6 @@ public class TestFactory {
 在之前所编写的代码实际上都默认使用了类中的无参构造方法，但是并不是所有的类都提供有无参构造。
 
 **范例：**观察程序的问题
-
 ```java
 package com.alpha.entity;
 public class Book {
@@ -393,8 +385,7 @@ public class MainClass{
 
 #### 总结
 
-1、实例化对象的方式增加了一种反射；
-
-2、反射只是一个开始。
+1. 实例化对象的方式增加了一种反射；
+2. 反射只是一个开始。
 
 

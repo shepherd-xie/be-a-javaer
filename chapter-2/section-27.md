@@ -17,7 +17,7 @@
 **范例：**定义一个表示颜色基色的多例
 
 ```java
-package com.alpha;
+\backspace
 class Color {
 	private String title;
 	private static final Color RED = new Color("红色");

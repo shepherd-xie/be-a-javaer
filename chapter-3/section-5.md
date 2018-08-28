@@ -1,8 +1,13 @@
 ## Java基础类库
 
----
+* [StringBuffer](/chapter-3/section-5.md#StringBuffer)
+* [Runtime](/chapter-3/section-5.md#Runtime)
+* [System](/chapter-3/section-5.md#System)
+* [Object::finalize](/chapter-3/section-5.md#Object::finalize)
+* [Cleaner](/chapter-3/section-5.md#Cleaner)
+* [对象克隆](/chapter-3/section-5.md#对象克隆)
 
-### StringBuffer类
+### StringBuffer
 
 1、StringBuffer类的主要特点；
 
@@ -174,7 +179,7 @@ public class MainClass{
 }
 ```
 
- 从JDK1.5之后增加了一个新的字符串操作类：StringBuilder，这个类的定义结构如下：
+从JDK1.5之后增加了一个新的字符串操作类：StringBuilder，这个类的定义结构如下：
 
 ```java
 public final class StringBuilder
@@ -195,11 +200,10 @@ implements Serializable, CharSequence
 
 String类依然是最常用的字符串描述类，而StringBuffer类由于出现时间较长，使用要比StringBuilder多。
 
-### Runtime类
+### Runtime
 
-1、Runtime类的主要作用；
-
-2、Runtime类的定义形式。
+1. Runtime类的主要作用；
+2. Runtime类的定义形式。
 
 在每一个JVM进程里面都会存在有一个Runtime类的对象，这个类的主要功能是取得一些与运行时有关的环境属性或者创建新的进程等操作。
 
@@ -260,16 +264,13 @@ public class MainClass{
 ```
 
 **面试题：**请解释什么叫GC？如何处理？
-
 * GC（Garbage Collector）垃圾收集器，指的是释放无用的内存空间；
 * GC会由系统不定期进行自动的回收，或者调用Runtime类中的gc()方法收工回收。
 
 实际上Runtime类还有一个更加有意思的功能，就是说他可以调用本机的可执行程序，并且创建进程。
-
 * 执行程序：public Process exec(String command) throws IOException.
 
 **范例：**执行进程
-
 ```java
 package com.alpha;
 public class MainClass{ 
@@ -284,28 +285,22 @@ public class MainClass{
 
 #### 总结
 
-1、Runtime类使用了单例设计模式，必须通过内部的getRuntime()方法才可以取得Runtime类对象；
+1. Runtime类使用了单例设计模式，必须通过内部的getRuntime()方法才可以取得Runtime类对象；
+2. Runtime类提供了gc()方法，可以用于手工释放内存。
 
-2、Runtime类提供了gc()方法，可以用于手工释放内存。
+### System
 
-### System类
-
-1、如何计算某个代码的执行时间；
-
-2、进行垃圾收集操作
+1. 如何计算某个代码的执行时间；
+2. 进行垃圾收集操作
 
 之前一直使用的“System.out.println()”就属于System类的操作功能，只不过这个功能由于牵扯到IO部分，所以留到以后继续讲解。在System类里面之前也使用过一个System.arraycopy()方法实现数组拷贝，而这个方法的真实定义如下：
-
 * 数组拷贝：public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)。
 
 在System类里面定义有一个重要的方法：
-
 * 取得当前的系统时间：public static long currentTimeMillis()。
 
 **范例：**请统计出某项操作的执行时间
-
 ```java
-package com.alpha;
 public class MainClass{ 
 	public static void main(String[] args) throws Exception {
 		long start = System.currentTimeMillis(); // 取得开始时间
@@ -323,10 +318,18 @@ public class MainClass{
 
 在System类里面定义了一个操作方法：public static void gc()，这个gc()方法并不是一个新定义的方法，而是间接调用了Runtime类中的gc()方法。
 
+#### 总结
+
+1、System类可以使用currentTimeMillies()方法取得当前的系统时间；
+
+2、System类中的gc()方法直接调用了“Runtime.getRuntime().gc()”。
+
+### Object::finalize
+
 对象产生一定会调用构造方法，可以进行一些处理操作，相对应的也存在有对象销毁时所调用的方法（类似C++中的析构函数），如果某个对象需要此类的功能，那么就可以考虑覆写Object类中的finalize()方法。
 
 > ### 析构函数
->
+> 
 > 一个析构函数是一个构造函数的逆，当一个类的一个实例被销毁时会被调用，例如当一个类在块（一组花括号“{}”)中被构造的一个对象会在关闭括号后删除，之后析构函数被自动调用。它会在清空保存变量的内存位置时被调用。析构函数可以在类被销毁时用来释放资源，例如堆分配的内存和打开的文件。
 >
 > 声明一个析构函数的符号类似于构造函数。它没有返回值而且方法的名称和在类的名称前加上波浪线（~）相同。
@@ -365,22 +368,60 @@ public class MainClass{
 构造方法是留给对象初始化时使用的，而finalize()方法是留给对象回收前使用的。
 
 **面试题：**请解释final、finally、finalize的区别？
-
 * final：关键字，定义不能被继承的类、不能被覆写的方法、常量；
 * finally：关键字，异常的统一出口；
 * finalize()：方法，Object类提供的方法（protected void finalize() throws Throwable），指的是对象回收前的收尾方法即使出现了异常也不回导致程序中断执行。
 
-#### 总结
+### Cleaner
 
-1、System类可以使用currentTimeMillies()方法取得当前的系统时间；
+Cleaner是在JDK1.9之后提供的一个对象清理操作，其主要的功能是对`Object::finalize`进行代替。在JDK1.9之后的版本中对于`Object::finalize`的定义：
+```java
+@Deprecated(since="9")
+protected void finalize() throws Throwable { }
+```
 
-2、System类中的gc()方法直接调用了“Runtime.getRuntime().gc()”。
+在JDK1.9之后这个方法已经被声明过期了，取而代之的是建议使用`AutoCloseable`或`java.lang.ref.Cleaner`进行对象的回收处理。
+
+```java
+class Product implements Runnable {
+    public Product() {
+        System.out.println("【构造】 生产一个产品");
+    }
+    @Override
+    public void run() {
+        System.out.println("【回收】 销毁一个产品");        
+    }
+}
+class ProductCleaner implements AutoCloseable {
+    private static final Cleaner CLEANER = Cleaner.create();
+    private Product product;
+    private Cleaner.Cleanable cleanable;
+    public ProductCleaner() {
+        this.product = new Product();
+        this.cleanable = CLEANER.register(this, this.product); // 注册使用的对象
+    }
+    @Override
+    public void close() throws Exception {
+        this.cleanable.clean();
+    }
+}
+public class Application {
+    public static void main(String[] args) {
+        try (ProductCleaner pc = new ProductCleaner()) {
+            // 业务逻辑
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+新的操作更多考虑的是在多线程的使用。
 
 ### 对象克隆
 
-1、清楚对象克隆的操作结构；
-
-2、巩固接口的作用。
+1. 清楚对象克隆的操作结构；
+2. 巩固接口的作用。
 
 对象克隆指的就是对象的复制操作，在Object类里面提供有一个专门的克隆方法。
 

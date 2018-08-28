@@ -1,7 +1,7 @@
 ## 辅助概念
 
-* [final关键字](chapter-2/section-17.md#final关键字)
-* [多态性](chapter-2/section-17.md#多态性)
+* [final关键字](/chapter-2/section-17.md#final关键字)
+* [多态性](/chapter-2/section-17.md#多态性)
 
 ---
 

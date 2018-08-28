@@ -2,11 +2,9 @@
 
 ---
 
-1、Date类的使用；
-
-2、Calendar类的使用；
-
-3、SimpleDateFormat类的使用。
+* [Date类](/chapter-3/section-7.md#Date类)
+* [日期格式化](/chapter-3/section-7.md#日期格式化)
+* [Calendar类](/chapter-3/section-7.md#Calendar类)
 
 ### Date类
 
@@ -52,7 +50,7 @@ public class MainClass{
 
 以后的代码编写过程中，依然需要以上的转换操作，尤其是getTime()方法。
 
-### 日期格式化：SimpleDateFormat
+### 日期格式化
 
 java.text是一个专门实现国际化程序的开发包，而SimpleDateFormat是一个专门处理格式化日期的工具类，即：可以将Date型的对象转化为String型的形式显示。而主要使用的是以下方法：
 
@@ -164,7 +162,6 @@ public class MainClass{
 
 #### 总结
 
-1、数据库中的日期型使用java.util.Date表示；
-
-2、SimpleDateFormat类实现String与Date件的互相转换。
+1. 数据库中的日期型使用java.util.Date表示；
+2. SimpleDateFormat类实现String与Date件的互相转换。
 

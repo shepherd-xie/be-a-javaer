@@ -16,10 +16,6 @@ Java是一门为数不多的多线程支持的编程语言。
 
 线程是比进程更快的处理单元，而且所占的资源也小。
 
-#### 总结
-
-线程离不开进程。进程如果消失后线程一定会消失，反之如果线程消失了，进程未必会消失。
-
 ### 多线程的实现
 
 掌握Java中三种多线程的实现方式（JDK1.5之后增加了第三种）。
@@ -137,7 +133,7 @@ public synchronized void start() {
 private native void start0();
 ```
 
-首先方法在Thread类的start()方法里面存在有一个“IllegalThreadStateException”异常抛出。本方法六面使用了throw抛出异常，按照道理来讲应该使用try...catch处理，或者在start()方法声明上使用throws声明，但是此处并没有这样的代码，因为此异常属于RuntimeException的子类，属于选择性处理。如果某一个线程对象重复进行了启动，那么就会抛出此异常。
+首先方法在Thread类的start()方法里面存在有一个“IllegalThreadStateException”异常抛出。本方法里面使用了throw抛出异常，按照道理来讲应该使用try...catch处理，或者在start()方法声明上使用throws声明，但是此处并没有这样的代码，因为此异常属于RuntimeException的子类，属于选择性处理。如果某一个线程对象重复进行了启动，那么就会抛出此异常。
 
 发现在start()方法里面要调用一的start0()方法，而且此方法的结构与抽象方法类似，唯一不同的是使用了native声明，在Java的开发里面有一门技术称为JNI技术（JavaNativeInterface），这门技术的特点：使用Java调用本机操作系统提供的函数。但是这样的技术有一个缺点，不能离开特定的操作系统。
 
