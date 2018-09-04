@@ -18,7 +18,7 @@
 
 * 取得当前线程对象：public static Thread currentThread()
 
-**范例：**观察线程的命名
+**范例：** 观察线程的命名
 
 ```java
 package com.alpha;
@@ -40,7 +40,7 @@ public class MainClass { // 主类
 
 如果在实例化Thread类对象的时候没有为其设置名字，那么会自动的进行编号命名，也就是说保证线程对象的名字不重复。
 
-**范例：**设置名字
+**范例：** 设置名字
 
 ```java
 package com.alpha;
@@ -102,7 +102,7 @@ main
 * public static void sleep(long millis) throws InterruptedException
 * public static void sleep(long millis, int nanos) throws InterruptedException
 
-**范例：**观察休眠特点
+**范例：** 观察休眠特点
 
 ```java
 package com.alpha;
@@ -137,7 +137,7 @@ public class MainClass { // 主类
 * 判断线程是否被中断：public boolean isInterrupted()
 * 中断线程：public void interrupt()
 
-**范例：**线程的中断
+**范例：** 线程的中断
 ```java
 public class MainClass { // 主类
 	public static void main(String[] args) throws Exception {
@@ -167,7 +167,7 @@ public class MainClass { // 主类
 * public final void join(long millis) throws InterruptedException
 * public final void join(long millis, int nanos) throws InterruptedException
 
-**范例：**线程合并
+**范例：** 线程合并
 ```java
 public class MainClass { // 主类
 	public static void main(String[] args) throws Exception {
@@ -203,7 +203,7 @@ public class MainClass { // 主类
 如果当前线程获得CPU时间片可以使用线程让步将CPU时间片让渡给其他线程，而自身进入就绪阶段。
 * public static void yield()
 
-**范例：**线程让步
+**范例：** 线程让步
 ```java
 public class MainClass { // 主类
 	public static void main(String[] args) throws Exception {
@@ -244,7 +244,7 @@ public class MainClass { // 主类
 * 中等优先级：public static final int NORM_PRIORITY，5；
 * 最低优先级：public static final int MIN_PRIORITY，1。
 
-**范例：**测试
+**范例：** 测试
 
 ```java
 package com.alpha;
@@ -275,7 +275,7 @@ public class MainClass { // 主类
 }
 ```
 
-**范例：**主线程优先级是多少？
+**范例：** 主线程优先级是多少？
 
 ```java
 public class MainClass { // 主类

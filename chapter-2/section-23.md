@@ -24,7 +24,7 @@
 
 对于其他的权限基本上已经见过了，现在重点放在protected，这种权限它直接与包的定义有关。
 
-**范例：**定义com.alpha.demoa.A类
+**范例：** 定义com.alpha.demoa.A类
 
 ```java
 package com.alpha.demoa;
@@ -33,7 +33,7 @@ public class A {
 }
 ```
 
-**范例：**定义com.alpha.demob.B类，此类继承A类
+**范例：** 定义com.alpha.demob.B类，此类继承A类
 
 ```java
 package com.alpha.demob;
@@ -45,7 +45,7 @@ public class B extends A { // 是A不同包的子类
 }
 ```
 
-**范例：**测试
+**范例：** 测试
 
 ```java
 package test;
@@ -61,7 +61,7 @@ B中的print方法会输出A类中的info属性。
 
 如果此时Test想要直接输出A类的info属性.
 
-**范例：**错误的访问
+**范例：** 错误的访问
 
 ```java
 package test;
@@ -103,7 +103,7 @@ public class Test {
 
 在正常情况下，一个类只有产生了对象之后才可以操作这个类。
 
-**范例：**观察如下代码
+**范例：** 观察如下代码
 
 ```java
 class Singleton {
@@ -122,7 +122,7 @@ public class MainClass {
 
 现在Singleton类里面存在有构造方法，如果没有明确定义一个构造的话，会自动的在编译时生成一个无参构造方法，即：一个类至少会保留有一个构造方法。
 
-**范例：**修改Singleton类定义
+**范例：** 修改Singleton类定义
 
 ```java
 class Singleton {
@@ -136,7 +136,7 @@ class Singleton {
 
 一旦构造方法私有化，那么在外部就无法直接通过关键字new来进行对象的实例化操作。
 
-**范例：**错误的代码
+**范例：** 错误的代码
 
 ```java
 public class MainClass {
@@ -272,7 +272,7 @@ class Singleton {
 
 例如：现在要定义有一个表示性别的类，这个类只能取两个对象。
 
-**范例：**定义一个表示性别的类
+**范例：** 定义一个表示性别的类
 
 ```java
 class Sex {

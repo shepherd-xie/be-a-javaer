@@ -178,7 +178,7 @@ class MyThread implements Runnable { // 这就是一个多线程的操作类
 
 * 构造方法：public Thread(Runnable target)，接收的是Runnable接口对象;
 
-**范例：**启动多线程
+**范例：** 启动多线程
 
 ```java
 public class MainClass { // 主类
@@ -213,7 +213,7 @@ public class Thread extends Object implements Runnable
 
 除了以上的联系之外，还有一点：使用Runnable接口可以比Thread类能够更好的描述出数据共享这一概念。此时的数据共享指的是多个线程访问统一资源的操作。
 
-**范例：**观察代码（每一个线程对象都必须通过start()启动）
+**范例：** 观察代码（每一个线程对象都必须通过start()启动）
 
 ```java
 package com.alpha;
@@ -242,7 +242,7 @@ public class MainClass { // 主类
 
 本程序声明了三个MyThread类的对象，并且分别调用了三次start()方法，启动线程对象。但是发现最终的结果是每一个线程对象都在卖各自的10张票，此时并不存在数据共享。
 
-**范例：**利用Runnable实现
+**范例：** 利用Runnable实现
 
 ```java
 package com.alpha;
@@ -289,7 +289,7 @@ public interface Callable<V> {
 
 call()方法执行完线程的功能之后可以返回一个结果，而返回结果的类型由Callable接口上的泛型来决定。
 
-**范例：**定义一个线程主体类
+**范例：** 定义一个线程主体类
 
 ```java
 import java.util.concurrent.Callable;

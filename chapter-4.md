@@ -1,4 +1,4 @@
-# 第四章  Oracle数据库
+## 第 4 章 Oracle数据库基础
 
 * [第 1 节 Oracle简介](/chapter-4/section-1.md)
 * [第 2 节 Oracle安装与配置](/chapter-4/section-2.md)

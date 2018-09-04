@@ -12,7 +12,7 @@
 
 现在需要设计一个方法，这个方法可以接受任意多个整形数据的相加。最早的设计是利用数组来解决这个问题。
 
-**范例：**最初的解决方案
+**范例：** 最初的解决方案
 
 ```java
 public class MainClass {
@@ -112,7 +112,7 @@ for (类型 变量 : 数组 | 集合) {
 }
 ```
 
-**范例：**观察增强型for循环
+**范例：** 观察增强型for循环
 
 ```java
 public class MainClass {
@@ -131,7 +131,7 @@ public class MainClass {
 
 如果说现在某一个类中定义的方法全部都属于static型的方法，那么其他类要引用此类时必须使用“类名称.方法()”进行调用。
 
-**范例：**传统的做法
+**范例：** 传统的做法
 
 ```java
 package com.alpha.util;
@@ -147,7 +147,7 @@ public class MyMath {
 
 此时MyMath类里面的方法都是static型的方法，随后在其他类使用这些方法。
 
-**范例：**基本使用形式
+**范例：** 基本使用形式
 
 ```java
 package com.alpha;
@@ -162,7 +162,7 @@ public class MainClass {
 
 如果在主类中定义的是static方法，那么可以直接调用static方法，而现在的MyMath类里面都是static方法，那么觉得前面加上类名称实在是多余。于是从JDK1.5开始增加了静态导入。
 
-**范例：**静态导入
+**范例：** 静态导入
 
 ```java
 package com.alpha;

@@ -6,26 +6,26 @@
 
 在之前接触过一个COUNT\(\)函数，这个函数的主要作用是可以统计出数据表中的数据行的个数，这个本身就属于一个统计函数，而与之类似的还有SUM()、AVG()、MIN()、MAX()。
 
-**范例：**查询出公司的人数、平均工资、每月的总支出
+**范例：** 查询出公司的人数、平均工资、每月的总支出
 
 ```sql
 SELECT COUNT(*),AVG(sal),SUM(sal) FROM emp;
 ```
 
-**范例：**查询出工资的最高和最低工资
+**范例：** 查询出工资的最高和最低工资
 
 ```sql
 SELECT MAX(sal),MIN(sal) FROM emp;
 ```
 
-**范例：**查询出公司的平均服务年限
+**范例：** 查询出公司的平均服务年限
   现在没有一个字段是明确表示出年限的，对于服务年限只能够通过计算得到。 
 
 ```sql
 SELECT AVG(MONTHS_BETWEEN(SYSDATE,hiredate)/12) FROM emp;
 ```
 
-**范例：**查询公司的最早雇佣日期和最晚雇佣日期
+**范例：** 查询公司的最早雇佣日期和最晚雇佣日期
 
 ```sql
 SELECT MIN(hiredate),MAX(hiredate) FROM emp;
@@ -67,7 +67,7 @@ SELECT COUNT(*),COUNT(DISTINCT job) FROM emp;
 ⑤[ORDER BY 字段 [ASC | DESC], 字段 [ASC | DESC],...];
 ```
 
-**范例：**按照部门编号进行分组，查询出每个部门的人数、平均工资
+**范例：** 按照部门编号进行分组，查询出每个部门的人数、平均工资
 
 ```sql
 SELECT deptno,COUNT(*),AVG(sal)
@@ -76,7 +76,7 @@ WHERE deptno IS NOT NULL
 GROUP BY deptno;
 ```
 
-**范例：**统计每个职位的最低和最高工资
+**范例：** 统计每个职位的最低和最高工资
 
 ```sql
 SELECT job,MAX(sal),MIN(sal)
@@ -122,7 +122,7 @@ SELECT MAX(AVG(sal)) FROM emp GROUP BY deptno;
 
 在之前进行的分组统计都是采用了单表的形式完成的处理，于是下面希望乐意在多表查询上实现分组的统计处理操作。
 
-**范例：**查询出每个部门的名称、人数、平均工资
+**范例：** 查询出每个部门的名称、人数、平均工资
 
 * 确定要使用的数据表：
   * dept表：部门名称；
@@ -156,7 +156,7 @@ WHERE d.deptno=e.deptno(+)
 GROUP BY d.dname;
 ```
 
-**范例：**查询出每个工资等距对应的人数，以及此等级的最高工资
+**范例：** 查询出每个工资等距对应的人数，以及此等级的最高工资
 
 * 确定要使用的数据表：
   * salgrade表：等级的名称；
@@ -181,7 +181,7 @@ WHERE e.sal BETWEEN s.losal AND s.hisal
 GROUP BY s.grade;
 ```
 
-**范例：**查询出每个部门的编号、名称、位置、部门人数、平均工资
+**范例：** 查询出每个部门的编号、名称、位置、部门人数、平均工资
 
 * 确定要使用的数据表：
   * dept表：部门的编号、名称、位置；
@@ -212,7 +212,7 @@ GROUP BY d.deptno,d.dname,d.loc;
 
 在讲解HAVING具体做法之前，首先来看这样一个查询。
 
-**范例：**按照职位分组，查询出平均工资高于1200的所有职位信息以及该职位对应的人数、平均工资
+**范例：** 按照职位分组，查询出平均工资高于1200的所有职位信息以及该职位对应的人数、平均工资
 
 ```
 SELECT job,COUNT(*),AVG(sal)
@@ -241,7 +241,7 @@ GROUP BY job;
 ⑥[ORDER BY 字段 [ASC | DESC], 字段 [ASC | DESC],...];
 ```
 
-**范例：**使用HAVING
+**范例：** 使用HAVING
 
 ```sql
 SELECT job,COUNT(*),AVG(sal)

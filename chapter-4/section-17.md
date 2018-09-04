@@ -25,7 +25,7 @@ CREATE TABLE 表名称 (
 );
 ```
 
-**范例：**进行数据表的创建
+**范例：** 进行数据表的创建
 ```sql
 CREATE TABLE member(
     mid         VARCHAR2(20),
@@ -39,7 +39,7 @@ CREATE TABLE member(
 
 当数据表创建成功之后就可以是使用`SELECT * FROM tab;`查看所有的数据表名称，或者使用`DESC 表名称;`查看数据组成的结构。
 
-**范例：**向数据表之中进行数据的存储
+**范例：** 向数据表之中进行数据的存储
 ```sql
 INSERT INTO member (mid,name,age,salary,birthday,note) VALUES ('ALPHA','ANNIE',25,4000,TO_DATE('2000-04-12','yyyy-mm-dd'),'NOTHING');
 INSERT INTO member (mid,age,salary,birthday,note) VALUES ('BATE',250,500,TO_DATE('2017-12-04','yyyy-mm-dd'),'SOMTHING');
@@ -54,18 +54,18 @@ INSERT INTO member (mid,age,salary,birthday,note) VALUES ('BATE',250,500,TO_DATE
 CREATE TABLE 表名称 AS 子查询;
 ```
 
-**范例：**将20部门的雇员复制到emp20表中
+**范例：** 将20部门的雇员复制到emp20表中
 ```sql
 CREATE TABLE emp20 AS SELECT * FROM emp WHERE deptno=20;
 ```
 
-**范例：**将emp的表结构复制到empnull表中
+**范例：** 将emp的表结构复制到empnull表中
 * 此时只需要编写一个绝对不可能满足的查询条件即可；
 ```sql
 CREATE TABLE empnull AS SELECT * FROM emp WHERE 1=2;
 ```
 
-**范例：**以上的表都是根据已有的表进行了复制，甚至在做表创建的时候也可以操作的更加复杂一点，直接采用子查询结果创建。
+**范例：** 以上的表都是根据已有的表进行了复制，甚至在做表创建的时候也可以操作的更加复杂一点，直接采用子查询结果创建。
 * 创建一张数据表，并且要求将部门表数据的统计结果保存到此表中
 ```sql
 CREATE TABLE deptstat
@@ -92,12 +92,12 @@ WHERE d.deptno=temp.dno;
 * DBA_*：表示数据库管理员具有的数据字典信息；
 * ALL_*：表示用户和管理员都可以访问的数据字典信息。
 
-**范例：**查询数据表保存的字典信息
+**范例：** 查询数据表保存的字典信息
 ```sql
 SELECT * FROM USER_TABLES;
 ```
 
-**范例：**修改表名称
+**范例：** 修改表名称
 * 语法：`RENAME 旧名称 TO 新名称;`
 ```sql
 RENAME member TO person;
@@ -107,7 +107,7 @@ RENAME member TO person;
 
 假设现在要清楚某张数据表的全部数据，最直接的方式就是`DELETE FROM 表名称;`。但是此时数据表所占用的资源依旧会被保存下载，这些资源可能保存：数据索引信息、约束信息，也就是说标的数据删除之后并不是立即释放掉所有的资源。如果想要立即释放掉所有的资源，那么就需要使用_**截断表**_的操作。表一旦被截断，数据就无法再进行回滚了。
 
-**范例：**截断表
+**范例：** 截断表
 ```sql
 TRUNCATE TABLE person;
 ```
@@ -121,7 +121,7 @@ TRUNCATE TABLE person;
 DROP TABLE 表名称;
 ```
 
-**范例：**删除数据表
+**范例：** 删除数据表
 ```sql
 DROP TABLE empnull;
 ```
@@ -159,7 +159,7 @@ PURGE RECYCLEBIN;
 
 修改表结构这一功能不建议使用，特别是在已经上线运行中的项目，如果不是必须不要进行这样的操作。
 
-**范例：**准备出一张数据表
+**范例：** 准备出一张数据表
 ```sql
 CREATE TABLE member (
     mid     NUMBER,
@@ -174,14 +174,14 @@ INSERT INTO member (mid,name) VALUES (2,'BATE');
 ALTER TABLE 表名称 ADD (列名称 数据类型 [DEFAULT 默认值],...);
 ```
 
-**范例：**为表中追加一个age数据列
+**范例：** 为表中追加一个age数据列
 ```sql
 ALTER TABLE member ADD (age NUMBER(3));
 ```
 
 此时，新增的字段默认值为null。
 
-**范例：**为表中追加一个sex数据列，设置默认值为'男'
+**范例：** 为表中追加一个sex数据列，设置默认值为'男'
 ```sql
 ALTER TABLE member ADD (sex VARCHAR2(10) DEFAULT '男');
 ```
@@ -192,7 +192,7 @@ ALTER TABLE member ADD (sex VARCHAR2(10) DEFAULT '男');
 ALTER TABLE 表名称 MODIFY (列名称 数据类型 [DEFAULT 默认值],...);
 ```
 
-**范例：**将name的长度修改为50
+**范例：** 将name的长度修改为50
 ```sql
 ALTER TABLE member MODIFY (name VARCHAR2(50));
 ```
@@ -202,7 +202,7 @@ ALTER TABLE member MODIFY (name VARCHAR2(50));
 ALTER TABLE 表名称 DROP COLUMN 字段名称;
 ```
 
-**范例：**删除掉age的数据列
+**范例：** 删除掉age的数据列
 ```sql
 ALTER TABLE member DROP COLUMN age;
 ```

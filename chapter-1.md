@@ -1,4 +1,4 @@
-# 第一章  Java编程开发入门
+## 第 1 章 Java编程开发入门
 
 * [第 1 节 Java开发准备](/chapter-1/section-1.md)
 * [第 2 节 Java基本概念](/chapter-1/section-2.md)

@@ -20,7 +20,7 @@ Object类是所有类的父类，也就是说任何一个类在定义的手如�
 
 既然Object类是所有类的父类，那么就有了一个最大的好处：利用Object类可以接受全部类的对象，因为所有类都可以向上转型成Object类。
 
-**范例：**利用Object类接收对象
+**范例：** 利用Object类接收对象
 
 ```java
 class Book extends Object {}
@@ -50,7 +50,7 @@ Object类是所有类的父类，所有子类进行实例化时都一定要调�
 
 如果说现在是一个String类对象，直接输出这个对象可以取得字符串的内容，但是如果是一个自定义的对象，那么就会出现一个对象编码。
 
-**范例：**观察代码
+**范例：** 观察代码
 
 ```java
 class Book extends Object {}
@@ -71,7 +71,7 @@ public class MainClass {
 
 如果现在有需要，也可以自己根据实际情况来覆写此方法。
 
-**范例：**覆写toString\(\)方法
+**范例：** 覆写toString\(\)方法
 
 ```java
 class Book {
@@ -99,7 +99,7 @@ public class MainClass {
 
 对象比较在很多开发之中都是一定要使用到的核心概念，而在之前使用了一个自定义的compare\(\)方法作为比较方法的名称，但是这个不标准，标准的做法是使用equals\(\)方法完成。
 
-**范例：**实现对象比较
+**范例：** 实现对象比较
 
 ```java
 class Book {
@@ -140,7 +140,7 @@ public class MainClass {
 
 Object类是所有类的父类，所以Object类的对象可以接受所有类的对象，可是除了类的对象之外，Object还可以接受数组和接口对象。
 
-**范例：**接受数组数据
+**范例：** 接受数组数据
 
 ```java
 public class MainClass {
@@ -158,7 +158,7 @@ public class MainClass {
 ```
 除了数组外，接口也同样可以。
 
-**范例：**Object类接收接口对象
+**范例：** Object类接收接口对象
 
 ```java
 interface A {
@@ -184,7 +184,7 @@ public class MainClass {
 
 长期一直困扰我们的是事情就是链表问题，因为在设计链表的时候一直遗留下的问题：链表不能统一数据，所以就造成了每一次使用链表的时候都要进行重复的开发，但是有了Object之后，这一切就彻底解决了，因为Object可以接受任何类型的对象，同时在链表之中需要对象比较的动能，这一功能Object也提供有容器equals\(\)方法。
 
-**范例：**修改可用链表
+**范例：** 修改可用链表
 
 ```java
 class Link { // 链表类，外部能够看见的只有这一个类
@@ -316,7 +316,7 @@ class Link { // 链表类，外部能够看见的只有这一个类
 }
 ```
 
-**范例：**测试
+**范例：** 测试
 
 ```java
 public class MainClass {
@@ -352,7 +352,7 @@ public class MainClass {
 
 现在已经有了一个可用链表，并且这两个链表里面还提供有Object统一参数。
 
-**范例：**定义宠物的标准
+**范例：** 定义宠物的标准
 
 ```java
 interface Pet { // 定义一个宠物的标准
@@ -363,7 +363,7 @@ interface Pet { // 定义一个宠物的标准
 
 宠物商店与具体的宠物没有任何的关系，它只和宠物这个接口的标准有关。
 
-**范例：**定义宠物商店
+**范例：** 定义宠物商店
 
 ```java
 class PetShop { // 一个宠物商店要保存有多个宠物信息
@@ -390,7 +390,7 @@ class PetShop { // 一个宠物商店要保存有多个宠物信息
 
 下面就可以根据宠物的标准定义各个子类。
 
-**范例：**定义猫
+**范例：** 定义猫
 
 ```java
 class Cat implements Pet { // 如果不实现接口无法保存宠物信息
@@ -429,7 +429,7 @@ class Cat implements Pet { // 如果不实现接口无法保存宠物信息
 }
 ```
 
-**范例：**定义狗
+**范例：** 定义狗
 
 ```java
 class Dog implements Pet { // 如果不实现接口无法保存宠物信息
@@ -470,7 +470,7 @@ class Dog implements Pet { // 如果不实现接口无法保存宠物信息
 
 可以发现，有了接口以后子类的形式都非常的类似，这属于接口的特点。
 
-**范例：**测试类
+**范例：** 测试类
 
 ```java
 public class MainClass {

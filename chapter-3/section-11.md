@@ -6,7 +6,7 @@
 
 所有的代理设计模式如果按照设计要求来讲，必须是基于接口的设计，也就是说需要首先定义出核心接口的组成，下面模拟一个消息发送的代理操作结构。
 
-**范例：**传统代理设计
+**范例：** 传统代理设计
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -76,7 +76,7 @@ public interface InvocationHandler {
   * `Class<?>[] interfaces`：代理是围绕着接口进行的，所以一定要获取真实主体类的接口信息；
   * `InvocationHandler h`：代理处理的方法；
 
-**范例：**实现动态代理机制
+**范例：** 实现动态代理机制
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {

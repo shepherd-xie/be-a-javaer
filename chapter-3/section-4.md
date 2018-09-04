@@ -18,7 +18,7 @@
 * 第一组数据：title=mori，content=好学生
 * 第二组数据：title=可爱的萌动物，content=草泥马
 
-**范例：**程序基本模型
+**范例：** 程序基本模型
 
 ```java
 package com.alpha;
@@ -171,7 +171,7 @@ public class MainClass{ // 主类
 * 唤醒第一个等待线程：public final void notify()；
 * 唤醒全部等待线程，那个优先级高就先执行：public final void notifyAll()。
 
-**范例：**解决程序问题
+**范例：** 解决程序问题
 
 ```java
 package com.alpha;

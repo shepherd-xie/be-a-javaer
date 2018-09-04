@@ -17,7 +17,7 @@
 
 ![](/images/chapter-2/section-13/1.png)
 
-**范例：**定义一个Node类
+**范例：** 定义一个Node类
 
 * 假设本次保存的数据是String型数据，同时拥有下一个引用；
 
@@ -44,7 +44,7 @@ class Node { // 定义一个节点
 
 以上只是一个专门负责保存节点关系的类，但是至于说怎么保存的关系，并不是由Node类进行设置。需要有其他类来进行Node的关系匹配。
 
-**范例：**使用第一种形式设置和取出数据
+**范例：** 使用第一种形式设置和取出数据
 
 ```java
 public class MainClass {
@@ -68,7 +68,7 @@ public class MainClass {
 
 实际上以上的操作使用循环并不方便，最好的做法还是应该使用递归操作完成。
 
-**范例：**使用第二种方式设置和取出数据
+**范例：** 使用第二种方式设置和取出数据
 
 ```java
 public class MainClass {
@@ -108,7 +108,7 @@ public class MainClass {
 
 ![](/images/chapter-2/section-13/2.png)
 
-**范例：**链表的基本形式
+**范例：** 链表的基本形式
 
 ```java
 // 每一个链表实际上就是由多个节点所组成的
@@ -199,7 +199,7 @@ public class MainClass {
 
 这个时候使用内部类是一个最好的选择。内部类可以使用private定义，这样一个内部类只能够被一个外部类使用，并且，内部类可以方便的与外部类之间进行私有属性的直接访问。
 
-**范例：**链表的开发结构
+**范例：** 链表的开发结构
 
 ```java
 class Link { // 链表类，外部能够看见的只有这一个类
@@ -269,7 +269,7 @@ public class MainClass {
 
 既然每一个链表对象都只有一个root根元素，那么每一个链表就有自己的长度，可以直接在Link类里面设置一个count属性，每一次数据添加完成之后，可以进行个数的自增。
 
-**范例：**修改Link类
+**范例：** 修改Link类
 
 * 增加count属性
 
@@ -323,7 +323,7 @@ public boolean isEmpty() {
 
 在链表中一定会保存有多个数据，那么基本的判断数据是否存在的方式，以：String为例。循环链表中的内容，并且与要查询的数据进行匹配（equals\(\)），如果查到了返回true，否则返回false。
 
-**范例：**修改Link类
+**范例：** 修改Link类
 
 ```java
 public boolean contains(String data) {
@@ -337,7 +337,7 @@ public boolean contains(String data) {
 
 从根元素开始查询数据是否存在。
 
-**范例：**在Node类增加方法
+**范例：** 在Node类增加方法
 
 ```java
 // 第一次调用（Link）：this = Link.root
@@ -356,7 +356,7 @@ public boolean containsNode(String data) {
 }
 ```
 
-**范例：**定义测试程序
+**范例：** 定义测试程序
 
 ```java
 public class MainClass {
@@ -379,13 +379,13 @@ public class MainClass {
 
 由于是动态对象数组，所以数组中的每一个元素的索引的内容都一定是动态生成的。
 
-**范例：**在Link类里面增加一个foot的属性，表示每一个Node元素的编号
+**范例：** 在Link类里面增加一个foot的属性，表示每一个Node元素的编号
 
 ```java
 private int foot = 0;
 ```
 
-**范例：**在每一次查询的时候（一个链表可能查询多次），那么foot应该在每一次查询时都从头开始；但是一定要注意查询的前提：root存在，并且要查询的索引小于链表个数。
+**范例：** 在每一次查询的时候（一个链表可能查询多次），那么foot应该在每一次查询时都从头开始；但是一定要注意查询的前提：root存在，并且要查询的索引小于链表个数。
 
 ```java
 public String get(int index) {
@@ -397,7 +397,7 @@ public String get(int index) {
 }
 ```
 
-**范例：**在Node类里面实现getNode\(\)方法，内部类和外部类之间可以互相进行私有属性的访问。
+**范例：** 在Node类里面实现getNode\(\)方法，内部类和外部类之间可以互相进行私有属性的访问。
 
 ```java
 public String getNode(int index) {
@@ -415,7 +415,7 @@ public String getNode(int index) {
 
 修改数据和查询数据区别不大，查询的时候当满足索引值得时候只是进行了一个数据的返回，那么此处只需要将数据返回变为数据的重新赋值即可。
 
-**范例：**在Link类里面增加set\(\)方法
+**范例：** 在Link类里面增加set\(\)方法
 
 ```java
 public void set(int index, String data) {
@@ -427,7 +427,7 @@ public void set(int index, String data) {
 }
 ```
 
-**范例：**在Node类里面增加setNode\(\)方法
+**范例：** 在Node类里面增加setNode\(\)方法
 
 ```java
 public void setNode(int index, String data) {
@@ -446,7 +446,7 @@ public void setNode(int index, String data) {
 * 情况一：要删除的数据是根节点，则root应该变为“根节点\.next”，由于root是由Link类进行维护，所以此操作应该在Link类中定义;
 * 情况二：要删除的是普通节点，应该在Node类中处理。删除数据的最终形式：当前节点上一节点\.next = 当前节点\.next，即：空出了当前节点。
 
-**范例：**在Node类里面增加一个removeNode\(\)方法，此方法专门处理非根节点的删除
+**范例：** 在Node类里面增加一个removeNode\(\)方法，此方法专门处理非根节点的删除
 
 ```java
 // 要传递上一个节点以及要删除的数据
@@ -459,7 +459,7 @@ public void removeNode(Node previous, String data) {
 }
 ```
 
-**范例：**在Link类里面增加根节点的判断
+**范例：** 在Link类里面增加根节点的判断
 
 ```java
 public void remove(String data) {
@@ -481,7 +481,7 @@ public void remove(String data) {
 
 Link类的toArray\(\)方法一定要返回一个对象数组，并且这个对象数组一定要被Node类操作，那么这个对象数组最好定义在Link类的属性里面。
 
-**范例：**修改Link类的定义
+**范例：** 修改Link类的定义
 
 * 增加一个返回的数组属性内容，之所以将其定义为属性，是因为内部类和外部类都可以访问；
 
@@ -503,7 +503,7 @@ public String[] toArray() {
 }
 ```
 
-**范例：**在Node类里面处理数组数据的保存
+**范例：** 在Node类里面处理数组数据的保存
 
 ```java
 // 第一次调用（Link）：this = Link.root
@@ -549,7 +549,7 @@ class Book {
 }
 ```
 
-**范例：**修改链表实现
+**范例：** 修改链表实现
 
 ```java
 class Link { // 链表类，外部能够看见的只有这一个类
@@ -681,7 +681,7 @@ class Link { // 链表类，外部能够看见的只有这一个类
 }
 ```
 
-**范例：**实现测试
+**范例：** 实现测试
 
 ```java
 public class MainClass {

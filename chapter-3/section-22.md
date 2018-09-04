@@ -28,7 +28,7 @@
 * 服务器类：`ServerSocket`，主要工作在服务器端，用于接收用户的请求；
 * 客户端类：`Socket`，每一个链接到服务区上的用户都通过`Socket`表示；
 
-**范例：**定义服务器端 —— 主要使用`ServerSocket`
+**范例：** 定义服务器端 —— 主要使用`ServerSocket`
 
 * 构造方法：`public ServerSocket(int port) throws IOException`，设置监听端口；
 * 接收客户端连接：`public Socket accept() throws IOException`;
@@ -52,7 +52,7 @@ public class HelloServer {
 
 此时的服务器只是出处一个Hello World字符串而后就关闭服务器，只能够处理一次客户端的请求。
 
-**范例：**编写客户端 —— `Socket`
+**范例：** 编写客户端 —— `Socket`
 
 * 构造方法：`public Socket(String host, int port) throws UnknownHostException, IOException`
   * `host`表示主机的IP地址，如果是本机直接访问那么使用`localhost`（127.0.0.1）代替IP；
@@ -85,7 +85,7 @@ public class HelloClient {
 * 由于需要多次输入，所以不能够每次连接后立刻关闭服务端；
 * 可以设置一个字符串，如果输入了"byebye"，那么表示结束本次的Echo操作。
 
-**范例：**实现服务器端
+**范例：** 实现服务器端
 ```java
 public class EchoServer {
 	public static void main(String[] args) throws Exception {
@@ -114,7 +114,7 @@ public class EchoServer {
 }
 ```
 
-**范例：**定义客户端
+**范例：** 定义客户端
 ```java
 public class EchoClient {
 	public static void main(String[] args) throws Exception {
@@ -150,7 +150,7 @@ public class EchoClient {
 
 此时的程序只能连接一个客户端，而不能够连接其他客户端，因为所有的操作都是在主线程上进行的开发，也就是说此时的程序属于单线程的网络应用，实际中不可能如此进行，所以为了能够让一个服务器可以同时处理多个客户端的操作，使用多线程描述。把每一个连接到服务器端的客户都作为一个独立的线程对象保留。
 
-**范例：**修改服务器端
+**范例：** 修改服务器端
 ```java
 class EchoThread implements Runnable {
 	private Socket client = null;
@@ -205,7 +205,7 @@ public class EchoServer {
 
 UDP通信常用在对传输效率高而可靠性低的场景，例如：网络直播、网络游戏连接等。
 
-**范例：**实现一个UDP客户端
+**范例：** 实现一个UDP客户端
 ```java
 public class UDPClient {
     public static void main(String[] args) throws Exception {
@@ -220,7 +220,7 @@ public class UDPClient {
 }
 ```
 
-**范例：**实现UDP服务端
+**范例：** 实现UDP服务端
 ```java
 public class UDPServer {
     public static void main(String[] args) throws Exception {

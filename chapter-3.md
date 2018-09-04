@@ -1,4 +1,4 @@
-# 第三章  Java高级编程
+## 第 3 章 Java高级编程
 
 * [第 1 节 Java多线程基础实现](/chapter-3/section-1.md)
 * [第 2 节 线程常用操作方法](/chapter-3/section-2.md)

@@ -30,7 +30,7 @@ public class MainClass {
 
 那么现在首先需要解决的问题就是将Book类中的属性设置为对外不可见（只能够针对于本类访问），所以可以使用private关键字来定义属性。
 
-**范例：**修改之前的程序
+**范例：** 修改之前的程序
 
 ```java
 class Book { //定义一个新的类
@@ -57,7 +57,7 @@ public class MainClass {
 * **setter方法主要是设置内容，public void setTitle\(String t\);，有参；**
 * **getter方法主要是取得内容，public String getTitle\(\);，无参；**
 
-**范例：**为Book类中的封装属性设置setter、getter操作
+**范例：** 为Book类中的封装属性设置setter、getter操作
 
 ```java
 class Book { //定义一个新的类
@@ -91,7 +91,7 @@ public class MainClass {
 
 如果真的需要加入检查的代码，那么应该在setter之中增加，因为getter只是简单的返回数据。
 
-**范例：**增加验证
+**范例：** 增加验证
 
 ```java
 public void setPrice(double p) {
@@ -191,7 +191,7 @@ public class MainClass {
 
 本程序是现实例化了Book类对象，而后利用Book类的实例化对象去调用类中定义的setter方法，如果要想设置全部属性的内容，那么一定要调用多次setter方法。
 
-**范例：**定义构造方法
+**范例：** 定义构造方法
 
 ```java
 class Book { //定义一个新的类
@@ -235,7 +235,7 @@ public class MainClass {
 
 另外，既然构造方法也属于方法，那么可以针对于构造方法进行重载，但是构造方法由于其定义的特殊性，所以在构造方法重载时，要求只注意参数的类型及个数即可。
 
-**范例：**构造方法重载
+**范例：** 构造方法重载
 
 ```java
 class Book { //定义一个新的类
@@ -355,7 +355,7 @@ public class MainClass {
 * 类之中不允许出现任何的输出语句，所有信息输出必须交给被调用处输出；
 * 类之中需要提供有一个取得对象完整信息的方法，暂定为：getInfo\(\)，而且返回String型数据；
 
-**范例：**开发程序类
+**范例：** 开发程序类
 
 ```java
 class Emp {    //一个有意义的类
@@ -414,7 +414,7 @@ class Emp {    //一个有意义的类
 }
 ```
 
-**范例：**编写测试程序
+**范例：** 编写测试程序
 
 ```java
 public class MainClass {

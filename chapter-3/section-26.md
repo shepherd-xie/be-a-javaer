@@ -24,7 +24,7 @@ public interface Map<K, V>
 | 5 | public Set<K> keySet() | 普通 | 取出全部的key |
 | 6 | public V remove(Object key) | 普通 | 根据key删除内容 |
 
-**范例：**观察Map的特点
+**范例：** 观察Map的特点
 ```java
 package com.alpha.demo;
 import java.util.HashMap;
@@ -51,7 +51,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
 ![](/images/chapter-3/Collection/HashMap.png)
 
-**范例：**观察`Map`集合的使用
+**范例：** 观察`Map`集合的使用
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -72,7 +72,7 @@ public class Application {
 
 但是对于`put()`方法本身是提供返回值的，这个返回值就是在`key`相同的情况下返回替换掉的旧的`value`。
 
-**范例：**观察`put()`方法
+**范例：** 观察`put()`方法
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -290,7 +290,7 @@ public class LinkedHashMap<K,V>
 
 由于`LinkedHashMap`是基于链表的存储，所以在进行操作时数据量不易过大，否则容易造成时间复杂度攀升。
 
-**范例：**使用`LinkedHashMap`
+**范例：** 使用`LinkedHashMap`
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -316,7 +316,7 @@ public class Hashtable<K,V>
 
 ![](/images/chapter-3/Collection/Hashtable.png)
 
-**范例：**使用Hashtable
+**范例：** 使用Hashtable
 ```java
 public class Application { 
 	public static void main(String[] args) throws Exception {
@@ -383,7 +383,7 @@ public class TreeMap<K,V>
 
 ![](/images/chapter-3/Collection/TreeMap.png)
 
-**范例：**使用`TreeMap`实现排序
+**范例：** 使用`TreeMap`实现排序
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -415,7 +415,7 @@ public interface Map<K, V> {
 在JDK1.9之后`Map`提供了一个静态方法可以直接构造`Map.Entry`：
 * 创建`Map.Entry`对象：`static <K,V> Map.Entry<K,V> entry​(K k, V v)`；
 
-**范例：**创建`Map.Entry`对象
+**范例：** 创建`Map.Entry`对象
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -452,7 +452,7 @@ _**Map集合利用Iterator接口输出的步骤：**_
 * _**利用Set集合中的iterator()方法将Set集合进行Iterator输出；**_
 * _**每一次Iterator循环取出的都是Map.Entry接口对象，利用此对象进行key与value的取出。**_
 
-**范例：**利用Iterator实现Map接口的输出
+**范例：** 利用Iterator实现Map接口的输出
 ```java
 public class Application {
 	public static void main(String[] args) throws Exception {

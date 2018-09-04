@@ -1,7 +1,7 @@
 ## 正则表达式
 
 * [常用的正则标记](/chapter-3/section-9.md#常用的正则标记)
-* [String类对正则的支持](/chapter-3/section-9.md#String类对正则的支持)
+* [String类对正则的支持](/chapter-3/section-9.md#string类对正则的支持)
 * [java.util.regex包支持](/chapter-3/section-9.md#java.util.regex包支持)
 
 ### 问题引出
@@ -13,7 +13,7 @@
 * 将字符串变为字符数组；
 * 而后判断每一个字符是否在'0'~'9'的范围之间。
 
-**范例：**实现字符串的判断
+**范例：** 实现字符串的判断
 
 ```java
 package com.alpha;
@@ -36,7 +36,7 @@ public class MainClass{
 
 此时判断字符串是否由数字所组成，是一个很容易的实现的功能，但是这样一个简短的操作，却写出了这么多代码，如果说需要更加复杂的判断，这种方式显然就不再适用了。
 
-**范例：**更简单的做法
+**范例：** 更简单的做法
 
 ```java
 package com.alpha;
@@ -120,7 +120,7 @@ public class MainClass{
 
 给出的几个方法里面对于替换和拆分实际上难度不高，最关键的就是正则匹配，在验证上使用的特别多。
 
-**范例：**实现字符串替换
+**范例：** 实现字符串替换
 ```java
 package com.alpha;
 public class MainClass{ 
@@ -132,7 +132,7 @@ public class MainClass{
 }
 ```
 
-**范例：**字符串拆分
+**范例：** 字符串拆分
 ```java
 package com.alpha;
 public class MainClass{ 
@@ -147,7 +147,7 @@ public class MainClass{
 }
 ```
 
-**范例：**验证一个字符串是否是数字，如果是则将其变为double型
+**范例：** 验证一个字符串是否是数字，如果是则将其变为double型
 
 * 数字可能是整数，也可能是小数；
 
@@ -165,7 +165,7 @@ public class MainClass{
 }
 ```
 
-**范例：**判断给定的字符串是否是一个IP地址（IPv4）
+**范例：** 判断给定的字符串是否是一个IP地址（IPv4）
 
 ```java
 package com.alpha;
@@ -179,7 +179,7 @@ public class MainClass{
 }
 ```
 
-**范例：**给定一个字符串，要求判断其是否是日期格式，如果是则将其转换为Date型数据
+**范例：** 给定一个字符串，要求判断其是否是日期格式，如果是则将其转换为Date型数据
 
 ```java
 package com.alpha;
@@ -198,7 +198,7 @@ public class MainClass{
 }
 ```
 
-**范例：**判断电话号码
+**范例：** 判断电话号码
 
 * 格式一：12345678，"\\\\d{7,8}"；
 * 格式二：029-12345678，"(\\\\d{3,4}-)?\\\\d{7,8}"；
@@ -215,7 +215,7 @@ public class MainClass{
 }
 ```
 
-**范例：**验证email地址
+**范例：** 验证email地址
 
 * 要求格式一：email由字幕、数字、\_所组成。
 
@@ -247,7 +247,7 @@ public class MainClass{
 
 在大多数情况下使用正则的时候都会采用String类完成，但是正则最原始的开发包是java.util.regex，这个包里提供有两个类。
 
-**范例：**Pattern类
+**范例：** Pattern类
 ```java
 package com.alpha;
 import java.util.Arrays;
@@ -263,7 +263,7 @@ public class MainClass{
 }
 ```
 
-**范例：**字符串验证
+**范例：** 字符串验证
 ```java
 package com.alpha;
 import java.util.regex.Matcher;

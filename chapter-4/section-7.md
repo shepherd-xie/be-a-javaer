@@ -4,7 +4,7 @@
 
 当使用查询操作的时候，默认情况下他会按照数据的插入顺序进行排序显示。
 
-**范例：**执行以下的操作
+**范例：** 执行以下的操作
 
 ```sql
 SELECT * FROM emp;
@@ -26,13 +26,13 @@ ORDER BY子句是在SELECT子句之后执行，而ORDER BY子句可以使用SELE
 * ASC（默认）：按照升序的方式排列；
 * DESC：按照降序的方式排列。
 
-**范例：**查询所有的雇员信息，要求按照工资由高到低排序
+**范例：** 查询所有的雇员信息，要求按照工资由高到低排序
 
 ```sql
 SELECT * FROM emp ORDER BY sal DESC;
 ```
 
-**范例：**查询所有销售人员的信息，要求按照雇佣日期由早到晚排序
+**范例：** 查询所有销售人员的信息，要求按照雇佣日期由早到晚排序
 
 ```sql
 SELECT * FROM emp WHERE job='SALESMAN' ORDER BY hiredate;
@@ -40,7 +40,7 @@ SELECT * FROM emp WHERE job='SALESMAN' ORDER BY hiredate;
 
 以上只是针对于一个字段的排序，那么也可以同时设置多个排序字段。 
 
-**范例：**要求按照工资由高到低排序，如果工资相同，则按照雇佣日期由早到晚排序
+**范例：** 要求按照工资由高到低排序，如果工资相同，则按照雇佣日期由早到晚排序
 
 ```sql
 SELECT * FROM emp ORDER BY sal DESC, hiredate ASC;
@@ -52,7 +52,7 @@ SELECT * FROM emp ORDER BY sal DESC, hiredate;
 
 ORDER BY子句既然在SELECT子句之后执行，那么就可以使用SELECT子句里定义的别名。
 
-**范例：**查询每个雇员的编号、姓名、年薪，按照年薪由低到高排序
+**范例：** 查询每个雇员的编号、姓名、年薪，按照年薪由低到高排序
 
 ```sql
 SELECT empno, ename, sal*12 income 

@@ -1,7 +1,7 @@
 ## Java7新特性
 
-* [AutoCloseable](/chapter-2/section-29.md#AutoCloseable)
-* [Try-with-resources](/chapter-2/section-29.md#Try-with-resources)
+* [AutoCloseable](/chapter-2/section-29.md#autocloseable)
+* [Try-with-resources](/chapter-2/section-29.md#try-with-resources)
 
 ### AutoCloseable
 
@@ -9,7 +9,7 @@ AutoCloseable主要是用于资源操作时，实现资源的自动关闭。例�
 
 为了方便说明，下面实现一个简单的消息发送。
 
-**范例：**消息发送
+**范例：** 消息发送
 ```java
 interface IMessage {
     void send();
@@ -49,7 +49,7 @@ AutoCloseable的自动关闭功能要结合Try-with-resources处理使用。
 
 try-with-resources语句是一个声明一个或多个资源的`try`语句。一个资源作为一个对象，必须在程序结束之后随之关闭。try-with-resources语句确保在语句的最后每个资源都被关闭。任何实现了`java.lang.AutoCloseable`的对象, 包括所有实现了`java.io.Closeable`的对象, 都可以用作一个资源。
 
-**范例：**消息发送
+**范例：** 消息发送
 ```java
 interface IMessage {
     void send();

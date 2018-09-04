@@ -36,7 +36,7 @@ public static 返回值类型 方法名称(参数类型 参数名称,...) {
 >
 > 补充说明，在JAVA中：类名的标识符一般用大驼峰式书写格式，方法和变量的标识符则多用小驼峰式书写格式(关于具体的命名规范可参考[Java编程规范](README.md#Java编程规范参考))。
 
-**范例：**定义一个没有参数没有返回值的方法
+**范例：** 定义一个没有参数没有返回值的方法
 
 ```java
 public static void main(String[] args) {
@@ -50,7 +50,7 @@ public static void printInfo() {
 
 可以发现将若干代码封装在一个方法之中，就可以根据需要重复执行这些方法所定义的代码。实际上是否要形成方法，并没有一个绝对的条件。但是有一点可以作为参考：如果在代码之中你总是在对一些操作进行复制粘贴的时候，就可以考虑将此类代码定义成为方法以供重复调用使用。
 
-**范例：**定义一个有参数无返回值的方法
+**范例：** 定义一个有参数无返回值的方法
 
 ```java
 public static void main(String[] args) {
@@ -74,7 +74,7 @@ public static void test(double score) {
 
 有了参数之后，方法就可以根据不同的参数内容进行数据的处理。
 
-**范例：**定义有参数有返回值的方法
+**范例：** 定义有参数有返回值的方法
 
 ```java
 public static void main(String[] args) {
@@ -92,7 +92,7 @@ public static int add(int x, int y) {
 
 如果说现在一个方法上使用了void定义为它的返回值，那么可以使用return结束一个方法的调用。
 
-**范例：**利用return结束方法调用
+**范例：** 利用return结束方法调用
 
 ```java
 public static void main(String[] args) {
@@ -115,7 +115,7 @@ public static void set(int x) {
 
 如果说有一个方法要执行多项操作，例如add方法，它可能执行两个整数的相加，也有可能执行三个整数的相加，还有可能执行两个小数的相加，那么在这样的情况下，一个方法体肯定无法满足这样的需求，要为add方法轻易多个不同的功能实现，此类操作就成为方法重载，但是在进行方法的重载时要求：方法的名称相同，参数的类型或个数不同。
 
-**范例：**观察方法重载
+**范例：** 观察方法重载
 
 ```java
 public static void main(String[] args) {
@@ -135,7 +135,7 @@ public static double add(double x, double y) {
 }
 ```
 
-**范例：**观察代码
+**范例：** 观察代码
 
 ```java
 public static void main(String[] args) {
@@ -176,7 +176,7 @@ public static void main(String[] args) {
 
 之所以在开发之中尽量减少递归操作，是因为如果处理不得当就有可能出现内存的溢出问题。
 
-**范例：**实现一个1~100的累加操作
+**范例：** 实现一个1~100的累加操作
 
 ```java
 int sum = 0;
@@ -190,7 +190,7 @@ System.out.println(sum);
 
 将以上的代码形式转化为递归操作。
 
-**范例：**递归调用
+**范例：** 递归调用
 
 ```java
 public static void main(String[] args) {

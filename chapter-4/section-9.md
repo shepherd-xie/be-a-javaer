@@ -25,13 +25,13 @@
 
 1、转大写、小写操作
 
-**范例：**观察基本操作
+**范例：** 观察基本操作
 
 ```sql
 SELECT UPPER('hello') FROM dual;
 ```
 
-**范例：**将所有的姓名转小写
+**范例：** 将所有的姓名转小写
 
 ```sql
 SELECT LOWER(ename) FROM emp;
@@ -39,7 +39,7 @@ SELECT LOWER(ename) FROM emp;
 
 在Oracle数据库里面本身数据是区分大小写的，但是在实际的开发之中有许多的代码本身是不区分大小写的，所以用户进行信息查询的时候也往往不会考虑到大小写的问题。
 
-**范例：**由用户输入要查询的雇员姓名，而后显示雇员的完整信息
+**范例：** 由用户输入要查询的雇员姓名，而后显示雇员的完整信息
 
 * 在Oracle里面如果想要实现数据的输入操作，可以使用替代变量的方式完成，格式“&标记”；
 
@@ -49,7 +49,7 @@ SELECT * FROM emp WHERE ename=UPPER('&inputname');
 
 2、首字母大写其他字母小写
 
-**范例：**将所有的雇员姓名以首字母大写的形式保存
+**范例：** 将所有的雇员姓名以首字母大写的形式保存
 
 ```sql
 SELECT ename, INITCAP(ename) FROM emp;
@@ -57,13 +57,13 @@ SELECT ename, INITCAP(ename) FROM emp;
 
 3、取得字符串的长度
 
-**范例：**基础操作
+**范例：** 基础操作
 
 ```sql
 SELECT LENGTH('helloworld!!!') FROM dual;
 ```
 
-**范例：**查询雇员姓名长度为5的全部雇员信息
+**范例：** 查询雇员姓名长度为5的全部雇员信息
 
 ```sql
 SELECT * FROM emp WHERE LENGTH(ename)=5;
@@ -74,7 +74,7 @@ SELECT * FROM emp WHERE LENGTH(ename)=5;
 * 从指定位置截取到结尾：字符串 SUBSTR\(列 \| 字符串, 开始索引\);
 * 截取部分内容：字符串 SUBSTR\(列 \| 字符串, 开始索引, 长度\);
 
-**范例：**验证函数
+**范例：** 验证函数
 
 ```sql
 SELECT SUBSTR('helloworld',6) FROM dual;
@@ -90,13 +90,13 @@ SELECT SUBSTR('helloworld',1,5) FROM dual;
 
 在程序之中所有的字符串的首字母的索引都是0，但是在Oracle里面，所有的字符串的首字母的索引都是1，如果你设置的是0，那么它也会按照1的方式来进行处理。
 
-**范例：**要求截取每个雇员姓名的前三个字母
+**范例：** 要求截取每个雇员姓名的前三个字母
 
 ```sql
 SELECT ename,SUBSTR(ename,1,3) FROM emp;
 ```
 
-**范例：**取每个雇员姓名的后三位字母
+**范例：** 取每个雇员姓名的后三位字母
 
 * 如果要想取出后三位字母，那么首先必须要知道截取的开始索引。
 
@@ -122,7 +122,7 @@ SELECT SUBSTR(ename,-3) FROM emp;
 |  | 2 | 数字 TRUNC\(列 \| 数字\[, 小数位\]\) | 实现数据的截取，即：不进位 |
 | 3 | 数字 MOD\(列 \| 数字， 列 \| 数字\) | 求模\(计算余数\) |
 
-**范例：**使用ROUND\(\)函数
+**范例：** 使用ROUND\(\)函数
 
 ```sql
 SELECT ROUND(789.5671234) FROM dual;
@@ -130,7 +130,7 @@ SELECT ROUND(789.5671234) FROM dual;
 
 如果没有设置小数点的保留位数，那么会直接不保留小数位进位。
 
-**范例：**使用ROUND\(\)函数
+**范例：** 使用ROUND\(\)函数
 
 ```sql
 SELECT ROUND(789.5671234,2) FROM dual;
@@ -138,7 +138,7 @@ SELECT ROUND(789.5671234,2) FROM dual;
 
 如果设置了小数位的话，那么就会在指定的小数位上实现四舍五入。
 
-**范例：**可以设置为负数
+**范例：** 可以设置为负数
 
 ```sql
 SELECT ROUND(789.5671234,-2) FROM dual;
@@ -146,7 +146,7 @@ SELECT ROUND(789.5671234,-2) FROM dual;
 
 如果设置为负数，那么就表示进行整数位的四舍五入。
 
-**范例：**验证TRUNC\(\)函数
+**范例：** 验证TRUNC\(\)函数
 
 TRUNK\(\)函数与ROUND\(\)函数的使用形式上差别不大，唯一的区别在于TRUNC\(\)是不会进位的。
 
@@ -156,7 +156,7 @@ SELECT TRUNC(789.5671234),
     TRUNC(789.5671234,-2) FROM dual;
 ```
 
-**范例：**求模函数
+**范例：** 求模函数
 
 ```sql
 SELECT MOD(10,3) FROM dual;
@@ -166,7 +166,7 @@ SELECT MOD(10,3) FROM dual;
 
 取得日期时间，Oracle里面专门提供了一个伪列“SYSDATE”（SYSTIMESTAMP）。
 
-**范例：**验证伪列
+**范例：** 验证伪列
 
 ```sql
 SELECT SYSDATE FROM dual;
@@ -176,7 +176,7 @@ SELECT SYSDATE FROM dual;
 SELECT SYSTIMESTAMP FROM dual;
 ```
 
-**范例：**进一步观察伪列
+**范例：** 进一步观察伪列
 
 ```sql
 SELECT ename,job,sal,SYSDATE FROM emp;
@@ -190,7 +190,7 @@ SYSDATE伪列里面包含有日期时间的内容，只不过现在只显示了�
 * 日期 - 数字 = 日期（若干天之前的日期）；
 * 日期 - 日期 = 数字（天数）
 
-**范例：**实现日期的基本操作
+**范例：** 实现日期的基本操作
 
 ```sql
 SELECT SYSDATE-7,SYSDATE+120 FROM dual;
@@ -198,7 +198,7 @@ SELECT SYSDATE-7,SYSDATE+120 FROM dual;
 
 对于日期而言，由于每个月的天数是不相同的，所以直接进行天数加法实现月数的计算是不精确的。
 
-**范例：**要求查询出每个雇员的编号、姓名、职位、已经被雇佣的天数
+**范例：** 要求查询出每个雇员的编号、姓名、职位、已经被雇佣的天数
 
 ```sql
 SELECT empno,ename,job,SYSDATE-hiredate FROM emp;
@@ -215,7 +215,7 @@ SELECT empno,ename,job,SYSDATE-hiredate FROM emp;
 |  | 3 | 日期 LAST\_DAY\(列 \| 日期\) | 取得指定日期所在月的最后一天 |
 |  | 4 | 日期 NEXT\_DAY\(列 \| 日期, 星期X\) | 返回下一个指定的一周时间数对应的日期 |
 
-**范例：**在当前日期下增加指定的月数
+**范例：** 在当前日期下增加指定的月数
 
 ```sql
 SELECT ADD_MONTHS(SYSDATE,4) FROM dual;
@@ -223,19 +223,19 @@ SELECT ADD_MONTHS(SYSDATE,4) FROM dual;
 
 在进行月数增加的时候是不会限制数据的大小的。
 
-**范例：**计算所有雇员到今天为止雇佣的月数
+**范例：** 计算所有雇员到今天为止雇佣的月数
 
 ```sql
 SELECT empno,ename,hiredate,MONTHS_BETWEEN(SYSDATE,hiredate) FROM emp;
 ```
 
-**范例：**计算当前时间所在月的最后一天日期
+**范例：** 计算当前时间所在月的最后一天日期
 
 ```sql
 SELECT LAST_DAY(SYSDATE) FROM dual;
 ```
 
-**范例：**要求查询出所有在雇佣所在月倒数第三天雇佣的雇员信息
+**范例：** 要求查询出所有在雇佣所在月倒数第三天雇佣的雇员信息
 
 ```sql
 SELECT empno,ename,hiredate FROM emp WHERE hiredate=LAST_DAY(hiredate)-2;
@@ -243,13 +243,13 @@ SELECT empno,ename,hiredate FROM emp WHERE hiredate=LAST_DAY(hiredate)-2;
 
 一般而言，日期函数的操作过程是有些麻烦的，但是有一个前提：利用日期函数操作的日期是最准确的。
 
-**范例：**验证“NEXT\_DAT\(\)”函数
+**范例：** 验证“NEXT\_DAT\(\)”函数
 
 ```sql
 SELECT NEXT_DAY(SYSDATE,'星期二') FROM dual;
 ```
 
-**范例：**要求以年、月、日的方式计算出每个雇员到现在为止雇佣年限
+**范例：** 要求以年、月、日的方式计算出每个雇员到现在为止雇佣年限
 
 例如：7698的雇员BLAKE，雇佣的日期是：1981-05-01，现在的日期是2018-04-11，此雇员到现在为止已经被雇佣了：36年、11月、10天。本次要求的时间精度很高，只能通过时间函数进行操作。
 

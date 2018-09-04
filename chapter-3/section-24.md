@@ -25,7 +25,7 @@ ArrayList类是List接口最为常用的一个子类。下面将利用此类来�
 
 ![](/images/chapter-3/Collection/ArrayList.png)
 
-**范例：**List基本操作
+**范例：** List基本操作
 
 ```java
 public class TestDemo { 
@@ -51,7 +51,7 @@ public class TestDemo {
 
 可以发现，List集合之中所保存的数据是按照保存的顺序存放，而且允许存在有重复数据，但是List子接口扩充有get()方法。
 
-**范例：**为Collection接口实例化
+**范例：** 为Collection接口实例化
 
 * ArrayList是List接口子类，而List有事Collection子接口，自然可以通过ArrayList为Collection接口实例化。
 
@@ -75,7 +75,7 @@ public class TestDemo {
 
 Collection接口与List接口相比，功能会显得有所不足，而且以上的形式并不是集合所使用的标准的输出的结构，只是一个基础的展示。
 
-**范例：**在集合里面保存对象
+**范例：** 在集合里面保存对象
 ```java
 class Book {
 	private String title;
@@ -298,7 +298,7 @@ public class LinkedList<E>
 
 ![](/images/chapter-3/Collection/Vector.png)
 
-**范例：**使用Vector
+**范例：** 使用Vector
 
 ```java
 package com.alpha.demo;

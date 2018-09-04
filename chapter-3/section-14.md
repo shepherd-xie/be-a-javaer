@@ -1,11 +1,11 @@
 ## 开发支持类库
 
-* [Arrays类](/chapter-3/section-14.md#Arrays类)
-* [UUID类](/chapter-3/section-14.md#UUID类)
-* [Optional类](/chapter-3/section-14.md#Optional类)
-* [ThreadLocal类](/chapter-3/section-14.md#ThreadLocal类)
+* [Arrays类](/chapter-3/section-14.md#arrays类)
+* [UUID类](/chapter-3/section-14.md#uuid类)
+* [Optional类](/chapter-3/section-14.md#optional类)
+* [ThreadLocal类](/chapter-3/section-14.md#threadlocal类)
 * [定时器](/chapter-3/section-14.md#定时器)
-* [Base64加密工具](/chapter-3/section-14.md#Base64加密工具)
+* [Base64加密工具](/chapter-3/section-14.md#base64加密工具)
 
 ### Arrays类
 
@@ -13,7 +13,7 @@
 
 在这个类里面存在有二分查找法：public static int binarySearch(Object[] a, int fromIndex, int toIndex, Object key)。但是要进行二分查找前提条件就是先要排序。
 
-**范例：**实现二分查找
+**范例：** 实现二分查找
 
 ```java
 package com.alpha;
@@ -80,7 +80,7 @@ public class Application {
 
 Optional类的主要功能是进行NPE的相关处理，在以往进行开发的时候，为了防止程序出现NPE往往需要追加验证。
 
-**范例：**传统的引用传递问题
+**范例：** 传统的引用传递问题
 ```java
 public class Application {
     public static void main(String[] args) {
@@ -116,7 +116,7 @@ class MessageImpl implements IMessage {
 * 保存数据，允许为null：`public static <T> Optional<T> ofNullable(T value)`;
 * 为空返回默认值：`public T orElse(T other)`;
 
-**范例：**修改程序
+**范例：** 修改程序
 ```java
 public class Application {
     public static void main(String[] args) {
@@ -151,7 +151,7 @@ ThreadLocal是一个关于创建线程局部变量的类。
 
 通常情况下，我们创建的变量是可以被任何一个线程访问并修改的。而使用ThreadLocal创建的变量只能被当前线程访问，其他线程则无法访问和修改。
 
-**范例：**定义一个发送消息的功能
+**范例：** 定义一个发送消息的功能
 ```java
 public class Application {
     public static void main(String[] args) {
@@ -183,7 +183,7 @@ class Message {
 
 以上的程序采用的是单线程的处理方法，如果在多线程的环境下还能否正常运行？
 
-**范例：**在多线程环境下运行
+**范例：** 在多线程环境下运行
 ```java
 public class Application {
     public static void main(String[] args) {
@@ -234,7 +234,7 @@ class Message {
 * 取出数据：`public T get()`;
 * 删除数据：`public void remove()`;
 
-**范例：**解决线程同步问题
+**范例：** 解决线程同步问题
 ```java
 public class Application {
     public static void main(String[] args) {
@@ -288,7 +288,7 @@ class Message {
   * 任务启动：`public void schedule(TimerTask task, long delay)`；
   * 间隔触发：`public void scheduleAtFixedRate(TimerTask task, long delay, long period)`；
   
-**范例：**定时任务
+**范例：** 定时任务
 ```java
 public class Application {
     public static void main(String[] args) {
@@ -313,7 +313,7 @@ class MyTask extends TimerTask {
 * `Base64.Decoder`：进行解密处理；
   * 解密：`public byte[] decode(byte[] src)`;
 
-**范例：**实现加密解密操作
+**范例：** 实现加密解密操作
 ```java
 public class Application {
     public static void main(String[] args) {

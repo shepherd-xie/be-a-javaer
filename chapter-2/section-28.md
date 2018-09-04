@@ -21,7 +21,7 @@ Annotation是JDK1.5最大的特色，利用注解的形式来实现程序的不�
 
 如果在输出对象的时候希望其可以返回需要的内容，那么一定要进行toString()方法的覆写。
 
-**范例：**有没有可能在开发中出现以下的形式
+**范例：** 有没有可能在开发中出现以下的形式
 
 ```java
 class Book {
@@ -57,7 +57,7 @@ class Book {
 
 这个时候就可以使用“@Deprecated”来进行声明。
 
-**范例：**声明过期操作
+**范例：** 声明过期操作
 
 ```java
 package com.alpha;
@@ -78,7 +78,7 @@ public class MainClass {
 
 可以压制多个警告。
 
-**范例：**观察警告
+**范例：** 观察警告
 
 ```java
 package com.alpha;

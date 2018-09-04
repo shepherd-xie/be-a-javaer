@@ -1,9 +1,9 @@
 ## 集合工具类
 
-* [Stack](/chapter-3/section-28.md#Stack)
-* [Queue](/chapter-3/section-28.md#Queue)
-* [Properties](/chapter-3/section-28.md#Properties)
-* [Collections工具类](/chapter-3/section-28.md#Collections工具类)
+* [Stack](/chapter-3/section-28.md#stack)
+* [Queue](/chapter-3/section-28.md#queue)
+* [Properties](/chapter-3/section-28.md#properties)
+* [Collections工具类](/chapter-3/section-28.md#collections工具类)
 
 ### Stack
 
@@ -18,7 +18,7 @@ extends Vector<E>
 * 入栈：`public E push(E item)`；
 * 出栈：`public E pop()`；
 
-**范例：**观察栈的操作
+**范例：** 观察栈的操作
 ```java
 public class TestDemo {
 	public static void main(String[] args) throws Exception {
@@ -44,7 +44,7 @@ public class TestDemo {
 * 追加：`public boolean offer(E e)`，可以直接使用`add()`方法；
 * 获取：`public E poll()`。
 
-**范例：**实现队列操作
+**范例：** 实现队列操作
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -74,7 +74,7 @@ extends Hashtable<Object,Object>
 * 取得属性：`public String getProperty(String key)`，如果`key`不存在返回`null`；
 * 取得属性：`public String getProperty(String key, String defaultValue)`，如果`key`不存在返回`defaultValue`；
 
-**范例：**属性的基本操作
+**范例：** 属性的基本操作
 ```java
 public class TestDemo {
 	public static void main(String[] args) throws Exception {
@@ -90,7 +90,7 @@ public class TestDemo {
 
 在`Properties`类里面提供有数据的输出操作：`public void store(OutputStream out, String comments) throws IOException`。
 
-**范例：**将属性信息保存在文件里
+**范例：** 将属性信息保存在文件里
 ```java
 public class TestDemo {
 	public static void main(String[] args) throws Exception {
@@ -105,7 +105,7 @@ public class TestDemo {
 
 也可以从指定的输入流中读取属性信息：`public void load(InputStream inStream) throws IOException`；
 
-**范例：**通过文件流读取属性内容
+**范例：** 通过文件流读取属性内容
 ```java
 package com.alpha.demo;
 import java.io.FileInputStream;

@@ -16,7 +16,7 @@
 * 设置完整路径：public File(String pathname)，大部分情况下使用此类操作；
 * 设置父路径与子文件路径：public File(String parent, String child)，在Android上使用比较多。
 
-**范例：**操作文件
+**范例：** 操作文件
 
 * 创建文件：public boolean createNewFile() throws IOException
   * 如果目录不能访问；
@@ -112,7 +112,7 @@ public class MainClass {
 * 列出目录下的信息：public String[] list()；
 * 列出所有的信息以File类对象包装：public File[] listFiles()。
 
-**范例：**列出信息
+**范例：** 列出信息
 
 ```java
 package com.alpha;
@@ -130,7 +130,7 @@ public class MainClass {
 }
 ```
 
-**范例：**列出全部的File类对象
+**范例：** 列出全部的File类对象
 
 ```java
 package com.alpha;

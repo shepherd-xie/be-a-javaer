@@ -20,7 +20,7 @@
 
 异常是导致程序中断执行的一种指令流，异常一旦出现并且没有进行合理处理的话，那么程序就将中断执行。
 
-**范例：**不产生异常的代码
+**范例：** 不产生异常的代码
 
 ```java
 public class MainClass {
@@ -38,7 +38,7 @@ public class MainClass {
 3、除法计算结束。
 ```
 
-**范例：**产生异常
+**范例：** 产生异常
 
 ```java
 public class MainClass {
@@ -80,7 +80,7 @@ try {
 
 对于以上的操作组合：try...catch、try...catch...finally、try...finally。
 
-**范例：**应用异常处理格式
+**范例：** 应用异常处理格式
 
 ```java
 public class MainClass {
@@ -129,7 +129,7 @@ java.lang.ArithmeticException: / by zero
 
 此时发现打印的异常信息是很完整的。
 
-**范例：**使用try...catch...finally
+**范例：** 使用try...catch...finally
 
 ```java
 public class MainClass {
@@ -175,7 +175,7 @@ public class MainClass {
 
 以上的代码里面只存在有一个catch，所以只能够处理一个异常，如果其他没有处理的异常，依然会导致程序中断执行。
 
-**范例：**加入多个catch
+**范例：** 加入多个catch
 
 ```java
 public class MainClass {
@@ -252,7 +252,7 @@ public class MainClass {
 
 整个过程就好比方法重载一样。根据catch后面的参数类型进行匹配，但是所有的Java对象都存在有自动向上转型的特性，也就是说匹配所有的异常类，简单的做法是匹配Exception就够了。
 
-**范例：**使用Exception处理异常
+**范例：** 使用Exception处理异常
 
 ```java
 public class MainClass {
@@ -283,7 +283,7 @@ public class MainClass {
 
 throws关键字主要用于方法声明上，指的是当方法之中出现异常后交由被调用处来进行处理。
 
-**范例：**使用throws
+**范例：** 使用throws
 
 ```java
 class MyMath {
@@ -294,7 +294,7 @@ class MyMath {
 }
 ```
 
-**范例：**调用以上方法
+**范例：** 调用以上方法
 
 ```java
 public class MainClass {
@@ -335,7 +335,7 @@ public class MainClass {
 
 在程序之中可以之季节使用throw手工的抛出一个异常类的实例化对象。
 
-**范例：**手工抛出异常
+**范例：** 手工抛出异常
 
 ```java
 public class MainClass {
@@ -358,7 +358,7 @@ public class MainClass {
 
 现在要求定义一个div()方法，要求，这个方法在进行计算之前打印提示信息，在计算结束完毕也打印提示信息，如果在计算之中产生了异常则交给被调用处进行处理。
 
-**范例：**首先给出代码不出错的情况
+**范例：** 首先给出代码不出错的情况
 
 ```java
 class MyMath {
@@ -500,7 +500,7 @@ assert关键字是在JDK1.4的时候引入的，其主要功能是进行断言�
 
 在Java中的断言指的是程序执行到某行代码处时一定是预期的结果。
 
-**范例：**观察断言
+**范例：** 观察断言
 
 ```java
 public class MainClass {
@@ -530,7 +530,7 @@ Java本身已经提供了大量的异常，但是这些异常在实际的工作�
 
 如果想要开发自定义的异常类可以选择继承Exception或者是RuntimeException。
 
-**范例：**定义AddException
+**范例：** 定义AddException
 
 ```java
 class AddException extends Exception {

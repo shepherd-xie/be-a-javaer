@@ -25,7 +25,7 @@ public class MainClass{
 
 * 取得Class对象：public final Class<?> getClass()
 
-**范例：**观察反射
+**范例：** 观察反射
 ```java
 package com.alpha;
 import java.util.Date; // 先有类
@@ -95,7 +95,7 @@ public class MainClass{
 
 * 实例化对象方法：public T newInstance() throws InstantiationException, IllegalAccessException
 
-**范例：**利用反射实例化对象
+**范例：** 利用反射实例化对象
 ```java
 package com.alpha;
 class Book {
@@ -120,7 +120,7 @@ public class MainClass{
 
 在任何的开发之中，new是造成耦合的最大元凶，一切的耦合都起源于new。
 
-**范例：**观察工厂设计模式
+**范例：** 观察工厂设计模式
 ```java
 package com.alpha.factory;
 interface Fruit {
@@ -215,7 +215,7 @@ public class TestFactory {
 
 在之前所编写的代码实际上都默认使用了类中的无参构造方法，但是并不是所有的类都提供有无参构造。
 
-**范例：**观察程序的问题
+**范例：** 观察程序的问题
 ```java
 package com.alpha.entity;
 public class Book {
@@ -263,7 +263,7 @@ Caused by: java.lang.NoSuchMethodException: com.alpha.entity.Book.<init>()
 
 以上的方法返回的都是"java.lang.reflect.Constructor"类的对象。在这个类中提供有一个明确传递有参构造内容的实例化方法：public T newInstance(Object... initargs) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException。
 
-**范例：**明确调用类中有参构造
+**范例：** 明确调用类中有参构造
 
 ```java
 package com.alpha;
@@ -284,7 +284,7 @@ public class MainClass{
 
 **类的普通方法只有在一个类产生实例化对象之后才可以调用。并且实例化对象的方式有三种。**
 
-**范例：**定义一个类
+**范例：** 定义一个类
 
 ```java
 package com.alpha.entity;
@@ -310,7 +310,7 @@ public class Book {
 
 * 调用方法：public Object invoke(Object obj, Object... args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException
 
-**范例：**反射调用方法
+**范例：** 反射调用方法
 
 ```java
 package com.alpha;
@@ -352,7 +352,7 @@ public class MainClass{
 
 在这个类里面提供有一个方法：public void setAccessible(boolean flag) throws SecurityException，设置是否封装。
 
-**范例：**现提供有如下的类
+**范例：** 现提供有如下的类
 
 ```java
 package com.alpha.entity;
@@ -363,7 +363,7 @@ public class Book {
 
 这个类里面只定义了一个私有属性，按照原始的做法，此时它一定无法被外部所使用。
 
-**范例：**反射调用
+**范例：** 反射调用
 
 ```java
 package com.alpha;

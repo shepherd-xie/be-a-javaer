@@ -23,14 +23,14 @@ CREATE SEQUENCE 序列名称
 * 非循环序列：NOCYCLE；
 * 缓冲个数：20；
 
-**范例：**创建一个序列
+**范例：** 创建一个序列
 ```sql
 CREATE SEQUENCE myseq;
 ```
 
 当一个序列创建成功之后会自动将此序列的信息保存在数据字典表之中（user_sequences）。
 
-**范例：**查询数据字典
+**范例：** 查询数据字典
 ```sql
 SELECT * FROM user_sequences;
 ```
@@ -40,14 +40,14 @@ SELECT * FROM user_sequences;
 * `序列名称.currval`：获取序列当前的内容；
   * 一定要先调用`nextval`后才可以执行`currval`否则会出现`ORA-08002: 序列 MYSEQ.CURRVAL 尚未在此会话中定义`；
 
-**范例：**序列的增长
+**范例：** 序列的增长
 ```sql
 SELECT myseq.nextval FROM dual;
 ```
 
 如果要想将序列结合数据表一起使用，那么只能够在增加语句上操作。
 
-**范例：**创建数据表
+**范例：** 创建数据表
 ```sql
 DROP TABLE member PURGE;
 CREATE TABLE member (
@@ -57,7 +57,7 @@ CREATE TABLE member (
 );
 ```
 
-**范例：**编写增加语句，设置mid的时候使用序列处理
+**范例：** 编写增加语句，设置mid的时候使用序列处理
 ```sql
 INSERT INTO member(mid,name) VALUES (myseq.nextval,'ALPHA');
 ```

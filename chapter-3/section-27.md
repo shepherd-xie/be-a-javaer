@@ -11,7 +11,7 @@ public interface Set<E> extends Collection<E>
 
 ![](/images/chapter-3/Collection/Set.png)
 
-**范例：**验证`Set`集合特征
+**范例：** 验证`Set`集合特征
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -34,7 +34,7 @@ public class HashSet<E>
 
 ![](/images/chapter-3/Collection/HashSet.png)
 
-**范例：**观察HashSet子类的特点
+**范例：** 观察HashSet子类的特点
 ```java
 package com.alpha.demo;
 import java.util.HashSet;
@@ -63,7 +63,7 @@ public class TreeSet<E> extends AbstractSet<E>
 
 ![](/images/chapter-3/Collection/TreeSet.png)
 
-**范例：**使用TreeSet子类
+**范例：** 使用TreeSet子类
 ```java
 package com.alpha.demo;
 import java.util.Set;
@@ -88,7 +88,7 @@ public class TestDemo {
 
 集合就是一个动态的对象数组，那么如果想要为一组对象进行排序，在Java里面必须要使用比较器，应该使用Comparable完成比较。在比较方法里面需要将这个类的所有属性都一起参与到比较之中。
 
-**范例：**TreeSet排序
+**范例：** TreeSet排序
 ```java
 package com.alpha.demo;
 import java.util.Set;

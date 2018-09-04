@@ -89,7 +89,7 @@ OutputStream本书属于抽象类，如果想要为抽象类进行对象的实�
 * 创建或覆盖已有文件：public FileOutputStream(File file) throws FileNotFoundException；
 * 文件内容追加：public FileOutputStream(File file, boolean append) throws FileNotFoundException；
 
-**范例：**文件内容的输出
+**范例：** 文件内容的输出
 
 ```java
 package com.alpha;
@@ -118,7 +118,7 @@ public class MainClass {
 
 以上是将整个字节输出的内容进行了输出，并且发现，如果此时要输出的文件不存在，那么会自动进行创建，可是对于输出操作在整个OutputStream类里面一共定义有三个方法。
 
-**范例：**采用单个字节的方式输出
+**范例：** 采用单个字节的方式输出
 
 ```java
 	for (int i = 0; i < data.length; i ++) {
@@ -126,7 +126,7 @@ public class MainClass {
 	}
 ```
 
-**范例：**输出部分字节数组内容
+**范例：** 输出部分字节数组内容
 
 ```java
 	output.write(data, 6, 6);
@@ -166,7 +166,7 @@ InputStream是一个抽象类，所以如果要想进行文件读取使用FileIn
 
 * 构造方法：public FileInputStream(File file) throws FileNotFoundException；
 
-**范例：**向数组里面读取数据
+**范例：** 向数组里面读取数据
 
 ```java
 package com.alpha;
@@ -192,7 +192,7 @@ public class MainClass {
 }
 ```
 
-**范例：**单个字节数据读取
+**范例：** 单个字节数据读取
 
 * 由于一个文件有很多的字节数据，所以如果要进行读取肯定采用循环的方式完成，由于不确定循环次数，所以应该采用while循环完成，下面为了更好的演示出问题，使用do_while与while两种方式实现。
 
@@ -292,7 +292,7 @@ public interface Appendable {
 
 Writer是一个抽象类，如果要想为这个类的对象实例化，应该使用FileWriter子类；
 
-**范例：**使用Writer类实现内容输出
+**范例：** 使用Writer类实现内容输出
 
 ```java
 package com.alpha;
@@ -336,7 +336,7 @@ implements Readable, Closeable
 
 为Reader类实例化的可以使用FileReader子类完成。
 
-**范例：**使用Reader读取数据 
+**范例：** 使用Reader读取数据 
 
 ```java
 package com.alpha;
@@ -371,7 +371,7 @@ public class MainClass {
 
 在使用OutputStream输出数据的时候即使最后没有关闭输出流，那么内容也可以正常输出，但是返过来如果使用的是字符输出流，如果不关闭，那么就表示在缓冲区之中处理的内容不会被强制性的清空，所以就不会输出数据。如果现在有特殊情况不能够关闭字符输出流，可以使用flush()方法强制清空缓冲区。
 
-**范例：**强制清空字符流缓冲区
+**范例：** 强制清空字符流缓冲区
 
 ```java
 package com.alpha;
@@ -406,7 +406,7 @@ public class MainClass {
 | InputStreamReader | public class InputStreamReader extends Reader | public InputStreamReader(InputStream in) |
 | OutputStreamWriter | public class OutputStreamWriter extends Writer | public OutputStreamWriter(OutputStream out) |
 
-**范例：**实现转换
+**范例：** 实现转换
 
 ```java
 package com.alpha;
@@ -482,7 +482,7 @@ FileInputStream与FileOutputStream都是InputStream与OutputStream的直接子�
 
 由于现在有可能要拷贝二进制数据，那么一定使用字节流会比较合适一些。
 
-**范例：**代码的基本实现
+**范例：** 代码的基本实现
 
 ```java
 package com.alpha;
@@ -533,7 +533,7 @@ public class CopyDemo {
   * 要设置的字节数组实际上就是在read()方法里面使用的数组；
   * 一定是从字节数组的第0个元素开始输出，输出读取的数据长度；
 
-**范例：**改进拷贝操作
+**范例：** 改进拷贝操作
 
 ```java
 package com.alpha;

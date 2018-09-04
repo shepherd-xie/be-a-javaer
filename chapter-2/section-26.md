@@ -22,7 +22,7 @@
 * double：double自动装箱为Double，Double向上转型为Object；
 * String：直接向上转型为Object。
 
-**范例：**初期设计如下
+**范例：** 初期设计如下
 
 ```java
 class Point { // 定义坐标
@@ -45,7 +45,7 @@ class Point { // 定义坐标
 
 下面重复的演示三个程序，分别使用各个不同的数据类型。
 
-**范例：**在Point类里面保存整形数据
+**范例：** 在Point类里面保存整形数据
 
 ```java
 public class MainClass {
@@ -62,7 +62,7 @@ public class MainClass {
 }
 ```
 
-**范例：**使用小数
+**范例：** 使用小数
 
 ```java
 public class MainClass {
@@ -79,7 +79,7 @@ public class MainClass {
 }
 ```
 
-**范例：**使用字符串
+**范例：** 使用字符串
 
 ```java
 public class MainClass {
@@ -98,7 +98,7 @@ public class MainClass {
 
 此时的代码已经利用Object数据类型解决了一切的开发问题，但是解决的关键靠的是Object，于是失败的关键也就是Object。
 
-**范例：**错误的程序
+**范例：** 错误的程序
 
 ```java
 public class MainClass {
@@ -148,7 +148,7 @@ class Point<T> { // 定义坐标, T -> Type
 
 在使用Point类的时候才去设置标记的内容，也就是设置了类中的属性的类型。
 
-**范例：**设置为String
+**范例：** 设置为String
 
 ```java
 public class MainClass {
@@ -313,7 +313,7 @@ public class MainClass {
 * ? super 类：设置泛型下限，方法参数上使用；
   * ? super String：意味着只能够设置String或者是它的父类Object。
 
-**范例：**设置泛型的上限
+**范例：** 设置泛型的上限
 
 ```java
 package com.alpha;
@@ -340,7 +340,7 @@ public class MainClass {
 
 如果设置了非Number或者是其子类的话，那么将出现语法错误。
 
-**范例：**设置泛型的下限
+**范例：** 设置泛型的下限
 
 ```java
 package com.alpha;
@@ -371,7 +371,7 @@ public class MainClass {
 
 在之前都是将泛型定义在了一个类里面，那么泛型也可以在接口上声明，称为泛型接口。
 
-**范例：**定义泛型接口
+**范例：** 定义泛型接口
 
 ```java
 // 如果是接口在前面加上字母I，例如：IMessage
@@ -436,7 +436,7 @@ public class MainClass {
 
 泛型方法不一定非要定义在支持泛型的类李曼。在之前所编写的所有存在有泛型的方法都是在泛型支持类里面定义的。
 
-**范例：**泛型方法定义
+**范例：** 泛型方法定义
 
 ```java
 package com.alpha;

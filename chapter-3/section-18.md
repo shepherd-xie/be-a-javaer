@@ -112,7 +112,7 @@ public class MainClass {
 
 如果需要格式化输出就需要一些标记：整数（%d）、字符串（%s）、小数（%m.nf）、字符（%c）描述。
 
-**范例：**格式化输出
+**范例：** 格式化输出
 
 ```java
 package com.alpha;

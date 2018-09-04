@@ -21,7 +21,7 @@ public class MainClass {
 
 * 构造方法：public String\(String str\)，在构造里面依然要接收一个本类对象；
 
-**范例：**利用构造方法实例化
+**范例：** 利用构造方法实例化
 
 ```java
 public class MainClass {
@@ -38,7 +38,7 @@ String类有两种形式，主观上会认为第二种构造方法的形式更�
 
 如果现在有两个int型整数想要判断其是否相等，可以使用“ == ”符号进行判断。
 
-**范例：**判断两个int型整数是否相等
+**范例：** 判断两个int型整数是否相等
 
 ```java
 public class MainClass {
@@ -52,7 +52,7 @@ public class MainClass {
 
 但是需要知道的是在String上也可以使用“ == ”比较，那么比较的结果如何呢？
 
-**范例：**在String中使用“ == ”判断
+**范例：** 在String中使用“ == ”判断
 
 ```java
 public class MainClass {
@@ -77,7 +77,7 @@ public class MainClass {
 
 * 比较内容：public boolean equals\(String str\);
 
-**范例：**实现内容比较
+**范例：** 实现内容比较
 
 ```java
 public class MainClass {
@@ -103,7 +103,7 @@ public class MainClass {
 
 实际上任何的语言都没有提供字符串这一概念，很多的语言里面都是使用了字符数组来描述的字符串的概念。在Java里面也没有字符串的概念。但是所有的开发都不可能离开字符串的应用，那么最终的结果是，Java自己创造了字符串。但是这个字符串依然不属于基本数据类型，它是将字符串作为了String类的匿名对象的形式存在的。
 
-**范例：**观察字符串是匿名对象的验证
+**范例：** 观察字符串是匿名对象的验证
 
 ```java
 public class MainClass {
@@ -201,7 +201,7 @@ String str = new String("hello");
 
 除了浪费空间之外，如果使用了构造方法定义的String类对象，其内容不会保存在对象池之中，因为是使用的关键字new开辟的新内存。如果希望开辟的新内存数据也可以进行对象池的保存，那么可以采用String类定义的一个手工入池的方法：public String intern\(\);
 
-**范例：**手工入池
+**范例：** 手工入池
 
 ```java
 public class MainClass {
@@ -240,7 +240,7 @@ public class MainClass {
 
 以上的操作可以发现，所谓的字符串内容实际上根本就没有改变（Java就定义好了String的内容不能改变），而对于字符串对象内容的改变，是利用了引用关系的变化而实现得，但是每一次的变化都会产生垃圾空间。
 
-**范例：**观察以下代码
+**范例：** 观察以下代码
 
 ```java
 public class MainClass {

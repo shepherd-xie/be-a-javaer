@@ -4,7 +4,7 @@
 
 在JDK 1.8开始发现整个类集里面所提供的接口都出现了大量的`default`或者是`static`方法，以`Collection`的父借口`Iterable`接口里面定义的一个方法来观察：`default void forEach(Consumer<? super T> action)`。
 
-**范例：**利用`forEach()`方法输出
+**范例：** 利用`forEach()`方法输出
 ```java
 package com.alpha.demo;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class TestDemo {
 
 除了使用`Iterator`迭代取出数据并且处理之外，在JDK 1.8里面又提供了一个专门可以进行数据处理的类：`java.util.stream.Stream`，这个类的对象可以利用`Collection`接口提供的方法操作：`default Stream<E> stream()`。
 
-**范例：**取得`Stream`对象
+**范例：** 取得`Stream`对象
 ```java
 package com.alpha.demo;
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class TestDemo {
 
 取得了`Stream`类对象就可以进行数据的加工操作。
 
-**范例：**取消重复数据
+**范例：** 取消重复数据
 * Stream类里面提供有一个消除重复的方法：`public Stream<T> distinct()`；
 * 收集器：`public <R, A> R collect(Collector<? super T, A, R> collector)`；
   * `Collectors`类：`public static <T> Collector<T, ?, List<T>> toList()`；
@@ -72,7 +72,7 @@ public class TestDemo {
 
 `Stream`类是进行数据处理的，那么必然要涉及到数据的筛选（过滤），`Stream`里面支持有数据的筛选操作：`public Stream<T> filter(Predicate<? super T> predicate)`。
 
-**范例：**数据过滤
+**范例：** 数据过滤
 ```java
 public class TestDemo {
 	public static void main(String[] args) throws Exception {
@@ -92,7 +92,7 @@ public class TestDemo {
 
 整个数据操作已经实现了过滤功能，但是发现这个时候的过滤是区分大小写的。那么就要在过滤之前对数据进行一些额外的处理，例如：统一将大写转为小写。在`Stream`类里面有专门的数据处理方法：`pulbic <R> Stream<R> map(Function<? super T, ? extends R> mapper)`。
 
-**范例：**数据处理后过滤
+**范例：** 数据处理后过滤
 ```java
 public class TestDemo {
 	public static void main(String[] args) throws Exception {
@@ -137,7 +137,7 @@ public class TestDemo {
 * 全匹配：`public boolean allMatch(Predicate<? super T> predicate)`；
 * 匹配任意一个：`public boolean anyMatch(Predicate<? super T> predicate)`；
 
-**范例：**实现数据的匹配查询
+**范例：** 实现数据的匹配查询
 
 ```java
 public class TestDemo {
@@ -162,7 +162,7 @@ public class TestDemo {
 * 或操作：`default Predicate<T> or(Predicate<? super T> other)`；
 * 与操作：`default Predicate<T> and(Predicate<? super T> other)`；
 
-**范例：**设置多个条件
+**范例：** 设置多个条件
 ```java
 public class TestDemo {
 	public static void main(String[] args) throws Exception {
@@ -191,7 +191,7 @@ public class TestDemo {
 
 * 数据分析方法：`public Optional<T> reduce(BinaryOperator<T> accumulator)`；
 
-**范例：**实现一个`MapReduce`
+**范例：** 实现一个`MapReduce`
 ```java
 class ShopCar {
 	private String pname; // 商品名称
@@ -216,7 +216,7 @@ class ShopCar {
 
 此类设计的时候专门设计出了商品的单价与数量，这样如果要想取得某一个商品的花费就必须使用数量乘以单价。
 
-**范例：**进行数据的保存于初步的处理
+**范例：** 进行数据的保存于初步的处理
 ```java
 public class TestDemo {
 	public static void main(String[] args) throws Exception {
@@ -231,7 +231,7 @@ public class TestDemo {
 
 此时已经对每一个数据进行了处理。但是这个时候没有总价。于是要对处理后的数据进行统计操作，使用`reduce()`完成。
 
-**范例：**统计处理数据
+**范例：** 统计处理数据
 ```java
 public class TestDemo {
 	public static void main(String[] args) throws Exception {
@@ -251,7 +251,7 @@ public class TestDemo {
 * 按照`Integer`处理：`public IntStream mapToInt(ToIntFunction<? super T> mapper)`；
 * 按照`Long`处理：`public LongStream mapToLong(ToLongFunction<? super T> mapper)`；
 
-**范例：**实现数据的统计操作
+**范例：** 实现数据的统计操作
 ```java
 public class TestDemo {
 	public static void main(String[] args) throws Exception {

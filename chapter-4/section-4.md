@@ -34,7 +34,7 @@ SELECT * FROM tab;
 DESC 表名称
 ```
 
-**范例：**查看dept表结构
+**范例：** 查看dept表结构
 
 ```sql
 DESC dept;

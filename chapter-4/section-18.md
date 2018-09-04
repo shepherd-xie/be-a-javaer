@@ -30,12 +30,12 @@ CREATE TABLE member (
 
 此时name字段设置了非空约束，这要就表示在进行name字段的数据更新时必须设置内容。
 
-**范例：**正确的进行member数据增加
+**范例：** 正确的进行member数据增加
 ```sql
 INSERT INTO member(mid,name) VALUES ('ALPHA','ALPHA GO');
 ```
 
-**范例：**错误示范
+**范例：** 错误示范
 ```
 INSERT INTO member(mid) VALUES ('BETA');
 INSERT INTO member(mid,name) VALUES ('BETA',null);
@@ -57,13 +57,13 @@ CREATE TABLE member (
 );
 ```
 
-**范例：**添加正确的数据
+**范例：** 添加正确的数据
 ```sql
 INSERT INTO member(mid,name,email) VALUES ('ALPHA','ALPHA GO','alpha@gmail.com');
 INSERT INTO member(mid,name,email) VALUES ('ALPHA','ALPHA GO',null);
 ```
 
-**范例：**向数据表中追加重复数据
+**范例：** 向数据表中追加重复数据
 ```
 INSERT INTO member(mid,name,email) VALUES ('BETA','BETA GO','alpha@gmail.com');
 INSERT INTO member(mid,name,email) VALUES ('BETA','BETA GO',null);
@@ -112,7 +112,7 @@ CREATE TABLE member (
 
 主键约束简单的说就是`非空约束 + 唯一约束`，也就是说用做_唯一标识_使用，例如：中国公民的身份证编号、某学校学生的学号，此类数据不可重复、不可为空。
 
-**范例：**定义主键约束
+**范例：** 定义主键约束
 ```sql
 DROP TABLE member PURGE;
 CREATE TABLE member (
@@ -122,12 +122,12 @@ CREATE TABLE member (
 );
 ```
 
-**范例：**添加正确的数据
+**范例：** 添加正确的数据
 ```sql
 INSERT INTO member(mid,name) VALUES ('ALPHA','ALPHA GO');
 ```
 
-**范例：**错误的数据
+**范例：** 错误的数据
 * 情况一：追加的主键内容为空（错误提示：`ORA-01400: 无法将 NULL 插入 ("SCOTT"."MEMBER"."MID")`）
 ```
 INSERT INTO member(name) VALUES ('BETA GO');
@@ -142,7 +142,7 @@ INSERT INTO member(mid,name) VALUES ('ALPHA','BETA GO');
 
 正常情况下一张数据表仅有一个主键，但数据库也允许在两个或多个字段上同时设置主键，称为：~~_复合主键_~~。
 
-**范例：**定义复合主键
+**范例：** 定义复合主键
 ```
 DROP TABLE member PURGE;
 CREATE TABLE member (
@@ -154,14 +154,14 @@ CREATE TABLE member (
 
 当设置的多个字段为主键时表示当且仅当多个字段的值完全一致时才会违反唯一约束。
 
-**范例：**正确的数据
+**范例：** 正确的数据
 ```sql
 INSERT INTO member(mid,name) VALUES ('ALPHA','ALPHA GO');
 INSERT INTO member(mid,name) VALUES ('ALPHA','BETA GO');
 INSERT INTO member(mid,name) VALUES ('BETA','ALPHA GO');
 ```
 
-**范例：**错误的数据
+**范例：** 错误的数据
 ```
 INSERT INTO member(mid,name) VALUES ('ALPHA','ALPHA GO');
 ```
@@ -172,7 +172,7 @@ INSERT INTO member(mid,name) VALUES ('ALPHA','ALPHA GO');
 
 检查约束的本质在于设置一系列的过滤条件，当满足了这些过滤条件之后才可以保证数据更新，例如：在进行年龄设置的时候年龄应当在0~255之间，在设置性别时只能设置男、女。
 
-**范例：**设置检查约束
+**范例：** 设置检查约束
 ```sql
 DROP TABLE member PURGE;
 CREATE TABLE member (
@@ -186,13 +186,13 @@ CREATE TABLE member (
 );
 ```
 
-**范例：**增加正确的数据
+**范例：** 增加正确的数据
 ```sql
 INSERT INTO member(mid,name,age,sex) VALUES ('ALPHA','ALPHA GO',0,'女');
 INSERT INTO member(mid,name,age,sex) VALUES ('BETA','BETA GO',255,'男');
 ```
 
-**范例：**错误的数据
+**范例：** 错误的数据
 ```
 INSERT INTO member(mid,name,age,sex) VALUES ('GAMMA','GAMMA GO',-1,'不正常');
 INSERT INTO member(mid,name,age,sex) VALUES ('DELTA','DELTA GO',256,'正常');
@@ -204,7 +204,7 @@ INSERT INTO member(mid,name,age,sex) VALUES ('DELTA','DELTA GO',256,'正常');
 
 之前的几种约束作用的范围都是在单表上进行操作，而外键约束描述的是两张数据表之间的关联数据。例如：在之前用到的emp表与dept表，一个部门有多个雇员的关系。
 
-**范例：**建立人与图书的关系
+**范例：** 建立人与图书的关系
 ```sql
 DROP TABLE member PURGE;
 DROP TABLE book PURGE;
@@ -239,7 +239,7 @@ INSERT INTO book(bid,title,mid) VALUES (1006,'data structure','DELAT');
 
 这个时候可以发现，在member表中并没有`GAMMA`和`DELAT`的mid。这个数据显然不应该保存到book表中，`book.mid`的取值范围应该由`member.mid`决定。想要实现这种关系的约束就要依靠外键。
 
-**范例：**使用外键规范做法
+**范例：** 使用外键规范做法
 ```sql
 DROP TABLE member PURGE;
 DROP TABLE book PURGE;
@@ -298,7 +298,7 @@ _**设置原则：**_在任何的系统数据库设计的时候，当你的数�
 
 为了演示约束的修改处理，创建一张简单的数据表：
 
-**范例：**建立数据表
+**范例：** 建立数据表
 ```sql
 DROP TABLE member PURGE;
 CREATE TABLE member (
@@ -314,7 +314,7 @@ INSERT INTO member(mid,name) VALUES ('BETA',null);
 
 * 语法：`ALTER TABLE 表名称 ADD CONSTRAINT 约束名称 约束类型(字段)`；
 
-**范例：**为member表追加主键约束
+**范例：** 为member表追加主键约束
   * 如果数据表之中的数据有违法主键的情况出现，那么该约束是无法添加的；
 ```sql
 ALTER TABLE member ADD CONSTRAINT pk_mid PRIMARY KEY(mid);
@@ -329,7 +329,7 @@ ALTER TABLE member MODIFY (name VARCHAR2(50) NOT NULL);
 
 * 语法：`ALTER TABLE 表名称 DROP CONSTRAINT 约束名称;`
 
-**范例：**删除主键约束
+**范例：** 删除主键约束
 ```sql
 ALTER TABLE member DROP CONSTRAINT pk_mid;
 ```

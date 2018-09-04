@@ -8,7 +8,7 @@
 * 获取全部Annotation： `public Annotation[] getAnnotations()`；
 * 获取指定Annotation： `public <T extends Annotation> T getAnnotation(Class<T> annotationClass)`；
 
-**范例：**定义一个接口，并且在接口上使用Annotation
+**范例：** 定义一个接口，并且在接口上使用Annotation
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -95,7 +95,7 @@ public enum RetentionPolicy {
 
 现在已经清楚了Annotation的获取以及Annotation的运行策略，但是最为关键的是如何自定义Annotation。为此Java里面提供了新的语法，使用 `@interface` 声明Annotation。
 
-**范例：**自定义Annotation
+**范例：** 自定义Annotation
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {

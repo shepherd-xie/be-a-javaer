@@ -11,7 +11,7 @@
 
 发现Arrays类里面可以直接利用sort()方法实现对象数组排序。
 
-**范例：**编写测试代码
+**范例：** 编写测试代码
 
 ```java
 package com.alpha;
@@ -64,7 +64,7 @@ public interface Comparable<T> {
 
 实际上Stirng类就是Comparable接口的子类，之前使用的compareTo()方法就是比较的操作功能，如果现在用户要针对于对象进行比较，建议compareTo()方法返回三类数据：1（大于）、0（等于）、-1（小于）。
 
-**范例：**使用比较器
+**范例：** 使用比较器
 
 ```java
 package com.alpha;
@@ -152,7 +152,7 @@ public interface Comparator<T> {
 
 而真正要实现的只有compare()方法，需要单独准备出一个类来实现Comparator接口，这个类将作为指定类的排序类。
 
-**范例：**定义排序的工具类
+**范例：** 定义排序的工具类
 
 ```java
 class BookComparator implements Comparator<Book> {
@@ -170,7 +170,7 @@ class BookComparator implements Comparator<Book> {
 
 之前使用Comparable接口的时候利用的是Arrays类中的sort()方法，可是现在更换了一个接口之后，那么也可以使用另一个被重载的sort()方法：public static <T> void sort(T[] a, Comparator<? super T> c)。
 
-**范例：**实现排序
+**范例：** 实现排序
 
 ```java
 public class MainClass{ 
@@ -203,7 +203,7 @@ public class MainClass{
 
 在任何数据结构里面Node类的核心功能是保存真实数据以及配置节点关系。
 
-**范例：**实现二叉树
+**范例：** 实现二叉树
 
 * 定义出要使用的数据，数据所在的类要实现Comparable接口；
 

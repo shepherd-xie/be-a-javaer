@@ -12,7 +12,7 @@
 
 实际上所谓的同步指的就是多个线程访问统一资源时所需要考虑到的问题。
 
-**范例：**观察非同步情况下的操作
+**范例：** 观察非同步情况下的操作
 
 ```java
 package com.alpha;
@@ -77,7 +77,7 @@ class MyThread implements Runnable {
 
 在Java里面有四种代码块：普通代码块、构造块、静态块、同步块。
 
-**范例：**观察同步块
+**范例：** 观察同步块
 
 ```java
 package com.alpha;
@@ -110,7 +110,7 @@ public class MainClass { // 主类
 }
 ```
 
-**范例：**使用同步方法解决
+**范例：** 使用同步方法解决
 
 ```java
 package com.alpha;

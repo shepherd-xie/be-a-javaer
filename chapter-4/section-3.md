@@ -42,13 +42,13 @@ CONN 用户名/密码 [AS SYSDBA]
 
 如果现在使用的是sys用户登录，那么必须要写上“AS SYSDBA”，否则无法登录。
 
-**范例：**使用system登录
+**范例：** 使用system登录
 
 ```
 CONN system/manager
 ```
 
-**范例：**使用sys登录
+**范例：** 使用sys登录
 
 ```
 CONN sys/change_on_install AS SYSDBA
@@ -65,7 +65,7 @@ ORA-00942: 表或视图不存在
 
 因为emp表述语scott用户。严格来讲emp表的名称是“模式名称.表名称”（后来随着发展，模式名称就几乎等同于用户名，所以emp表的完整名称是“用户名.表名称”，即：“scott.emp”）。
 
-**范例：**使用完整的名称访问
+**范例：** 使用完整的名称访问
 
 ```
 SELECT * FROM scott.emp;
@@ -73,7 +73,7 @@ SELECT * FROM scott.emp;
 
 在sqlplus命令里面，除了可以使用Oracle自己定义的命令之外，也可以利用HOST指令调用本机的操作系统命令。
 
-**范例：**调用echo命令
+**范例：** 调用echo命令
 
 ```
 echo helloworld
@@ -83,7 +83,7 @@ echo helloworld
 HOST echo helloworld
 ```
 
-**范例：**调用copy命令
+**范例：** 调用copy命令
 
 ```
 copy 源文件路径 目标文件路径

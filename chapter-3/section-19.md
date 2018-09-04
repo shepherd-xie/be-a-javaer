@@ -34,7 +34,7 @@ public class MainClass {
 
 System.out是在Java之中专门准备的支持品目输出信息的操作对象（此对象由系统负责实例化）。那么下面就可以利用System.out来实现一个简单的输出操作。
 
-**范例：**利用OutputStream实现屏幕输出
+**范例：** 利用OutputStream实现屏幕输出
 
 ```java
 package com.alpha;
@@ -66,7 +66,7 @@ public class MainClass {
 
 在任何语言里面都有一种功能：键盘输入的操作。但是Java本身并没有直接提供，但是在System类里面有一个in的对象。此对象的类型是InputStream。
 
-**范例：**实现键盘的数据输入
+**范例：** 实现键盘的数据输入
 
 ```java
 package com.alpha;

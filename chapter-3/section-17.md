@@ -3,7 +3,7 @@
 * [字符编码](/chapter-3/section-17.md#字符编码)
 * [内存流](/chapter-3/section-17.md#内存流)
 * [管道流](/chapter-3/section-17.md#管道流)
-* [RandomAccessFile](/chapter-3/section-17.md#RandomAccessFile)
+* [RandomAccessFile](/chapter-3/section-17.md#randomaccessfile)
 
 ### 字符编码
 
@@ -36,7 +36,7 @@ public class MainClass {
 
 发现默认的编码是GBK，那么也就是说默认输出的中文都是GBK编码标准。
 
-**范例：**默认的中文输出
+**范例：** 默认的中文输出
 
 ```java
 package com.alpha;
@@ -53,7 +53,7 @@ public class MainClass {
 }
 ```
 
-**范例：**出现乱码
+**范例：** 出现乱码
 
 ```java
 package com.alpha;
@@ -116,7 +116,7 @@ Constructor：public ByteArrayOutputStream()，从内存输出数据
   * 输出（InputStream）：程序 -> InputStream -> 内存；
   * 输入（OutputStream）：程序 <- OutputStream <- 内存；
 
-**范例：**实现一个小写字母转大写字母的操作
+**范例：** 实现一个小写字母转大写字母的操作
 
 * 为了方便的实现字母的转大写的转换（避免不必要的字符也被转换了）可以借助于Character：
   * public static char toLowerCase(char ch)；
@@ -154,7 +154,7 @@ public class MainClass {
 
 利用这个BYteArrayOutputStream可以实现多个文件的同时读取。
 
-**范例：**实现文件的合并读取
+**范例：** 实现文件的合并读取
 
 ```java
 package com.alpha;
@@ -197,7 +197,7 @@ public class MainClass {
 * **字符管道流：**PipedWriter、PipedReader;
   * 连接：`public void connect(PipedWriter src) throws IOException`;
   
-**范例：**实现管道操作
+**范例：** 实现管道操作
 ```java
 public class Application {
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -273,7 +273,7 @@ RandomAccessFile类里面定义有如下的操作方法：
 * 构造方法：`public RandomAccessFile(File file, String mode) throws FileNotFoundException`;
   * 文件处理模式：r、rw；
 
-**范例：**实现文件的保存
+**范例：** 实现文件的保存
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -294,7 +294,7 @@ RandomAccessFile最大的特点是在于数据的读取处理上，因为所有�
 * 跳过n个字节：`public int skipBytes(int n) throws IOException`;
 * 定位到某个字节：`public void seek(long pos) throws IOException`;
 
-**范例：**读取数据
+**范例：** 读取数据
 ```java
 public class Application {
     public static void main(String[] args) throws Exception {

@@ -1,7 +1,7 @@
 ## Java8新特性
 
 * [接口定义增强](/chapter-2/section-30.md#接口定义增强)
-* [Lambda表达式](/chapter-2/section-30.md#Lambda表达式)
+* [Lambda表达式](/chapter-2/section-30.md#lambda表达式)
 * [方法引用](/chapter-2/section-30.md#方法引用)
 * [函数式接口](/chapter-2/section-30.md#函数式接口)
 
@@ -38,7 +38,7 @@ public class MainClass {
 
 除了使用default定义方法之外，还可以使用static定义方法，一旦使用了static定义方法意味着这个方法可以直接由类名称调用。
 
-**范例：**定义static方法
+**范例：** 定义static方法
 
 ```java
 interface IMessage { // 定义接口
@@ -88,7 +88,7 @@ Lambda属于函数式编程的概念，那么为什么需要函数式的编程�
 
 如果想要清楚函数式编程的目的，那么必须用过匿名内部类来分析。
 
-**范例：**传统的匿名内部类
+**范例：** 传统的匿名内部类
 
 ```java
 interface IMessage { 
@@ -113,7 +113,7 @@ public class MainClass {
 
 以上的做法要求的实在是过于严谨了，所以在JDK1.8时代引入了函数式编程，可以简化以上的代码。
 
-**范例：**使用Lambda表达式
+**范例：** 使用Lambda表达式
 
 ```java
 interface IMessage { 
@@ -137,7 +137,7 @@ public class MainClass {
 * (参数) -> {多行语句}；
 * (参数) -> 表达式。
 
-**范例：**观察有参数的单行语句
+**范例：** 观察有参数的单行语句
 
 ```java
 
@@ -155,7 +155,7 @@ public class MainClass {
 }
 ```
 
-**范例：**编写多行语句
+**范例：** 编写多行语句
 
 ```java
 interface IMessage { 
@@ -177,7 +177,7 @@ public class MainClass {
 
 如果说现在代码里面只是一个简单的计算表达式，那么操作也可以很容易。
 
-**范例：**编写一个表达式
+**范例：** 编写一个表达式
 
 ```java
 interface IMessage { 
@@ -217,7 +217,7 @@ public class MainClass {
 * 引用特定类型的方法：特定类 :: 普通方法；
 * 引用构造方法：类名称 ::new。
 
-**范例：**引用静态方法
+**范例：** 引用静态方法
 
 * 在String类里面有一个valueOf()方法：public static String valueOf(int x);
 
@@ -240,7 +240,7 @@ public class MainClass {
 }
 ```
 
-**范例：**普通方法引用
+**范例：** 普通方法引用
 
 ```java
 /**
@@ -286,7 +286,7 @@ interface IMessage<R> {
 
 如果要进行比较的话，比较的形式：字符串1对象.compareTo(字符串2对象)，也就是说如果真要引用这个方法就需要准备出两个参数。
 
-**范例：**引用特定类的方法
+**范例：** 引用特定类的方法
 
 ```java
 @FunctionalInterface // 此为函数式接口，只能定义一个方法
@@ -303,7 +303,7 @@ public class MainClass {
 
 与之前相比，方法引用前不在需要定义对象，而是可以理解为将对象定义在了参数上。
 
-**范例：**引用构造方法
+**范例：** 引用构造方法
 
 ```java
 @FunctionalInterface // 此为函数式接口，只能定义一个方法
@@ -358,7 +358,7 @@ public class MainClass {
 
 所有在JDK1.8之中由于存在有以上的四种功能型接口，所以一般很少会由用户去定义新的函数式接口。
 
-**范例：**观察函数式接口 —— 接收参数并且返回一个处理结果；
+**范例：** 观察函数式接口 —— 接收参数并且返回一个处理结果；
 
 * String类有一个方法：public boolean startWith(String str)
 
@@ -372,7 +372,7 @@ public class MainClass {
 }
 ```
 
-**范例：**消费型接口
+**范例：** 消费型接口
 
 ```java
 import java.util.function.Consumer;
@@ -398,7 +398,7 @@ public class MainClass {
 }
 ```
 
-**范例：**供给型接口
+**范例：** 供给型接口
 
 * 引用String类的toUpperCase()方法：public String toUpperCase();
 
@@ -412,7 +412,7 @@ public class MainClass {
 }
 ```
 
-**范例：**断言型接口
+**范例：** 断言型接口
 
 * String类里面有一个equalsIgnoreCase()方法
 

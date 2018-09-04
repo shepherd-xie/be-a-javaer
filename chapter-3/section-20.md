@@ -8,7 +8,7 @@
 
 所谓的对象序列化指的就是将保存在内存中的对象数据转换为二进制数据流进行传输的操作。但是并不是所有类的对象都可以进行序列化，想要能够序列化的类必须要实现java.io.Serializable接口。但是这个接口里面没有任何属性和方法存在，因为它是一个标识接口，表示一种能力。
 
-**范例：**定义一个可以被序列化对象的类
+**范例：** 定义一个可以被序列化对象的类
 ```java
 import java.io.Serializable;
 @SuppressWarnings("serial")
@@ -33,7 +33,7 @@ class Book implements Serializable { // 此类对象可以被序列化
 * 序列化类：java.io.ObjectOutputStream，将对象变为指定格式的二进制数据；
 * 反序列化类：java.io.ObjectInputStream，可以将序列化对象转换回对象。
 
-**范例：**实现序列化对象操作 —— ObjectOutputStream
+**范例：** 实现序列化对象操作 —— ObjectOutputStream
 
 * 构造方法：public ObjectOutputStream(OutputStream out) throws IOException
 * 输出对象：public final void writeObject(Object obj) throws IOException
@@ -46,7 +46,7 @@ class Book implements Serializable { // 此类对象可以被序列化
 	}
 ```
 
-**范例：**实现反序列化操作 —— ObjectInputStream
+**范例：** 实现反序列化操作 —— ObjectInputStream
 
 * 构造方法：public ObjectInputStream(InputStream in) throws IOException
 * 读取方法：public final Object readObject() throws IOException, ClassNotFoundException

@@ -1,10 +1,10 @@
 ## Java基础类库
 
-* [StringBuffer](/chapter-3/section-5.md#StringBuffer)
-* [Runtime](/chapter-3/section-5.md#Runtime)
-* [System](/chapter-3/section-5.md#System)
-* [Object::finalize](/chapter-3/section-5.md#Object::finalize)
-* [Cleaner](/chapter-3/section-5.md#Cleaner)
+* [StringBuffer](/chapter-3/section-5.md#stringbuffer)
+* [Runtime](/chapter-3/section-5.md#runtime)
+* [System](/chapter-3/section-5.md#system)
+* [Object::finalize](/chapter-3/section-5.md#object::finalize)
+* [Cleaner](/chapter-3/section-5.md#cleaner)
 * [对象克隆](/chapter-3/section-5.md#对象克隆)
 
 ### StringBuffer
@@ -27,7 +27,7 @@ String类的对象可以使用“+”进行字符串的连接操作，但是在S
 
 * 方法：public StringBuffer append(Object obj)
 
-**范例：**观察StringBuffer基本使用
+**范例：** 观察StringBuffer基本使用
 
 ```java
 package com.alpha;
@@ -215,7 +215,7 @@ Runtime类是直接与本地运行有关的所有相关属性的集合，所以�
 * 返回最大可用内存空间：public long maxMemory()；
 * 返回空余内存空间：public long freeMemory()。
 
-**范例：**观察内存大小
+**范例：** 观察内存大小
 
 ```java
 package com.alpha;
@@ -270,7 +270,7 @@ public class MainClass{
 实际上Runtime类还有一个更加有意思的功能，就是说他可以调用本机的可执行程序，并且创建进程。
 * 执行程序：public Process exec(String command) throws IOException.
 
-**范例：**执行进程
+**范例：** 执行进程
 ```java
 package com.alpha;
 public class MainClass{ 
@@ -299,7 +299,7 @@ public class MainClass{
 在System类里面定义有一个重要的方法：
 * 取得当前的系统时间：public static long currentTimeMillis()。
 
-**范例：**请统计出某项操作的执行时间
+**范例：** 请统计出某项操作的执行时间
 ```java
 public class MainClass{ 
 	public static void main(String[] args) throws Exception {

@@ -16,7 +16,7 @@
 
 拥有抽象方法的类一定属于抽象类，抽象类要使用_**abstract**_声明。
 
-**范例：**定义抽象类
+**范例：** 定义抽象类
 
 ```java
 abstract class A { // 定义一个抽象类
@@ -30,7 +30,7 @@ abstract class A { // 定义一个抽象类
 
 既然定义好了抽象类，那么下面使用这个抽象类。
 
-**范例：**直接实例化对象？？？？？
+**范例：** 直接实例化对象？？？？？
 
 ```java
 public class MainClass {
@@ -50,7 +50,7 @@ public class MainClass {
 * 抽象类的子类（如果该子类不是抽象类）必须要覆写抽象类之中的全部抽象方法（强制子类覆写）；
 * 抽象类的对象实例化需要依靠子类完成，采用向上转型的方式处理。
 
-**范例：**正确使用抽象类
+**范例：** 正确使用抽象类
 
 ```java
 abstract class A { // 定义一个抽象类
@@ -195,7 +195,7 @@ public class MainClass {
 
 ![](/images/chapter-2/section-18/1.png)
 
-**范例：**定义的是一个行为类
+**范例：** 定义的是一个行为类
 
 ```java
 abstract class Action {
@@ -225,7 +225,7 @@ abstract class Action {
 }
 ```
 
-**范例：**定义机器人的类
+**范例：** 定义机器人的类
 
 ```java
 class Robot extends Action {
@@ -240,7 +240,7 @@ class Robot extends Action {
 }
 ```
 
-**范例：**定义人的类
+**范例：** 定义人的类
 
 ```java
 class Human extends Action {
@@ -256,7 +256,7 @@ class Human extends Action {
 }
 ```
 
-**范例：**定义猪的类
+**范例：** 定义猪的类
 
 ```java
 class Pig extends Action {

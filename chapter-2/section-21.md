@@ -109,7 +109,7 @@ _Number是一个抽象类，里面一共定义了六个操作方法：intValue()
 * 拆箱操作：从包装类之中取出被包装的数据；
   * 利用Number类中提供的一系列xxxValue()方法完成。
 
-**范例：**使用int和Integer
+**范例：** 使用int和Integer
 
 ```java
 public class MainClass {
@@ -123,7 +123,7 @@ public class MainClass {
 
 之前所编写的MyInt类，现在换成了Integer这个系统类。
 
-**范例：**使用double和Double
+**范例：** 使用double和Double
 
 ```java
 public class MainClass {
@@ -135,7 +135,7 @@ public class MainClass {
 }
 ```
 
-**范例：**使用boolean和Boolean（不是Number子类）
+**范例：** 使用boolean和Boolean（不是Number子类）
 
 ```java
 public class MainClass {
@@ -151,7 +151,7 @@ public class MainClass {
 
 在JDK1.5之前能够使用的操作都是以上形式的代码，但是从JDK1.5之后，Java为了方便开发提供了自动装箱与自动拆箱机制，并且可以直接利用包装类的对象进行数学计算。
 
-**范例：**观察自动装箱与自动拆箱
+**范例：** 观察自动装箱与自动拆箱
 
 ```java
 public class MainClass {
@@ -200,7 +200,7 @@ public class MainClass {
 }
 ```
 
-**范例：**观察Double
+**范例：** 观察Double
 
 ```java
 public class MainClass {
@@ -211,7 +211,7 @@ public class MainClass {
 }
 ```
 
-**范例：**观察Booelan
+**范例：** 观察Booelan
 
 ```java
 public class MainClass {
@@ -236,7 +236,7 @@ public class MainClass {
 
 特别需要注意的是Character类里面并不存在有字符串变为字符的方法，因为String类有一个charAt()的方法可以根据索引取出字符内容。
 
-**范例：**将字符串变为int型数据
+**范例：** 将字符串变为int型数据
 
 ```java
 public class MainClass {
@@ -250,7 +250,7 @@ public class MainClass {
 
 此时实现了字符串变为基本数据类型的操作。但是在这样的转换过程之中一定要注意：被转换为数字的字符串一定要由数字组成。
 
-**范例：**错误的代码
+**范例：** 错误的代码
 
 ```java
 public class MainClass {
@@ -266,7 +266,7 @@ public class MainClass {
 Exception in thread "main" java.lang.NumberFormatException: For input string: "1a3"
 ```
 
-**范例：**观察double转换
+**范例：** 观察double转换
 
 ```java
 public class MainClass {
@@ -278,7 +278,7 @@ public class MainClass {
 }
 ```
 
-**范例：**观察boolean转换
+**范例：** 观察boolean转换
 
 ```java
 public class MainClass {

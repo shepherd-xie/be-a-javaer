@@ -15,7 +15,7 @@ public interface Iterator<E> {
 
 Iterator本身是一个接口，如果要想取得本接口实例化只能够依靠Collection接口，在Collection接口里面定义有如下的一个操作方法：public Iterator<E> iterator()；
 
-**范例：**使用Iterator输出集合
+**范例：** 使用Iterator输出集合
 
 ```java
 public class TestDemo { 
@@ -44,7 +44,7 @@ Iterator本身只具有由前向后的输出，但是有些人认为应该让其
 
 ListIterator是专门为List子接口定义的输出接口，方法：public ListIterator<E> listIterator()。
 
-**范例：**完成双向迭代
+**范例：** 完成双向迭代
 
 ```java
 package com.alpha.demo;

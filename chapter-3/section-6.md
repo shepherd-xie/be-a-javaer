@@ -1,7 +1,7 @@
 ## 数字操作类
 
-* [Math类](/chapter-3/section-6.md#Math类)
-* [Random类](/chapter-3/section-6.md#Random类)
+* [Math类](/chapter-3/section-6.md#math类)
+* [Random类](/chapter-3/section-6.md#random类)
 * [大数字操作类](/chapter-3/section-6.md#大数字操作类)
 
 ### Math类
@@ -13,7 +13,7 @@ Math就是一个专门进行数学计算的操作类，里面提供了一系列�
 Math类中有这样的一个方法：
 * 四舍五入：public static long round(double a)。
 
-**范例：**观察四舍五入
+**范例：** 观察四舍五入
 ```java
 public class MainClass{ 
 	public static void main(String[] args) throws Exception {
@@ -30,7 +30,7 @@ public class MainClass{
 
 这个类的主要功能是取得随机数的操作类。
 
-**范例：**产生10个不大于100的正整数（0~99）
+**范例：** 产生10个不大于100的正整数（0~99）
 
 ```java
 public class MainClass{ 
@@ -45,7 +45,7 @@ public class MainClass{
 
 既然Random可以产生对技术，下面就希望利用其来实现一个36选7的功能。
 
-**范例：**36选7
+**范例：** 36选7
 ```java
 public class MainClass{ 
 	public static void main(String[] args) throws Exception {
@@ -142,7 +142,7 @@ BigInteger不能保存小数，而BigDecimal可以保存小数。在BigDecimal�
   * int scale：保留的小数位；
   * int roundingMode：进位模式（public static final int ROUND_HALF_UP）。
 
-**范例：**实现准确的四舍五入
+**范例：** 实现准确的四舍五入
 ```java
 class MyMath {
 	/**

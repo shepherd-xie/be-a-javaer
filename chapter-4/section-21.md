@@ -8,7 +8,7 @@ CREATE [OR REPLACE] VIEW 视图名称 AS 子查询
 
 OR REPLACE表示创建视图时如果视图不存在则创建视图，如果视图存在则使用当前语句替换该视图。
 
-**范例：**实现一个包含有复杂操作的视图
+**范例：** 实现一个包含有复杂操作的视图
 ```sql
 CREATE OR REPLACE VIEW myview
     AS
@@ -34,21 +34,21 @@ SELECT * FROM myview;
 
 对于视图而言，本身支持的功能还是很多的，但是视图只是一个查询的结果，并不表示真实的数据，所以理论上视图是不应该被修改的，可是默认情况下不进行任何的配置，视图中的数据是允许修改的。
 
-**范例：**创建一个包含有20部门雇员信息视图
+**范例：** 创建一个包含有20部门雇员信息视图
 ```sql
 CREATE OR REPLACE VIEW myview
     AS
 SELECT * FROM emp WHERE deptno=20;
 ```
 
-**范例：**更新雇员编号为7369的部门编号为30
+**范例：** 更新雇员编号为7369的部门编号为30
 ```sql
 UPDATE myview SET deptno=30 WHERE empno=7369;
 ```
 
 此时直接修改了视图中的数据并且影响了原始的数据，最关键的是修改的字段为视图的创建条件字段，很明显这样的做法是不合理的。所以为例保证字段的内容不被改变，这个时候可以考虑使用一个语句：`WITH CHECK OPTION`。
 
-**范例：**创建一个不允许修改创建字段的视图
+**范例：** 创建一个不允许修改创建字段的视图
 ```sql
 CREATE OR REPLACE VIEW myview
     AS
@@ -56,7 +56,7 @@ SELECT * FROM emp WHERE deptno=20
 WITH CHECK OPTION;
 ```
 
-这个时候将无法修改视图中的deptno字段，可是其他的字段依然允许用户修改。为了保证视图不可更改可以追加`WITH READ ONLY`，将其配置为只读视图。
+这个时候将无法修改视图中的`deptno`字段，可是其他的字段依然允许用户修改。为了保证视图不可更改可以追加`WITH READ ONLY`，将其配置为只读视图。
 ```sql
 CREATE OR REPLACE VIEW myview
     AS

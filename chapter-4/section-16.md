@@ -6,7 +6,7 @@
 
 ROWNUM直译就是行号，在每一次查询的时候如果要想显示出当前的行号，就添加ROWNUM字段即可：
 
-**范例：**观察ROWNUM使用
+**范例：** 观察ROWNUM使用
 ```sql
 SELECT ROWNUM,empno,ename FROM emp;
 ```
@@ -17,7 +17,7 @@ SELECT ROWNUM,empno,ename FROM emp;
 * 查询第一行记录：
 * 查询前N行记录：
 
-**范例：**查询第一行数据
+**范例：** 查询第一行数据
 ```sql
 SELECT empno,ename FROM emp WHERE ROWNUM=1;
 ```
@@ -26,7 +26,7 @@ SELECT empno,ename FROM emp WHERE ROWNUM=1;
 
 ROWNUM还有另一个主要的作用就是可以进行前N行数据库的查询，这个时候需要使用“关系运算”进行控制。
 
-**范例：**查询emp表的前5行数据
+**范例：** 查询emp表的前5行数据
 ```sql
 SELECT ROWNUM,empno,ename FROM emp
 WHERE ROWNUM<=5;
@@ -50,7 +50,7 @@ WHERE temp.rn>(currentPage-1)*lineSize
 
 其中currentPage描述的是当前所在页，而lineSize描述的每页显示的数据行数。
 
-**范例：**查询emp表中的6~10行记录
+**范例：** 查询emp表中的6~10行记录
 * currnetPage=2、lineSize=5
 ```sql
 SELECT * 
@@ -69,7 +69,7 @@ WHERE temp.rn>5;
 
 ![](/images/chapter-4/section-16/1.png)
 
-**范例：**观察ROWID组成
+**范例：** 观察ROWID组成
 ```sql
 SELECT ROWID,deptno,dname,loc FROM dept;
 ```
@@ -84,7 +84,7 @@ AAAR3qAAEAAAACHAAD         40 OPERATIONS                   BOSTON
 
 每一行记录都有唯一的一个ROWID的数据，而且可以通过ROWID定位数据行。
 
-**范例：**通过ROWID找到数据
+**范例：** 通过ROWID找到数据
 ```sql
 SELECT * FROM dept WHERE ROWID='AAAR3qAAEAAAACHAAB';
 ```

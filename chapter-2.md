@@ -1,4 +1,4 @@
-# 第二章  Java面向对象编程
+## 第 2 章 Java面向对象编程
 
 * [第 1 节 类与对象](/chapter-2/section-1.md)
 * [第 2 节 深入分析类与对象](/chapter-2/section-2.md)
