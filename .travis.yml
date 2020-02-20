@@ -17,7 +17,7 @@ cache:
 
 branches:
   only:
-    - develop
+    - master
 
 before_install:
   - npm install -g gitbook-cli
@@ -36,4 +36,4 @@ deploy:
   keep-history: true
   local-dir: _book
   on:
-    branch: develop
+    branch: master
