@@ -1,0 +1,2556 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第 4 节 Java运算符 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="section-5.html" />
+    
+    
+    <link rel="prev" href="section-3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter-1.html">
+            
+                <a href="../chapter-1.html">
+            
+                    
+                    第 1 章 Java编程开发入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="section-1.html">
+            
+                <a href="section-1.html">
+            
+                    
+                    第 1 节 Java开发准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="section-2.html">
+            
+                <a href="section-2.html">
+            
+                    
+                    第 2 节 Java基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="section-3.html">
+            
+                <a href="section-3.html">
+            
+                    
+                    第 3 节 Java数据类型划分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="section-4.html">
+            
+                <a href="section-4.html">
+            
+                    
+                    第 4 节 Java运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="section-5.html">
+            
+                <a href="section-5.html">
+            
+                    
+                    第 5 节 Java程序逻辑控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="section-6.html">
+            
+                <a href="section-6.html">
+            
+                    
+                    第 6 节 Java方法的定义及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter-2.html">
+            
+                <a href="../chapter-2.html">
+            
+                    
+                    第 2 章 Java面向对象编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter-2/section-1.html">
+            
+                <a href="../chapter-2/section-1.html">
+            
+                    
+                    第 1 节 类与对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chapter-2/section-2.html">
+            
+                <a href="../chapter-2/section-2.html">
+            
+                    
+                    第 2 节 深入分析类与对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chapter-2/section-3.html">
+            
+                <a href="../chapter-2/section-3.html">
+            
+                    
+                    第 3 节 数组的定义与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../chapter-2/section-4.html">
+            
+                <a href="../chapter-2/section-4.html">
+            
+                    
+                    第 4 节 String类的基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../chapter-2/section-5.html">
+            
+                <a href="../chapter-2/section-5.html">
+            
+                    
+                    第 5 节 String类的常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../chapter-2/section-6.html">
+            
+                <a href="../chapter-2/section-6.html">
+            
+                    
+                    第 6 节 this关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../chapter-2/section-7.html">
+            
+                <a href="../chapter-2/section-7.html">
+            
+                    
+                    第 7 节 引用传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../chapter-2/section-8.html">
+            
+                <a href="../chapter-2/section-8.html">
+            
+                    
+                    第 8 节 数据表与简单Java类映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../chapter-2/section-9.html">
+            
+                <a href="../chapter-2/section-9.html">
+            
+                    
+                    第 9 节 对象比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../chapter-2/section-10.html">
+            
+                <a href="../chapter-2/section-10.html">
+            
+                    
+                    第 10 节 static关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../chapter-2/section-11.html">
+            
+                <a href="../chapter-2/section-11.html">
+            
+                    
+                    第 11 节 代码块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../chapter-2/section-12.html">
+            
+                <a href="../chapter-2/section-12.html">
+            
+                    
+                    第 12 节 内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../chapter-2/section-13.html">
+            
+                <a href="../chapter-2/section-13.html">
+            
+                    
+                    第 13 节 链表的定义与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../chapter-2/section-14.html">
+            
+                <a href="../chapter-2/section-14.html">
+            
+                    
+                    第 14 节 继承性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../chapter-2/section-15.html">
+            
+                <a href="../chapter-2/section-15.html">
+            
+                    
+                    第 15 节 覆写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../chapter-2/section-16.html">
+            
+                <a href="../chapter-2/section-16.html">
+            
+                    
+                    第 16 节 数组操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../chapter-2/section-17.html">
+            
+                <a href="../chapter-2/section-17.html">
+            
+                    
+                    第 17 节 辅助概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.17.1" data-path="../chapter-2/section-17.html">
+            
+                <a href="../chapter-2/section-17.html#final关键字">
+            
+                    
+                    final关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17.2" data-path="../chapter-2/section-17.html">
+            
+                <a href="../chapter-2/section-17.html#多态性">
+            
+                    
+                    多态性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../chapter-2/section-18.html">
+            
+                <a href="../chapter-2/section-18.html">
+            
+                    
+                    第 18 节 抽象类的定义及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="../chapter-2/section-19.html">
+            
+                <a href="../chapter-2/section-19.html">
+            
+                    
+                    第 19 节 接口的定义及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="../chapter-2/section-20.html">
+            
+                <a href="../chapter-2/section-20.html">
+            
+                    
+                    第 20 节 Object类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="../chapter-2/section-21.html">
+            
+                <a href="../chapter-2/section-21.html">
+            
+                    
+                    第 21 节 拓展概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.21.1" data-path="../chapter-2/section-21.html">
+            
+                <a href="../chapter-2/section-21.html#匿名内部类">
+            
+                    
+                    匿名内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21.2" data-path="../chapter-2/section-21.html">
+            
+                <a href="../chapter-2/section-21.html#包装类">
+            
+                    
+                    包装类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="../chapter-2/section-22.html">
+            
+                <a href="../chapter-2/section-22.html">
+            
+                    
+                    第 22 节 包的定义及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="../chapter-2/section-23.html">
+            
+                <a href="../chapter-2/section-23.html">
+            
+                    
+                    第 23 节 访问控制权限
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.23.1" data-path="../chapter-2/section-23.html">
+            
+                <a href="../chapter-2/section-23.html#单例设计模式">
+            
+                    
+                    单例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23.2" data-path="../chapter-2/section-23.html">
+            
+                <a href="../chapter-2/section-23.html#多例设计模式">
+            
+                    
+                    多例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="../chapter-2/section-24.html">
+            
+                <a href="../chapter-2/section-24.html">
+            
+                    
+                    第 24 节 异常的捕获及处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="../chapter-2/section-25.html">
+            
+                <a href="../chapter-2/section-25.html">
+            
+                    
+                    第 25 节 Java5新特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.25.1" data-path="../chapter-2/section-25.html">
+            
+                <a href="../chapter-2/section-25.html#可变参数">
+            
+                    
+                    可变参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25.2" data-path="../chapter-2/section-25.html">
+            
+                <a href="../chapter-2/section-25.html#foreach循环">
+            
+                    
+                    foreach循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25.3" data-path="../chapter-2/section-25.html">
+            
+                <a href="../chapter-2/section-25.html#静态导入">
+            
+                    
+                    静态导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="../chapter-2/section-26.html">
+            
+                <a href="../chapter-2/section-26.html">
+            
+                    
+                    第 26 节 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="../chapter-2/section-27.html">
+            
+                <a href="../chapter-2/section-27.html">
+            
+                    
+                    第 27 节 枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="../chapter-2/section-28.html">
+            
+                <a href="../chapter-2/section-28.html">
+            
+                    
+                    第 28 节 Annotation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="../chapter-2/section-29.html">
+            
+                <a href="../chapter-2/section-29.html">
+            
+                    
+                    第 29 节 Java7新特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.29.1" data-path="../chapter-2/section-29.html">
+            
+                <a href="../chapter-2/section-29.html#autocloseable">
+            
+                    
+                    AutoCloseable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29.2" data-path="../chapter-2/section-29.html">
+            
+                <a href="../chapter-2/section-29.html#try-with-resources">
+            
+                    
+                    Try-with-resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30" data-path="../chapter-2/section-30.html">
+            
+                <a href="../chapter-2/section-30.html">
+            
+                    
+                    第 30 节 Java8新特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.30.1" data-path="../chapter-2/section-30.html">
+            
+                <a href="../chapter-2/section-30.html#接口定义增强">
+            
+                    
+                    接口定义增强
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30.2" data-path="../chapter-2/section-30.html">
+            
+                <a href="../chapter-2/section-30.html#lambda表达式">
+            
+                    
+                    Lambda表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30.3" data-path="../chapter-2/section-30.html">
+            
+                <a href="../chapter-2/section-30.html#方法引用">
+            
+                    
+                    方法引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30.4" data-path="../chapter-2/section-30.html">
+            
+                <a href="../chapter-2/section-30.html#函数式接口">
+            
+                    
+                    函数式接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter-3.html">
+            
+                <a href="../chapter-3.html">
+            
+                    
+                    第 3 章 Java高级编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chapter-3/section-1.html">
+            
+                <a href="../chapter-3/section-1.html">
+            
+                    
+                    第 1 节 Java多线程基础实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chapter-3/section-2.html">
+            
+                <a href="../chapter-3/section-2.html">
+            
+                    
+                    第 2 节 线程常用操作方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../chapter-3/section-3.html">
+            
+                <a href="../chapter-3/section-3.html">
+            
+                    
+                    第 3 节 线程的同步与死锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../chapter-3/section-4.html">
+            
+                <a href="../chapter-3/section-4.html">
+            
+                    
+                    第 4 节 生产者与消费者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../chapter-3/section-5.html">
+            
+                <a href="../chapter-3/section-5.html">
+            
+                    
+                    第 5 节 Java基础类库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../chapter-3/section-5.html">
+            
+                <a href="../chapter-3/section-5.html#stringbuffer">
+            
+                    
+                    StringBuffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../chapter-3/section-5.html">
+            
+                <a href="../chapter-3/section-5.html#runtime">
+            
+                    
+                    Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../chapter-3/section-5.html">
+            
+                <a href="../chapter-3/section-5.html#system">
+            
+                    
+                    System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="../chapter-3/section-5.html">
+            
+                <a href="../chapter-3/section-5.html#object::finalize">
+            
+                    
+                    Object::finalize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="../chapter-3/section-5.html">
+            
+                <a href="../chapter-3/section-5.html#cleaner">
+            
+                    
+                    Cleaner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="../chapter-3/section-5.html">
+            
+                <a href="../chapter-3/section-5.html#对象克隆">
+            
+                    
+                    对象克隆
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../chapter-3/section-6.html">
+            
+                <a href="../chapter-3/section-6.html">
+            
+                    
+                    第 6 节 数字操作类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../chapter-3/section-6.html">
+            
+                <a href="../chapter-3/section-6.html#math类">
+            
+                    
+                    Math类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../chapter-3/section-6.html">
+            
+                <a href="../chapter-3/section-6.html#random类">
+            
+                    
+                    Random类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="../chapter-3/section-6.html">
+            
+                <a href="../chapter-3/section-6.html#大数字操作类">
+            
+                    
+                    大数字操作类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../chapter-3/section-7.html">
+            
+                <a href="../chapter-3/section-7.html">
+            
+                    
+                    第 7 节 日期处理类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../chapter-3/section-7.html">
+            
+                <a href="../chapter-3/section-7.html#date类">
+            
+                    
+                    Date类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../chapter-3/section-7.html">
+            
+                <a href="../chapter-3/section-7.html#日期格式化">
+            
+                    
+                    日期格式化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="../chapter-3/section-7.html">
+            
+                <a href="../chapter-3/section-7.html#calendar类">
+            
+                    
+                    Calendar类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../chapter-3/section-8.html">
+            
+                <a href="../chapter-3/section-8.html">
+            
+                    
+                    第 8 节 比较器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../chapter-3/section-9.html">
+            
+                <a href="../chapter-3/section-9.html">
+            
+                    
+                    第 9 节 正则表达式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../chapter-3/section-9.html">
+            
+                <a href="../chapter-3/section-9.html#常用的正则标记">
+            
+                    
+                    常用的正则标记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../chapter-3/section-9.html">
+            
+                <a href="../chapter-3/section-9.html#string类对正则的支持">
+            
+                    
+                    String类对正则的支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="../chapter-3/section-9.html">
+            
+                <a href="../chapter-3/section-9.html#java.util.regex包支持">
+            
+                    
+                    java.util.regex包支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../chapter-3/section-10.html">
+            
+                <a href="../chapter-3/section-10.html">
+            
+                    
+                    第 10 节 反射机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../chapter-3/section-11.html">
+            
+                <a href="../chapter-3/section-11.html">
+            
+                    
+                    第 11 节 动态代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../chapter-3/section-12.html">
+            
+                <a href="../chapter-3/section-12.html">
+            
+                    
+                    第 12 节 反射与Annotation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../chapter-3/section-13.html">
+            
+                <a href="../chapter-3/section-13.html">
+            
+                    
+                    第 13 节 国际化程序实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../chapter-3/section-14.html">
+            
+                <a href="../chapter-3/section-14.html">
+            
+                    
+                    第 14 节 开发支持类库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.14.1" data-path="../chapter-3/section-14.html">
+            
+                <a href="../chapter-3/section-14.html#arrays类">
+            
+                    
+                    Arrays类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.2" data-path="../chapter-3/section-14.html">
+            
+                <a href="../chapter-3/section-14.html#uuid类">
+            
+                    
+                    UUID类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.3" data-path="../chapter-3/section-14.html">
+            
+                <a href="../chapter-3/section-14.html#optional类">
+            
+                    
+                    Optional类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.4" data-path="../chapter-3/section-14.html">
+            
+                <a href="../chapter-3/section-14.html#threadlocal类">
+            
+                    
+                    ThreadLocal类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.5" data-path="../chapter-3/section-14.html">
+            
+                <a href="../chapter-3/section-14.html#定时器">
+            
+                    
+                    定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.6" data-path="../chapter-3/section-14.html">
+            
+                <a href="../chapter-3/section-14.html#base64加密工具">
+            
+                    
+                    Base64加密工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../chapter-3/section-15.html">
+            
+                <a href="../chapter-3/section-15.html">
+            
+                    
+                    第 15 节 文件操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../chapter-3/section-16.html">
+            
+                <a href="../chapter-3/section-16.html">
+            
+                    
+                    第 16 节 字节流与字符流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../chapter-3/section-17.html">
+            
+                <a href="../chapter-3/section-17.html">
+            
+                    
+                    第 17 节 IO辅助概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.17.1" data-path="../chapter-3/section-17.html">
+            
+                <a href="../chapter-3/section-17.html#字符编码">
+            
+                    
+                    字符编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.2" data-path="../chapter-3/section-17.html">
+            
+                <a href="../chapter-3/section-17.html#内存流">
+            
+                    
+                    内存流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.3" data-path="../chapter-3/section-17.html">
+            
+                <a href="../chapter-3/section-17.html#管道流">
+            
+                    
+                    管道流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.4" data-path="../chapter-3/section-17.html">
+            
+                <a href="../chapter-3/section-17.html#randomaccessfile">
+            
+                    
+                    RandomAccessFile
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../chapter-3/section-18.html">
+            
+                <a href="../chapter-3/section-18.html">
+            
+                    
+                    第 18 节 打印流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../chapter-3/section-19.html">
+            
+                <a href="../chapter-3/section-19.html">
+            
+                    
+                    第 19 节 System类对IO的支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../chapter-3/section-20.html">
+            
+                <a href="../chapter-3/section-20.html">
+            
+                    
+                    第 20 节 对象序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="../chapter-3/section-21.html">
+            
+                <a href="../chapter-3/section-21.html">
+            
+                    
+                    第 21 节 IO高级应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.21.1" data-path="../chapter-3/section-21.html">
+            
+                <a href="../chapter-3/section-21.html#缓冲输入流">
+            
+                    
+                    缓冲输入流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21.2" data-path="../chapter-3/section-21.html">
+            
+                <a href="../chapter-3/section-21.html#扫描流：scanner">
+            
+                    
+                    扫描流：Scanner
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="../chapter-3/section-22.html">
+            
+                <a href="../chapter-3/section-22.html">
+            
+                    
+                    第 22 节 网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="../chapter-3/section-23.html">
+            
+                <a href="../chapter-3/section-23.html">
+            
+                    
+                    第 23 节 类集框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../chapter-3/section-24.html">
+            
+                <a href="../chapter-3/section-24.html">
+            
+                    
+                    第 24 节 List集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="../chapter-3/section-25.html">
+            
+                <a href="../chapter-3/section-25.html">
+            
+                    
+                    第 25 节 集合输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.26" data-path="../chapter-3/section-26.html">
+            
+                <a href="../chapter-3/section-26.html">
+            
+                    
+                    第 26 节 Map集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.27" data-path="../chapter-3/section-27.html">
+            
+                <a href="../chapter-3/section-27.html">
+            
+                    
+                    第 27 节 Set集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28" data-path="../chapter-3/section-28.html">
+            
+                <a href="../chapter-3/section-28.html">
+            
+                    
+                    第 28 节 集合工具类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.28.1" data-path="../chapter-3/section-28.html">
+            
+                <a href="../chapter-3/section-28.html#stack">
+            
+                    
+                    Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28.2" data-path="../chapter-3/section-28.html">
+            
+                <a href="../chapter-3/section-28.html#queue">
+            
+                    
+                    Queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28.3" data-path="../chapter-3/section-28.html">
+            
+                <a href="../chapter-3/section-28.html#properties">
+            
+                    
+                    Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28.4" data-path="../chapter-3/section-28.html">
+            
+                <a href="../chapter-3/section-28.html#collections工具类">
+            
+                    
+                    Collections工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.29" data-path="../chapter-3/section-29.html">
+            
+                <a href="../chapter-3/section-29.html">
+            
+                    
+                    第 29 节 数据流Stream
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.30" data-path="../chapter-3/section-30.html">
+            
+                <a href="../chapter-3/section-30.html">
+            
+                    
+                    第 30 节 JDBC简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.31" data-path="../chapter-3/section-31.html">
+            
+                <a href="../chapter-3/section-31.html">
+            
+                    
+                    第 31 节 Statement接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.32" data-path="../chapter-3/section-32.html">
+            
+                <a href="../chapter-3/section-32.html">
+            
+                    
+                    第 32 节 PreparedStatment接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.33" data-path="../chapter-3/section-33.html">
+            
+                <a href="../chapter-3/section-33.html">
+            
+                    
+                    第 33 节 批处理与事务处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../chapter-4.html">
+            
+                <a href="../chapter-4.html">
+            
+                    
+                    第 4 章 Oracle数据库基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../chapter-4/section-1.html">
+            
+                <a href="../chapter-4/section-1.html">
+            
+                    
+                    第 1 节 Oracle简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../chapter-4/section-2.html">
+            
+                <a href="../chapter-4/section-2.html">
+            
+                    
+                    第 2 节 Oracle安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../chapter-4/section-3.html">
+            
+                <a href="../chapter-4/section-3.html">
+            
+                    
+                    第 3 节 SQLPlus命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../chapter-4/section-4.html">
+            
+                <a href="../chapter-4/section-4.html">
+            
+                    
+                    第 4 节 SQL简介与数据表分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../chapter-4/section-5.html">
+            
+                <a href="../chapter-4/section-5.html">
+            
+                    
+                    第 5 节 SQL简单查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../chapter-4/section-6.html">
+            
+                <a href="../chapter-4/section-6.html">
+            
+                    
+                    第 6 节 SQL限定查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../chapter-4/section-7.html">
+            
+                <a href="../chapter-4/section-7.html">
+            
+                    
+                    第 7 节 查询排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../chapter-4/section-8.html">
+            
+                <a href="../chapter-4/section-8.html">
+            
+                    
+                    第 8 节 综合练习：基础查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../chapter-4/section-9.html">
+            
+                <a href="../chapter-4/section-9.html">
+            
+                    
+                    第 9 节 单行函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../chapter-4/section-10.html">
+            
+                <a href="../chapter-4/section-10.html">
+            
+                    
+                    第 10 节 多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../chapter-4/section-11.html">
+            
+                <a href="../chapter-4/section-11.html">
+            
+                    
+                    第 11 节 分组统计查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../chapter-4/section-12.html">
+            
+                <a href="../chapter-4/section-12.html">
+            
+                    
+                    第 12 节 子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../chapter-4/section-13.html">
+            
+                <a href="../chapter-4/section-13.html">
+            
+                    
+                    第 13 节 综合案例：复杂查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../chapter-4/section-14.html">
+            
+                <a href="../chapter-4/section-14.html">
+            
+                    
+                    第 14 节 数据更新操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../chapter-4/section-15.html">
+            
+                <a href="../chapter-4/section-15.html">
+            
+                    
+                    第 15 节 事务处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../chapter-4/section-16.html">
+            
+                <a href="../chapter-4/section-16.html">
+            
+                    
+                    第 16 节 数据伪列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../chapter-4/section-17.html">
+            
+                <a href="../chapter-4/section-17.html">
+            
+                    
+                    第 17 节 数据表的创建与管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../chapter-4/section-18.html">
+            
+                <a href="../chapter-4/section-18.html">
+            
+                    
+                    第 18 节 约束的创建与管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../chapter-4/section-19.html">
+            
+                <a href="../chapter-4/section-19.html">
+            
+                    
+                    第 19 节 综合案例：数据表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../chapter-4/section-20.html">
+            
+                <a href="../chapter-4/section-20.html">
+            
+                    
+                    第 20 节 序列的定义与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter-5.html">
+            
+                <a href="../chapter-5.html">
+            
+                    
+                    第 5 章 JavaWeb基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    第 1 节 HTML基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    第 2 节 CSS基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    第 3 节 JavaScript基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <span>
+            
+                    
+                    第 4 节 JQuery基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" >
+            
+                <span>
+            
+                    
+                    第 5 节 XML基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    第 6 节 Java解析XML
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../other.html">
+            
+                <a href="../other.html">
+            
+                    
+                    Other
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../oh-my-zsh.html">
+            
+                <a href="../oh-my-zsh.html">
+            
+                    
+                    Oh My Zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第 4 节 Java运算符</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="java&#x8FD0;&#x7B97;&#x7B26;">Java&#x8FD0;&#x7B97;&#x7B26;</h2>
+<hr>
+<p>&#x6240;&#x6709;&#x7684;&#x7A0B;&#x5E8F;&#x5B9E;&#x9645;&#x4E0A;&#x90FD;&#x662F;&#x5BF9;&#x6570;&#x5B57;&#x6570;&#x636E;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x800C;&#x5728;&#x5904;&#x7406;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x5FC5;&#x7136;&#x6D89;&#x53CA;&#x5230;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x5728;&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre><code>int num = 10;
+</code></pre><p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x79F0;&#x4E3A;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x201C; = &#x201D;&#x662F;&#x5B9E;&#x73B0;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x4F7F;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x8FDB;&#x884C;&#x6570;&#x5B66;&#x8BA1;&#x7B97;&#x65F6;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x56DB;&#x5219;&#x8FD0;&#x7B97;&#x7B26;&#x4E5F;&#x5C5E;&#x4E8E;&#x8FD0;&#x7B97;&#x7B26;&#x53F7;&#x7684;&#x5B9A;&#x4E49;&#x8303;&#x7574;&#x3002;&#x7531;&#x5DE6;&#x81F3;&#x53F3;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x4F18;&#x5148;&#x7EA7;</th>
+<th style="text-align:center">&#x8FD0;&#x7B97;&#x7B26;</th>
+<th style="text-align:center">&#x7C7B;</th>
+<th style="text-align:center">&#x7ED3;&#x5408;&#x6027;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">()</td>
+<td style="text-align:center">&#x62EC;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">[]</td>
+<td style="text-align:center">&#x65B9;&#x62EC;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">!&#x3001;+&#xFF08;&#x6B63;&#x53F7;&#xFF09;&#x3001;-&#xFF08;&#x8D1F;&#x53F7;&#xFF09;</td>
+<td style="text-align:center">&#x4E00;&#x5143;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x53F3;&#x81F3;&#x5DE6;</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">~</td>
+<td style="text-align:center">&#x4F4D;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x53F3;&#x81F3;&#x5DE6;</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">++&#x3001;--</td>
+<td style="text-align:center">&#x9012;&#x589E;&#x4E0E;&#x9012;&#x51CF;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x53F3;&#x81F3;&#x5DE6;</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">*&#x3001;/&#x3001;%</td>
+<td style="text-align:center">&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">+&#x3001;-</td>
+<td style="text-align:center">&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">&gt;&gt;&#x3001;&lt;&lt;</td>
+<td style="text-align:center">&#x4F4D;&#x5DE6;&#x79FB;&#x3001;&#x53F3;&#x79FB;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">&gt;&#x3001;&gt;=&#x3001;&lt;&#x3001;&lt;=</td>
+<td style="text-align:center">&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">==&#x3001;!=</td>
+<td style="text-align:center">&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">&amp;&#xFF08;&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;AND&#xFF09;</td>
+<td style="text-align:center">&#x4F4D;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">^&#xFF08;&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;XOR&#xFF09;</td>
+<td style="text-align:center">&#x4F4D;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">&#x4E28;&#xFF08;&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;OR&#xFF09;</td>
+<td style="text-align:center">&#x4F4D;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">&#x4E28;&#x4E28;</td>
+<td style="text-align:center">&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x5DE6;&#x81F3;&#x53F3;</td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:center">?:</td>
+<td style="text-align:center">&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x53F3;&#x81F3;&#x5DE6;</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:center">=</td>
+<td style="text-align:center">&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:center">&#x7531;&#x53F3;&#x81F3;&#x5DE6;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5207;&#x8BB0;&#x4E0D;&#x8981;&#x7F16;&#x5199;&#x8FC7;&#x4E8E;&#x590D;&#x6742;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5BF9;&#x81EA;&#x5DF1;&#x7F16;&#x5199;&#x7684;&#x8FD0;&#x7B97;&#x987A;&#x5E8F;&#x4E0D;&#x662F;&#x5341;&#x5206;&#x786E;&#x5B9A;&#xFF0C;&#x5C31;&#x7528;&#x201C;&#xFF08;&#xFF09;&#x201D;&#x6765;&#x6539;&#x53D8;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x6216;&#x8005;&#x5C06;&#x64CD;&#x4F5C;&#x62C6;&#x5F00;&#x3002;</p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x89C2;&#x5BDF;&#x4E00;&#x79CD;&#x795E;&#x5947;&#x7684;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> numA = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> numB = <span class="hljs-number">20</span>;
+<span class="hljs-keyword">int</span> result = numA * <span class="hljs-number">2</span> - --numB * numA ++ + numB - numA -- + numB;
+System.out.println(result);
+</code></pre>
+<p>&#x4EE5;&#x540E;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x5199;&#x51FA;&#x50CF;&#x201C; 1 + 1 = 2&#x201D;&#x8FD9;&#x6837;&#x7B80;&#x5355;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x82E5;&#x679C;&#x662F;&#x771F;&#x7684;&#x590D;&#x6742;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x201C; () &#x201D;&#x6539;&#x53D8;&#x4F18;&#x5148;&#x7EA7;&#x3002;</p>
+<h3 id="&#x57FA;&#x672C;&#x8FD0;&#x7B97;&#x7B26;">&#x57FA;&#x672C;&#x8FD0;&#x7B97;&#x7B26;</h3>
+<p>&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x51E0;&#x7C7B;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;&#x56DB;&#x5219;&#x8FD0;&#x7B97;&#x7B26;&#x3001;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x3001;&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x3001;&#x4F4D;&#x8FD0;&#x7B97;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x56DB;&#x5219;&#x8FD0;&#x7B97;&#x57FA;&#x672C;&#x7684;&#x7EC4;&#x6210;&#x662F;&#xFF1A;+&#x3001;-&#x3001;*&#x3001;/&#x3001;%&#x3002;</p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x56DB;&#x5219;&#x8FD0;&#x7B97;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> numA = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> numB = <span class="hljs-number">20</span>;
+System.out.println(<span class="hljs-string">&quot;&#x52A0;&#x6CD5;&#x8BA1;&#x7B97;&quot;</span> + (numA + numB));
+System.out.println(<span class="hljs-string">&quot;&#x51CF;&#x6CD5;&#x8BA1;&#x7B97;&quot;</span> + (numA - numB));
+System.out.println(<span class="hljs-string">&quot;&#x4E58;&#x6CD5;&#x8BA1;&#x7B97;&quot;</span> + (numA * numB));
+System.out.println(<span class="hljs-string">&quot;&#x9664;&#x6CD5;&#x8BA1;&#x7B97;&quot;</span> + (numA / (<span class="hljs-keyword">double</span>)numB));
+System.out.println(<span class="hljs-string">&quot;&#x52A0;&#x6CD5;&#x8BA1;&#x7B97;&quot;</span> + (numA + numB));
+</code></pre>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x6C42;&#x6A21;&#x8BA1;&#x7B97;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> numA = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> numB = <span class="hljs-number">3</span>;
+System.out.println(<span class="hljs-string">&quot;&#x6C42;&#x6A21;&#x8BA1;&#x7B97;&quot;</span> + (numA % numB));
+</code></pre>
+<p>&#x5728;&#x8FD0;&#x7B97;&#x7B26;&#x91CC;&#x9762;&#x53C8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x7B80;&#x5316;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;*=&#x3001;/=&#x3001;+=&#x3001;-=&#x3001;%=&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> num = <span class="hljs-number">10</span>;
+num *= <span class="hljs-number">2</span>; <span class="hljs-comment">//num = num * 2;</span>
+System.out.println(num);
+</code></pre>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x7C7B;&#x8FD0;&#x7B97;&#x7B26;&#x662F;&#x201C; ++ &#x201D;&#xFF08;&#x81EA;&#x589E;&#xFF09;&#x3001;&#x201C; -- &#x201D;&#xFF08;&#x81EA;&#x51CF;&#xFF09;&#xFF0C;&#x5B83;&#x6839;&#x636E;&#x4F4D;&#x7F6E;&#x4E0D;&#x540C;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x987A;&#x5E8F;&#x4E5F;&#x4E0D;&#x540C;&#x3002;</p>
+<ul>
+<li>++&#x53D8;&#x91CF;&#x3001;--&#x53D8;&#x91CF;&#xFF1A;&#x5199;&#x5728;&#x524D;&#x9762;&#x8868;&#x793A;&#x7684;&#x662F;&#x8FDB;&#x884C;&#x5185;&#x5BB9;&#x7684;&#x81EA;&#x589E;1&#x6216;&#x81EA;&#x51CF;1&#x4E4B;&#x540E;&#x518D;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x6570;&#x5B66;&#x8BA1;&#x7B97;&#xFF1B;</li>
+<li>&#x53D8;&#x91CF;++&#x3001;&#x53D8;&#x91CF;--&#xFF1A;&#x5148;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x800C;&#x540E;&#x5728;&#x5B9E;&#x73B0;&#x81EA;&#x589E;&#x6216;&#x81EA;&#x51CF;&#x7684;&#x64CD;&#x4F5C;&#x3002;</li>
+</ul>
+<p><strong>&#x8303;&#x4F8B;&#xFF1B;</strong>&#x89C2;&#x5BDF;&#x81EA;&#x589E;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> numA = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> numB = <span class="hljs-number">20</span>;
+<span class="hljs-keyword">int</span> result = ++ numA + numB;
+System.out.println(<span class="hljs-string">&quot;numA = &quot;</span> + numA);
+System.out.println(<span class="hljs-string">&quot;result = &quot;</span> + result);
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> numA = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> numB = <span class="hljs-number">20</span>;
+<span class="hljs-keyword">int</span> result = numA ++ + numB;
+System.out.println(<span class="hljs-string">&quot;numA = &quot;</span> + numA);
+System.out.println(<span class="hljs-string">&quot;result = &quot;</span> + result);
+</code></pre>
+<p>&#x5982;&#x679C;&#x4EE5;&#x540E;&#x4F7F;&#x7528;&#x6B64;&#x7C7B;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4E5F;&#x53EA;&#x4F1A;&#x4F7F;&#x7528;&#x201C; numA ++ &#x201D;&#xFF1B;</p>
+<h3 id="&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;">&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;</h3>
+<p>&#x4E09;&#x76EE;&#x662F;&#x4E00;&#x79CD;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x6267;&#x884C;&#x4E09;&#x76EE;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x4EE5;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#xFF0C;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>&#x6570;&#x636E;&#x7C7B;&#x578B; &#x53D8;&#x91CF; = &#x5E03;&#x5C14;&#x8868;&#x8FBE;&#x5F0F; ? &#x6EE1;&#x8DB3;&#x6B64;&#x8868;&#x8FBE;&#x5F0F;&#x65F6;&#x8BBE;&#x7F6E;&#x7684;&#x5185;&#x5BB9; : &#x4E0D;&#x6EE1;&#x8DB3;&#x6B64;&#x8868;&#x8FBE;&#x5F0F;&#x65F6;&#x8BBE;&#x7F6E;&#x7684;&#x5185;&#x5BB9;;
+</code></pre><p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x5B9E;&#x73B0;&#x8D4B;&#x503C;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> numA = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> numB = <span class="hljs-number">20</span>;
+<span class="hljs-comment">//&#x5982;&#x679C;numA&#x5927;&#x4E8E;numB&#xFF0C;&#x8FD4;&#x56DE;true&#xFF0C;&#x5219;&#x5C06;numA&#x7684;&#x5185;&#x5BB9;&#x8D4B;&#x503C;&#x7ED9;max</span>
+<span class="hljs-comment">//&#x5982;&#x679C;numA&#x5C0F;&#x4E8E;numB&#xFF0C;&#x8FD4;&#x56DE;false&#xFF0C;&#x5219;&#x5C06;numB&#x7684;&#x5185;&#x5BB9;&#x8D4B;&#x503C;&#x7ED9;max</span>
+<span class="hljs-keyword">int</span> max = numA &gt; numB ? numA : numB;
+System.out.println(max);
+</code></pre>
+<p>&#x5982;&#x679C;&#x6B64;&#x5904;&#x4E0D;&#x4F7F;&#x7528;&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#xFF0C;&#x5219;&#x5C31;&#x9700;&#x8981;&#x7F16;&#x5199;&#x5982;&#x4E0B;&#x5F62;&#x5F0F;&#x7684;&#x5224;&#x65AD;&#x8BED;&#x53E5;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> numA = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> numB = <span class="hljs-number">20</span>;
+<span class="hljs-keyword">int</span> max = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">if</span> (numA &gt; numB) {
+    max = numA;
+} <span class="hljs-keyword">else</span> {
+    max = numB;
+}
+System.out.println(max);
+</code></pre>
+<p>&#x5229;&#x7528;&#x4E09;&#x76EE;&#x53EF;&#x4EE5;&#x8282;&#x7EA6;&#x4E00;&#x4E9B;&#x5224;&#x65AD;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x8FD8;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5D4C;&#x5957;&#x3002;</p>
+<pre><code>int numA = 10;
+int numB = 20;
+int flag = numA &gt; numB ? 1 : (numA &lt; numB ? -1 : 0);
+</code></pre><p>&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x64CD;&#x4F5C;&#x4F1A;&#x8BA9;&#x7A0B;&#x5E8F;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x53D8;&#x5F97;&#x5F88;&#x5DEE;&#x3002;</p>
+<h3 id="&#x903B;&#x8F91;&#x8FD0;&#x7B97;">&#x903B;&#x8F91;&#x8FD0;&#x7B97;</h3>
+<p>&#x5BF9;&#x4E8E;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#xFF1A;&#x4E0E;&#xFF08;&amp;&#x3001;&amp;&amp;&#xFF09;&#x3001;&#x6216;&#xFF08;|&#x3001;||&#xFF09;&#x3001;&#x975E;&#xFF08;&#xFF01;&#xFF09;&#x4E09;&#x79CD;&#x8BA1;&#x7B97;&#x3002;</p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x975E;&#x5C31;&#x662F;&#x9488;&#x5BF9;&#x5E03;&#x5C14;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x6C42;&#x53CD;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">true</span>;
+System.out.println(!flag);
+</code></pre>
+<p>&#x5982;&#x679C;&#x73B0;&#x5728;&#x662F;&#x591A;&#x4E2A;&#x5E03;&#x5C14;&#x8868;&#x8FBE;&#x5F0F;&#x60F3;&#x8981;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#xFF0C;&#x53EA;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x4E0E;&#x548C;&#x6216;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#x3002;</p>
+<p><strong>1. &#x4E0E;&#x64CD;&#x4F5C;</strong></p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x89C2;&#x5BDF;&#x666E;&#x901A;&#x4E0E;&#x201C; &amp; &#x201D;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">if</span> ((<span class="hljs-number">1</span> == <span class="hljs-number">2</span>) &amp; (<span class="hljs-number">10</span> / <span class="hljs-number">0</span> == <span class="hljs-number">0</span>)) {
+    System.out.println(<span class="hljs-string">&quot;Hello World !&quot;</span>);
+}
+</code></pre>
+<p>&#x6B64;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x201C; &amp; &#x201D;&#xFF0C;&#x53D1;&#x73B0;&#x7B2C;&#x4E00;&#x4E2A;&#x5224;&#x65AD;&#x8FD4;&#x56DE;false&#x4E4B;&#x540E;&#x7B2C;&#x4E8C;&#x4E2A;&#x5224;&#x65AD;&#xFF08;(10 / 0 == 0)&#xFF09;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x7684;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x524D;&#x9762;&#x7684;&#x6761;&#x4EF6;&#x5DF2;&#x7ECF;&#x8FD4;&#x56DE;&#x4E86;false&#xFF0C;&#x540E;&#x9762;&#x4E0D;&#x7BA1;&#x6709;&#x591A;&#x5C11;&#x4E2A;true&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#x8FD8;&#x662F;false&#xFF0C;&#x90A3;&#x4E48;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x8FDB;&#x884C;&#x540E;&#x9762;&#x7684;&#x5224;&#x65AD;&#x3002;</p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x4F7F;&#x7528;&#x77ED;&#x8DEF;&#x4E0E;&#xFF08;&amp;&amp;&#xFF09;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">if</span> ((<span class="hljs-number">1</span> == <span class="hljs-number">2</span>) &amp; (<span class="hljs-number">10</span> / <span class="hljs-number">0</span> == <span class="hljs-number">0</span>)) {
+    System.out.println(<span class="hljs-string">&quot;Hello World !&quot;</span>);
+}
+</code></pre>
+<p>&#x6B64;&#x65F6;&#x6CA1;&#x6709;&#x51FA;&#x9519;&#xFF0C;&#x56E0;&#x4E3A;&#x524D;&#x9762;&#x7684;&#x6761;&#x4EF6;&#x8FD4;&#x56DE;&#x4E86;false&#xFF0C;&#x540E;&#x9762;&#x5C31;&#x81EA;&#x7136;&#x4E0D;&#x9700;&#x8981;&#x5224;&#x65AD;&#x3002;</p>
+<p><strong>2. &#x6216;&#x64CD;&#x4F5C;</strong></p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x89C2;&#x5BDF;&#x666E;&#x901A;&#x6216;&#xFF08;|&#xFF09;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">if</span> ((<span class="hljs-number">1</span> == <span class="hljs-number">1</span>) | (<span class="hljs-number">10</span> / <span class="hljs-number">0</span> == <span class="hljs-number">0</span>)) {
+    System.out.println(<span class="hljs-string">&quot;Hello World !&quot;</span>);
+}
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x666E;&#x901A;&#x6216;&#x7684;&#x65F6;&#x5019;&#x6240;&#x6709;&#x7684;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x90FD;&#x8FDB;&#x884C;&#x4E86;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x6216;&#x8FD0;&#x7B97;&#x7684;&#x57FA;&#x672C;&#x5F62;&#x5F0F;&#x662F;&#xFF1A;&#x53EA;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x5224;&#x65AD;&#x8FD4;&#x56DE;&#x4E86;true&#xFF0C;&#x540E;&#x9762;&#x4E0D;&#x7BA1;&#x6709;&#x591A;&#x5C11;&#x4E2A;true&#x6216;&#x8005;&#x662F;false&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#x6C38;&#x8FDC;&#x90FD;&#x662F;true&#x3002;</p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x89C2;&#x5BDF;&#x77ED;&#x8DEF;&#x6216;&#xFF08;&amp;&amp;&#xFF09;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">if</span> ((<span class="hljs-number">1</span> == <span class="hljs-number">1</span>) || (<span class="hljs-number">10</span> / <span class="hljs-number">0</span> == <span class="hljs-number">0</span>)) {
+    System.out.println(<span class="hljs-string">&quot;Hello World !&quot;</span>);
+}
+</code></pre>
+<p>&#x4ECE;&#x6B64;&#x4EE5;&#x540E;&#x5C31;&#x662F;&#x7528;&#x77ED;&#x8DEF;&#x4E0E;&#x548C;&#x77ED;&#x8DEF;&#x6216;&#x64CD;&#x4F5C;&#x3002;</p>
+<blockquote>
+<p>&#x9664;&#x4E86;&#x4EE5;&#x4E0A;&#x4E09;&#x79CD;&#x64CD;&#x4F5C;&#x4E4B;&#x5916;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x4E0D;&#x5E38;&#x7528;&#x7684;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x64CD;&#x4F5C;&#x79F0;&#x4E3A;<strong>&#x5F02;&#x6216;(^)</strong>
+&#x5F02;&#x6216;&#x6709;&#x7740;&#x8F83;&#x4E3A;&#x7279;&#x6B8A;&#x7684;&#x6027;&#x8D28;&#xFF1A;&#x5F53;&#x8FD0;&#x7B97;&#x7B26;&#x4E24;&#x4FA7;&#x5E03;&#x5C14;&#x503C;&#x76F8;&#x540C;&#x662F;&#x7ED3;&#x679C;&#x4E3A;false&#xFF0C;&#x4E24;&#x4FA7;&#x5E03;&#x5C14;&#x503C;&#x4E0D;&#x540C;&#x65F6;&#x7ED3;&#x679C;&#x4E3A;true&#xFF1B;</p>
+<pre><code class="lang-java">System.out.println(<span class="hljs-keyword">true</span> ^ <span class="hljs-keyword">true</span>);    <span class="hljs-comment">// false</span>
+System.out.println(<span class="hljs-keyword">true</span> ^ <span class="hljs-keyword">false</span>);   <span class="hljs-comment">// true</span>
+System.out.println(<span class="hljs-keyword">false</span> ^ <span class="hljs-keyword">true</span>);   <span class="hljs-comment">// true</span>
+System.out.println(<span class="hljs-keyword">false</span> ^ <span class="hljs-keyword">false</span>);  <span class="hljs-comment">// false</span>
+</code></pre>
+<p>&#x5F02;&#x6216;&#x64CD;&#x4F5C;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;</p>
+</blockquote>
+<h3 id="&#x4F4D;&#x8FD0;&#x7B97;&#xFF08;&#x4E86;&#x89E3;&#xFF09;">&#x4F4D;&#x8FD0;&#x7B97;&#xFF08;&#x4E86;&#x89E3;&#xFF09;</h3>
+<p>&#x5728;&#x4E4B;&#x524D;&#x6240;&#x8FDB;&#x884C;&#x7684;&#x6570;&#x5B66;&#x90FD;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x5341;&#x8FDB;&#x5236;&#x6570;&#x636E;&#xFF0C;&#x800C;Java&#x672C;&#x8EAB;&#x7684;&#x8FD0;&#x7B97;&#x652F;&#x6301;&#x4E8C;&#x8FDB;&#x5236;&#x3001;&#x516B;&#x8FDB;&#x5236;&#x3001;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x3002;&#x4E0B;&#x9762;&#x91CD;&#x70B9;&#x89C2;&#x5BDF;&#x4E8C;&#x8FDB;&#x5236;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5C06;&#x5341;&#x8FDB;&#x5236;&#x53D8;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x91C7;&#x7528;&#x7684;&#x662F;&#x77ED;&#x9664;&#x6CD5;&#xFF08;&#x9664;2&#x3001;&#x53D6;&#x4F59;&#x3001;&#x5012;&#x5E8F;&#xFF09;&#x3002;</p>
+<p>&#x4F4D;&#x8FD0;&#x7B97;&#x4E3B;&#x8981;&#x662F;&#x8FDB;&#x884C;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF1A;&amp;&#x3001;|&#x3001;&gt;&gt;&#x3001;&lt;&lt;&#x3001;^&#x3001;~&#x3002;</p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x5B9E;&#x73B0;&#x4F4D;&#x4E0E;&#x64CD;&#x4F5C;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> numA = <span class="hljs-number">9</span>;
+<span class="hljs-keyword">int</span> numB = <span class="hljs-number">11</span>;
+System.out.println(numA &amp; numB);
+</code></pre>
+<p>9 &#x7684;&#x4E8C;&#x8FDB;&#x5236;&#xFF1A;00000000 00000000 00000000 00001001<br>11&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#xFF1A;00000000 00000000 00000000 00001011<br>&amp; &#x7ED3;&#x679C;&#xFF1A;00000000 00000000 00000000 00001001</p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x5B9E;&#x73B0;&#x4F4D;&#x6216;&#x64CD;&#x4F5C;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> numA = <span class="hljs-number">9</span>;
+<span class="hljs-keyword">int</span> numB = <span class="hljs-number">11</span>;
+System.out.println(numA | numB);
+</code></pre>
+<p>9 &#x7684;&#x4E8C;&#x8FDB;&#x5236;&#xFF1A;00000000 00000000 00000000 00001001
+11&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#xFF1A;00000000 00000000 00000000 00001011
+| &#x7ED3;&#x679C;&#xFF1A;00000000 00000000 00000000 00001011</p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x79FB;&#x4F4D;&#x64CD;&#x4F5C;&#xFF08;&#x8BF7;&#x7528;&#x6700;&#x5FEB;&#x7684;&#x65B9;&#x5F0F;&#x8BA1;&#x7B97;2&#x7684;3&#x6B21;&#x65B9;&#x7ED3;&#x679C;&#xFF09;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> num = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">int</span> result = num &lt;&lt; <span class="hljs-number">2</span>;
+System.out.println(num);
+System.out.println(result);
+</code></pre>
+<p>2 &#x7684;&#x4E8C;&#x8FDB;&#x5236;&#xFF1A;00000000 00000000 00000000 00000010
+&#x5DE6;&#x79FB;&#x4F4D;&#x4E4B;&#x540E;&#xFF1A;00000000 00000000 00000000 00001000</p>
+<p><strong>&#x9762;&#x8BD5;&#x9898;&#xFF1A;</strong>&#x8BF7;&#x89E3;&#x91CA;&#x201C; &amp; &#x201D;&#x548C;&#x201C; &amp;&amp; &#x201D;&#x7684;&#x533A;&#x522B;&#xFF1F;&#x201C; | &#x201D;&#x548C;&#x201C; || &#x201D;&#x7684;&#x533A;&#x522B;&#xFF1F;</p>
+<ul>
+<li>&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#xFF1A;<ul>
+<li>&#x4E0E;&#x8FD0;&#x7B97;&#x5206;&#x4E3A;&#x666E;&#x901A;&#x4E0E;&#xFF08;&amp;&#xFF09;&#x548C;&#x77ED;&#x8DEF;&#x4E0E;&#xFF08;&amp;&amp;&#xFF09;&#x4E24;&#x79CD;&#xFF1B;<ul>
+<li>&#x666E;&#x901A;&#x4E0E;&#xFF1A;&#x6240;&#x6709;&#x7684;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x90FD;&#x8981;&#x5224;&#x65AD;&#xFF1B;</li>
+<li>&#x77ED;&#x8DEF;&#x4E0E;&#xFF1A;&#x5982;&#x679C;&#x524D;&#x9762;&#x7684;&#x5224;&#x65AD;&#x8FD4;&#x56DE;&#x4E86;false&#xFF0C;&#x540E;&#x9762;&#x4E0D;&#x518D;&#x5224;&#x65AD;&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x662F;false&#x3002;</li>
+</ul>
+</li>
+<li>&#x6216;&#x8FD0;&#x7B97;&#x5206;&#x4E3A;&#x666E;&#x901A;&#x6216;&#xFF08;|&#xFF09;&#x548C;&#x77ED;&#x8DEF;&#x6216;&#xFF08;||&#xFF09;&#x4E24;&#x79CD;&#xFF1B;<ul>
+<li>&#x666E;&#x901A;&#x6216;&#xFF1A;&#x6240;&#x6709;&#x7684;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x90FD;&#x8981;&#x5224;&#x65AD;&#xFF1B;</li>
+<li>&#x77ED;&#x8DEF;&#x6216;&#xFF1A;&#x5982;&#x679C;&#x524D;&#x9762;&#x7684;&#x5224;&#x65AD;&#x8FD4;&#x56DE;&#x4E86;true&#xFF0C;&#x540E;&#x9762;&#x4E0D;&#x5728;&#x5224;&#x65AD;&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x662F;true&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x4F4D;&#x8FD0;&#x7B97;&#xFF1A;&#x4F4D;&#x4E0E;&#x8FD0;&#x7B97;&#xFF08;&amp;&#xFF09;&#x3001;&#x4F4D;&#x6216;&#x8FD0;&#x7B97;&#xFF08;|&#xFF09;&#xFF0C;&#x5176;&#x4E2D;&#x201C; &amp;&amp; &#x201D;&#x548C;&#x201C; || &#x201D;&#x4E0D;&#x80FD;&#x8FD0;&#x7528;&#x5728;&#x4F4D;&#x8FD0;&#x7B97;&#x4E0A;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="section-3.html" class="navigation navigation-prev " aria-label="Previous page: 第 3 节 Java数据类型划分">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="section-5.html" class="navigation navigation-next " aria-label="Next page: 第 5 节 Java程序逻辑控制">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第 4 节 Java运算符","level":"1.2.4","depth":2,"next":{"title":"第 5 节 Java程序逻辑控制","level":"1.2.5","depth":2,"path":"chapter-1/section-5.md","ref":"chapter-1/section-5.md","articles":[]},"previous":{"title":"第 3 节 Java数据类型划分","level":"1.2.3","depth":2,"path":"chapter-1/section-3.md","ref":"chapter-1/section-3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter-1/section-4.md","mtime":"2020-02-20T03:38:19.088Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-20T03:39:05.692Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

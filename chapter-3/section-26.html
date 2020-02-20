@@ -1,0 +1,2754 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第 26 节 Map集合 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="section-27.html" />
+    
+    
+    <link rel="prev" href="section-25.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter-1.html">
+            
+                <a href="../chapter-1.html">
+            
+                    
+                    第 1 章 Java编程开发入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter-1/section-1.html">
+            
+                <a href="../chapter-1/section-1.html">
+            
+                    
+                    第 1 节 Java开发准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter-1/section-2.html">
+            
+                <a href="../chapter-1/section-2.html">
+            
+                    
+                    第 2 节 Java基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter-1/section-3.html">
+            
+                <a href="../chapter-1/section-3.html">
+            
+                    
+                    第 3 节 Java数据类型划分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter-1/section-4.html">
+            
+                <a href="../chapter-1/section-4.html">
+            
+                    
+                    第 4 节 Java运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../chapter-1/section-5.html">
+            
+                <a href="../chapter-1/section-5.html">
+            
+                    
+                    第 5 节 Java程序逻辑控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../chapter-1/section-6.html">
+            
+                <a href="../chapter-1/section-6.html">
+            
+                    
+                    第 6 节 Java方法的定义及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter-2.html">
+            
+                <a href="../chapter-2.html">
+            
+                    
+                    第 2 章 Java面向对象编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter-2/section-1.html">
+            
+                <a href="../chapter-2/section-1.html">
+            
+                    
+                    第 1 节 类与对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chapter-2/section-2.html">
+            
+                <a href="../chapter-2/section-2.html">
+            
+                    
+                    第 2 节 深入分析类与对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chapter-2/section-3.html">
+            
+                <a href="../chapter-2/section-3.html">
+            
+                    
+                    第 3 节 数组的定义与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../chapter-2/section-4.html">
+            
+                <a href="../chapter-2/section-4.html">
+            
+                    
+                    第 4 节 String类的基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../chapter-2/section-5.html">
+            
+                <a href="../chapter-2/section-5.html">
+            
+                    
+                    第 5 节 String类的常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../chapter-2/section-6.html">
+            
+                <a href="../chapter-2/section-6.html">
+            
+                    
+                    第 6 节 this关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../chapter-2/section-7.html">
+            
+                <a href="../chapter-2/section-7.html">
+            
+                    
+                    第 7 节 引用传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../chapter-2/section-8.html">
+            
+                <a href="../chapter-2/section-8.html">
+            
+                    
+                    第 8 节 数据表与简单Java类映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../chapter-2/section-9.html">
+            
+                <a href="../chapter-2/section-9.html">
+            
+                    
+                    第 9 节 对象比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../chapter-2/section-10.html">
+            
+                <a href="../chapter-2/section-10.html">
+            
+                    
+                    第 10 节 static关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../chapter-2/section-11.html">
+            
+                <a href="../chapter-2/section-11.html">
+            
+                    
+                    第 11 节 代码块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../chapter-2/section-12.html">
+            
+                <a href="../chapter-2/section-12.html">
+            
+                    
+                    第 12 节 内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../chapter-2/section-13.html">
+            
+                <a href="../chapter-2/section-13.html">
+            
+                    
+                    第 13 节 链表的定义与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../chapter-2/section-14.html">
+            
+                <a href="../chapter-2/section-14.html">
+            
+                    
+                    第 14 节 继承性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../chapter-2/section-15.html">
+            
+                <a href="../chapter-2/section-15.html">
+            
+                    
+                    第 15 节 覆写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../chapter-2/section-16.html">
+            
+                <a href="../chapter-2/section-16.html">
+            
+                    
+                    第 16 节 数组操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../chapter-2/section-17.html">
+            
+                <a href="../chapter-2/section-17.html">
+            
+                    
+                    第 17 节 辅助概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.17.1" data-path="../chapter-2/section-17.html">
+            
+                <a href="../chapter-2/section-17.html#final关键字">
+            
+                    
+                    final关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17.2" data-path="../chapter-2/section-17.html">
+            
+                <a href="../chapter-2/section-17.html#多态性">
+            
+                    
+                    多态性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../chapter-2/section-18.html">
+            
+                <a href="../chapter-2/section-18.html">
+            
+                    
+                    第 18 节 抽象类的定义及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="../chapter-2/section-19.html">
+            
+                <a href="../chapter-2/section-19.html">
+            
+                    
+                    第 19 节 接口的定义及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="../chapter-2/section-20.html">
+            
+                <a href="../chapter-2/section-20.html">
+            
+                    
+                    第 20 节 Object类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="../chapter-2/section-21.html">
+            
+                <a href="../chapter-2/section-21.html">
+            
+                    
+                    第 21 节 拓展概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.21.1" data-path="../chapter-2/section-21.html">
+            
+                <a href="../chapter-2/section-21.html#匿名内部类">
+            
+                    
+                    匿名内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21.2" data-path="../chapter-2/section-21.html">
+            
+                <a href="../chapter-2/section-21.html#包装类">
+            
+                    
+                    包装类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="../chapter-2/section-22.html">
+            
+                <a href="../chapter-2/section-22.html">
+            
+                    
+                    第 22 节 包的定义及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="../chapter-2/section-23.html">
+            
+                <a href="../chapter-2/section-23.html">
+            
+                    
+                    第 23 节 访问控制权限
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.23.1" data-path="../chapter-2/section-23.html">
+            
+                <a href="../chapter-2/section-23.html#单例设计模式">
+            
+                    
+                    单例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23.2" data-path="../chapter-2/section-23.html">
+            
+                <a href="../chapter-2/section-23.html#多例设计模式">
+            
+                    
+                    多例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="../chapter-2/section-24.html">
+            
+                <a href="../chapter-2/section-24.html">
+            
+                    
+                    第 24 节 异常的捕获及处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="../chapter-2/section-25.html">
+            
+                <a href="../chapter-2/section-25.html">
+            
+                    
+                    第 25 节 Java5新特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.25.1" data-path="../chapter-2/section-25.html">
+            
+                <a href="../chapter-2/section-25.html#可变参数">
+            
+                    
+                    可变参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25.2" data-path="../chapter-2/section-25.html">
+            
+                <a href="../chapter-2/section-25.html#foreach循环">
+            
+                    
+                    foreach循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25.3" data-path="../chapter-2/section-25.html">
+            
+                <a href="../chapter-2/section-25.html#静态导入">
+            
+                    
+                    静态导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="../chapter-2/section-26.html">
+            
+                <a href="../chapter-2/section-26.html">
+            
+                    
+                    第 26 节 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="../chapter-2/section-27.html">
+            
+                <a href="../chapter-2/section-27.html">
+            
+                    
+                    第 27 节 枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="../chapter-2/section-28.html">
+            
+                <a href="../chapter-2/section-28.html">
+            
+                    
+                    第 28 节 Annotation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="../chapter-2/section-29.html">
+            
+                <a href="../chapter-2/section-29.html">
+            
+                    
+                    第 29 节 Java7新特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.29.1" data-path="../chapter-2/section-29.html">
+            
+                <a href="../chapter-2/section-29.html#autocloseable">
+            
+                    
+                    AutoCloseable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29.2" data-path="../chapter-2/section-29.html">
+            
+                <a href="../chapter-2/section-29.html#try-with-resources">
+            
+                    
+                    Try-with-resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30" data-path="../chapter-2/section-30.html">
+            
+                <a href="../chapter-2/section-30.html">
+            
+                    
+                    第 30 节 Java8新特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.30.1" data-path="../chapter-2/section-30.html">
+            
+                <a href="../chapter-2/section-30.html#接口定义增强">
+            
+                    
+                    接口定义增强
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30.2" data-path="../chapter-2/section-30.html">
+            
+                <a href="../chapter-2/section-30.html#lambda表达式">
+            
+                    
+                    Lambda表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30.3" data-path="../chapter-2/section-30.html">
+            
+                <a href="../chapter-2/section-30.html#方法引用">
+            
+                    
+                    方法引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30.4" data-path="../chapter-2/section-30.html">
+            
+                <a href="../chapter-2/section-30.html#函数式接口">
+            
+                    
+                    函数式接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter-3.html">
+            
+                <a href="../chapter-3.html">
+            
+                    
+                    第 3 章 Java高级编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="section-1.html">
+            
+                <a href="section-1.html">
+            
+                    
+                    第 1 节 Java多线程基础实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="section-2.html">
+            
+                <a href="section-2.html">
+            
+                    
+                    第 2 节 线程常用操作方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="section-3.html">
+            
+                <a href="section-3.html">
+            
+                    
+                    第 3 节 线程的同步与死锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="section-4.html">
+            
+                <a href="section-4.html">
+            
+                    
+                    第 4 节 生产者与消费者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="section-5.html">
+            
+                <a href="section-5.html">
+            
+                    
+                    第 5 节 Java基础类库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="section-5.html">
+            
+                <a href="section-5.html#stringbuffer">
+            
+                    
+                    StringBuffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="section-5.html">
+            
+                <a href="section-5.html#runtime">
+            
+                    
+                    Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="section-5.html">
+            
+                <a href="section-5.html#system">
+            
+                    
+                    System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="section-5.html">
+            
+                <a href="section-5.html#object::finalize">
+            
+                    
+                    Object::finalize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="section-5.html">
+            
+                <a href="section-5.html#cleaner">
+            
+                    
+                    Cleaner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="section-5.html">
+            
+                <a href="section-5.html#对象克隆">
+            
+                    
+                    对象克隆
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="section-6.html">
+            
+                <a href="section-6.html">
+            
+                    
+                    第 6 节 数字操作类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="section-6.html">
+            
+                <a href="section-6.html#math类">
+            
+                    
+                    Math类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="section-6.html">
+            
+                <a href="section-6.html#random类">
+            
+                    
+                    Random类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="section-6.html">
+            
+                <a href="section-6.html#大数字操作类">
+            
+                    
+                    大数字操作类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="section-7.html">
+            
+                <a href="section-7.html">
+            
+                    
+                    第 7 节 日期处理类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="section-7.html">
+            
+                <a href="section-7.html#date类">
+            
+                    
+                    Date类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="section-7.html">
+            
+                <a href="section-7.html#日期格式化">
+            
+                    
+                    日期格式化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="section-7.html">
+            
+                <a href="section-7.html#calendar类">
+            
+                    
+                    Calendar类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="section-8.html">
+            
+                <a href="section-8.html">
+            
+                    
+                    第 8 节 比较器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="section-9.html">
+            
+                <a href="section-9.html">
+            
+                    
+                    第 9 节 正则表达式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="section-9.html">
+            
+                <a href="section-9.html#常用的正则标记">
+            
+                    
+                    常用的正则标记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="section-9.html">
+            
+                <a href="section-9.html#string类对正则的支持">
+            
+                    
+                    String类对正则的支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="section-9.html">
+            
+                <a href="section-9.html#java.util.regex包支持">
+            
+                    
+                    java.util.regex包支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="section-10.html">
+            
+                <a href="section-10.html">
+            
+                    
+                    第 10 节 反射机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="section-11.html">
+            
+                <a href="section-11.html">
+            
+                    
+                    第 11 节 动态代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="section-12.html">
+            
+                <a href="section-12.html">
+            
+                    
+                    第 12 节 反射与Annotation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="section-13.html">
+            
+                <a href="section-13.html">
+            
+                    
+                    第 13 节 国际化程序实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="section-14.html">
+            
+                <a href="section-14.html">
+            
+                    
+                    第 14 节 开发支持类库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.14.1" data-path="section-14.html">
+            
+                <a href="section-14.html#arrays类">
+            
+                    
+                    Arrays类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.2" data-path="section-14.html">
+            
+                <a href="section-14.html#uuid类">
+            
+                    
+                    UUID类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.3" data-path="section-14.html">
+            
+                <a href="section-14.html#optional类">
+            
+                    
+                    Optional类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.4" data-path="section-14.html">
+            
+                <a href="section-14.html#threadlocal类">
+            
+                    
+                    ThreadLocal类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.5" data-path="section-14.html">
+            
+                <a href="section-14.html#定时器">
+            
+                    
+                    定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.6" data-path="section-14.html">
+            
+                <a href="section-14.html#base64加密工具">
+            
+                    
+                    Base64加密工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="section-15.html">
+            
+                <a href="section-15.html">
+            
+                    
+                    第 15 节 文件操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="section-16.html">
+            
+                <a href="section-16.html">
+            
+                    
+                    第 16 节 字节流与字符流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="section-17.html">
+            
+                <a href="section-17.html">
+            
+                    
+                    第 17 节 IO辅助概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.17.1" data-path="section-17.html">
+            
+                <a href="section-17.html#字符编码">
+            
+                    
+                    字符编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.2" data-path="section-17.html">
+            
+                <a href="section-17.html#内存流">
+            
+                    
+                    内存流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.3" data-path="section-17.html">
+            
+                <a href="section-17.html#管道流">
+            
+                    
+                    管道流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.4" data-path="section-17.html">
+            
+                <a href="section-17.html#randomaccessfile">
+            
+                    
+                    RandomAccessFile
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="section-18.html">
+            
+                <a href="section-18.html">
+            
+                    
+                    第 18 节 打印流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="section-19.html">
+            
+                <a href="section-19.html">
+            
+                    
+                    第 19 节 System类对IO的支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="section-20.html">
+            
+                <a href="section-20.html">
+            
+                    
+                    第 20 节 对象序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="section-21.html">
+            
+                <a href="section-21.html">
+            
+                    
+                    第 21 节 IO高级应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.21.1" data-path="section-21.html">
+            
+                <a href="section-21.html#缓冲输入流">
+            
+                    
+                    缓冲输入流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21.2" data-path="section-21.html">
+            
+                <a href="section-21.html#扫描流：scanner">
+            
+                    
+                    扫描流：Scanner
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="section-22.html">
+            
+                <a href="section-22.html">
+            
+                    
+                    第 22 节 网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="section-23.html">
+            
+                <a href="section-23.html">
+            
+                    
+                    第 23 节 类集框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="section-24.html">
+            
+                <a href="section-24.html">
+            
+                    
+                    第 24 节 List集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="section-25.html">
+            
+                <a href="section-25.html">
+            
+                    
+                    第 25 节 集合输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.26" data-path="section-26.html">
+            
+                <a href="section-26.html">
+            
+                    
+                    第 26 节 Map集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.27" data-path="section-27.html">
+            
+                <a href="section-27.html">
+            
+                    
+                    第 27 节 Set集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28" data-path="section-28.html">
+            
+                <a href="section-28.html">
+            
+                    
+                    第 28 节 集合工具类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.28.1" data-path="section-28.html">
+            
+                <a href="section-28.html#stack">
+            
+                    
+                    Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28.2" data-path="section-28.html">
+            
+                <a href="section-28.html#queue">
+            
+                    
+                    Queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28.3" data-path="section-28.html">
+            
+                <a href="section-28.html#properties">
+            
+                    
+                    Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28.4" data-path="section-28.html">
+            
+                <a href="section-28.html#collections工具类">
+            
+                    
+                    Collections工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.29" data-path="section-29.html">
+            
+                <a href="section-29.html">
+            
+                    
+                    第 29 节 数据流Stream
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.30" data-path="section-30.html">
+            
+                <a href="section-30.html">
+            
+                    
+                    第 30 节 JDBC简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.31" data-path="section-31.html">
+            
+                <a href="section-31.html">
+            
+                    
+                    第 31 节 Statement接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.32" data-path="section-32.html">
+            
+                <a href="section-32.html">
+            
+                    
+                    第 32 节 PreparedStatment接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.33" data-path="section-33.html">
+            
+                <a href="section-33.html">
+            
+                    
+                    第 33 节 批处理与事务处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../chapter-4.html">
+            
+                <a href="../chapter-4.html">
+            
+                    
+                    第 4 章 Oracle数据库基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../chapter-4/section-1.html">
+            
+                <a href="../chapter-4/section-1.html">
+            
+                    
+                    第 1 节 Oracle简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../chapter-4/section-2.html">
+            
+                <a href="../chapter-4/section-2.html">
+            
+                    
+                    第 2 节 Oracle安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../chapter-4/section-3.html">
+            
+                <a href="../chapter-4/section-3.html">
+            
+                    
+                    第 3 节 SQLPlus命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../chapter-4/section-4.html">
+            
+                <a href="../chapter-4/section-4.html">
+            
+                    
+                    第 4 节 SQL简介与数据表分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../chapter-4/section-5.html">
+            
+                <a href="../chapter-4/section-5.html">
+            
+                    
+                    第 5 节 SQL简单查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../chapter-4/section-6.html">
+            
+                <a href="../chapter-4/section-6.html">
+            
+                    
+                    第 6 节 SQL限定查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../chapter-4/section-7.html">
+            
+                <a href="../chapter-4/section-7.html">
+            
+                    
+                    第 7 节 查询排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../chapter-4/section-8.html">
+            
+                <a href="../chapter-4/section-8.html">
+            
+                    
+                    第 8 节 综合练习：基础查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../chapter-4/section-9.html">
+            
+                <a href="../chapter-4/section-9.html">
+            
+                    
+                    第 9 节 单行函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../chapter-4/section-10.html">
+            
+                <a href="../chapter-4/section-10.html">
+            
+                    
+                    第 10 节 多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../chapter-4/section-11.html">
+            
+                <a href="../chapter-4/section-11.html">
+            
+                    
+                    第 11 节 分组统计查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../chapter-4/section-12.html">
+            
+                <a href="../chapter-4/section-12.html">
+            
+                    
+                    第 12 节 子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../chapter-4/section-13.html">
+            
+                <a href="../chapter-4/section-13.html">
+            
+                    
+                    第 13 节 综合案例：复杂查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../chapter-4/section-14.html">
+            
+                <a href="../chapter-4/section-14.html">
+            
+                    
+                    第 14 节 数据更新操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../chapter-4/section-15.html">
+            
+                <a href="../chapter-4/section-15.html">
+            
+                    
+                    第 15 节 事务处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../chapter-4/section-16.html">
+            
+                <a href="../chapter-4/section-16.html">
+            
+                    
+                    第 16 节 数据伪列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../chapter-4/section-17.html">
+            
+                <a href="../chapter-4/section-17.html">
+            
+                    
+                    第 17 节 数据表的创建与管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../chapter-4/section-18.html">
+            
+                <a href="../chapter-4/section-18.html">
+            
+                    
+                    第 18 节 约束的创建与管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../chapter-4/section-19.html">
+            
+                <a href="../chapter-4/section-19.html">
+            
+                    
+                    第 19 节 综合案例：数据表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../chapter-4/section-20.html">
+            
+                <a href="../chapter-4/section-20.html">
+            
+                    
+                    第 20 节 序列的定义与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter-5.html">
+            
+                <a href="../chapter-5.html">
+            
+                    
+                    第 5 章 JavaWeb基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    第 1 节 HTML基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    第 2 节 CSS基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    第 3 节 JavaScript基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <span>
+            
+                    
+                    第 4 节 JQuery基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" >
+            
+                <span>
+            
+                    
+                    第 5 节 XML基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    第 6 节 Java解析XML
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../other.html">
+            
+                <a href="../other.html">
+            
+                    
+                    Other
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../oh-my-zsh.html">
+            
+                <a href="../oh-my-zsh.html">
+            
+                    
+                    Oh My Zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第 26 节 Map集合</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="map&#x96C6;&#x5408;">Map&#x96C6;&#x5408;</h2>
+<p>Collection&#x6BCF;&#x4E00;&#x6B21;&#x90FD;&#x53EA;&#x4F1A;&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;Map&#x4E3B;&#x8981;&#x662F;&#x8D1F;&#x8D23;&#x4FDD;&#x5B58;&#x4E00;&#x5BF9;&#x5BF9;&#x8C61;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8BF4;&#x73B0;&#x5728;&#x8981;&#x4FDD;&#x5B58;&#x4E00;&#x5BF9;&#x5173;&#x8054;&#x6570;&#x636E;&#xFF08;key=value&#xFF09;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x679C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;Collection&#x5C31;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Map&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x6B64;&#x7C7B;&#x6570;&#x636E;&#x7684;&#x4FDD;&#x5B58;&#xFF0C;&#x5E76;&#x4E14;Map&#x63A5;&#x53E3;&#x8FD8;&#x63D0;&#x4F9B;&#x6709;&#x6839;&#x636E;key&#x67E5;&#x627E;value&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5728;&#x5F00;&#x53D1;&#x4E4B;&#x4E2D;&#xFF0C;<code>Collection</code>&#x96C6;&#x5408;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x7684;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x8F93;&#x51FA;&#xFF0C;<code>Map</code>&#x96C6;&#x5408;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x7684;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x8FDB;&#x884C;<code>key</code>&#x7684;&#x67E5;&#x627E;&#x3002;</p>
+<h3 id="map&#x63A5;&#x53E3;&#x7B80;&#x4ECB;">Map&#x63A5;&#x53E3;&#x7B80;&#x4ECB;</h3>
+<p>Map&#x63A5;&#x53E3;&#x662F;&#x8FDB;&#x884C;&#x4E8C;&#x5143;&#x5BF9;&#x8C61;&#x4FDD;&#x5B58;&#x7684;&#x6700;&#x5927;&#x7236;&#x63A5;&#x53E3;&#xFF0C;&#x8BE5;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Map</span>&lt;<span class="hljs-title">K</span>, <span class="hljs-title">V</span>&gt;
+</span></code></pre>
+<p>&#x8BE5;&#x63A5;&#x53E3;&#x4E3A;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x7236;&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x8FDB;&#x884C;&#x63A5;&#x53E3;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x8BBE;&#x7F6E;Key&#x4E0E;Value&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5728;&#x6574;&#x4F53;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x4FDD;&#x5B58;&#x4E24;&#x4E2A;&#x5185;&#x5BB9;&#xFF0C;&#x5728;Map&#x63A5;&#x53E3;&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x6709;&#x5982;&#x4E0B;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">No.</th>
+<th style="text-align:center">&#x65B9;&#x6CD5;&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x7C7B;&#x578B;</th>
+<th style="text-align:center">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">public V put(K key, V value)</td>
+<td style="text-align:center">&#x666E;&#x901A;</td>
+<td style="text-align:center">&#x5411;&#x96C6;&#x5408;&#x4E2D;&#x4FDD;&#x5B58;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">public V get(Object key)</td>
+<td style="text-align:center">&#x666E;&#x901A;</td>
+<td style="text-align:center">&#x6839;&#x636E;key&#x67E5;&#x627E;&#x5BF9;&#x5E94;&#x7684;value&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">public Set<map.entry<k, v="">&gt; entrySet()</map.entry<k,></td>
+<td style="text-align:center">&#x666E;&#x901A;</td>
+<td style="text-align:center">&#x5C06;Map&#x96C6;&#x5408;&#x8F6C;&#x5316;&#x4E3A;Set&#x96C6;&#x5408;</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">public boolean containsKey(Object key)</td>
+<td style="text-align:center">&#x666E;&#x901A;</td>
+<td style="text-align:center">&#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x7684;key&#x662F;&#x5426;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">public Set<k> keySet()</k></td>
+<td style="text-align:center">&#x666E;&#x901A;</td>
+<td style="text-align:center">&#x53D6;&#x51FA;&#x5168;&#x90E8;&#x7684;key</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">public V remove(Object key)</td>
+<td style="text-align:center">&#x666E;&#x901A;</td>
+<td style="text-align:center">&#x6839;&#x636E;key&#x5220;&#x9664;&#x5185;&#x5BB9;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x89C2;&#x5BDF;Map&#x7684;&#x7279;&#x70B9;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.alpha.demo;
+<span class="hljs-keyword">import</span> java.util.HashMap;
+<span class="hljs-keyword">import</span> java.util.Map;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>{ 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        Map&lt;String, Integer&gt; map = Map.of(<span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&quot;two&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-number">101</span>, <span class="hljs-keyword">null</span>, <span class="hljs-number">0</span>);
+        System.out.println(map);
+    }
+}
+</code></pre>
+<p>&#x5728;Map&#x96C6;&#x5408;&#x4E4B;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x4FDD;&#x5B58;&#x5C31;&#x662F;&#x6309;&#x7167;<code>key = value</code>&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;<code>of()</code>&#x65B9;&#x6CD5;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#x91CC;&#x9762;&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x91CD;&#x590D;&#x5219;&#x4F1A;&#x51FA;&#x73B0;<code>IllegalArgumentException</code>&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x7684;&#x5185;&#x5BB9;&#x4E3A;<code>null</code>&#xFF0C;&#x5219;&#x4F1A;&#x51FA;&#x73B0;<code>NullPointerException</code>&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x73B0;&#x5728;&#x4F7F;&#x7528;&#x7684;<code>of()</code>&#x65B9;&#x6CD5;&#x4E25;&#x683C;&#x610F;&#x4E49;&#x4E0A;&#x6765;&#x8BB2;&#x5E76;&#x4E0D;&#x662F;Map&#x96C6;&#x5408;&#x7684;&#x6807;&#x51C6;&#x7528;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x6B63;&#x5E38;&#x7684;&#x5F00;&#x53D1;&#x4E4B;&#x4E2D;&#x9700;&#x8981;&#x901A;&#x8FC7;Map&#x96C6;&#x5408;&#x7684;&#x5B50;&#x7C7B;&#x6765;&#x8FDB;&#x884C;&#x63A5;&#x53E3;&#x5BF9;&#x8C61;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x5B50;&#x7C7B;&#xFF1A;<code>HashMap</code>&#xFF0C;<code>Hashtable</code>&#xFF0C;<code>TreeMap</code>&#xFF0C;<code>linkedHashMap</code>&#xFF0C;<code>ConcurrentHashMap</code>&#x3002;</p>
+<h3 id="hashmap">HashMap</h3>
+<p><code>HashMap</code>&#x662F;<code>Map</code>&#x63A5;&#x53E3;&#x4E4B;&#x4E2D;&#x6700;&#x4E3A;&#x5E38;&#x89C1;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x7684;&#x4E3B;&#x8981;&#x7279;&#x70B9;&#x662F;&#x65E0;&#x5E8F;&#x5B58;&#x50A8;&#xFF0C;<code>HashMap</code>&#x7C7B;&#x7684;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HashMap</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt; <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractMap</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+    <span class="hljs-keyword">implements</span> <span class="hljs-title">Map</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;, <span class="hljs-title">Cloneable</span>, <span class="hljs-title">Serializable</span> </span>{}
+</code></pre>
+<p><img src="../images/chapter-3/Collection/HashMap.png" alt=""></p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x89C2;&#x5BDF;<code>Map</code>&#x96C6;&#x5408;&#x7684;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        Map&lt;String, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+        map.put(<span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-number">1</span>);
+        map.put(<span class="hljs-string">&quot;two&quot;</span>, <span class="hljs-number">2</span>);
+        map.put(<span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-number">101</span>);
+        map.put(<span class="hljs-keyword">null</span>, <span class="hljs-number">0</span>);
+        map.put(<span class="hljs-string">&quot;zero&quot;</span>, <span class="hljs-keyword">null</span>);
+        System.out.println(map.get(<span class="hljs-string">&quot;one&quot;</span>));
+        System.out.println(map.get(<span class="hljs-keyword">null</span>));
+        System.out.println(map.get(<span class="hljs-string">&quot;ten&quot;</span>));
+    }
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x7684;&#x64CD;&#x4F5C;&#x5F62;&#x5F0F;&#x4E3A;<code>Map</code>&#x96C6;&#x5408;&#x4F7F;&#x7528;&#x7684;&#x6807;&#x51C6;&#x5F62;&#x5F0F;&#xFF0C;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x901A;&#x8FC7;<code>HashMap</code>&#x5B9E;&#x4F8B;&#x5316;&#x7684;<code>Map</code>&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x4E0E;<code>key</code>&#x6216;<code>value</code>&#x4FDD;&#x5B58;<code>null</code>&#x7684;&#x6570;&#x636E;&#xFF0C;&#x540C;&#x65F6;&#x5373;&#x4F7F;&#x4FDD;&#x5B58;&#x76F8;&#x540C;&#x7684;<code>key</code>&#x503C;&#x4E5F;&#x5E76;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x53EA;&#x662F;&#x5C06;<code>value</code>&#x65E7;&#x7684;&#x5185;&#x5BB9;&#x4F7F;&#x7528;&#x65B0;&#x5185;&#x5BB9;&#x66FF;&#x6362;&#x4E86;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5BF9;&#x4E8E;<code>put()</code>&#x65B9;&#x6CD5;&#x672C;&#x8EAB;&#x662F;&#x63D0;&#x4F9B;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#x5C31;&#x662F;&#x5728;<code>key</code>&#x76F8;&#x540C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8FD4;&#x56DE;&#x66FF;&#x6362;&#x6389;&#x7684;&#x65E7;&#x7684;<code>value</code>&#x3002;</p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x89C2;&#x5BDF;<code>put()</code>&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        Map&lt;String, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+        System.out.println(map.put(<span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-number">1</span>));
+        System.out.println(map.put(<span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-number">101</span>));
+    }
+}
+</code></pre>
+<p><code>HashMap</code>&#x5728;&#x4ECA;&#x540E;&#x7684;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x4E4B;&#x4E2D;&#x662F;&#x4E00;&#x5B9A;&#x4F1A;&#x4F7F;&#x7528;&#x5230;&#x7684;&#xFF0C;&#x4E3A;&#x4E86;&#x6DF1;&#x5165;&#x7406;&#x89E3;<code>HashMap</code>&#x7684;&#x5E95;&#x5C42;&#x673A;&#x5236;&#xFF0C;&#x4E0B;&#x9762;&#x5BF9;&#x5176;&#x6E90;&#x7801;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HashMap</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt; <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractMap</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+        <span class="hljs-keyword">implements</span> <span class="hljs-title">Map</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;, <span class="hljs-title">Cloneable</span>, <span class="hljs-title">Serializable</span> </span>{
+
+    <span class="hljs-comment">/**
+     * &#x9ED8;&#x8BA4;&#x521D;&#x59CB;&#x5BB9;&#x91CF; - &#x5FC5;&#x987B;&#x662F;2&#x7684;&#x5E42;
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> DEFAULT_INITIAL_CAPACITY = <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">4</span>; <span class="hljs-comment">// aka 16</span>
+
+    <span class="hljs-comment">/**
+     * &#x6700;&#x5927;&#x5BB9;&#x91CF;&#x3002;&#x5982;&#x679C;&#x5177;&#x6709;&#x53C2;&#x6570;&#x7684;&#x4EFB;&#x4E00;&#x6784;&#x9020;&#x51FD;&#x6570;&#x9690;&#x5F0F;&#x6307;&#x5B9A;&#x8F83;&#x9AD8;&#x503C;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x6700;&#x5927;&#x5BB9;&#x91CF;&#x3002;
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> MAXIMUM_CAPACITY = <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">30</span>;
+
+    <span class="hljs-comment">/**
+     * &#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x672A;&#x6307;&#x5B9A;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x52A0;&#x8F7D;&#x56E0;&#x5B50;&#x3002;
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">float</span> DEFAULT_LOAD_FACTOR = <span class="hljs-number">0.75f</span>;
+
+    <span class="hljs-comment">/**
+     * &#x94FE;&#x8868;-&#x6811; &#x8F6C;&#x6362;&#x9608;&#x503C;
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TREEIFY_THRESHOLD = <span class="hljs-number">8</span>;
+
+    <span class="hljs-comment">/**
+     * &#x5728;&#x8C03;&#x6574;&#x5927;&#x5C0F;&#x671F;&#x95F4; &#x6811;-&#x94FE;&#x8868; &#x8F6C;&#x6362;&#x9608;&#x503C;
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> UNTREEIFY_THRESHOLD = <span class="hljs-number">6</span>;
+
+    <span class="hljs-comment">/**
+     * &#x6700;&#x5C0F;&#x6811;&#x5BB9;&#x91CF;
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> MIN_TREEIFY_CAPACITY = <span class="hljs-number">64</span>;
+
+    <span class="hljs-comment">/**
+     * &#x57FA;&#x7840;&#x7684;&#x5185;&#x90E8;&#x7EF4;&#x62A4;&#x8282;&#x70B9;&#xFF0C;&#x5355;&#x5411;&#x94FE;&#x8868;
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title">Map</span>.<span class="hljs-title">Entry</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt; </span>{
+        <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> hash;
+        <span class="hljs-keyword">final</span> K key;
+        V value;
+        Node&lt;K,V&gt; next;
+        <span class="hljs-comment">// &#x5168;&#x53C2;&#x6784;&#x9020;&#x3001;getter/setter&#x3001;toString&#x3001;hashCode&#x3001;equals &#x7565;</span>
+    }
+
+    <span class="hljs-comment">/**
+     * &#x5185;&#x90E8;&#x7EF4;&#x62A4;&#x7684;&#x4E8C;&#x5143;&#x6570;&#x7EC4;&#xFF0C;&#x5176;&#x5927;&#x5C0F;&#x59CB;&#x7EC8;&#x4E3A; 2 &#x7684;&#x5E42;&#x6570;
+     */</span>
+    <span class="hljs-keyword">transient</span> Node&lt;K,V&gt;[] table;
+
+    <span class="hljs-comment">/**
+     * &#x7528;&#x4F5C;&#x7F13;&#x5B58;&#x7684;entrySet
+     */</span>
+    <span class="hljs-keyword">transient</span> Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet;
+
+    <span class="hljs-comment">/**
+     * key-value&#x6620;&#x5C04;&#x7684;&#x6570;&#x91CF;
+     */</span>
+    <span class="hljs-keyword">transient</span> <span class="hljs-keyword">int</span> size;
+
+    <span class="hljs-comment">/**
+     * &#x6B64;HashMap&#x7ECF;&#x8FC7;&#x7ED3;&#x6784;&#x4FEE;&#x6539;&#x7684;&#x6B21;&#x6570;&#x7ED3;&#x6784;&#x4FEE;&#x6539;&#x662F;&#x6307;&#x66F4;&#x6539;HashMap&#x4E2D;&#x6620;&#x5C04;&#x6570;&#x6216;&#x4EE5;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x4FEE;&#x6539;&#x5176;&#x5185;&#x90E8;&#x7ED3;&#x6784;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x91CD;&#x65B0;&#x6563;&#x5217;&#xFF09;&#x7684;&#x4FEE;&#x6539;&#x3002;
+     */</span>
+    <span class="hljs-keyword">transient</span> <span class="hljs-keyword">int</span> modCount;
+
+    <span class="hljs-comment">/**
+     * &#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x8C03;&#x6574;&#x5927;&#x5C0F;&#x7684;&#x503C;&#xFF08;capacity * load factor&#xFF09;&#x3002;
+     */</span>
+    <span class="hljs-keyword">int</span> threshold;
+
+    <span class="hljs-comment">/**
+     * &#x52A0;&#x8F7D;&#x56E0;&#x5B50;
+     *
+     * <span class="hljs-doctag">@serial</span>
+     */</span>
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">float</span> loadFactor;
+
+    <span class="hljs-comment">/**
+     * &#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x548C;&#x52A0;&#x8F7D;&#x56E0;&#x5B50;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;HashMap&#x3002;
+     *
+     * <span class="hljs-doctag">@param</span>  initialCapacity &#x521D;&#x59CB;&#x5BB9;&#x91CF;
+     * <span class="hljs-doctag">@param</span>  loadFactor      &#x52A0;&#x8F7D;&#x56E0;&#x5B50;
+     * <span class="hljs-doctag">@throws</span> IllegalArgumentException &#x5982;&#x679C;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x4E3A;&#x8D1F;&#x6216;&#x52A0;&#x8F7D;&#x56E0;&#x5B50;&#x4E3A;&#x975E;&#x6B63;&#x6570;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HashMap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> initialCapacity, <span class="hljs-keyword">float</span> loadFactor)</span> </span>{
+        <span class="hljs-keyword">if</span> (initialCapacity &lt; <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;Illegal initial capacity: &quot;</span> +
+                    initialCapacity);
+        <span class="hljs-keyword">if</span> (initialCapacity &gt; MAXIMUM_CAPACITY)
+            initialCapacity = MAXIMUM_CAPACITY;
+        <span class="hljs-keyword">if</span> (loadFactor &lt;= <span class="hljs-number">0</span> || Float.isNaN(loadFactor))
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;Illegal load factor: &quot;</span> +
+                    loadFactor);
+        <span class="hljs-keyword">this</span>.loadFactor = loadFactor;
+        <span class="hljs-keyword">this</span>.threshold = tableSizeFor(initialCapacity);
+    }
+
+    <span class="hljs-comment">/**
+     * &#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x548C;&#x9ED8;&#x8BA4;&#x52A0;&#x8F7D;&#x56E0;&#x5B50;&#xFF08;0.75&#xFF09;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;HashMap&#x3002;
+     *
+     * <span class="hljs-doctag">@param</span>  initialCapacity &#x521D;&#x59CB;&#x5BB9;&#x91CF;
+     * <span class="hljs-doctag">@throws</span> IllegalArgumentException &#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x4E3A;&#x8D1F;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HashMap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> initialCapacity)</span> </span>{
+        <span class="hljs-keyword">this</span>(initialCapacity, DEFAULT_LOAD_FACTOR);
+    }
+
+    <span class="hljs-comment">/**
+     * &#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#xFF08;16&#xFF09;&#x548C;&#x9ED8;&#x8BA4;&#x52A0;&#x8F7D;&#x56E0;&#x5B50;&#xFF08;0.75&#xFF09;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;HashMap&#x3002;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HashMap</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>.loadFactor = DEFAULT_LOAD_FACTOR; <span class="hljs-comment">// all other fields defaulted</span>
+    }
+
+    <span class="hljs-comment">/**
+     * &#x8C03;&#x7528;putVal&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x6DFB;&#x52A0;&#x64CD;&#x4F5C;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> V <span class="hljs-title">put</span><span class="hljs-params">(K key, V value)</span> </span>{
+        <span class="hljs-keyword">return</span> putVal(hash(key), key, value, <span class="hljs-keyword">false</span>, <span class="hljs-keyword">true</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * Implements Map.put and related methods.
+     *
+     * <span class="hljs-doctag">@param</span> hash hash for key
+     * <span class="hljs-doctag">@param</span> key the key
+     * <span class="hljs-doctag">@param</span> value the value to put
+     * <span class="hljs-doctag">@param</span> onlyIfAbsent if true, don&apos;t change existing value
+     * <span class="hljs-doctag">@param</span> evict if false, the table is in creation mode.
+     * <span class="hljs-doctag">@return</span> previous value, or null if none
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">final</span> V <span class="hljs-title">putVal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hash, K key, V value, <span class="hljs-keyword">boolean</span> onlyIfAbsent,
+                   <span class="hljs-keyword">boolean</span> evict)</span> </span>{
+        Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="hljs-keyword">int</span> n, i;
+        <span class="hljs-keyword">if</span> ((tab = table) == <span class="hljs-keyword">null</span> || (n = tab.length) == <span class="hljs-number">0</span>)
+            n = (tab = resize()).length;
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x5728;&#x5185;&#x90E8;&#x7EF4;&#x62A4;&#x7684;tab[hash]&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x5C06;&#x65B0;&#x8282;&#x70B9;&#x5B58;&#x653E;&#x5230;&#x8BE5;&#x4F4D;&#x7F6E;</span>
+        <span class="hljs-keyword">if</span> ((p = tab[i = (n - <span class="hljs-number">1</span>) &amp; hash]) == <span class="hljs-keyword">null</span>)
+            tab[i] = newNode(hash, key, value, <span class="hljs-keyword">null</span>);
+        <span class="hljs-comment">// &#x4E0D;&#x4E3A;&#x7A7A;&#x5219;&#x8FDB;&#x884C;&#x94FE;&#x8868;&#x6216;&#x6811;&#x7684;&#x62D3;&#x5C55;</span>
+        <span class="hljs-keyword">else</span> {
+            Node&lt;K,V&gt; e; K k;
+            <span class="hljs-keyword">if</span> (p.hash == hash &amp;&amp;
+                    ((k = p.key) == key || (key != <span class="hljs-keyword">null</span> &amp;&amp; key.equals(k))))
+                e = p;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (p <span class="hljs-keyword">instanceof</span> TreeNode)
+                e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="hljs-keyword">this</span>, tab, hash, key, value);
+            <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> binCount = <span class="hljs-number">0</span>; ; ++binCount) {
+                    <span class="hljs-keyword">if</span> ((e = p.next) == <span class="hljs-keyword">null</span>) {
+                        p.next = newNode(hash, key, value, <span class="hljs-keyword">null</span>);
+                        <span class="hljs-comment">// &#x5982;&#x679C;&#x5BB9;&#x91CF;&#x5927;&#x4E8E;&#x8F6C;&#x6362;&#x9608;&#x503C;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x6811;</span>
+                        <span class="hljs-keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="hljs-number">1</span>) <span class="hljs-comment">// -1 for 1st</span>
+                            treeifyBin(tab, hash);
+                        <span class="hljs-keyword">break</span>;
+                    }
+                    <span class="hljs-keyword">if</span> (e.hash == hash &amp;&amp;
+                            ((k = e.key) == key || (key != <span class="hljs-keyword">null</span> &amp;&amp; key.equals(k))))
+                        <span class="hljs-keyword">break</span>;
+                    p = e;
+                }
+            }
+            <span class="hljs-keyword">if</span> (e != <span class="hljs-keyword">null</span>) { <span class="hljs-comment">// existing mapping for key</span>
+                V oldValue = e.value;
+                <span class="hljs-keyword">if</span> (!onlyIfAbsent || oldValue == <span class="hljs-keyword">null</span>)
+                    e.value = value;
+                afterNodeAccess(e);
+                <span class="hljs-keyword">return</span> oldValue;
+            }
+        }
+        ++modCount;
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x5BB9;&#x91CF;&#x5927;&#x4E8E;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x8C03;&#x6574;&#x5927;&#x5C0F;&#x7684;&#x503C;&#xFF0C;&#x6269;&#x5BB9;&#x81F3;&#x539F;&#x5927;&#x5C0F;&#x7684;&#x4E8C;&#x500D;&#x5E76;&#x4E14;&#x91CD;&#x65B0;&#x6563;&#x5217;</span>
+        <span class="hljs-keyword">if</span> (++size &gt; threshold)
+            resize();
+        afterNodeInsertion(evict);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x5F53;&#x94FE;&#x8868;&#x957F;&#x5EA6;&#x8FC7;&#x957F;&#x65F6;&#x5C06;&#x8282;&#x70B9;&#x8F6C;&#x53D8;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#x4EE5;&#x63D0;&#x9AD8;&#x6548;&#x7387;
+     * <span class="hljs-doctag">@param</span> &lt;K&gt;
+     * <span class="hljs-doctag">@param</span> &lt;V&gt;
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TreeNode</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt; <span class="hljs-keyword">extends</span> <span class="hljs-title">LinkedHashMap</span>.<span class="hljs-title">Entry</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt; </span>{
+        TreeNode&lt;K, V&gt; parent; 
+        TreeNode&lt;K, V&gt; left;
+        TreeNode&lt;K, V&gt; right;
+        TreeNode&lt;K, V&gt; prev;
+        <span class="hljs-keyword">boolean</span> red;
+    }
+}
+</code></pre>
+<h3 id="linkedhashmap">LinkedHashMap</h3>
+<p><code>HashMap</code>&#x672C;&#x8EAB;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x662F;&#x65E0;&#x5E8F;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x6DFB;&#x52A0;&#x7684;&#x5143;&#x7D20;&#x6709;&#x5E8F;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>LinkedHashMap</code>&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkedHashMap</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+    <span class="hljs-keyword">extends</span> <span class="hljs-title">HashMap</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+    <span class="hljs-keyword">implements</span> <span class="hljs-title">Map</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+</span></code></pre>
+<p><img src="../images/chapter-3/Collection/LinkedHashMap.png" alt=""></p>
+<p>&#x7531;&#x4E8E;<code>LinkedHashMap</code>&#x662F;&#x57FA;&#x4E8E;&#x94FE;&#x8868;&#x7684;&#x5B58;&#x50A8;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x65F6;&#x6570;&#x636E;&#x91CF;&#x4E0D;&#x6613;&#x8FC7;&#x5927;&#xFF0C;&#x5426;&#x5219;&#x5BB9;&#x6613;&#x9020;&#x6210;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x6500;&#x5347;&#x3002;</p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x4F7F;&#x7528;<code>LinkedHashMap</code></p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        Map&lt;String, Integer&gt; map = <span class="hljs-keyword">new</span> LinkedHashMap&lt;&gt;();
+        map.put(<span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-number">1</span>);
+        map.put(<span class="hljs-string">&quot;two&quot;</span>, <span class="hljs-number">2</span>);
+        map.put(<span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-number">101</span>);
+        map.put(<span class="hljs-keyword">null</span>, <span class="hljs-number">0</span>);
+        map.put(<span class="hljs-string">&quot;zero&quot;</span>, <span class="hljs-keyword">null</span>);
+        System.out.println(map);
+    }
+}
+</code></pre>
+<h3 id="hashtable">Hashtable</h3>
+<p>&#x5728;<code>Map</code>&#x63A5;&#x53E3;&#x4E0B;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;<code>Hashtable</code>&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x6B64;&#x7C7B;&#x662F;&#x5728;JDK 1.0&#x7684;&#x65F6;&#x5019;&#x63D0;&#x4F9B;&#x7684;&#xFF0C;&#x5C5E;&#x4E8E;&#x6700;&#x65E9;&#x7684;<code>Map</code>&#x96C6;&#x5408;&#x7684;&#x5B9E;&#x73B0;&#x64CD;&#x4F5C;&#xFF0C;&#x5728;JDK 1.2&#x7684;&#x65F6;&#x5019;&#x8BA9;&#x5176;&#x591A;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;<code>Map</code>&#x63A5;&#x53E3;&#xFF0C;&#x4ECE;&#x800C;&#x4FDD;&#x5B58;&#x4E0B;&#x6765;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Hashtable</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+    <span class="hljs-keyword">extends</span> <span class="hljs-title">Dictionary</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+    <span class="hljs-keyword">implements</span> <span class="hljs-title">Map</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;, <span class="hljs-title">Cloneable</span>, <span class="hljs-title">java</span>.<span class="hljs-title">io</span>.<span class="hljs-title">Serializable</span>
+</span></code></pre>
+<p><img src="../images/chapter-3/Collection/Hashtable.png" alt=""></p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x4F7F;&#x7528;Hashtable</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> </span>{ 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        Map&lt;String, Integer&gt; map = <span class="hljs-keyword">new</span> Hashtable&lt;String, Integer&gt;();
+        map.put(<span class="hljs-string">&quot;&#x58F9;&quot;</span>, <span class="hljs-number">1</span>);
+        map.put(<span class="hljs-string">&quot;&#x8D30;&quot;</span>, <span class="hljs-number">2</span>);
+        map.put(<span class="hljs-string">&quot;&#x53C1;&quot;</span>, <span class="hljs-number">3</span>);
+        map.put(<span class="hljs-keyword">null</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// key&#x7684;&#x5185;&#x5BB9;&#x4E3A;null</span>
+        System.out.println(map);
+    }
+}
+</code></pre>
+<p>&#x53D1;&#x73B0;Hashtable&#x91CC;&#x9762;&#x5BF9;&#x4E8E;key&#x548C;value&#x7684;&#x6570;&#x636E;&#x90FD;&#x4E0D;&#x5141;&#x8BB8;&#x8BBE;&#x7F6E;&#x4E3A;null&#x3002;</p>
+<blockquote>
+<p>&#x7A0B;&#x5E8F;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java">Exception in thread <span class="hljs-string">&quot;main&quot;</span> java.lang.NullPointerException
+    at java.util.Hashtable.put(Hashtable.java:<span class="hljs-number">464</span>)
+    at com.alpha.demo.TestDemo.main(TestDemo.java:<span class="hljs-number">10</span>)
+</code></pre>
+<p>&#x67E5;&#x9605;JDK&#x6E90;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> V <span class="hljs-title">put</span><span class="hljs-params">(K key, V value)</span> </span>{
+    <span class="hljs-keyword">if</span> (value == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException();
+    }
+    Entry&lt;?,?&gt; tab[] = table;
+    <span class="hljs-keyword">int</span> hash = key.hashCode();
+    <span class="hljs-keyword">int</span> index = (hash &amp; <span class="hljs-number">0x7FFFFFFF</span>) % tab.length;
+    Entry&lt;K,V&gt; entry = (Entry&lt;K,V&gt;)tab[index];
+    <span class="hljs-keyword">for</span>(; entry != <span class="hljs-keyword">null</span> ; entry = entry.next) {
+        <span class="hljs-keyword">if</span> ((entry.hash == hash) &amp;&amp; entry.key.equals(key)) {
+            V old = entry.value;
+            entry.value = value;
+            <span class="hljs-keyword">return</span> old;
+        }
+    }
+    addEntry(hash, key, value, index);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+}
+</code></pre>
+</blockquote>
+<p><strong>&#x9762;&#x8BD5;&#x9898;&#xFF1A;</strong>&#x8BF7;&#x89E3;&#x91CA;HashMap&#x4E0E;Hashtable&#x7684;&#x533A;&#x522B;&#xFF1F;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">No.</th>
+<th style="text-align:center">&#x533A;&#x522B;</th>
+<th style="text-align:center">HashMap&#xFF08;90%&#xFF09;</th>
+<th style="text-align:center">Hashtable&#xFF08;10%&#xFF09;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">&#x63A8;&#x51FA;&#x65F6;&#x95F4;</td>
+<td style="text-align:center">JDK 1.2&#x65F6;&#x63A8;&#x51FA;&#xFF0C;&#x5C5E;&#x4E8E;&#x65B0;&#x7684;&#x7C7B;</td>
+<td style="text-align:center">JDK 1.0&#x65F6;&#x63A8;&#x51FA;&#xFF0C;&#x5C5E;&#x4E8E;&#x65E7;&#x7684;&#x7C7B;</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">&#x6027;&#x80FD;</td>
+<td style="text-align:center">&#x91C7;&#x7528;&#x5F02;&#x6B65;&#x5904;&#x7406;</td>
+<td style="text-align:center">&#x91C7;&#x7528;&#x540C;&#x6B65;&#x5904;&#x7406;</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">&#x6570;&#x636E;&#x5B89;&#x5168;</td>
+<td style="text-align:center">&#x975E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;</td>
+<td style="text-align:center">&#x7EBF;&#x7A0B;&#x5B89;&#x5168;</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">&#x8BBE;&#x7F6E;null</td>
+<td style="text-align:center">&#x5141;&#x8BB8;key&#x6216;value&#x5185;&#x5BB9;&#x4E3A;null</td>
+<td style="text-align:center">&#x4E0D;&#x5141;&#x8BB8;&#x8BBE;&#x7F6E;null</td>
+</tr>
+</tbody>
+</table>
+<h3 id="treemap">TreeMap</h3>
+<p><code>TreeMap</code>&#x5C5E;&#x4E8E;&#x6709;&#x5E8F;&#x7684;<code>Map</code>&#x96C6;&#x5408;&#x7C7B;&#x578B;&#xFF0C;&#x4ED6;&#x53EF;&#x4EE5;&#x6309;&#x7167;<code>key</code>&#x8FDB;&#x884C;&#x6392;&#x9664;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x4F7F;&#x7528;<code>TreeMap</code>&#x65F6;&#x4E00;&#x5B9A;&#x8981;&#x914D;&#x5408;<code>Comparable</code>&#x63A5;&#x53E3;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TreeMap</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+    <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractMap</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+    <span class="hljs-keyword">implements</span> <span class="hljs-title">NavigableMap</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;, <span class="hljs-title">Cloneable</span>, <span class="hljs-title">java</span>.<span class="hljs-title">io</span>.<span class="hljs-title">Serializable</span>
+</span></code></pre>
+<p><img src="../images/chapter-3/Collection/TreeMap.png" alt=""></p>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x4F7F;&#x7528;<code>TreeMap</code>&#x5B9E;&#x73B0;&#x6392;&#x5E8F;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        Map&lt;String, Integer&gt; map = <span class="hljs-keyword">new</span> TreeMap&lt;&gt;();
+        map.put(<span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-number">3</span>);
+        map.put(<span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-number">2</span>);
+        map.put(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-number">1</span>);
+        System.out.println(map);
+    }
+}
+</code></pre>
+<p>&#x5728;&#x4F7F;&#x7528;<code>TreeMap</code>&#x65F6;&#x53EF;&#x4EE5;&#x6839;&#x636E;<code>key</code>&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x7684;&#x6392;&#x5E8F;&#x64CD;&#x4F5C;&#xFF0C;&#x7531;&#x4E8E;&#x8981;&#x8C03;&#x7528;<code>Comparable</code>&#x63A5;&#x53E3;&#x7684;<code>compareTo()</code>&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x6240;&#x4EE5;<code>key</code>&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x4E3A;<code>null</code>&#x7684;&#xFF0C;<code>value</code>&#x5219;&#x5141;&#x8BB8;&#x4E3A;<code>null</code>&#x3002;</p>
+<h3 id="mapentry&#x63A5;&#x53E3;">Map.Entry&#x63A5;&#x53E3;</h3>
+<p>&#x4E4B;&#x524D;&#x5BF9;<code>HashMap</code>&#x8FDB;&#x884C;&#x6E90;&#x7801;&#x5206;&#x6790;&#x662F;&#x53D1;&#x73B0;&#x5176;&#x5185;&#x90E8;&#x662F;&#x5C06;&#x952E;&#x503C;&#x5BF9;&#x4FDD;&#x5B58;&#x5728;&#x4E86;<code>HashMap.Node</code>&#x4E4B;&#x4E2D;&#xFF0C;&#x800C;<code>HashMap.Node</code>&#x672C;&#x8EAB;&#x5B9E;&#x73B0;&#x7684;&#x662F;<code>Map.Entry</code>&#x63A5;&#x53E3;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title">Map</span>.<span class="hljs-title">Entry</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+</span></code></pre>
+<p>&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5F97;&#x51FA;&#xFF1A;&#x6240;&#x6709;&#x7684;<code>key-value</code>&#x90FD;&#x88AB;&#x5C01;&#x88C5;&#x5728;<code>Map.Entry</code>&#x63A5;&#x53E3;&#x4E4B;&#x4E2D;&#xFF0C;<code>Map.Entry</code>&#x63A5;&#x53E3;&#x7684;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Map</span>&lt;<span class="hljs-title">K</span>, <span class="hljs-title">V</span>&gt; </span>{
+    <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Entry</span>&lt;<span class="hljs-title">K</span>, <span class="hljs-title">V</span>&gt; </span>{}
+}
+</code></pre>
+<p>&#x5728;JDK1.9&#x4E4B;&#x540E;<code>Map</code>&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6784;&#x9020;<code>Map.Entry</code>&#xFF1A;</p>
+<ul>
+<li>&#x521B;&#x5EFA;<code>Map.Entry</code>&#x5BF9;&#x8C61;&#xFF1A;<code>static &lt;K,V&gt; Map.Entry&lt;K,V&gt; entry&#x200B;(K k, V v)</code>&#xFF1B;</li>
+</ul>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x521B;&#x5EFA;<code>Map.Entry</code>&#x5BF9;&#x8C61;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        Map.Entry&lt;String, Integer&gt; entry = Map.entry(<span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-number">1</span>);
+        System.out.println(<span class="hljs-string">&quot;&#x83B7;&#x53D6;key&#xFF1A;&quot;</span> + entry.getKey());
+        System.out.println(<span class="hljs-string">&quot;&#x83B7;&#x53D6;value&#xFF1A;&quot;</span> + entry.getValue());
+        System.out.println(entry.getClass().getName());
+    }
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;<code>Map.Entry</code>&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;<code>key</code>&#x548C;<code>value</code>&#x7684;&#x5305;&#x88C5;&#x7C7B;&#x578B;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#x5728;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x4F1A;&#x5C06;<code>key</code>&#x548C;<code>value</code>&#x5305;&#x88C5;&#x4E3A;&#x4E00;&#x4E2A;<code>Map.Entry</code>&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;iterator&#x8F93;&#x51FA;map&#x96C6;&#x5408;">&#x4F7F;&#x7528;Iterator&#x8F93;&#x51FA;Map&#x96C6;&#x5408;</h3>
+<p>&#x5728;&#x4E4B;&#x524D;&#x5F3A;&#x8C03;&#x8FC7;&#xFF0C;&#x53EA;&#x8981;&#x662F;&#x96C6;&#x5408;&#x7684;&#x8F93;&#x51FA;&#x4E00;&#x5B9A;&#x8981;&#x4F7F;&#x7528;Iterator&#x5B8C;&#x6210;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x6574;&#x4E2A;Map&#x63A5;&#x53E3;&#x91CC;&#x9762;&#x5E76;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x7684;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;Iterator&#x63A5;&#x53E3;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x4E0B;&#x9762;&#x5982;&#x679C;&#x8981;&#x60F3;&#x4F7F;&#x7528;Iterator&#x8F93;&#x51FA;Map&#x96C6;&#x5408;&#xFF0C;&#x9996;&#x5148;&#x5FC5;&#x987B;&#x8981;&#x9488;&#x5BF9;&#x4E8E;Map&#x96C6;&#x5408;&#x4E0E;Collection&#x96C6;&#x5408;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x7684;&#x7279;&#x70B9;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x540E;&#x624D;&#x80FD;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x6BCF;&#x5F53;&#x7528;&#x6237;&#x4F7F;&#x7528;put()&#x65B9;&#x6CD5;&#x5411;Map&#x96C6;&#x5408;&#x91CC;&#x9762;&#x4FDD;&#x5B58;&#x4E00;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x90FD;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x7684;&#x5C01;&#x88C5;&#x4E3A;Map.Entry&#x63A5;&#x53E3;&#x5BF9;&#x8C61;&#x3002;&#x89C2;&#x5BDF;Map.Entry&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Map</span>.<span class="hljs-title">Entry</span>&lt;<span class="hljs-title">K</span>,<span class="hljs-title">V</span>&gt;
+</span></code></pre>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li>&#x53D6;&#x5F97;key&#xFF1A;public K getKey()&#xFF1B;</li>
+<li>&#x53D6;&#x5F97;value&#xFF1A;public V getValue()&#xFF1B;</li>
+</ul>
+<p><img src="../images/chapter-3/section-26/1.png" alt=""></p>
+<p>&#x5728;Map&#x63A5;&#x53E3;&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x6709;&#x4E00;&#x4E2A;&#x5C06;Map&#x96C6;&#x5408;&#x8F6C;&#x5316;&#x4E3A;Set&#x96C6;&#x5408;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;public Set<map.entry<k, v="">&gt; entrySet()&#x3002;</map.entry<k,></p>
+<p><em><strong>Map&#x96C6;&#x5408;&#x5229;&#x7528;Iterator&#x63A5;&#x53E3;&#x8F93;&#x51FA;&#x7684;&#x6B65;&#x9AA4;&#xFF1A;</strong></em></p>
+<ul>
+<li><em><strong>&#x5229;&#x7528;Map&#x63A5;&#x53E3;&#x7684;entrySet()&#x65B9;&#x6CD5;&#x5C06;Map&#x96C6;&#x5408;&#x53D8;&#x4E3A;Set&#x96C6;&#x5408;&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x6CDB;&#x578B;&#x662F;Map.Entry&#xFF1B;</strong></em></li>
+<li><em><strong>&#x5229;&#x7528;Set&#x96C6;&#x5408;&#x4E2D;&#x7684;iterator()&#x65B9;&#x6CD5;&#x5C06;Set&#x96C6;&#x5408;&#x8FDB;&#x884C;Iterator&#x8F93;&#x51FA;&#xFF1B;</strong></em></li>
+<li><em><strong>&#x6BCF;&#x4E00;&#x6B21;Iterator&#x5FAA;&#x73AF;&#x53D6;&#x51FA;&#x7684;&#x90FD;&#x662F;Map.Entry&#x63A5;&#x53E3;&#x5BF9;&#x8C61;&#xFF0C;&#x5229;&#x7528;&#x6B64;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;key&#x4E0E;value&#x7684;&#x53D6;&#x51FA;&#x3002;</strong></em></li>
+</ul>
+<p><strong>&#x8303;&#x4F8B;&#xFF1A;</strong> &#x5229;&#x7528;Iterator&#x5B9E;&#x73B0;Map&#x63A5;&#x53E3;&#x7684;&#x8F93;&#x51FA;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        Map&lt;String, Integer&gt; map = <span class="hljs-keyword">new</span> Hashtable&lt;String, Integer&gt;();
+        map.put(<span class="hljs-string">&quot;&#x58F9;&quot;</span>, <span class="hljs-number">1</span>);
+        map.put(<span class="hljs-string">&quot;&#x8D30;&quot;</span>, <span class="hljs-number">2</span>);
+        map.put(<span class="hljs-string">&quot;&#x53C1;&quot;</span>, <span class="hljs-number">3</span>);
+        <span class="hljs-comment">// &#x5C06;Map&#x96C6;&#x5408;&#x53D8;&#x4E3A;Set&#x96C6;&#x5408;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x4F7F;&#x7528; iterator()&#x65B9;&#x6CD5;</span>
+        Set&lt;Map.Entry&lt;String, Integer&gt;&gt; set = map.entrySet();
+        Iterator&lt;Map.Entry&lt;String, Integer&gt;&gt; iter = set.iterator();
+        <span class="hljs-keyword">while</span> (iter.hasNext()) {
+            Map.Entry&lt;String, Integer&gt; me = iter.next();
+            System.out.println(me.getKey() + <span class="hljs-string">&quot; = &quot;</span> + me.getValue());
+        }
+    }
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x7684;&#x4EE3;&#x7801;&#x4F1A;&#x4E0D;&#x5B9A;&#x671F;&#x7684;&#x51FA;&#x73B0;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x638C;&#x63E1;&#x6B65;&#x9AA4;&#x3002;</p>
+<h3 id="&#x5173;&#x4E8E;map&#x96C6;&#x5408;&#x4E2D;key&#x7684;&#x8BF4;&#x660E;">&#x5173;&#x4E8E;Map&#x96C6;&#x5408;&#x4E2D;key&#x7684;&#x8BF4;&#x660E;</h3>
+<p>&#x5728;&#x4F7F;&#x7528;Map&#x63A5;&#x53E3;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x51E0;&#x4E4E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x610F;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x4F5C;&#x4E3A;key&#x6216;value&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x4E5F;&#x5C31;&#x8868;&#x793A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;key&#x3002;&#x4F5C;&#x4E3A;key&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x5FC5;&#x987B;&#x8981;&#x8986;&#x5199;Object&#x7C7B;&#x4E2D;&#x7684;hashCode()&#x4E0E;equals()&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5728;&#x4EE5;&#x540E;&#x4F7F;&#x7528;Map&#x96C6;&#x5408;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9996;&#x9009;&#x7684;key&#x7C7B;&#x578B;&#x662F;String&#xFF0C;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x53BB;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="section-25.html" class="navigation navigation-prev " aria-label="Previous page: 第 25 节 集合输出">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="section-27.html" class="navigation navigation-next " aria-label="Next page: 第 27 节 Set集合">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第 26 节 Map集合","level":"1.4.26","depth":2,"next":{"title":"第 27 节 Set集合","level":"1.4.27","depth":2,"path":"chapter-3/section-27.md","ref":"chapter-3/section-27.md","articles":[]},"previous":{"title":"第 25 节 集合输出","level":"1.4.25","depth":2,"path":"chapter-3/section-25.md","ref":"chapter-3/section-25.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter-3/section-26.md","mtime":"2020-02-20T03:38:19.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-20T03:39:05.692Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

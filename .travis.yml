@@ -1,0 +1,48 @@
+language: node_js
+sudo: required
+node_js: stable
+
+env:
+  global:
+    - GH_REF: github.com/shepherd-xie/blog-book.git
+    - secure: 
+
+addons:
+  apt:
+    update: true
+
+cache:
+  directories: 
+    - node_modules
+
+branches:
+  only:
+    - develop
+
+before_install:
+  - npm install -g gitbook-cli
+
+install:
+  - npm install
+
+script:
+  - gitbook build
+
+after_script:
+  - cd _book
+  - git init
+  - git config user.name "Shepherd"
+  - git config user.email "shepherd@orkva.com"
+  - git add .
+  - git commit -m "Site updated"
+  - git push -f "https://${GH_TOKEN}@${GH_REF}" master:master
+
+deploy:
+  provider: pages
+  email: shepherd@orkva.com
+  github-token: $GH_TOKEN
+  skip-cleanup: true
+  keep-history: true
+  local-dir: _book
+  on:
+    branch: develop
