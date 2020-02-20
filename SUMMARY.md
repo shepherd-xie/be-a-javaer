@@ -147,3 +147,5 @@
   * [第 4 节 JQuery基础]()
   * [第 5 节 XML基础]()
   * [第 6 节 Java解析XML]()
+* [Other](/other.md)
+  * [Oh My Zsh](/oh-my-zsh.md)
