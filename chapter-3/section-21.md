@@ -1,7 +1,7 @@
 ## IO高级应用
 
 * [缓冲输入流](/chapter-3/section-21.md#缓冲输入流)
-* [扫描流：Scanner](/chapter-3/section-21.md#扫描流：scanner)
+* [Scanner](/chapter-3/section-21.md#scanner)
 
 ### 缓冲输入流
 
@@ -101,7 +101,7 @@ public class MainClass {
 
 读取数据不再直接使用InoutStream，就好比输出不再使用OutputStream一样。
 
-### 扫描流：Scanner
+### Scanner
 
 * Scanner类的主要特点以及操作形式；
 * 利用Scanner解决输入流的操作。

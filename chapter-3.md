@@ -8,7 +8,7 @@
   * [StringBuffer](/chapter-3/section-5.md#StringBuffer)
   * [Runtime](/chapter-3/section-5.md#Runtime)
   * [System](/chapter-3/section-5.md#System)
-  * [Object::finalize](/chapter-3/section-5.md#Object::finalize)
+  * [finalize](/chapter-3/section-5.md#finalize)
   * [Cleaner](/chapter-3/section-5.md#Cleaner)
   * [对象克隆](/chapter-3/section-5.md#对象克隆)
 * [第 6 节 数字操作类](/chapter-3/section-6.md)

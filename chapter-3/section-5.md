@@ -3,7 +3,7 @@
 * [StringBuffer](/chapter-3/section-5.md#stringbuffer)
 * [Runtime](/chapter-3/section-5.md#runtime)
 * [System](/chapter-3/section-5.md#system)
-* [Object::finalize](/chapter-3/section-5.md#object::finalize)
+* [finalize](/chapter-3/section-5.md#finalize)
 * [Cleaner](/chapter-3/section-5.md#cleaner)
 * [对象克隆](/chapter-3/section-5.md#对象克隆)
 
@@ -324,7 +324,7 @@ public class MainClass{
 
 2、System类中的gc()方法直接调用了“Runtime.getRuntime().gc()”。
 
-### Object::finalize
+### finalize
 
 对象产生一定会调用构造方法，可以进行一些处理操作，相对应的也存在有对象销毁时所调用的方法（类似C++中的析构函数），如果某个对象需要此类的功能，那么就可以考虑覆写Object类中的finalize()方法。
 

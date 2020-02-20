@@ -1,0 +1,39 @@
+language: node_js
+sudo: required
+node_js: stable
+
+env:
+  global:
+    - GH_REF: github.com/shepherd-xie/blog-book.git
+    - secure: 
+
+addons:
+  apt:
+    update: true
+
+cache:
+  directories: 
+    - node_modules
+
+branches:
+  only:
+    - develop
+
+before_install:
+  - npm install -g gitbook-cli
+
+install:
+  - npm install
+
+script:
+  - gitbook build
+
+deploy:
+  provider: pages
+  email: shepherd@orkva.com
+  github-token: $GH_TOKEN
+  skip-cleanup: true
+  keep-history: true
+  local-dir: _book
+  on:
+    branch: develop

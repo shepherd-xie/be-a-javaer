@@ -3,10 +3,11 @@
 ### 什么是 HTML？
 
 HTML 是用来描述网页的一种语言。
-* HTML 指的是超文本标记语言 (**H**yper **T**ext **M**arkup **L**anguage)
-* HTML 不是一种编程语言，而是一种**标记语言** (markup language)
-* 标记语言是一套**标记标签** (markup tag)
-* HTML 使用**标记标签**来描述网页
+
+- HTML 指的是超文本标记语言 (**H**yper **T**ext **M**arkup **L**anguage)
+- HTML 不是一种编程语言，而是一种**标记语言** (markup language)
+- 标记语言是一套**标记标签** (markup tag)
+- HTML 使用**标记标签**来描述网页
 
 ### HTML 标签
 
