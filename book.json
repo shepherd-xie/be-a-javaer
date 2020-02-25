@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "pageview-count",
+    "back-to-top-button",
+    "tbfed-pagefooter"
+  ],
+  "pluginsConfig": {
+    "tbfed-pagefooter": {
+        "copyright":"Copyright &copy 2018-present orkva.com, all right reserved.",
+        "modify_label": "修订时间: ",
+        "modify_format": "YYYY-MM-DD HH:mm:ss"
+    }
+  }
+}

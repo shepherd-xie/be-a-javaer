@@ -80,7 +80,7 @@ public class MainClass {
 * 堆内存：保存每一个对象的属性内容，对内存需要用关键字new才可以开辟；
 * 栈内存：保存的是一块堆内存的地址，但是为了方便分析，可以简单地理解栈内存保存的是对象名字；
 
-![](/images/chapter-2/section-1/1.png)
+![](../images/chapter-2/section-1/1.png)
 
 对象除了可以利用一行语句定义之外，也可以分步完成。
 
