@@ -24,6 +24,7 @@ before_install:
 
 install:
   - npm install
+  - gitbook install
 
 script:
   - gitbook build
