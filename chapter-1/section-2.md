@@ -4,10 +4,10 @@
 
 ### CLASSPATH环境属性
 
-默认情况下，类都是从当前所在的目录中进行加载的，如果要想改变加载目录 ，就使用CLASSPATH。
+默认情况下，类都是从当前所在的目录中进行加载的，如果要想改变加载目录 ，就使用 CLASSPATH。
 
-设置CLASSPATH：
-```
+设置 CLASSPATH：
+```shell
 set CLASS_PATH=路径
 ```
 
