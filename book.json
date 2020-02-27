@@ -6,8 +6,8 @@
   ],
   "pluginsConfig": {
     "tbfed-pagefooter": {
-        "copyright":"Copyright &copy 2018-present orkva.com, all right reserved.",
-        "modify_label": "修订时间: ",
+        "copyright":"Copyright &copy 2018 orkva.com",
+        "modify_label": "最后更新时间：",
         "modify_format": "YYYY-MM-DD HH:mm:ss"
     }
   }

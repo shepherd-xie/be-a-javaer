@@ -15,3 +15,11 @@ int doSomething(int y);
 String doSomething(int x);
 int doSomething(int z) throws java.lang.Exception;
 ```
+
+## LOC
+
+**源代码行数**（Source lines of code）简称**SLOC**，也称为**程序行数**（lines of code），简称**LOC**，是由计算程序[源代码](https://zh.wikipedia.org/wiki/源代码)的行数来估计[计算机程序](https://zh.wikipedia.org/wiki/计算机程序)大小的[软件度量](https://zh.wikipedia.org/wiki/軟體度量)。源代码行数一般会用来预计开发程序需要的人力及时间，若在软件完成后，也可以用来估计[程序开发生产力](https://zh.wikipedia.org/w/index.php?title=程式開發生產力&action=edit&redlink=1)或[可维护性](https://zh.wikipedia.org/wiki/可维护性)。
+
+## EC2
+
+**亚马逊弹性云计算**（英语：Amazon Elastic Compute Cloud，简称Amazon EC2） ，是由[亚马逊公司](https://zh.wikipedia.org/wiki/亞馬遜公司)提供的[Web服务](https://zh.wikipedia.org/wiki/Web服務)，是一个让用户可以租用[云端](https://zh.wikipedia.org/wiki/雲端運算)电脑运行所需应用的系统。EC2借由提供Web服务的方式让用户可以弹性地运行自己的Amazon机器映像档，用户将可以在这个[虚拟机](https://zh.wikipedia.org/wiki/虛擬機器)上运行任何自己想要的软件或应用程序。
