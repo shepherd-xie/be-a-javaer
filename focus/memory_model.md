@@ -1,8 +1,8 @@
 ## Java8内存模型
 
-![Java8内存模型](/images/focus/java_runtime_data_areas.jpg)
+![Java8内存模型](../assets/focus/java_runtime_data_areas.jpg)
 
-![区域的内存大小](/images/focus/Cookbook_JVMArguments_2_MemoryModel.png)
+![区域的内存大小](../assets/focus/Cookbook_JVMArguments_2_MemoryModel.png)
 
 | 控制参数 | 使用说明 |
 | :---: | :---: |
