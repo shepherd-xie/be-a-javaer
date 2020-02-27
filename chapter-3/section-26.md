@@ -49,7 +49,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable {}
 ```
 
-![](/images/chapter-3/Collection/HashMap.png)
+![](../assets/chapter-3/Collection/HashMap.png)
 
 **范例：** 观察`Map`集合的使用
 ```java
@@ -286,7 +286,7 @@ public class LinkedHashMap<K,V>
     implements Map<K,V>
 ```
 
-![](/images/chapter-3/Collection/LinkedHashMap.png)
+![](../assets/chapter-3/Collection/LinkedHashMap.png)
 
 由于`LinkedHashMap`是基于链表的存储，所以在进行操作时数据量不易过大，否则容易造成时间复杂度攀升。
 
@@ -314,7 +314,7 @@ public class Hashtable<K,V>
     implements Map<K,V>, Cloneable, java.io.Serializable
 ```
 
-![](/images/chapter-3/Collection/Hashtable.png)
+![](../assets/chapter-3/Collection/Hashtable.png)
 
 **范例：** 使用Hashtable
 ```java
@@ -381,7 +381,7 @@ public class TreeMap<K,V>
     implements NavigableMap<K,V>, Cloneable, java.io.Serializable
 ```
 
-![](/images/chapter-3/Collection/TreeMap.png)
+![](../assets/chapter-3/Collection/TreeMap.png)
 
 **范例：** 使用`TreeMap`实现排序
 ```java
@@ -443,7 +443,7 @@ public static interface Map.Entry<K,V>
 * 取得key：public K getKey()；
 * 取得value：public V getValue()；
 
-![](/images/chapter-3/section-26/1.png)
+![](../assets/chapter-3/section-26/1.png)
 
 在Map接口里面定义有一个将Map集合转化为Set集合的方法：public Set<Map.Entry<K, V>> entrySet()。
 

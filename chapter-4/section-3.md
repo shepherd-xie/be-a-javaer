@@ -28,7 +28,7 @@ SELECT * FROM emp;
 
 命令：“ed 文件名称”（如果不写猴嘴，默认的后缀就是*.sql），输入：ed demo；
 
-![](/images/chapter-4/section-3/1.png)
+![](../assets/chapter-4/section-3/1.png)
 
 打开记事本之后，就相当于进入到了一种程序阻塞状态，必须等待记事本关闭之后才可以继续使用。
 

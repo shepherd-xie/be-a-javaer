@@ -193,7 +193,7 @@ public class MainClass {
 
 要求可以实现以上的操作控制，即：可以实现任意的控制人、机器人、猪的操作行为。
 
-![](/images/chapter-2/section-18/1.png)
+![](../assets/chapter-2/section-18/1.png)
 
 **范例：** 定义的是一个行为类
 

@@ -107,7 +107,7 @@ public class MainClass {
 
 任何情况下只要有关键字new，都表示要开辟新的堆内存空间，一旦堆内存空间开辟了，里面就一定会有有所有类重定义的属性内容，当然所有的属性诶荣都是其对应数据类型的默认值。
 
-![](/images/chapter-2/section-1/2.png)
+![](../assets/chapter-2/section-1/2.png)
 
 以上的代码是分为两步的方式实现了对象的实例化（开辟了堆内存的对象称为实例化对象），若果使用了没有实例化的对象。
 
@@ -161,7 +161,7 @@ public class MainClass {
 }
 ```
 
-![](/images/chapter-2/section-1/3.png)这个时候给出的代码，是声明并实例化对象，用一行语句完成的，观察引用类型的使用。
+![](../assets/chapter-2/section-1/3.png)这个时候给出的代码，是声明并实例化对象，用一行语句完成的，观察引用类型的使用。
 
 **范例：** 对象引用传递
 
@@ -189,7 +189,7 @@ public class MainClass {
 
 严格来讲bookA和bookB里面保存的是对象的地址信息，所以以上的引用过程就属于将bookA的地址给了bookB。
 
-![](/images/chapter-2/section-1/4.png)
+![](../assets/chapter-2/section-1/4.png)
 
 由于此时两个对象指向的是同一块堆内存空间，所以任何一个对象修改了堆内存中的数据后，都会影响到其他对象在引用的操作过程中，一块堆内存可以同时被多个栈内存所指向，但是一块栈内存只能保存一块堆内存空间的地址。
 
@@ -219,7 +219,7 @@ public class MainClass {
 }
 ```
 
-![](/images/chapter-2/section-1/5.png)
+![](../assets/chapter-2/section-1/5.png)
 
 通过内存的分析可以发现，在引用数据类型关系里面，一块没有任何栈内存指向的堆内存空间就将成为垃圾，所有的垃圾会不定期的被垃圾收集器（GC）进行回收，回收后会释放掉其所占用的空间。
 

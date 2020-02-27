@@ -240,7 +240,7 @@ public class MainClass {
 
 **面试题：**请解释Java中的异常处理流程
 
-![](/images/chapter-2/section-24/1.png)
+![](../assets/chapter-2/section-24/1.png)
 
 1、当程序在运行过程之中出现了异常后，会由JVM自动根据异常的类型实例化一个与之类型匹配的异常类对象（此处用户不用去关心new，由系统自动负责处理）；
 

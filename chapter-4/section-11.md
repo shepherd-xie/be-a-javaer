@@ -228,7 +228,7 @@ GROUP BY job;
 * 按照SQL语法执行顺序来讲，先执行的是WHERE，在执行的分组，而后执行的是SELECT统计；
 * 如果在WHERE里面使用统计函数，那么这是一个逻辑上的错误；
 
-![](/images/chapter-4/section-11/1.png)
+![](../assets/chapter-4/section-11/1.png)
 
 所以分组后进行的过滤统计是要求在HAVING子句中实现的，那么这个时候SQL语法如下：
 

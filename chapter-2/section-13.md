@@ -15,7 +15,7 @@
 
 链表是一种最为简单的数据结构，它的主要目的是依靠引用关系来实现多个数据的保存，那么下面假设现在要保存的数据是字符串。
 
-![](/images/chapter-2/section-13/1.png)
+![](../assets/chapter-2/section-13/1.png)
 
 **范例：** 定义一个Node类
 
@@ -106,7 +106,7 @@ public class MainClass {
 
 下面需要定义一个类，来帮助客户端去隐藏所有的链表中给出的细节操作。
 
-![](/images/chapter-2/section-13/2.png)
+![](../assets/chapter-2/section-13/2.png)
 
 **范例：** 链表的基本形式
 

@@ -9,7 +9,7 @@
 public interface Set<E> extends Collection<E>
 ```
 
-![](/images/chapter-3/Collection/Set.png)
+![](../assets/chapter-3/Collection/Set.png)
 
 **范例：** 验证`Set`集合特征
 ```java
@@ -32,7 +32,7 @@ public class HashSet<E>
     implements Set<E>, Cloneable, java.io.Serializable
 ```
 
-![](/images/chapter-3/Collection/HashSet.png)
+![](../assets/chapter-3/Collection/HashSet.png)
 
 **范例：** 观察HashSet子类的特点
 ```java
@@ -61,7 +61,7 @@ public class TreeSet<E> extends AbstractSet<E>
     implements NavigableSet<E>, Cloneable, java.io.Serializable
 ```
 
-![](/images/chapter-3/Collection/TreeSet.png)
+![](../assets/chapter-3/Collection/TreeSet.png)
 
 **范例：** 使用TreeSet子类
 ```java

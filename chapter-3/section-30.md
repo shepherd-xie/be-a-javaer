@@ -94,6 +94,6 @@ public class TestDemo {
 
 * `DriverManager`类取得`Connection`接口对象。
 
-![](/images/chapter-3/section-30/1.png)
+![](../assets/chapter-3/section-30/1.png)
 
 可以看出JDBC操作中，在驱动数据库连接对象是，采用的是工厂设计模式，而`DriverManager`就是一个工厂类，客户端调用的时候回完全隐藏具体的实现类。

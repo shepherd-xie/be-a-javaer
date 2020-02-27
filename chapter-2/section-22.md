@@ -206,7 +206,7 @@ Applet是Java在网页上嵌套的程序，是采用绘图的方式完成的显�
 
 在任何的项目里面一定会存在有大量的*.class文件，那么如果将这些*.class文件直接交给用户使用，那么会造成文件过多，并且会导致程序非常没有结构，所以在交付给用户使用之前，会使用jar命令对于*.class文件进行压缩，并且压缩的单位都是以包为主的。
 
-![](/images/chapter-2/section-22/1.png)
+![](../assets/chapter-2/section-22/1.png)
 
 **范例：** 定义一个Message.java文件
 
@@ -233,7 +233,7 @@ SET CLASSPATH=.;C:\Users\lenovo\Desktop\workspace\my.jar
 
 最简单的配置方式可以直接在环境属性中完成。
 
-![](/images/chapter-2/section-22/2.png)
+![](../assets/chapter-2/section-22/2.png)
 
 #### 总结
 

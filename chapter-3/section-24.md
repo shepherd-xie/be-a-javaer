@@ -7,7 +7,7 @@ List子接口是Collection子接口中最为常用（80%）的一个子接口，
 public interface List<E> extends Collection<E>
 ```
 
-![](/images/chapter-3/Collection/List.png)
+![](../assets/chapter-3/Collection/List.png)
 
 但是这个接口对Collection接口进行了一些功能的扩充。在List子接口里面重点掌握以下方法的使用：
 
@@ -23,7 +23,7 @@ public interface List<E> extends Collection<E>
 
 ArrayList类是List接口最为常用的一个子类。下面将利用此类来验证之前所描述过的操作方法。
 
-![](/images/chapter-3/Collection/ArrayList.png)
+![](../assets/chapter-3/Collection/ArrayList.png)
 
 **范例：** List基本操作
 
@@ -216,7 +216,7 @@ class ArrayList<E> extends AbstractList<E>
 
 在 `List` 接口里面还有另一个比较常用的子类： `LinkedList` ，这个类与之前的 `ArrayList` 一样，通过名字就可以推断出其内部是基于链表的实现。
 
-![](/images/chapter-3/Collection/LinkedList.png)
+![](../assets/chapter-3/Collection/LinkedList.png)
 
 `LinkedList` 的操作与 `ArrayList` 完全一致，只是其内部的实现机制不同，下面通过分析 `LinkedList` 的部分源码来了解其内部机制。
 
@@ -296,7 +296,7 @@ public class LinkedList<E>
 
 在最早JDK 1.0的时候就已经提供有Vector类，并且这个类被大量的使用。但是到了JDK 1.2的时候由于类集框架的引入，所以对于整个集合的操作就有了新的标准，那么为了可以继续保留下Vector类，所以让这个类多实现了一个List接口。
 
-![](/images/chapter-3/Collection/Vector.png)
+![](../assets/chapter-3/Collection/Vector.png)
 
 **范例：** 使用Vector
 

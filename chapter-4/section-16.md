@@ -67,7 +67,7 @@ WHERE temp.rn>5;
 
 所谓的ROWID指的是数据行的唯一的编号，该编号是通过硬盘的存储而得来的。
 
-![](/images/chapter-4/section-16/1.png)
+![](../assets/chapter-4/section-16/1.png)
 
 **范例：** 观察ROWID组成
 ```sql

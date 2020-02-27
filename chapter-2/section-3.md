@@ -42,7 +42,7 @@ public class MainClass {
 
 虽然数组的操作比较简单，但是其最麻烦的问题在于，它也属于引用数据类型，所以以上的代码依然需要牵扯到内存分配，与对象保存唯一的区别在于：对象中的堆内存保存的是属性，而数据中的堆内存保存的是一组信息。
 
-![](/images/chapter-2/section-3/1.png)
+![](../assets/chapter-2/section-3/1.png)
 
 以上使用的是第一种数组定义的语法，那么下面更换第二种；
 
@@ -63,7 +63,7 @@ public class MainClass {
 
 下面还是以内存关系来描述以上的关系。
 
-![](/images/chapter-2/section-3/2.png)
+![](../assets/chapter-2/section-3/2.png)
 
 既然数组属于引用数据类型，那么数组一定可以发生引用传递。
 
@@ -85,7 +85,7 @@ public class MainClass {
 }
 ```
 
-![](/images/chapter-2/section-3/3.png)
+![](../assets/chapter-2/section-3/3.png)
 
 以上数组的定义格式严格来讲是属于动态初始化，它的操作特点：先开辟数组空间，而后为数组中的的内容进行赋值。那么在数组定义之中还提供有静态初始化的操作，即：数组定义的同时就设置好了相应的数据内容，格式如下：
 
@@ -200,7 +200,7 @@ public class MainClass {
 }
 ```
 
-![](/images/chapter-2/section-3/4.png)
+![](../assets/chapter-2/section-3/4.png)
 
 在进行数组的引用传递的过程之中，方法对数组的修改一定会影响到原始数据。
 

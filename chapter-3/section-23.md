@@ -29,7 +29,7 @@ public interface Collection<E>
 extends Iterable<E>
 ```
 
-![](/images/chapter-3/Collection/Collection.png)
+![](../assets/chapter-3/Collection/Collection.png)
 
 在Collection接口里面定义有如下的几个常用操作方法。
 

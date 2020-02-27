@@ -195,7 +195,7 @@ class X implements A.B {
 
 电脑上可以使用U盘、MP3、打印机，这些设备都是连接到USB接口上的。
 
-![](/images/chapter-2/section-19/1.png)
+![](../assets/chapter-2/section-19/1.png)
 
 所有的代码如果要进行开发，一定要首先开发出USB接口标准，因为有了标准之后，电脑才可以去使用这些标准，设备厂商才可以去设计USB设备。
 
@@ -345,13 +345,13 @@ public class MainClass {
 
 现在的客户端不会看见具体的子类，因为所有的接口对象都是通过Factory类取得的，如果日后要扩充新的Fruit子类对象，则只需要修改Factory类即可，但是客户端的调用不会发生变化。
 
-![](/images/chapter-2/section-19/2.png)
+![](../assets/chapter-2/section-19/2.png)
 
 **面试题：**编写一个Factory程序
 
 ### 接口的应用 —— 代理设计模式（Proxy）
 
-![](/images/chapter-2/section-19/3.png)
+![](../assets/chapter-2/section-19/3.png)
 
 ```java
 interface Subject { // 整个操作的核心主题
@@ -390,7 +390,7 @@ public class MainClass {
 
 代理设计模式的核心就在于有一个主题操作接口（可能有多种方法），核心的业务主题只完成核心功能，例如：吃饭。而代理主题负责完成所有与核心主题有关的辅助性操作。
 
-![](/images/chapter-2/section-19/4.png)
+![](../assets/chapter-2/section-19/4.png)
 
 **面试题：**请编写一个Proxy程序
 

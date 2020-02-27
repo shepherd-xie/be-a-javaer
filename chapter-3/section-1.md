@@ -207,7 +207,7 @@ public class Thread extends Object implements Runnable
 
 发现Thread类实现了Runnable接口。那么这样一来程序就变为了以下的形式。
 
-![](/images/chapter-3/section-1/1.png)
+![](../assets/chapter-3/section-1/1.png)
 
 此时整个的定义结构看起来非常像代理设计模式，如果是代理设计模式，客户端调用的代理类的方法也应该是接口里提供的方法，那么也应该是run()才对。
 

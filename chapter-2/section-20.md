@@ -348,7 +348,7 @@ public class MainClass {
 
 实现一个宠物商店的模型，一个宠物商店可以保存多个宠物的信息（名字、年龄），可以实现宠物的上架、下架、模糊查询的功能。
 
-![](/images/chapter-2/section-20/1.png)
+![](../assets/chapter-2/section-20/1.png)
 
 现在已经有了一个可用链表，并且这两个链表里面还提供有Object统一参数。
 

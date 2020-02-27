@@ -33,7 +33,7 @@ public class MainClass {
 }
 ```
 
-![](/images/chapter-2/section-7/1.png)**范例二：**
+![](../assets/chapter-2/section-7/1.png)**范例二：**
 
 ```java
 public class MainClass {
@@ -50,7 +50,7 @@ public class MainClass {
 
 要注意的只有一点，String类对象的内容一旦声明，对象内容的改变依靠的是引用地址的改变。
 
-![](/images/chapter-2/section-7/2.png)**范例三：**
+![](../assets/chapter-2/section-7/2.png)**范例三：**
 
 ```java
 class Message {
@@ -77,11 +77,11 @@ public class MainClass {
 }
 ```
 
-![](/images/chapter-2/section-7/3.png)
+![](../assets/chapter-2/section-7/3.png)
 
 但是以上的内存描述并不严格，因为在程序里面，info也是一个String类的对象，所以如果想要描述清楚，应该使用如下的内存关系图。
 
-![](/images/chapter-2/section-7/4.png)
+![](../assets/chapter-2/section-7/4.png)
 
 虽然String属于类，属于引用类型，但是由于其内容不可改变的特点，很多时候就直接把String当成基本数据类型那样使用。也就是说，每一个String类型只能够保存一个数据。
 
