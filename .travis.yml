@@ -1,10 +1,9 @@
 language: node_js
-sudo: required
 node_js: stable
+root: linux
 
 env:
   global:
-    - GH_REF: github.com/shepherd-xie/blog-book.git
     - secure: 
 
 addons:
@@ -32,9 +31,9 @@ script:
 deploy:
   provider: pages
   email: shepherd@orkva.com
-  github-token: $GH_TOKEN
-  skip-cleanup: true
-  keep-history: true
-  local-dir: _book
+  token: $GH_TOKEN
+  cleanup: true
+  keep_history: true
+  local_dir: _book
   on:
     branch: master
