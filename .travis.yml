@@ -1,6 +1,6 @@
 language: node_js
 node_js: stable
-root: linux
+os: linux
 
 env:
   global:
