@@ -6,13 +6,13 @@ Oracle提供的是一个软件平台，如果想要使用这个平台，直接�
 
 Oracle安装完成之后会自动提供一个sqlplus命令，直接运行此命令即可。随后要求输入用户名与密码（密码不回显）。除了这种方法之外，也可以直接启动命令行模式（运行cmd），输入命令：
 
-```
+```bash
 sqlplus scott/tiger
 ```
 
 数据库之中基本组成是数据表，每一张表会包含有多条数据记录，下面查询emp表的数据。
 
-```
+```sql
 SELECT * FROM emp;
 ```
 
@@ -44,19 +44,19 @@ CONN 用户名/密码 [AS SYSDBA]
 
 **范例：** 使用system登录
 
-```
+```sql
 CONN system/manager
 ```
 
 **范例：** 使用sys登录
 
-```
+```sql
 CONN sys/change_on_install AS SYSDBA
 ```
 
 之前执行了查询emp表数据的操作，现在在sys用户下，执行同样的命令。
 
-```
+```sql
 SELECT * FROM emp
               *
 第 1 行出现错误:
