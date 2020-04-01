@@ -23,6 +23,8 @@
 
 # Docker Compose 安装与卸载
 
+> 相关信息可前往 [Docker 官网](https://docs.docker.com/compose/install/)进行查看。
+
 `Compose` 支持 Linux、macOS、Windows 10 三大平台。
 
 `Compose` 可以通过 Python 的包管理工具 `pip` 进行安装，也可以直接下载编译好的二进制文件使用，甚至能够直接在 Docker 容器中运行。
@@ -46,7 +48,7 @@ Linux 系统请使用以下介绍的方法安装。
 例如，在 Linux 64 位系统上直接下载对应的二进制包。
 
 ```bash
-$ sudo curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+$ sudo curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 $ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
@@ -73,8 +75,10 @@ Successfully installed docker-compose cached-property requests texttable websock
 
 ## bash 补全命令
 
+https://docs.docker.com/compose/completion/
+
 ```bash
-$ curl -L https://raw.githubusercontent.com/docker/compose/1.8.0/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
+$ sudo curl -L https://raw.githubusercontent.com/docker/compose/1.25.4/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 ```
 
 ## 容器中执行
