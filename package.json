@@ -1,0 +1,29 @@
+{
+  "name": "blog-book",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-back-to-top-button": "^0.1.4",
+    "gitbook-plugin-pageview-count": "^1.0.1",
+    "gitbook-plugin-tbfed-pagefooter": "0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "gitbook install",
+    "build": "gitbook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shepherd-xie/blog-book.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shepherd-xie/blog-book/issues"
+  },
+  "homepage": "https://github.com/shepherd-xie/blog-book#readme",
+  "__npminstall_done": false
+}
