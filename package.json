@@ -10,7 +10,7 @@
     "gitbook-plugin-tbfed-pagefooter": "0.0.1"
   },
   "resolutions": {
-    "**/graceful-fs": "4.2.4"
+    "graceful-fs": "4.2.4"
   },
   "devDependencies": {},
   "scripts": {
