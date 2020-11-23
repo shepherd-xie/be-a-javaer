@@ -4,11 +4,18 @@
   "description": "---",
   "main": "index.js",
   "dependencies": {
-    "gitbook-cli": "^2.3.2"
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-back-to-top-button": "^0.1.4",
+    "gitbook-plugin-pageview-count": "^1.0.1",
+    "gitbook-plugin-tbfed-pagefooter": "0.0.1"
+  },
+  "resolutions": {
+    "**/graceful-fs": "4.2.4"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx npm-force-resolutions",
     "install": "gitbook install",
     "build": "gitbook build"
   },
