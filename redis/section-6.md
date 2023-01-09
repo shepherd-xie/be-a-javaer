@@ -1,4 +1,4 @@
-# redis.conf
+# Redis 配置文件
 
 1. 单位格式
 

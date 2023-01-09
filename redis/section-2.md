@@ -1,3 +1,5 @@
+# Redis 的数据类型
+
 > [Introduction to Redis](https://redis.io/docs/about/)
 >
 > Redis 是一种开源（BSD 许可Introduction to Redis）内存**数据结构存储**，用作数据库、缓存、消息代理和流引擎。Redis 提供[数据结构](https://redis.io/docs/data-types/)，例如 [字符串](https://redis.io/docs/data-types/strings/)、[散列](https://redis.io/docs/data-types/hashes/)、[列表](https://redis.io/docs/data-types/lists/)、[集合](https://redis.io/docs/data-types/lists/)、带范围查询的[排序集合、](https://redis.io/docs/data-types/sorted-sets/)[位图](https://redis.io/docs/data-types/bitmaps/)、[hyperloglogs](https://redis.io/docs/data-types/hyperloglogs/)、[地理空间索引](https://redis.io/docs/data-types/geospatial/)和[流](https://redis.io/docs/data-types/streams/)。Redis 具有内置[复制](https://redis.io/topics/replication)、[Lua 脚本](https://redis.io/commands/eval)、[LRU 逐出](https://redis.io/docs/reference/eviction/)、[事务](https://redis.io/topics/transactions)和不同级别的[磁盘持久性](https://redis.io/topics/persistence)，并通过[Redis Sentinel](https://redis.io/topics/sentinel)和[Redis Cluster](https://redis.io/topics/cluster-tutorial)的自动分区提供高可用性。

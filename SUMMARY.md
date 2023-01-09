@@ -140,26 +140,16 @@
   - [第 18 节 约束的创建与管理](chapter-4/section-18.md)
   - [第 19 节 综合案例：数据表操作](chapter-4/section-19.md)
   - [第 20 节 序列的定义与使用](chapter-4/section-20.md)
-- [第 5 章 JavaWeb基础](chapter-5.md)
-  - [第 1 节 HTML基础]()
-  - [第 2 节 CSS基础]()
-  - [第 3 节 JavaScript基础]()
-  - [第 4 节 JQuery基础]()
-  - [第 5 节 XML基础]()
-  - [第 6 节 Java解析XML]()
-- [第 6 章 走向单体地狱](chapter-6.md)
-  - [1](chapter-6/section-1.md)
-  - [2](chapter-6/section-2.md)
-  - [3](chapter-6/section-3.md)
-  - [4](chapter-6/section-4.md)
-- [第 7 章 GitFlow工作流指南](chapter-7.md)
-  - [版本控制](chapter-7/section-1.md)
-  - [Git](chapter-7/section-2.md)
-  - [集中式工作流](chapter-7/section-3.md)
-  - [功能分支工作流](chapter-7/section-4.md)
-  - [GitFlow 工作流](chapter-7/section-5.md)
-  - [Forking 工作流](chapter-7/section-6.md)
-  - [Pull Requests](chapter-7/section-7.md)
+- 第 5 章 JavaWeb基础
+- 第 6 章 走向单体地狱
+- [第 7 章 GitFlow工作流指南](/git-workflow.md)
+  - [版本控制](/git-workflow/section-1.md)
+  - [Git](/git-workflow/section-2.md)
+  - [集中式工作流](/git-workflow/section-3.md)
+  - [功能分支工作流](/git-workflow/section-4.md)
+  - [GitFlow 工作流](/git-workflow/section-5.md)
+  - [Forking 工作流](/git-workflow/section-6.md)
+  - [Pull Requests](/git-workflow/section-7.md)
 - [第 8 章 微服务入门](chapter-8.md)
   - [第 1 节 微服务简介](chapter-8/section-1.md)
   - [第 2 节 Linux](chapter-8/section-2.md)
@@ -168,16 +158,28 @@
   - [Ubuntu 安装 Docker](chapter-8/section-5.md)
   - [Docker 镜像加速器](chapter-8/section-6.md)
   - [第 4 节 Docker Compose](chapter-8/section-7.md)
-  - [第 5 节 GitLab]()
-  - [第 6 节 Nexus]()
-  - [第 7 节 Harbor]()
-- [第 9 章 再谈微服务](chapter-9.md)
-- [第 10 章 Spring Boot](chapter-10.md)
-- [第 11 章 Spring Cloud Netflix](chapter-11.md)
-- [第 12 章 Apache Dubbo Zookeeper](chapter-12.md)
-- [第 13 章 Spring Cloud Alibaba](chapter-13.md)
-- [第 14 章 Vue](chapter-14.md)
-- [第 15 章 Kubernetes](chapter-15.md)
-- [第 16 章 Spring Security oAuth2](chapter-16.md)
-- [第 17 章 Flutter](chapter-17.md)
+  - 第 5 节 GitLab
+  - 第 6 节 Nexus
+  - 第 7 节 Harbor
+- 第 9 章 再谈微服务
+- 第 10 章 Spring Boot
+- 第 11 章 Spring Cloud Netflix
+- 第 12 章 Apache Dubbo Zookeeper
+- 第 13 章 Spring Cloud Alibaba
+- 第 14 章 Vue
+- 第 15 章 Kubernetes
+- 第 16 章 Spring Security oAuth2
+- 第 17 章 Flutter
+- [Redis](/redis.md)
+  - [Redis 入门](/redis/section-1.md)
+  - [Redis 的数据类型](/redis/section-2.md)
+  - [Redis 事务](/redis/section-3.md)
+  - [Jedis](/redis/section-4.md)
+  - [Spring Boot 整合 Redis](/redis/section-5.md)
+  - [Redis 配置文件](/redis/section-6.md)
+  - [Redis 持久化](/redis/section-7.md)
+  - [Redis 发布/订阅](/redis/section-8.md)
+  - [Redis 主从复制](/redis/section-9.md)
+  - [Redis Sentinel](/redis/section-10.md)
+  - [Redis 缓存故障](/redis/section-11.md)
 - [Glossary](GLOSSARY.md)
