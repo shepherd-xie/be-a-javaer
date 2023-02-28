@@ -8,6 +8,8 @@
 
 参考资料
 
-1. [撸帝](https://github.com/funtl)
-2. [魔乐科技](http://www.mldn.cn/)
-3. [遇见狂神说](https://space.bilibili.com/95256449)
+- [撸帝](https://github.com/funtl)
+- [魔乐科技](http://www.mldn.cn/)
+- [遇见狂神说](https://space.bilibili.com/95256449)
+- [咕泡科技](https://gupaoedu.cn/)
+- [深入设计模式](https://refactoringguru.cn/)
