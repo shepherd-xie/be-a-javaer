@@ -8,7 +8,7 @@
     "gitbook-plugin-back-to-top-button": "^0.1.4",
     "gitbook-plugin-pageview-count": "^1.0.1",
     "gitbook-plugin-tbfed-pagefooter": "0.0.1",
-    "npm": ">=6.14.6",
+    "npm": ">=10.9.0",
     "minimist": ">=1.2.6",
     "lodash": ">=4.17.21"
   },
